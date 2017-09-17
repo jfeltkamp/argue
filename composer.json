@@ -1,6 +1,6 @@
 {
   "name": "jfeltkamp/argue",
-  "description": "Profile for a Drupal based Argue app installtion.",
+  "description": "Profile for a Drupal based Argue app installation.",
   "type": "drupal-profile",
   "license": "GPL-2.0+",
   "authors": [

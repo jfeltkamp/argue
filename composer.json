@@ -54,7 +54,7 @@
     "patches": {
       "drupal/paragraphs": {
         "create a NEW paragraph 'in place' between existing ones": "https://www.drupal.org/files/issues/2899917_6.patch"
-      },
+      }
     },
     "installer-paths": {
       "config/shared": [

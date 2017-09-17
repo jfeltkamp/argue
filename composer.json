@@ -1,0 +1,94 @@
+{
+  "name": "jfeltkamp/argue",
+  "description": "Profile for a Drupal based Argue app installtion.",
+  "type": "drupal-profile",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Joachim Feltkamp",
+      "email": "j.feltkamp@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0",
+    "oomphinc/composer-installers-extender": "^1.1",
+    "cweagans/composer-patches": "~1.0",
+    "league/commonmark": "^0.11",
+
+    "drupal/core": "8.5.*",
+    "drush/drush": "~8.1.0",
+    "drupal/console": "~1.0",
+
+    "drupal/admin_toolbar": "~1.17",
+    "drupal/diff": "^1.0",
+    "drupal/entity": "^1.0",
+    "drupal/entity_reference_revisions": "^1.0",
+    "drupal/field_group": "^1.0",
+    "drupal/paragraphs": "^1.1",
+    "drupal/pathauto": "^1.0",
+    "drupal/token": "^1.0"
+  },
+  "require-dev": {
+    "drupal/drupal-extension": "^3.1",
+    "phpunit/phpunit": "5.2.8"
+  },
+  "config": {
+    "preferred-install": "source",
+    "bin-dir": "bin/",
+    "secure-http": false
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "patches": {
+      "drupal/paragraphs": {
+        "create a NEW paragraph 'in place' between existing ones": "https://www.drupal.org/files/issues/2899917_6.patch"
+      },
+    },
+    "installer-paths": {
+      "config/shared": [
+        "type:drupal-module-config"
+      ],
+      "docroot/core": [
+        "type:drupal-core"
+      ],
+      "docroot/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "docroot/modules/custom/{$name}": [
+        "type:drupal-module-custom"
+      ],
+      "docroot/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "docroot/profiles/custom/{$name}": [
+        "type:drupal-profile-custom"
+      ],
+      "docroot/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "docroot/themes/custom/{$name}": [
+        "type:drupal-theme-custom"
+      ],
+      "docroot/drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "docroot/drush/custom/{$name}": [
+        "type:drupal-drush-custom"
+      ],
+      "docroot/modules/contrib/libraries/{$name}": [
+        "type:drupal-library"
+      ]
+    }
+  }
+}

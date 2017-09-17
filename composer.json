@@ -36,7 +36,8 @@
     "drupal/field_group": "^1.0",
     "drupal/paragraphs": "^1.1",
     "drupal/pathauto": "^1.0",
-    "drupal/token": "^1.0"
+    "drupal/token": "^1.0",
+    "drupal/votingapi": "~3.0"
   },
   "require-dev": {
     "drupal/drupal-extension": "^3.1",

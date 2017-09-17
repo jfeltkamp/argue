@@ -1,0 +1,5 @@
+global-styling:
+  version: 0.1
+  css:
+    layout:
+      css/base/argue.css: {}

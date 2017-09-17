@@ -1,0 +1,43 @@
+name: Argue
+type: profile
+description: 'Drupal based Argue app for community decision on practical rules.'
+core: 8.x
+distribution:
+  name: Argue
+  install:
+    theme: seven
+
+# Required modules
+dependencies:
+  # core
+  - block
+  - breakpoint
+  - ckeditor
+  - contextual
+  - menu_link_content
+  - datetime
+  - editor
+  - entity_reference
+  - image
+  - menu_ui
+  - language
+  - node
+  - options
+  - path
+  - page_cache
+  - taxonomy
+  - dblog
+  - dynamic_page_cache
+  - toolbar
+  - field_ui
+  - file
+  - views
+  - views_ui
+# contrib
+  - admin_toolbar_tools
+  - diff
+  - paragraphs
+  - pathauto
+  - token
+themes:
+  - argue_base

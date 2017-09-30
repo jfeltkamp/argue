@@ -39,7 +39,7 @@
     "drupal/token": "^1.0",
     "drupal/votingapi": "~3.0",
 
-    "drupal/argue_proscons": "1.x-dev"
+    "drupal/argue_proscons": "dev-1.x"
   },
   "require-dev": {
     "drupal/drupal-extension": "^3.1",

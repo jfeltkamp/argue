@@ -38,6 +38,7 @@
     "drupal/pathauto": "^1.0",
     "drupal/token": "^1.0",
     "drupal/votingapi": "~3.0",
+    "drupal/votingapi_widgets": "~1.0",
 
     "drupal/argue_proscons": "1.x-dev"
   },

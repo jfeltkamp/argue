@@ -23,6 +23,10 @@ libraries-override:
     css:
       theme:
         css/components/colors.css: css/colors.css
+  rate/number-up-down:
+    css:
+      theme:
+        css/number-up-down.css: false
 
 libraries-extend:
   tour/tour-styling:

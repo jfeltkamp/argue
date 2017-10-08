@@ -1,0 +1,10 @@
+.argument::after {
+  margin-bottom: 2rem;
+}
+
+.argument::after {
+   content: '';
+   display: table;
+   clear: both;
+
+}

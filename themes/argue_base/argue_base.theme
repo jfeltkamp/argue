@@ -1,0 +1,67 @@
+<?php
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_theme().
+ */
+function argue_base_theme() {
+  return [
+    'argument_edit_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter()
+ *
+ * Changes vertical tabs to container.
+ */
+function argue_base_form_argument_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Use node display to keep it simple.
+  $form['#theme'] = ['argument_edit_form'];
+  $form['#attached']['library'][] = 'seven/node-form';
+
+  $form['header'] = [
+    '#type' => 'container',
+    '#weight' => 10,
+    '#attributes' => ['class' => ['argue_header']],
+    '#tree' => TRUE,
+    '#access' => TRUE,
+    'reference' => $form['reference'],
+    'title' => $form['title'],
+  ];
+  unset($form['reference']);
+  unset($form['title']);
+
+  $form['header']['reference']['#group'] = 'header';
+  $form['header']['title']['#group'] = 'header';
+
+  $form['meta'] = [
+    '#type' => 'container',
+    '#group' => 'advanced',
+    '#weight' => -10,
+    '#title' => t('Published'),
+    '#attributes' => ['class' => ['entity-meta__header']],
+    '#tree' => TRUE,
+    '#access' => TRUE,
+    'title' => [
+      '#type' => 'container',
+      'title' => [
+        '#markup' => new TranslatableMarkup('Header data'),
+      ],
+      '#attributes' => [
+        'class' => ['entity-meta__title'],
+      ]
+    ],
+  ];
+
+  $form['advanced']['#type'] = 'container';
+  $form['advanced']['#attributes']['class'][] = 'entity-meta';
+
+  $form['revision_information']['#type'] = 'container';
+  $form['revision_information']['#group'] = 'meta';
+
+}
+

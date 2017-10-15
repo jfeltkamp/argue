@@ -52,11 +52,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
-    "patches": {
-      "drupal/paragraphs": {
-        "create a NEW paragraph 'in place' between existing ones": "https://www.drupal.org/files/issues/2899917_6.patch"
-      }
-    },
+    "patches": {},
     "installer-paths": {
       "config/shared": [
         "type:drupal-module-config"

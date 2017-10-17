@@ -1,0 +1,44 @@
+<?php
+
+function argue_install() {
+  // Install theme argue_base and set as default theme
+  $theme_installer = \Drupal::service('theme_installer');
+  $theme_installer->install(['argue_base']);
+  $theme_handler = \Drupal::service('theme_handler');
+  $theme_handler->setDefault('argue_base');
+
+  // Override default configuration of the rate module as we need.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('rate')) {
+    $config_factory = \Drupal::configFactory();
+    $config_factory->getEditable('rate.settings')
+      ->set('enabled_types_bundles', ['argument' => ['argument']])
+      ->set('widget_type', 'number_up_down')
+      ->set('bot_minute_threshold', '0')
+      ->set('bot_hour_threshold', '0')
+      ->set('botscout_key', '')
+      ->save();
+  }
+
+  // Set new argumentation block below content.
+  $argue_block = \Drupal::configFactory()->getEditable('block.block.argumentation');
+  $argue_block->set('langcode', 'en')
+    ->set('status', TRUE)
+    ->set('dependencies', ['module' => ['argue_proscons','votingapi'],'theme' => ['argue_base']])
+    ->set('id', 'argumentation')
+    ->set('theme', 'argue_base')
+    ->set('region', 'content')
+    ->set('weight', 2)
+    ->set('plugin', 'argumentation_block')
+    ->set('settings', [
+      'id' => 'argumentation_block',
+      'label' => 'Argumentation',
+      'provider' => 'argue_proscons',
+      'label_display' => 'visible',
+      'introduction' => '',
+      'context_mapping' => [
+        'node' => '@node.node_route_context:node',
+      ]
+    ])
+    ->save();
+}

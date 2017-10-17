@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - argue_proscons
+id: argument.full
+label: full
+targetEntityType: argument
+cache: true

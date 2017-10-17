@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.argument.teaser
+  module:
+    - argue_proscons
+id: argument.argument.teaser
+targetEntityType: argument
+bundle: argument
+mode: teaser
+content:
+  argument:
+    label: hidden
+    type: basic_string
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  rate_vote_widget:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  reference_id: true
+  type: true
+  user_id: true

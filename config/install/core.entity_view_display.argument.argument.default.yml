@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - argue_proscons
+    - options
+    - user
+id: argument.argument.default
+targetEntityType: argument
+bundle: argument
+mode: default
+content:
+  argument:
+    label: hidden
+    type: basic_string
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    label: hidden
+    type: string
+    weight: 2
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  reference_id:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+  type:
+    label: hidden
+    type: list_key
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

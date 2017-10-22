@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/aufnahme-neuer-mitbewohner\/voraussetzungen?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "href": "http:\/\/default\/aufnahme-neuer-mitbewohner?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2a334cdf-3db7-4edc-9975-b3e8a08bcfd5"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "topic_tree"
+        }
+    ],
+    "name": [
+        {
+            "value": "Voraussetzungen",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/aufnahme-neuer-mitbewohner?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "67c2c56c-7462-4e9d-bb15-3c35c8dbdc08"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2017-10-20T11:52:12+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/aufnahme-neuer-mitbewohner\/voraussetzungen",
+            "pid": 6,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

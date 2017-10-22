@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/zusammenleben\/einkauf?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "href": "http:\/\/default\/zusammenleben?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2d2e393a-98db-4e0e-8fb1-3870df0f7cbc"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "topic_tree"
+        }
+    ],
+    "name": [
+        {
+            "value": "Einkauf",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 1
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/zusammenleben?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b0e49b5f-43a9-4414-bd30-37cf4f84b136"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2017-10-20T12:00:41+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/zusammenleben\/einkauf",
+            "pid": 7,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/finanzen\/mietzahlung?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "href": "http:\/\/default\/finanzen?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 12
+        }
+    ],
+    "uuid": [
+        {
+            "value": "17f612c0-c03d-4350-91c5-0593d392f4f1"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "topic_tree"
+        }
+    ],
+    "name": [
+        {
+            "value": "Mietzahlung",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 1
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/finanzen?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "83422f2c-eda0-475f-a25c-ce7b7724305e"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2017-10-20T11:57:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/finanzen\/mietzahlung",
+            "pid": 12,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

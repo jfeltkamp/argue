@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/aufnahme-neuer-mitbewohner?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+        }
+    },
+    "tid": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "67c2c56c-7462-4e9d-bb15-3c35c8dbdc08"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "topic_tree"
+        }
+    ],
+    "name": [
+        {
+            "value": "Aufnahme neuer Mitbewohner",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 11
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-10-20T12:00:41+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/aufnahme-neuer-mitbewohner",
+            "pid": 3,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

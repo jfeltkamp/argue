@@ -1,38 +1,48 @@
-id: argue-proscons
-module: argue_proscons
-label: Argue with pros and cons about the thesis given above.
 langcode: en
+status: true
+dependencies:
+  module:
+    - argue_demo
+id: argue-demo
+label: 'Argue with pros and cons about the thesis given above.'
+module: argue_demo
 routes:
-  - route_name: node.canonical
+  -
+    route_name: entity.node.canonical
 tips:
   introduction:
     id: introduction
     plugin: text
-    label: Adding or editing a container
-    body: This form can be used to edit an existing container or add a new container to your site.<br>Containers are used to group forums together. For example, if you ran a Drupal forum you might create a 'Support' container and include forums for 'Installing Drupal' and 'Getting started' inside the 'Support' Container
-    weight: "1"
+    label: 'Suggested topic that is argued below.'
+    weight: 1
+    attributes:
+      data-id: block-mainpagecontent
+    body: 'Carefully read and understand the suggested topic that is being argued below. '
+    location: bottom
   block-pagetitle:
     id: block-pagetitle
     plugin: text
-    label: Container name
-    body: Enter a name to identify this container. Eg 'Support'
-    weight: "2"
+    label: 'Arguments for the suggested topic.'
+    weight: 2
     attributes:
-      data-id: edit-name
+      data-id: pros
+    body: 'These are the arguments that speak for (Pro) the proposal. Read all the pro-arguments to better understand the proposal. Read all the counter-arguments to understand what is against this proposal.'
+    location: top
   container-description:
     id: container-description
     plugin: text
-    label: Container description
-    body: Give your container a description to help identify the purpose of the container and the types of forum it will contain. You can also use the container description to provide guidelines for other site administrators to help them decide which container a new forum might belong in.
-    weight: "3"
+    label: 'Arguments against (Contra) the proposal.'
+    weight: 3
     attributes:
-      data-id: edit-description
+      data-id: cons
+    body: 'These are the arguments that speak against (Contra) the proposal. Read all the counter-arguments to understand what reasons speak against this proposal.'
+    location: top
   container-save:
     id: container-save
     plugin: text
-    location: top
-    label: Save
-    body: When you have finished completing the form, click 'Save' to create the new container or save the changes to an existing container.
-    weight: "6"
+    label: 'Evaluate the arguments'
+    weight: 4
     attributes:
-      data-id: edit-submit
+      data-class: 'argument-teaser .rate-widget-number-up-down'
+    body: "When you have read and understand the argument, you can evaluate it. </p><p>\r\n\r\nUp = The argument is correct and important.</p><p>\r\n\r\nDown = The argument is wrong or misleading.</p><p>\r\n\r\nThe important thing is, that you think about the arguments and not about the proposal. Do nothing if you don't understand the point or if you think the argument is not important."
+    location: right

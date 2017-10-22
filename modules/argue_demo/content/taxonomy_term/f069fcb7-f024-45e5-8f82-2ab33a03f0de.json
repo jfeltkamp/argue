@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/aufnahme-neuer-mitbewohner\/vertrag?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "href": "http:\/\/default\/aufnahme-neuer-mitbewohner?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f069fcb7-f024-45e5-8f82-2ab33a03f0de"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "topic_tree"
+        }
+    ],
+    "name": [
+        {
+            "value": "Vertrag",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 2
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/aufnahme-neuer-mitbewohner?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "67c2c56c-7462-4e9d-bb15-3c35c8dbdc08"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2017-10-20T11:57:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/aufnahme-neuer-mitbewohner\/vertrag",
+            "pid": 4,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

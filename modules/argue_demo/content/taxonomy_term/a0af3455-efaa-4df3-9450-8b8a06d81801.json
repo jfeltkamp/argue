@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/finanzen\/haushaltsgeld?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "href": "http:\/\/default\/finanzen?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a0af3455-efaa-4df3-9450-8b8a06d81801"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "topic_tree"
+        }
+    ],
+    "name": [
+        {
+            "value": "Haushaltsgeld",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 2
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/finanzen?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "83422f2c-eda0-475f-a25c-ce7b7724305e"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2017-10-20T11:57:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/finanzen\/haushaltsgeld",
+            "pid": 13,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

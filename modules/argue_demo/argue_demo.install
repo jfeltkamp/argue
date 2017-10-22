@@ -1,0 +1,17 @@
+<?php
+
+function argue_demo_uninstall() {
+  $default_content_conf = system_get_info('module' ,'argue_demo')['default_content'];
+
+  foreach($default_content_conf as $entity_type => $uuid_array) {
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
+    $storage = \Drupal::service('entity_type.manager')->getStorage($entity_type);
+    foreach ($uuid_array as $uuid) {
+      /** @var \Drupal\Core\Entity\EntityInterface $entity */
+      $entities = $storage->loadByProperties(['uuid' => $uuid]);
+      foreach ($entities as $entity) {
+        $entity->delete();
+      }
+    }
+  }
+}

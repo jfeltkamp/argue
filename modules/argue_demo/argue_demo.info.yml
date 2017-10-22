@@ -1,0 +1,18 @@
+name: Argue Demo
+type: module
+description: Provides demo content to get an impression how argue works.
+core: 8.x
+package: Argue
+dependencies:
+  - default_content
+default_content:
+  argument:
+    - 0a8fca45-0789-4101-bcea-76647f7b6b68
+    - 0db11053-6886-4fbd-9e73-e78bcbcc8c78
+    - a1404474-a45c-48e0-a1aa-0a079f736cc2
+  node:
+    - 35119d53-adeb-4db8-b507-83522c9d0636
+  taxonomy_term:
+    - 35f0ad1b-3c4d-4da5-988d-ec11ca0a319f
+    - db4d04f1-e18a-4257-8f4e-06bbc0e47798
+

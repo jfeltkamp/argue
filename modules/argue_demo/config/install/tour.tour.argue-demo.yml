@@ -1,0 +1,38 @@
+id: argue-proscons
+module: argue_proscons
+label: Argue with pros and cons about the thesis given above.
+langcode: en
+routes:
+  - route_name: node.canonical
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Adding or editing a container
+    body: This form can be used to edit an existing container or add a new container to your site.<br>Containers are used to group forums together. For example, if you ran a Drupal forum you might create a 'Support' container and include forums for 'Installing Drupal' and 'Getting started' inside the 'Support' Container
+    weight: "1"
+  block-pagetitle:
+    id: block-pagetitle
+    plugin: text
+    label: Container name
+    body: Enter a name to identify this container. Eg 'Support'
+    weight: "2"
+    attributes:
+      data-id: edit-name
+  container-description:
+    id: container-description
+    plugin: text
+    label: Container description
+    body: Give your container a description to help identify the purpose of the container and the types of forum it will contain. You can also use the container description to provide guidelines for other site administrators to help them decide which container a new forum might belong in.
+    weight: "3"
+    attributes:
+      data-id: edit-description
+  container-save:
+    id: container-save
+    plugin: text
+    location: top
+    label: Save
+    body: When you have finished completing the form, click 'Save' to create the new container or save the changes to an existing container.
+    weight: "6"
+    attributes:
+      data-id: edit-submit

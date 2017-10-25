@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies: {  }
+id: moderator
+label: Moderator
+weight: 4
+is_admin: null
+permissions:
+  - 'access argument overview'
+  - 'access content overview'
+  - 'access tour'
+  - 'access user profiles'
+  - 'add argument entities'
+  - 'cast rate vote on argument of argument'
+  - 'delete all argument revisions'
+  - 'delete any topic content'
+  - 'delete argument entities'
+  - 'delete own topic content'
+  - 'delete topic revisions'
+  - 'edit any topic content'
+  - 'edit argument entities'
+  - 'edit own comments'
+  - 'edit own topic content'
+  - 'post comments'
+  - 'revert all argument revisions'
+  - 'revert all revisions'
+  - 'revert topic revisions'
+  - 'skip comment approval'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'view all argument revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view published argument entities'
+  - 'view rate results page'
+  - 'view topic revisions'
+  - 'view unpublished argument entities'

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+id: beginner
+label: Beginner
+weight: 2
+is_admin: null
+permissions:
+  - 'access tour'
+  - 'access user profiles'
+  - 'cast rate vote on argument of argument'
+  - 'edit own comments'
+  - 'post comments'
+  - 'view published argument entities'
+  - 'view rate results page'
+  - 'view topic revisions'

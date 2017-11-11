@@ -25,7 +25,7 @@
     "cweagans/composer-patches": "~1.0",
     "league/commonmark": "^0.11",
 
-    "drupal/core": "8.4.0",
+    "drupal/core": "8.4.2",
 
     "drupal/admin_toolbar": "~1.17",
     "drupal/default_content": "~1.0",

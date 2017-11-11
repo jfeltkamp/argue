@@ -13,16 +13,16 @@ tips:
   introduction:
     id: introduction
     plugin: text
-    label: 'Suggested topic that is argued below.'
+    label: 'Suggested rule that is argued below.'
     weight: 1
     attributes:
       data-id: block-mainpagecontent
-    body: 'Carefully read and understand the suggested topic that is being argued below. '
+    body: 'Carefully read and understand the suggested rule that is being argued below. '
     location: bottom
   block-pagetitle:
     id: block-pagetitle
     plugin: text
-    label: 'Arguments for the suggested topic.'
+    label: 'Arguments for the suggested rule.'
     weight: 2
     attributes:
       data-id: pros

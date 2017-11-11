@@ -1,0 +1,5 @@
+structure.list:
+  css:
+    theme:
+      css/list.css: {}
+

@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.topic
+    - node.type.rule
   module:
     - text
-id: node.topic.body
+id: node.rule.body
 field_name: body
 entity_type: node
-bundle: topic
+bundle: rule
 label: Body
 description: ''
 required: false

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains argue_structure.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function argue_structure_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the argue_structure module.
+    case 'help.page.argue_structure':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Argue basic structure of rule tree and user groups.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

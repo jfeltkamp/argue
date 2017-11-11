@@ -2,29 +2,34 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.topic.body
-    - field.field.node.topic.field_sector
-    - node.type.topic
+    - field.field.node.rule.body
+    - field.field.node.rule.field_sector
+    - node.type.rule
   module:
     - text
     - user
-id: node.topic.default
+id: node.rule.default
 targetEntityType: node
-bundle: topic
+bundle: rule
 mode: default
 content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_sector:
     weight: 1
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content

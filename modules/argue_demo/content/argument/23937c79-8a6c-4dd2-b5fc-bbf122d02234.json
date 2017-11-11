@@ -1,0 +1,159 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/argument\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/argument\/argument"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/user_id": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/reference_id": [
+            {
+                "href": "http:\/\/default\/finanzen\/mietzahlung\/die-miete-wird-zum-ersten-tag-des-monats-uberwiesen?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "23937c79-8a6c-4dd2-b5fc-bbf122d02234"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2017-11-05T16:37:18+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5fe57efa-74d7-477d-a363-03f5a988ef35"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/user_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5fe57efa-74d7-477d-a363-03f5a988ef35"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/reference_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/finanzen\/mietzahlung\/die-miete-wird-zum-ersten-tag-des-monats-uberwiesen?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/rule"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9fe6fa77-6f5a-487a-b959-d9d746bfa64b"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "type": [
+        {
+            "value": 1
+        }
+    ],
+    "name": [
+        {
+            "value": "Ein Dauer-\u00dcberweisungsauftrag verhindert Vergessen der Mietzahlung. "
+        }
+    ],
+    "argument": [
+        {
+            "value": "Ein Dauer-\u00dcberweisungsauftrag verhindert, dass die Mietzahlung vergessen wird und sorgt automatisch f\u00fcr Regelm\u00e4\u00dfigkeit. Die Zahlungsunf\u00e4higkeit eines Mitbewohners f\u00e4llt fr\u00fchzeitig auf, so dass Unterst\u00fctzung geleistet werden kann."
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-11-05T16:37:18+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-11-05T16:37:18+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ]
+}

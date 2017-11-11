@@ -6,6 +6,7 @@ label: Beginner
 weight: 2
 is_admin: null
 permissions:
+  - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
   - 'cast rate vote on argument of argument'
@@ -13,4 +14,4 @@ permissions:
   - 'post comments'
   - 'view published argument entities'
   - 'view rate results page'
-  - 'view topic revisions'
+  - 'view rule revisions'

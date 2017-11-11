@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: rule
+label: Rule
+type: 'canonical_entities:node'
+pattern: '[node:field_sector:entity:parents]/[node:field_sector:entity:name]/[node:title]'
+selection_criteria:
+  d9380688-13e6-4ad6-a6f0-627dba719679:
+    id: node_type
+    bundles:
+      rule: rule
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d9380688-13e6-4ad6-a6f0-627dba719679
+selection_logic: and
+weight: -9
+relationships: {  }

@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.topic
-id: node.topic.promote
+    - node.type.rule
+id: node.rule.promote
 field_name: promote
 entity_type: node
-bundle: topic
+bundle: rule
 label: 'Promoted to front page'
 description: ''
 required: false

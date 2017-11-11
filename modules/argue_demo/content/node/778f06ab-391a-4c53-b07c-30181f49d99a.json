@@ -1,0 +1,184 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/zusammenleben\/sanktionen\/sanktionen-durfen-statthaften-rahmen-verhangt-werden?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/rule"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/field_sector": [
+            {
+                "href": "http:\/\/default\/zusammenleben\/sanktionen?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 14
+        }
+    ],
+    "uuid": [
+        {
+            "value": "778f06ab-391a-4c53-b07c-30181f49d99a"
+        }
+    ],
+    "vid": [
+        {
+            "value": 27
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rule"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2017-11-05T11:54:14+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5fe57efa-74d7-477d-a363-03f5a988ef35"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5fe57efa-74d7-477d-a363-03f5a988ef35"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/field_sector": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/zusammenleben\/sanktionen?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "08d35d09-3338-464b-9467-8c577eb4ac6c"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Sanktionen d\u00fcrfen im statthaften Rahmen verh\u00e4ngt werden.",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-11-04T11:53:04+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-11-05T11:54:14+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/zusammenleben\/sanktionen\/sanktionen-durfen-statthaften-rahmen-verhangt-werden",
+            "pid": 77,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "Es sind nur Sanktionen erlaubt, die mit den allgemeinen Menschenrechten vereinbar sind. (http:\/\/www.ohchr.org\/EN\/UDHR\/Documents\/UDHR_Translations\/ger.pdf)\r\n\r\nDas Ziel jeder Sanktion ist, die W\u00fcrde und den Frieden wieder herzustellen, und den Mitbewohner zu einem freundlichen, hilfsbereiten und sozial kompetenten Mitmenschen zu erziehen, wie auch der sanktionierenden Gemeinschaft Erfahrungen mit einem positiven und gerechten Gebrauch DER MACHT zu vermitteln.\r\n\r\nWenn eine Sanktion das Menschrecht achtet, und geeignet ist, die W\u00fcrde des Delinquenten nach dem Delikt und den inneren Frieden der Gemeinschaft wie auch mit der Nachbarschaft oder Au\u00dfenwelt wieder herzustellen. Wenn die Entscheidung der Gemeinschaft weder boshaft oder willk\u00fcrlich, sondern gro\u00dfz\u00fcgig und gerecht ist. Dann ist sie statthaft.",
+            "format": "plain_text",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

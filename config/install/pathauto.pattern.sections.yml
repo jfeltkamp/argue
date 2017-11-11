@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: sections
+label: 'Sections'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parents]/[term:name]'
+selection_criteria:
+  2bbc60ae-d3c1-4fbf-b4ce-6e06d61e8f99:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      sections: sections
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 2bbc60ae-d3c1-4fbf-b4ce-6e06d61e8f99
+selection_logic: and
+weight: -10
+relationships: {  }

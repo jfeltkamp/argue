@@ -14,6 +14,7 @@ dependencies:
   - breakpoint
   - ckeditor
   - contextual
+  - ctools
   - menu_link_content
   - datetime
   - editor
@@ -22,8 +23,15 @@ dependencies:
   - menu_ui
   - language
   - node
+  - user
+  - views
+  - views_ui
   - options
+  - votingapi
+  - rate
+  - argue_proscons
   - path
+  - pathauto
   - page_cache
   - taxonomy
   - dblog
@@ -31,14 +39,14 @@ dependencies:
   - toolbar
   - field_ui
   - file
-  - views
-  - views_ui
+  - content_moderation
+  - workflows
 # contrib
   - admin_toolbar_tools
-  - argue_proscons
   - diff
   - pathauto
   - taxonomy_menu
   - token
+  - argue_structure
 themes:
   - argue_base

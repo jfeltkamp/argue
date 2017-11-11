@@ -4,7 +4,7 @@
             "href": "http:\/\/default\/zusammenleben?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
         }
     },
     "tid": [
@@ -25,7 +25,7 @@
     ],
     "vid": [
         {
-            "target_id": "topic_tree"
+            "target_id": "sections"
         }
     ],
     "name": [
@@ -36,12 +36,12 @@
     ],
     "weight": [
         {
-            "value": 13
+            "value": 14
         }
     ],
     "changed": [
         {
-            "value": "2017-10-20T12:00:41+00:00",
+            "value": "2017-11-05T01:49:12+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -55,7 +55,7 @@
     "path": [
         {
             "alias": "\/zusammenleben",
-            "pid": 1,
+            "pid": 59,
             "langcode": "en",
             "lang": "en"
         }

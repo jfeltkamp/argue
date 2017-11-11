@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sections
+id: taxonomy_term.sections
+target_entity_type_id: taxonomy_term
+target_bundle: sections
+default_langcode: current_interface
+language_alterable: false

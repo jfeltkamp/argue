@@ -1,0 +1,50 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 9
+        }
+    ],
+    "uuid": [
+        {
+            "value": "003725ea-4207-4046-b3cf-44319a5f5fa3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Moderator 1"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-10-29T14:54:40+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-10-29T14:54:40+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

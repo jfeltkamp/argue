@@ -6,14 +6,16 @@ label: Member
 weight: 3
 is_admin: null
 permissions:
+  - 'access argument overview'
+  - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
   - 'add argument entities'
   - 'cast rate vote on argument of argument'
-  - 'create topic content'
-  - 'delete own topic content'
+  - 'create rule content'
+  - 'delete own rule content'
   - 'edit own comments'
-  - 'edit own topic content'
+  - 'edit own rule content'
   - 'post comments'
   - 'skip comment approval'
   - 'use editorial transition create_new_draft'
@@ -21,4 +23,4 @@ permissions:
   - 'view own unpublished content'
   - 'view published argument entities'
   - 'view rate results page'
-  - 'view topic revisions'
+  - 'view rule revisions'

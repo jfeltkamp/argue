@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.topic
-id: node.topic.status
+    - node.type.rule
+id: node.rule.status
 field_name: status
 entity_type: node
-bundle: topic
+bundle: rule
 label: 'Publishing status'
 description: 'A boolean indicating the published state.'
 required: false

@@ -4,9 +4,9 @@
             "href": "http:\/\/default\/zusammenleben\/nachtruhe?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sections\/parent": [
             {
                 "href": "http:\/\/default\/zusammenleben?_format=hal_json"
             }
@@ -30,7 +30,7 @@
     ],
     "vid": [
         {
-            "target_id": "topic_tree"
+            "target_id": "sections"
         }
     ],
     "name": [
@@ -45,14 +45,14 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sections\/parent": [
             {
                 "_links": {
                     "self": {
                         "href": "http:\/\/default\/zusammenleben?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
                     }
                 },
                 "uuid": [
@@ -65,7 +65,7 @@
     },
     "changed": [
         {
-            "value": "2017-10-20T12:00:41+00:00",
+            "value": "2017-10-29T18:25:38+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -79,7 +79,7 @@
     "path": [
         {
             "alias": "\/zusammenleben\/nachtruhe",
-            "pid": 10,
+            "pid": 62,
             "langcode": "en",
             "lang": "en"
         }

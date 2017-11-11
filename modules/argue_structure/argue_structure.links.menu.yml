@@ -1,0 +1,7 @@
+argue_structure.argue_structure_conf_form:
+  title: 'Argue Structure Settings'
+  route_name: argue_structure.argue_structure_conf_form
+  description: 'Argue general settings.'
+  parent: system.admin_config
+  weight: 99
+

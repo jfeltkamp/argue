@@ -1,23 +1,23 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/http%3A\/argue.docker.amazee.io\/aufnahme-neuer-mitbewohner\/vertrag\/alle-mietvertrage-beinhalten-die?_format=hal_json"
+            "href": "http:\/\/default\/aufnahme-neuer-mitbewohner\/vertrag\/alle-mietvertrage-beinhalten-die-gleichen-rechte-und-pflichten?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/topic"
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/rule"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/topic\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/revision_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/topic\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/topic\/field_sector": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/field_sector": [
             {
                 "href": "http:\/\/default\/aufnahme-neuer-mitbewohner\/vertrag?_format=hal_json"
             }
@@ -46,7 +46,7 @@
     ],
     "type": [
         {
-            "target_id": "topic"
+            "target_id": "rule"
         }
     ],
     "revision_timestamp": [
@@ -56,7 +56,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/topic\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/revision_uid": [
             {
                 "_links": {
                     "self": {
@@ -73,7 +73,7 @@
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/topic\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/uid": [
             {
                 "_links": {
                     "self": {
@@ -91,14 +91,14 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/topic\/field_sector": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/rule\/field_sector": [
             {
                 "_links": {
                     "self": {
                         "href": "http:\/\/default\/aufnahme-neuer-mitbewohner\/vertrag?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
                     }
                 },
                 "uuid": [
@@ -159,10 +159,16 @@
             "lang": "en"
         }
     ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
     "path": [
         {
-            "alias": "\/http:\/argue.docker.amazee.io\/aufnahme-neuer-mitbewohner\/vertrag\/alle-mietvertrage-beinhalten-die",
-            "pid": 18,
+            "alias": "\/aufnahme-neuer-mitbewohner\/vertrag\/alle-mietvertrage-beinhalten-die-gleichen-rechte-und-pflichten",
+            "pid": 52,
             "langcode": "en",
             "lang": "en"
         }

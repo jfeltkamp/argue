@@ -3,12 +3,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_sector
-    - node.type.topic
-    - taxonomy.vocabulary.topic_tree
-id: node.topic.field_sector
+    - node.type.rule
+    - taxonomy.vocabulary.sections
+id: node.rule.field_sector
 field_name: field_sector
 entity_type: node
-bundle: topic
+bundle: rule
 label: Sector
 description: ''
 required: false
@@ -19,7 +19,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      topic_tree: topic_tree
+      sections: sections
     sort:
       field: _none
     auto_create: false

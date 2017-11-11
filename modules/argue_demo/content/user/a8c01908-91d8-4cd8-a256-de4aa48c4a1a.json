@@ -1,0 +1,50 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/10?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a8c01908-91d8-4cd8-a256-de4aa48c4a1a"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Argue Admin 1"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-10-29T14:57:30+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-10-29T14:57:30+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

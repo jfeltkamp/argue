@@ -1,0 +1,5 @@
+name: Argue structure
+type: module
+description: Argue basic structure of rule tree and user groups.
+core: 8.x
+package: Argue

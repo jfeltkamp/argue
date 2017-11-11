@@ -7,8 +7,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Topic
-type: topic
+name: Rule
+type: rule
 description: ''
 help: ''
 new_revision: true

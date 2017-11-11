@@ -1,0 +1,18 @@
+argue_structure.add_section:
+  route_name: entity.taxonomy_term.add_form
+  route_parameters:
+    taxonomy_vocabulary: 'sections'
+  title: 'Add Section'
+  weight: 10
+  appears_on:
+    - argue_structure.rule_overview_controller_getTree
+
+argue_structure.add_rule:
+  route_name: node.add
+  route_parameters:
+    node_type: 'rule'
+  title: 'Add new Rule'
+  weight: 20
+  appears_on:
+    - argue_structure.rule_overview_controller_getTree
+

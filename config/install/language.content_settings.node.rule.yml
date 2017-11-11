@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.topic
-id: node.topic
+    - node.type.rule
+id: node.rule
 target_entity_type_id: node
-target_bundle: topic
+target_bundle: rule
 default_langcode: site_default
 language_alterable: false

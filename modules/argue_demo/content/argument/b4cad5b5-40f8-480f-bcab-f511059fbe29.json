@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/argument\/argument\/reference_id": [
             {
-                "href": "http:\/\/default\/http%3A\/argue.docker.amazee.io\/finanzen\/mietzahlung\/die-miete-wird-zum-ersten-tag-des-monats?_format=hal_json",
+                "href": "http:\/\/default\/finanzen\/mietzahlung\/die-miete-wird-zum-ersten-tag-des-monats-uberwiesen?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -36,7 +36,7 @@
     ],
     "vid": [
         {
-            "value": 1
+            "value": 2
         }
     ],
     "langcode": [
@@ -91,10 +91,10 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/http%3A\/argue.docker.amazee.io\/finanzen\/mietzahlung\/die-miete-wird-zum-ersten-tag-des-monats?_format=hal_json"
+                        "href": "http:\/\/default\/finanzen\/mietzahlung\/die-miete-wird-zum-ersten-tag-des-monats-uberwiesen?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/node\/topic"
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/rule"
                     }
                 },
                 "uuid": [
@@ -134,7 +134,7 @@
     ],
     "changed": [
         {
-            "value": "2017-10-22T18:44:47+00:00",
+            "value": "2017-10-31T14:24:05+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -147,6 +147,12 @@
     "default_langcode": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
             "lang": "en"
         }
     ]

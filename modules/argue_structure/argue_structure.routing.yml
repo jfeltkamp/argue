@@ -1,0 +1,19 @@
+
+argue_structure.rule_overview_controller_getTree:
+  path: '/argue/overview'
+  defaults:
+    _controller: '\Drupal\argue_structure\Controller\RuleOverviewController::getTree'
+    _title_callback: '\Drupal\argue_structure\Controller\RuleOverviewController::getTitle'
+  requirements:
+    _permission: 'access the rule overview page'
+
+argue_structure.argue_structure_conf_form:
+  path: '/admin/config/argue_structure/settings'
+  defaults:
+    _form: '\Drupal\argue_structure\Form\ArgueStructureConfForm'
+    _title: 'Argue Structure Settings'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

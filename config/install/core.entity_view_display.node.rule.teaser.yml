@@ -3,14 +3,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.topic.body
-    - node.type.topic
+    - field.field.node.rule.body
+    - field.field.node.rule.field_sector
+    - node.type.rule
   module:
     - text
     - user
-id: node.topic.teaser
+id: node.rule.teaser
 targetEntityType: node
-bundle: topic
+bundle: rule
 mode: teaser
 content:
   body:
@@ -21,5 +22,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_sector: true
   langcode: true
   links: true

@@ -4,9 +4,9 @@
             "href": "http:\/\/default\/finanzen\/haushaltsgeld?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sections\/parent": [
             {
                 "href": "http:\/\/default\/finanzen?_format=hal_json"
             }
@@ -30,7 +30,7 @@
     ],
     "vid": [
         {
-            "target_id": "topic_tree"
+            "target_id": "sections"
         }
     ],
     "name": [
@@ -45,14 +45,14 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sections\/parent": [
             {
                 "_links": {
                     "self": {
                         "href": "http:\/\/default\/finanzen?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
                     }
                 },
                 "uuid": [
@@ -79,7 +79,7 @@
     "path": [
         {
             "alias": "\/finanzen\/haushaltsgeld",
-            "pid": 13,
+            "pid": 68,
             "langcode": "en",
             "lang": "en"
         }

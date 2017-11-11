@@ -1,12 +1,12 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/zusammenleben\/wg-retro?_format=hal_json"
+            "href": "http:\/\/default\/zusammenleben\/wg-watch-up?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sections\/parent": [
             {
                 "href": "http:\/\/default\/zusammenleben?_format=hal_json"
             }
@@ -30,12 +30,12 @@
     ],
     "vid": [
         {
-            "target_id": "topic_tree"
+            "target_id": "sections"
         }
     ],
     "name": [
         {
-            "value": "WG-Retro",
+            "value": "WG-Watch-Up",
             "lang": "en"
         }
     ],
@@ -45,14 +45,14 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/topic_tree\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sections\/parent": [
             {
                 "_links": {
                     "self": {
                         "href": "http:\/\/default\/zusammenleben?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/topic_tree"
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sections"
                     }
                 },
                 "uuid": [
@@ -65,7 +65,7 @@
     },
     "changed": [
         {
-            "value": "2017-10-20T12:00:25+00:00",
+            "value": "2017-10-24T19:40:10+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -78,8 +78,8 @@
     ],
     "path": [
         {
-            "alias": "\/zusammenleben\/wg-retro",
-            "pid": 14,
+            "alias": "\/zusammenleben\/wg-watch-up",
+            "pid": 60,
             "langcode": "en",
             "lang": "en"
         }

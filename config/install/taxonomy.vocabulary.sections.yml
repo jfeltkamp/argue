@@ -1,0 +1,8 @@
+langcode: und
+status: true
+dependencies: {  }
+name: 'Sections'
+vid: sections
+description: 'Thematic subdivision of problems and rules.'
+hierarchy: 0
+weight: 0

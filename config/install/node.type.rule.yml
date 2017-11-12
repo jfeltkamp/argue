@@ -9,8 +9,8 @@ third_party_settings:
     parent: ''
 name: Rule
 type: rule
-description: ''
+description: 'Rules that solves a problem.'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: false

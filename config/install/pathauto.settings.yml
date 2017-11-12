@@ -42,5 +42,3 @@ reduce_ascii: false
 case: true
 ignore_words: 'ein, eine, einer, der, die, das, dem, den, als, von, vor, um, bei, beim, in, im, unter, unterm, vorm, dass, dies, dieser, dieses, diese, welche, welcher, welches'
 update_action: 2
-_core:
-  default_config_hash: GcMSgi6uAfG5R_FGEsWUVCvRPkNIzPUH2bNVcx6H0JA

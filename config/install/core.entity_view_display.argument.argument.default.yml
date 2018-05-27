@@ -17,6 +17,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_change_requests:
+    weight: 101
+    label: above
+    settings:
+      display_modal: true
+      display_add_link: true
+      show_empty_field: true
+    third_party_settings: {  }
+    type: attach_change_requests
+    region: content
   name:
     label: hidden
     type: string
@@ -24,6 +39,11 @@ content:
     region: content
     settings:
       link_to_entity: false
+    third_party_settings: {  }
+  rate_vote_widget:
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   reference_id:
     type: entity_reference_entity_view

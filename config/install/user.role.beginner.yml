@@ -9,6 +9,7 @@ permissions:
   - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
+  - 'add patch entities'
   - 'cast rate vote on argument of argument'
   - 'edit own comments'
   - 'post comments'

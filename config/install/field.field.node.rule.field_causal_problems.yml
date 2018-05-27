@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_causal_problems
+    - node.type.problem
     - node.type.rule
 id: node.rule.field_causal_problems
 field_name: field_causal_problems

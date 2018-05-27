@@ -10,7 +10,7 @@ id: node.problem.body
 field_name: body
 entity_type: node
 bundle: problem
-label: Body
+label: Problem
 description: ''
 required: false
 translatable: true

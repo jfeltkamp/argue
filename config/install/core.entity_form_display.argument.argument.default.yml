@@ -3,15 +3,13 @@ status: true
 dependencies:
   module:
     - argue_proscons
-    - content_moderation
-    - text
 id: argument.argument.default
 targetEntityType: argument
 bundle: argument
 mode: default
 content:
   argument:
-    type: text_textarea
+    type: string_textarea
     text_processing: 1
     weight: 3
     region: content
@@ -19,6 +17,15 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_change_requests:
+    weight: 103
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   langcode:
     type: language_select
     weight: 2
@@ -27,11 +34,13 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: moderation_state_default
-    weight: 100
-    settings: {  }
-    region: content
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
   name:
     type: string_textfield
     weight: 2

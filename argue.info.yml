@@ -39,14 +39,13 @@ dependencies:
   - toolbar
   - field_ui
   - file
-  - content_moderation
-  - workflows
 # contrib
   - admin_toolbar_tools
+  - argue_structure
+  - change_requests
   - diff
   - pathauto
   - taxonomy_menu
   - token
-  - argue_structure
 themes:
   - argue_base

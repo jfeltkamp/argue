@@ -159,12 +159,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/finanzen\/haushaltsgeld\/die-regelmassige-einzahlungen-die-haushaltskasse-erfolgt-unaufgefordert",

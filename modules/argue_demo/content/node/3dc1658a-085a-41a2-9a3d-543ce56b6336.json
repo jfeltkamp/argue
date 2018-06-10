@@ -153,12 +153,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/zusammenleben\/wg-retro\/das-wg-watch-findet-wochentlich-am-dienstag-um-1930-uhr-statt",

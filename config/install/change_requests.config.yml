@@ -1,0 +1,40 @@
+change_requests: null
+node_types:
+  problem: problem
+  rule: rule
+general_excluded_fields:
+  - nid
+  - uuid
+  - vid
+  - langcode
+  - type
+  - revision_timestamp
+  - revision_uid
+  - revision_log
+  - status
+  - uid
+  - created
+  - changed
+  - promote
+  - sticky
+  - default_langcode
+  - revision_translation_affected
+  - moderation_state
+  - path
+enable_checkbox_node_form: 1
+log_message_required: 1
+log_message_title: 'Log message'
+image_style: thumbnail
+bundle_problem_fields:
+  revision_default: revision_default
+  menu_link: menu_link
+  title: 0
+  body: 0
+  field_sector: 0
+bundle_rule_fields:
+  revision_default: revision_default
+  menu_link: menu_link
+  title: 0
+  body: 0
+  field_causal_problems: 0
+  field_sector: 0

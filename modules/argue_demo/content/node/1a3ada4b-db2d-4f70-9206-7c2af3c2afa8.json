@@ -159,12 +159,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/aufnahme-neuer-mitbewohner\/aufnahmeverfahren\/uber-die-aufnahme-eines-wg-anwarters-wird-der-wg",

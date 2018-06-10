@@ -159,12 +159,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/finanzen\/haushaltsgeld\/das-haushaltsgeld-ist-fur-wg-ubliche-verbrauchsmittel-und-gemeinsam",

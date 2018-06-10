@@ -149,11 +149,5 @@
             "value": true,
             "lang": "en"
         }
-    ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
     ]
 }

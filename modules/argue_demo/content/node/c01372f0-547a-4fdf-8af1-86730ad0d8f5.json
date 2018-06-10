@@ -159,12 +159,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/aufnahme-neuer-mitbewohner\/vertrag\/alle-mietvertrage-beinhalten-die-gleichen-rechte-und-pflichten",

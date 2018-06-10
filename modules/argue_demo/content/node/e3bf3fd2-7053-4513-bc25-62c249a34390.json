@@ -159,12 +159,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/aufnahme-neuer-mitbewohner\/voraussetzungen\/der-wg-anwarter-muss-die-kaution-und-die-laufende-miete",

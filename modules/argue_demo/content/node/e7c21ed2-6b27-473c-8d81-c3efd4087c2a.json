@@ -159,12 +159,6 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/zusammenleben\/nachtruhe\/nachtruhe-beginnt-2200-uhr-und-endet-800-uhr",

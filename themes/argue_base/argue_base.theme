@@ -66,3 +66,107 @@ function argue_base_form_argument_form_alter(&$form, \Drupal\Core\Form\FormState
 
 }
 
+/**
+ * material
+ *
+ */
+function argue_base_preprocess_form_element(&$variables) {
+  $variables['attributes']['class'] = isset($variables['attributes']['class'])
+    ? $variables['attributes']['class']
+    : [];
+  switch ($variables['type']) {
+    case 'textfield':
+    case 'password':
+    case 'email':
+    case 'textarea':
+    case 'entity_autocomplete':
+      $variables['attributes']['class'][] = 'mdc-text-field';
+
+      if (in_array($variables['type'], ['textarea'])) {
+        $variables['attributes']['class'][] = 'mdc-text-field--textarea';
+      } else {
+        $variables['ripple'] = TRUE;
+      }
+
+      // DESCRIPTION handling
+      if (
+        isset($variables['description']['attributes'])
+        && $variables['description']['attributes'] instanceof \Drupal\Core\Template\Attribute
+      ) {
+        $variables['description']['attributes']->addClass('mdc-text-field-helper-text');
+      } elseif (
+        isset($variables['errors'])
+        && $variables['errors'] !== NULL
+      ) {
+        $variables['description']['attributes'] = new \Drupal\Core\Template\Attribute(['class' => ['mdc-text-field-helper-text']]);
+        $variables['description']['attributes']->addClass('mdc-text-field-helper-text--validation-msg');
+      }
+
+      // ERROR handling
+      if (isset($variables['errors']) && $variables['errors']) {
+        $variables['attributes']['class'][] = 'mdc-text-field--invalid';
+      }
+
+      // DISABLED handling
+      if (isset($variables['disabled']) && $variables['disabled']) {
+        $variables['attributes']['class'][] = 'mdc-text-field--disabled';
+      }
+
+      // LABEL handling
+      $variables['label_display'] = 'mdc-floating-label';
+      $variables['title'] = $variables['element']['#title'];
+      break;
+    case 'select':
+      $variables['attributes']['class'][] = 'mdc-select';
+      $variables['ripple'] = TRUE;
+      $variables['label_display'] = 'mdc-floating-label';
+      $variables['title'] = $variables['element']['#title'];
+      break;
+    case 'checkbox':
+    case 'radio':
+      $variables['attributes']['class'][] = 'mdc-form-field';
+      $variables['label_display'] = 'none';
+      break;
+    default:
+  }
+
+
+}
+
+function argue_base_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#type']) && $variables['element']['#type']) {
+    $suggestions[] = 'form_element__' . $variables['element']['#type'];
+  }
+}
+
+/**
+ * material
+ *
+ */
+function argue_base_preprocess_input(&$variables) {
+  $variables['attributes']['class'] = isset($variables['attributes']['class'])
+    ? $variables['attributes']['class']
+    : [];
+  switch ($variables['attributes']['type']) {
+    case 'text':
+    case 'password':
+    case 'email':
+    case 'number':
+      $variables['attributes']['class'][] = 'mdc-text-field__input';
+      break;
+    case 'checkbox':
+    case 'radio':
+      $variables['title'] = $variables['element']['#title'];
+      break;
+    case 'submit':
+      $variables['attributes']['class'][] = 'mdc-button mdc-button--raised mdc-ripple-upgraded';
+      $variables['mdc_label'] = $variables['attributes']['value'];
+      $variables['mdc_icon'] = NULL;
+      break;
+    default:
+  }
+}
+
+function argue_base_preprocess_select(&$variables) {
+  $variables['attributes']['class'][] = 'mdc-select__native-control';
+}

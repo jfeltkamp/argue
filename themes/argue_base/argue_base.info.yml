@@ -4,6 +4,7 @@ core: 8.x
 base theme: seven
 libraries:
   - argue_base/global-styling
+  - argue_base/material
 
 regions:
   header: 'Header'
@@ -23,10 +24,18 @@ libraries-override:
     css:
       theme:
         css/components/colors.css: css/colors.css
+      component:
+        css/components/buttons.css: false
+        css/components/form.css: false
   rate/number-up-down:
     css:
       theme:
         css/number-up-down.css: false
+  classy/base:
+    css:
+      component:
+        css/components/button.css: false
+        css/components/form.css: false
 
 libraries-extend:
   tour/tour-styling:

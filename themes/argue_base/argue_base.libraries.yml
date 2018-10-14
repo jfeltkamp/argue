@@ -2,4 +2,7 @@ global-styling:
   version: 0.1
   css:
     layout:
+      assets/argue_theme.css: {}
       css/base/argue.css: {}
+  js:
+    assets/argue_theme.js: {}

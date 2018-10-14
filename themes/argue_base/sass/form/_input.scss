@@ -1,0 +1,11 @@
+
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include mdc-button-ink-color(blue);
+  @include mdc-states(blue);
+}
+
+

@@ -1,0 +1,10 @@
+.drawer-frame-root {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}

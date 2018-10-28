@@ -2,11 +2,19 @@ name: Argue Base
 type: theme
 core: 8.x
 base theme: seven
+
+dependencies:
+  - drupal:toolbar
+  - admin_toolbar
+
 libraries:
   - argue_base/global-styling
   - argue_base/material
 
 regions:
+  drawer_header: 'Sidebar header'
+  drawer: 'Sidebar Menu'
+  context_menu: 'Context Menu'
   header: 'Header'
   pre_content: 'Pre-content'
   breadcrumb: Breadcrumb
@@ -40,3 +48,9 @@ libraries-override:
 libraries-extend:
   tour/tour-styling:
     - seven/tour-styling
+#
+stylesheets-remove:
+  - '@classy/css/components/menu.css'
+  - '@seven/css/base/elements.css'
+  - '@seven/css/components/menus-and-lists.css'
+  - '@admin_toolbar_tools/css/tools.css'

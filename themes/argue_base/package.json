@@ -43,9 +43,16 @@
     "webpack-dev-server": "^2.11.3"
   },
   "dependencies": {
+    "@material/checkbox": "^0.40.1",
+    "@material/drawer": "^0.40.1",
     "@material/form-field": "^0.40.1",
+    "@material/list": "^0.40.1",
+    "@material/menu": "^0.40.1",
+    "@material/menu-surface": "^0.40.1",
     "@material/radio": "^0.40.1",
+    "@material/select": "^0.40.1",
     "@material/textfield": "^0.40.1",
+    "@material/top-app-bar": "^0.40.1",
     "material-components-web": "^0.40.1"
   }
 }

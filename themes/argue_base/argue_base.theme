@@ -13,6 +13,12 @@ function argue_base_theme() {
   ];
 }
 
+function argue_base_preprocess_page(&$variables) {
+  // Set title for MDC TopBar
+  if (!isset($variables['title']) && isset($variables['page']['#title'])) {
+    $variables['title'] = $variables['page']['#title'];
+  }
+}
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter()
@@ -156,7 +162,9 @@ function argue_base_preprocess_input(&$variables) {
       break;
     case 'checkbox':
     case 'radio':
-      $variables['title'] = $variables['element']['#title'];
+      $variables['title'] = (isset($variables['element']['#title']))
+        ? $variables['element']['#title']
+        : '';
       break;
     case 'submit':
       $variables['attributes']['class'][] = 'mdc-button mdc-button--raised mdc-ripple-upgraded';
@@ -169,4 +177,51 @@ function argue_base_preprocess_input(&$variables) {
 
 function argue_base_preprocess_select(&$variables) {
   $variables['attributes']['class'][] = 'mdc-select__native-control';
+}
+
+
+function argue_base_preprocess_menu_local_task(&$variables, $hooks) {
+  if(!isset($variables['link']['#options']['attributes'])) {
+    $variables['link']['#options']['attributes'] = ['class' => []];
+  }
+  if(!isset($variables['link']['#options']['attributes']['class'])) {
+    $variables['link']['#options']['attributes']['class'] = [];
+  }
+  $variables['link']['#options']['attributes']['class'][] = 'mdc-list-item';
+  if(isset($variables['is_active']) && $variables['is_active']) {
+    $variables['link']['#options']['attributes']['class'][] = 'mdc-list-item--selected';
+  }
+}
+
+function argue_base_preprocess_links(&$variables) {
+  if ($variables['theme_hook_original'] == 'links__toolbar_user') {
+    $variables['attributes']['class'] = (isset($variables['attributes']['class']))
+      ? $variables['attributes']['class']
+      : [];
+    $variables['attributes']['class'][] = 'mdc-list';
+    foreach ($variables['links'] as $name => &$config) {
+      $icon = '';
+      switch($name) {
+        case 'account':
+          $icon = 'drafts';
+          break;
+        case 'account_edit':
+          $icon = 'description';
+          break;
+        case 'logout':
+          $icon = 'view_compact';
+          break;
+        default:
+      }
+      $config['link']['#title'] = [
+        '#markup' => new TranslatableMarkup('<i class="material-icons mdc-list-item__graphic" aria-hidden="true">@icon</i><span class="mdc-list-item__text">@title</span>',[
+          '@icon' => $icon,
+          '@title' => ($config['link']['#title']) ?: ''
+        ])
+      ];
+      $config['link']['#options']['attributes']['class'] = ['mdc-list-item'];
+
+    }
+
+  }
 }

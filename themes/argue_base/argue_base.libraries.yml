@@ -4,5 +4,9 @@ global-styling:
     layout:
       assets/argue_theme.css: {}
       css/base/argue.css: {}
+      assets/iconfont.css: {}
   js:
     assets/argue_theme.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

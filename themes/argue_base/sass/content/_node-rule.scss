@@ -1,0 +1,36 @@
+
+
+.node.mdc-card {
+  .node {
+    &__header {
+      .material-icons {
+        float: left;
+      }
+      
+
+      &__text {
+        margin-left: 60px;
+      }
+
+      h2, h3 { margin: 0; }
+      padding: 1rem;
+    }
+
+    &__content {
+      padding: 1rem 1rem 0;
+
+      p, div {
+        @include mdc-typography('body1');
+        margin: 0 0 1rem;
+      }
+    }
+
+    &__details {
+      padding: 1rem;
+    }
+
+    &__footer {
+      border-top: 1px solid var(--argue-base-cards-border-color);
+    }
+  }
+}

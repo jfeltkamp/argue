@@ -51,6 +51,10 @@ libraries-extend:
 #
 stylesheets-remove:
   - '@classy/css/components/menu.css'
+  - '@classy/css/components/field.css'
+  - '@classy/css/components/tabs.css'
+  - '@seven/css/components/tabs.css'
   - '@seven/css/base/elements.css'
   - '@seven/css/components/menus-and-lists.css'
   - '@admin_toolbar_tools/css/tools.css'
+

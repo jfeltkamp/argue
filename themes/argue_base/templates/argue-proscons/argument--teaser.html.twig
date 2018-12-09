@@ -1,0 +1,55 @@
+{#
+/**
+ * @file argument.html.twig
+ * Default theme implementation to present Argument data.
+ *
+ * This template is used when viewing Argument pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_argument()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+ set icon = 'thumb_up'
+%}
+{% if content %}
+<div{{ attributes.addClass('argument-teaser', 'mdc-card') }}>
+  <div class="argument__header">
+    <span class="mdc-icon-button material-icons" aria-hidden="true">{{ icon }}</span>
+    <div class="argument__header__text">
+      <h2 class="mdc-typography--headline6">{{ content.name }}</h2>
+      <h3 class="mdc-typography--subtitle2">{% trans %}Submitted by{% endtrans %} {{ content.user_id }} on {{ content.created }}</h3>
+    </div>
+  </div>
+
+  {% if content.voting %}
+    {{- content.voting -}}
+  {% endif %}
+
+  <div class="argument__content">
+      {{ content.argument }}
+  </div>
+
+  <div class="argument__details">
+  </div>
+
+
+  <div class="node__footer mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+      <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">{% trans %}Context{% endtrans %}</button>
+    </div>
+
+    <div class="mdc-card__action-icons">
+      <i class="material-icons mdc-icon-button">exposure_neg_1</i>
+      <i class="material-icons mdc-icon-button">exposure_plus_1</i>
+    </div>
+  </div>
+
+</div>
+{% endif %}

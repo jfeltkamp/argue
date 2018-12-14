@@ -22,3 +22,62 @@ function argue_structure_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+
+
+/**
+ * Implements hook_help().
+ */
+/**
+ * Implements hook_theme().
+ */
+function argue_structure_theme() {
+
+  return [
+    'argue_structure_listitem' => [
+      'variables' => [
+        'url' => NULL,
+        'icon' => NULL,
+        'line_1' => NULL,
+        'line_2' => NULL,
+        'meta' => NULL,
+        'meta_attributes' => NULL,
+      ],
+    ],
+    'argue_structure_list' => [
+      'variables' => [
+        'attributes' => NULL,
+        'content' => NULL,
+      ]
+    ],
+    'argue_structure_proscons_pill' => [
+      'variables' => [
+        'pro' => NULL,
+        'con' => NULL,
+      ]
+    ],
+    'argue_structure_nested_list' => [
+      'variables' => [
+        'attributes' => NULL,
+        'label' => NULL,
+        'level' => NULL,
+        'node_list' => NULL,
+        'items' => NULL,
+      ]
+    ],
+  ];
+}
+
+function argue_structure_preprocess_node(&$vars) {
+
+  /** @var \Drupal\argue_proscons\EvaluatingService $eval */
+  $eval = \Drupal::service('argue_proscons.evaluating_service');
+  if(isset($vars['node']) && $vars['node']->bundle() == 'rule') {
+    $result = $eval->getRuleArgumentCounts($vars['node']->id());
+    $vars['content']['meta'] = [
+      '#theme' => 'argue_structure_proscons_pill',
+      '#pro' => $result['pro'],
+      '#con' => $result['con'],
+    ];
+  }
+}

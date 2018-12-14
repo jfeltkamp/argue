@@ -3,6 +3,10 @@
   background-color: #F2F2F2;
 }
 
+html {
+  background-color: #F2F2F2;
+}
+
 body {
   box-sizing: border-box;
   height: calc(100vh - 1px);
@@ -12,7 +16,6 @@ body {
 
 .main-content {
   overflow: auto;
-  height: 100%;
   padding-left: var(--argue-base-main-padding);
   padding-right: var(--argue-base-main-padding);
 
@@ -25,8 +28,10 @@ body {
       margin-right: calc(-1 * var(--argue-base-main-padding));
     }
 
+    &.region-highlighted,
     &.region-content {
       max-width: 1400px;
+
     }
   }
 

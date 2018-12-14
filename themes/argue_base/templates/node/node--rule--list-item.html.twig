@@ -72,7 +72,8 @@
 #}
 {%
   set classes = [
-    'mdc-card',
+    'mdc-list-item',
+    'mdc-ripple',
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -82,32 +83,17 @@
   ]
 %}
 
-<article{{ attributes.addClass(classes) }}>
-
-  <header class="node__header">
-    <span class="mdc-icon-button material-icons" aria-hidden="true">account_balance</span>
-    <div class="node__header__text">
-      <h2{{ title_attributes.addClass('mdc-typography--headline6') }}>{{ label }}</h2>
-      {% if display_submitted %}
-          <h3{{ author_attributes.addClass('mdc-typography--subtitle2') }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
-          </h3>
-      {% endif %}
-    </div>
-  </header>
-
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_causal_problems') }}
-  </div>
-
-  <div class="node__details">
-    {{ content.field_causal_problems }}
-  </div>
-
-  <div class="node__footer mdc-card__actions">
-    <div class="mdc-card__action-buttons">
-      <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">{% trans %}Context{% endtrans %}</button>
-    </div>
-  </div>
-</article>
+<a href="{{ url }}"{{ attributes.addClass(classes) }}>
+  <span class="material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</span>
+  {% spaceless %}
+  <span class="mdc-list-item__text">
+    <span class="mdc-list-item__primary-text">{{- label -}}</span>
+    {% if display_submitted %}
+    <span class="mdc-list-item__secondary-text">{% trans %}Submitted by {% endtrans %}</span>
+    {% endif %}
+  </span>
+  {% endspaceless %}
+  {% if content.meta %}
+    <span class="mdc-list-item__meta">{{ content.meta }}</span>
+  {% endif %}
+</a>

@@ -19,7 +19,7 @@
     &__content {
       padding: 1rem 1rem 0;
 
-      p, div {
+      p {
         @include mdc-typography('body1');
         margin: 0 0 1rem;
       }
@@ -31,6 +31,10 @@
 
     &__footer {
       border-top: 1px solid var(--argue-base-cards-border-color);
+
+      .proscons-chip {
+        margin: -6px;
+      }
     }
   }
 }

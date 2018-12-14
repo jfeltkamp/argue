@@ -1,0 +1,30 @@
+{%
+  set class = [
+    'mdc-list',
+    'mdc-list--two-line',
+    'mdc-list--avatar-list',
+  ]
+%}
+{#
+  # set meta_class = meta_icon ?
+#}
+
+{% if url %}
+<a href="{{ url }}"{{ attributes.addClass(class) }}>
+  <span class="mdc-list-item__graphic material-icons" aria-hidden="true">{{ icon }}</span>
+  <span class="mdc-list-item__text">
+    <span class="mdc-list-item__primary-text">{{ line_1 }}</span>
+    <span class="mdc-list-item__secondary-text">{{ line_2 }}</span>
+  </span>
+  <span class="mdc-list-item__meta material-icons" aria-hidden="true">{{ meta }}</span>
+</a>
+{% else %}
+<div{{ attributes.addClass(class) }}>
+  <span class="mdc-list-item__graphic material-icons" aria-hidden="true">{{ icon }}</span>
+  <span class="mdc-list-item__text">
+      <span class="mdc-list-item__primary-text">{{ line_1 }}</span>
+      <span class="mdc-list-item__secondary-text">{{ line_2 }}</span>
+    </span>
+  <span class="mdc-list-item__meta material-icons" aria-hidden="true">{{ meta }}</span>
+</div>
+{% endif %}

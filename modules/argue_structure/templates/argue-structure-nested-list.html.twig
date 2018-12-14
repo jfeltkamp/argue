@@ -1,0 +1,14 @@
+
+
+{% if level >= 0 %}
+<li{{ attributes.addClass('list-item') }}><strong>{{ label }}</strong>
+  {{ node_list }}
+  <ol>
+{% else %}
+  <ol{{ attributes }}>
+{% endif %}
+    {{ items }}
+  </ol>
+{% if level >= 0 %}
+</li>
+{% endif %}

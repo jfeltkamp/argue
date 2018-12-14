@@ -1,0 +1,17 @@
+@import "vars";
+
+@mixin cards() {
+  @include mdc-card-shape-radius($card-shape-radius);
+  @include mdc-card-fill-color($card-fill-color);
+  @include mdc-card-outline($card-outline-color, $card-outline-width);
+  @include mdc-elevation(1);
+}
+
+@mixin button() {
+  @include mdc-button-base_;
+  @include mdc-button-shape-radius(small);
+  @include mdc-button-container-fill-color(secondary);
+  @include mdc-button-ink-color(white);
+  @include mdc-states(white);
+  @include mdc-button--raised_;
+}

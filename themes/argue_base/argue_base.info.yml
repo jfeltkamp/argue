@@ -50,11 +50,18 @@ libraries-extend:
     - seven/tour-styling
 #
 stylesheets-remove:
-  - '@classy/css/components/menu.css'
+  - '@argue_proscons/css/rate-widget-number-up-down.css'
+  - '@argue_proscons/css/argument-teaser.css'
+  - '@classy/css/components/details.css'
   - '@classy/css/components/field.css'
+  - '@classy/css/components/menu.css'
   - '@classy/css/components/tabs.css'
   - '@seven/css/components/tabs.css'
   - '@seven/css/base/elements.css'
+  - '@seven/css/components/entity-meta.css'
   - '@seven/css/components/menus-and-lists.css'
+  - '@seven/css/layout/node-add.css'
+  - '@stable/css/node/node.module.css'
+  - '@stable/css/node/node.preview.css'
   - '@admin_toolbar_tools/css/tools.css'
 

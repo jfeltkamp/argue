@@ -4,7 +4,6 @@ global-styling:
     layout:
       assets/argue_theme.css: {}
       css/fonts.css: {}
-      css/base/argue.css: {}
       assets/iconfont.css: {}
   js:
     assets/argue_theme.js: {}

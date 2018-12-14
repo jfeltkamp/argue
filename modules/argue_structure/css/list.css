@@ -1,3 +1,20 @@
+ol.argue-structure-nested-list,
+ol.argue-structure-nested-list ol {
+  counter-reset: item;
+  padding-left: 10px;
+}
+
+ol.argue-structure-nested-list li,
+ol.argue-structure-nested-list ol li {
+  display: block
+}
+
+ol.argue-structure-nested-list li:before,
+ol.argue-structure-nested-list ol li:before {
+  content: counters(item, ".")". ";
+  counter-increment: item
+}
+
 
 #sections .level_1 {
   margin-left: 20px;

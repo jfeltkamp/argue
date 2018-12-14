@@ -57,6 +57,7 @@
     "@material/checkbox": "^0.40.1",
     "@material/drawer": "^0.40.1",
     "@material/elevation": "^0.41.0",
+    "@material/fab": "^0.42.0",
     "@material/form-field": "^0.40.1",
     "@material/icon-button": "^0.42.0",
     "@material/list": "^0.40.1",

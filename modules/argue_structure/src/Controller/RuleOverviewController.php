@@ -2,15 +2,17 @@
 
 namespace Drupal\argue_structure\Controller;
 
-use Drupal\argue_proscons\Events\ArgueEvent;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigManager;
 use Drupal\Core\Config\ConfigManagerInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Entity\EntityViewBuilderInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Template\Attribute;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Render\Renderer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Link;
@@ -63,6 +65,13 @@ class RuleOverviewController extends ControllerBase {
   protected $cacheRender;
 
   /**
+   * Renderer.
+   *
+   * @var Renderer
+   */
+  protected $renderer;
+
+  /**
    * Argue structure config.
    *
    * @var ImmutableConfig
@@ -70,13 +79,22 @@ class RuleOverviewController extends ControllerBase {
   protected $argueStructureConfig;
 
   /**
+   * @var EntityViewBuilderInterface
+   */
+  protected $nodeViewBuilder;
+
+  /**
    * Constructs a new RuleOverviewController object.
    *
    * @param EntityTypeManager $entity_type_manager
    * @param ConfigManager $config_manager
    * @param CacheBackendInterface $cache_render
+   * @param Renderer $renderer
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function __construct(EntityTypeManager $entity_type_manager, ConfigManager $config_manager, CacheBackendInterface $cache_render) {
+  public function __construct(EntityTypeManager $entity_type_manager, ConfigManager $config_manager, CacheBackendInterface $cache_render, Renderer $renderer) {
     $this->entityTypeManager = $entity_type_manager;
     $this->configManager = $config_manager;
     $this->cacheRender = $cache_render;
@@ -84,6 +102,7 @@ class RuleOverviewController extends ControllerBase {
       ->get('argue_structure.arguestructureconf');
     $this->vocabulary = $this->entityTypeManager->getStorage('taxonomy_vocabulary')
         ->load($this->argueStructureConfig->get('argue_vocabulary'));
+    $this->renderer = $renderer;
   }
 
   /**
@@ -93,7 +112,8 @@ class RuleOverviewController extends ControllerBase {
     return new static(
       $container->get('entity_type.manager'),
       $container->get('config.manager'),
-      $container->get('cache.render')
+      $container->get('cache.render'),
+      $container->get('renderer')
     );
   }
 
@@ -115,6 +135,18 @@ class RuleOverviewController extends ControllerBase {
   }
 
   /**
+   * Returns the nodeViewBuilder
+   *
+   * @return EntityViewBuilderInterface|mixed|object
+   */
+  public function getNodeViewBuilder() {
+    if(!$this->nodeViewBuilder) {
+      $this->nodeViewBuilder = $this->entityTypeManager->getViewBuilder('node');
+    }
+    return $this->nodeViewBuilder;
+  }
+
+  /**
    * Returns a page title.
    */
   public function getDescription() {
@@ -123,6 +155,28 @@ class RuleOverviewController extends ControllerBase {
       : $this->t('No rule description found.');
     return $this->argueStructureConfig->get('description_section_term_overview_page')
       ?: $description;
+  }
+
+  /**
+   * @param array $tree
+   * @param $index
+   */
+  protected function getItems(array $tree, $i) {
+    $return = [];
+    foreach($tree as $index => $item) {
+      if(in_array($i, $item->parents)) {
+        unset($tree[$index]);
+        $return['term_' . $item->tid] = [
+          '#theme' => 'argue_structure_nested_list',
+          '#label' => $item->name,
+          '#node_list' => $this->getNodeRow($item->tid),
+          '#items' => $this->getItems($tree, $item->tid),
+          '#level' => $item->depth,
+          '#attributes' => new Attribute(['class' => ['level_'.$item->depth]]),
+        ];
+      }
+    }
+    return $return;
   }
 
   /**
@@ -141,19 +195,13 @@ class RuleOverviewController extends ControllerBase {
       $vid = $this->vocabulary->id();
 
       $this->termStorage = $this->entityTypeManager->getStorage('taxonomy_term');
+      /** @var \stdClass[] $tree */
+      $tree = $this->termStorage->loadTree($this->vocabulary->id());
       $list = [
-        '#type' => 'table',
-        '#header' => [
-          $this->t('Sections'),
-          $this->t('Count of entries'),
-        ],
-        /* @Todo Create Link to generate rules, or add action above table with permission check. */
-        '#empty' => $this->t('No rules found '),
-        '#rows' => [],
-        '#sticky' => TRUE,
-        '#attributes' => [
-          'id' => $vid,
-        ],
+        '#theme' => 'argue_structure_nested_list',
+        '#items' => $this->getItems($tree,0),
+        '#level' => -1,
+        '#attributes' => new Attribute(['id' => $vid, 'class' => ['argue-structure-nested-list']]),
         '#attached' => [
           'library' => [
             'argue_structure/structure.list'
@@ -161,26 +209,9 @@ class RuleOverviewController extends ControllerBase {
         ],
       ];
 
-      /** @var \stdClass[] $tree */
-      $tree = $this->termStorage->loadTree($this->vocabulary->id());
-
-      foreach ($tree as $term) {
-        $related_nodes = $this->getNodesByTermId($term->tid);
-
-        $link = $this->getTermRow($term);
-        $list['#rows'][] = [
-          $link,
-          count($related_nodes) ?: '',
-        ];
-        foreach ($related_nodes as $rel_node) {
-          $list['#rows'][] = $this->getNodeRow($rel_node->nid, $term->depth);
-        }
-      }
-
       $render_array = [
         '#type' => '#container',
         'head' => [
-          '#type' => 'markup',
           '#markup' => $this->getDescription(),
         ],
         'list' => $list,
@@ -213,43 +244,6 @@ class RuleOverviewController extends ControllerBase {
   }
 
   /**
-   * @param $term \stdClass
-   *   The taxonomy term.
-   *
-   * @return Link|array
-   *   The table row content.
-   */
-  protected function getTermRow(\stdClass $term) {
-    $attributes = [
-      'id' => 'rule__' . $term->vid . '_' . $term->tid,
-      'class' => [
-        'level_' . $term->depth
-      ]
-    ];
-
-    if ($this->argueStructureConfig->get('link_section_terms_to_the_term_page')) {
-      $options = [
-        'attributes' => $attributes,
-      ];
-      return Link::createFromRoute(
-        $term->name,
-        'entity.taxonomy_term.canonical',
-        ['taxonomy_term' => $term->tid],
-        $options
-      );
-    } else {
-      return [
-        'data' => [
-          '#type' => 'html_tag',
-          '#tag' => 'strong',
-          '#attributes' => $attributes,
-          '0' => ['#markup' => $term->name]
-        ],
-      ];
-    }
-  }
-
-  /**
    * Get nodes tagged by this term.
    *
    * @param $tid
@@ -262,51 +256,41 @@ class RuleOverviewController extends ControllerBase {
     $query = \Drupal::database()->select('taxonomy_index', 'ti');
     $query->fields('ti', ['nid']);
     $query->condition('ti.tid', $tid);
-    $nodes = $query->execute()->fetchAll();
+    $results = $query->execute()->fetchAll();
+    $nodes = [];
+    foreach($results as $node) {
+      $nodes[] = $node->nid;
+    }
     return $nodes;
   }
 
   /**
    * Content of a node row.
    *
-   * @param $nid
+   * @param integer $tid
    *   The node ID.
    * @param int $term_depth
    *   The depth level for the text indent.
    *
-   * @return array
+   * @return array|NULL
    */
-  protected function getNodeRow($nid, $term_depth = 0) {
-    /** @var NodeInterface $node */
-    $node = $this->getNodeStorage()->load($nid);
-    $options = ['attributes' => [
-        'class' => [
-          'level_'.($term_depth+1),
-        ]
-      ]
-    ];
-    return [
-      $node->toLink(NULL, 'canonical', $options),
-      $this->getNodeCounts($node->id()),
-    ];
+  protected function getNodeRow($tid, $term_depth = 0) {
+    $nids = $this->getNodesByTermId($tid);
+    if ($nids) {
+      $nodes = $this->getNodeStorage()->loadMultiple($nids);
+      $nodes_view = $this->getNodeViewBuilder()->viewMultiple($nodes, 'list_item');
+
+      $list = [
+        '#theme' => 'argue_structure_list',
+        '#attributes' => new Attribute(['class' => ['mdc-list--two-line', 'mdc-list--avatar-list', 'level_'.$term_depth]]),
+        '#content' => $nodes_view
+      ];
+
+      $node_html = $this->renderer->renderRoot($list);
+      return $node_html;
+    } else {
+      return NULL;
+    }
   }
 
-  protected function getNodeCounts($id) {
-    $query = \Drupal::database()->select('argument_field_data', 'tb');
-    $query->fields('tb', ['type']);
-    $query->condition('tb.reference_id', $id);
-    $query->condition('tb.status', 1);
-    $args = $query->execute()->fetchAll();
-    $collector = [
-      ArgueEvent::ARGUE_PRO => 0,
-      ArgueEvent::ARGUE_CON => 0,
-    ];
-    foreach ($args as $arg) {
-      $collector[$arg->type]++;
-    }
-    return $this->t('%pro <sub>PRO</sub> %con <sub>CONTRA</sub>', [
-      '%pro' => $collector[ArgueEvent::ARGUE_PRO],
-      '%con' => $collector[ArgueEvent::ARGUE_CON]
-    ]);
-  }
 }

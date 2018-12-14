@@ -1,0 +1,14 @@
+
+.block-argue-proscons {
+  > h2 {
+    @include mdc-typography('headline4');
+
+  }
+
+
+  &--col-headline {
+    @include mdc-typography('headline6');
+    border-bottom: 1px solid #999;
+    
+  }
+}

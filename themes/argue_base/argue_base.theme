@@ -225,3 +225,50 @@ function argue_base_preprocess_links(&$variables) {
 
   }
 }
+
+/**
+ * @implements theme_preprocess_preprocess_argument__teaser()
+ *
+ * Set undo Link as MDC icon-button.
+ */
+function argue_base_preprocess_argument(&$variables) {
+  /** @var \Drupal\argue_proscons\Entity\Argument $argument */
+  $argument = $variables['content']['#argument'];
+  if($argument->getType() == "1") {
+    $variables['header_icon'] = 'thumb_up';
+    $variables['attributes']['class'][] = 'argument__pro';
+  } elseif ($argument->getType() == "2") {
+    $variables['header_icon'] = 'thumb_down';
+    $variables['attributes']['class'][] = 'argument__con';
+  }
+}
+
+/**
+ * @implements theme_preprocess_rate_template_number_up_down()
+ *
+ * Set undo link as MDC icon-button.
+ */
+function argue_base_preprocess_rate_template_number_up_down(&$variables) {
+  if ($variables['undo'] instanceof \Drupal\Core\Link) {
+    $url_opts = $variables['undo']->getUrl()->getOptions();
+    if (isset($url_opts['attributes']['class']) && is_string($url_opts['attributes']['class'])) {
+      $url_opts['attributes']['class'] = explode(' ', $url_opts['attributes']['class']);
+    }
+    $url_opts['attributes']['class'][] = 'material-icons mdc-icon-button';
+
+    $variables['undo']->setText('undo');
+    $variables['undo']->setUrl($variables['undo']->getUrl()->setOptions($url_opts));
+  }
+}
+
+/**
+ * @implements theme_preprocess_links()
+ *
+ * Set context links as MDC button.
+ */
+function argue_base_preprocess_links__dropbutton__operations(&$variables) {
+  $attributes = ['attributes' => ['class' => ['mdc-button', 'mdc-card__action', 'mdc-card__action--button']]];
+  foreach ($variables['links'] as &$link) {
+    $link['link']['#url']->setOptions($attributes);
+  }
+}

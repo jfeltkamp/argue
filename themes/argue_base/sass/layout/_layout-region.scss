@@ -1,0 +1,71 @@
+
+.layout-node-form {
+  display: flex;
+  flex-direction: column;
+  margin: -1rem -1rem 0;
+}
+
+  /* Narrow screens */
+.layout-region {
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+
+/* Wide screens */
+@media (min-width: 780px) {
+
+  .layout-node-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .layout-region-node-header {
+    flex: 1 1 calc(100% - 2rem);
+  }
+
+  .layout-region-node-main,
+  .layout-region-node-footer {
+    flex: 1 1 calc(65% - 2rem);
+    max-width: calc(65% - 2rem);
+  }
+
+
+  .layout-region-node-secondary {
+    flex: 1 1 calc(35% - 2rem);
+  }
+
+  .layout-region-node-main,
+  .layout-region-node-secondary,
+  .entity-content-form-footer {
+    @include cards();
+  }
+}
+
+/**
+ * The vertical toolbar mode gets triggered for narrow screens, which throws off
+ * the intent of media queries written for the viewport width. When the vertical
+ * toolbar is on, we need to suppress layout for the original media width + the
+ * toolbar width (240px). In this case, 240px + 780px.
+ */
+@media screen and (max-width: 1020px) {
+
+  .toolbar-vertical.toolbar-tray-open .layout-node-form {
+    display: flex;
+    flex-direction: column;
+    margin: -1rem -1rem 0;
+  }
+
+
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-main,
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-footer {
+    flex: 1 1 calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+  }
+
+
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-secondary {
+    flex: 1 1 calc(100% - 2rem);
+  }
+}

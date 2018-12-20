@@ -85,7 +85,7 @@
 </div>
 
 {% if errors or description %}
-  <div{{ description.attributes.addClass(description_classes) }}>
+  <div{{ description.attributes.addClass(description_classes, 'description') }}>
     {% if errors %}
       {{ errors }}
     {% else %}

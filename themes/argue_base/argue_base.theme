@@ -145,6 +145,16 @@ function argue_base_theme_suggestions_form_element_alter(array &$suggestions, ar
   }
 }
 
+
+function argue_base_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#formatter'])) {
+    $suggestions[] = 'field__' . $variables['element']['#formatter'];
+    $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#formatter'];
+    $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#formatter'];
+    $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#field_name'] . '__' . $variables['element']['#formatter'];
+  }
+}
+
 /**
  * material
  *
@@ -194,37 +204,48 @@ function argue_base_preprocess_menu_local_task(&$variables, $hooks) {
 }
 
 function argue_base_preprocess_links(&$variables) {
-  if ($variables['theme_hook_original'] == 'links__toolbar_user') {
-    $variables['attributes']['class'] = (isset($variables['attributes']['class']))
-      ? $variables['attributes']['class']
-      : [];
-    $variables['attributes']['class'][] = 'mdc-list';
-    foreach ($variables['links'] as $name => &$config) {
-      $icon = '';
-      switch($name) {
-        case 'account':
-          $icon = 'drafts';
-          break;
-        case 'account_edit':
-          $icon = 'description';
-          break;
-        case 'logout':
-          $icon = 'view_compact';
-          break;
-        default:
-      }
-      $config['link']['#title'] = [
-        '#markup' => new TranslatableMarkup('<i class="material-icons mdc-list-item__graphic" aria-hidden="true">@icon</i><span class="mdc-list-item__text">@title</span>',[
-          '@icon' => $icon,
-          '@title' => ($config['link']['#title']) ?: ''
-        ])
-      ];
-      $config['link']['#options']['attributes']['class'] = ['mdc-list-item'];
-
+  if(in_array($variables['theme_hook_original'], ['links__comment'])) {
+    $variables['attributes'] = isset($variables['attributes'])
+      ? $variables['attributes']
+      : ['class' => []];
+    $variables['attributes']['class'][] = 'icon-menu';
+    foreach ($variables['links'] as &$link) {
+      _make_mdc_button_from_link($link);
     }
-
   }
 }
+
+/**
+ * @param $link array
+ * @param $include_text bool
+ */
+function _make_mdc_button_from_link(&$link) {
+  $url = &$link['link']['#url'];
+  if($url instanceof \Drupal\Core\Url) {
+    $attributes = $url->getOption('attributes') ?: [];
+    $attributes['class'] = isset($attributes['class']) ? $attributes['class'] : [];
+    $attributes['class'][] = 'mdc-icon-button material-icons';
+    $attributes['title'] = $link['text'];
+    $url->setOption('attributes', $attributes);
+    switch($url->getRouteName()) {
+      case 'comment.reply':
+        $link['link']['#title'] = 'reply';
+        break;
+      case 'entity.comment.edit_form':
+        $link['link']['#title'] = 'edit';
+        break;
+      case 'entity.comment.delete_form':
+        $link['link']['#title'] = 'delete';
+        break;
+    }
+    $link['text'] = $link['link']['#title'];
+  }
+}
+
+function _get_mdc_icon_link_content($string) {
+  return new TranslatableMarkup('<i class="material-icons mdc-icon-button__icon">@string</i>', ['@string' => $string]);
+}
+
 
 /**
  * @implements theme_preprocess_preprocess_argument__teaser()
@@ -270,5 +291,35 @@ function argue_base_preprocess_links__dropbutton__operations(&$variables) {
   $attributes = ['attributes' => ['class' => ['mdc-button', 'mdc-card__action', 'mdc-card__action--button']]];
   foreach ($variables['links'] as &$link) {
     $link['link']['#url']->setOptions($attributes);
+  }
+}
+
+/**
+ * @implements theme_preprocess_user()
+ *
+ * Set users roles to display.
+ */
+function argue_base_preprocess_user(&$variables) {
+  $roles = user_roles(TRUE);
+  $user_roles = [];
+  foreach ($variables['user']->get('roles') as $key => $value) {
+    $role_name = $value->getString();
+    if (isset($roles[$role_name])) {
+      $user_roles[] = $roles[$role_name]->label();
+    }
+  }
+  $variables['content']['field_roles'] = [
+    '#markup' => implode(', ', $user_roles),
+  ];
+}
+
+/**
+ * @implements theme_theme_suggestions_HOOK_alter()
+ *
+ * Add templates for view modes.
+ */
+function argue_base_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['#view_mode'])) {
+    $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
   }
 }

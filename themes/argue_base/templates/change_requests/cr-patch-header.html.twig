@@ -1,0 +1,9 @@
+
+<div class="card-header leading-icon">
+  <div class="card-header__icon" aria-hidden="true"><i class="material-icons ">input</i></div>
+  <div class="card-header__text">
+    <h2 class="card-header__first">{% trans %}Log message:{% endtrans %}
+      {% if log_message %}&raquo;{{ log_message }}&laquo;{% else %}n/a{% endif %}</h2>
+    <h3 class="card-header__second">{% trans %}by{% endtrans %} {{ creator }} {% trans %}on{% endtrans %} <time datetime="{{ created|format_date('Y-m-d') }}" property="datePublished">{{ created|format_date('medium') }}</time></h3>
+  </div>
+</div>

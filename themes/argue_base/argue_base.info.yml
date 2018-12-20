@@ -52,6 +52,7 @@ libraries-extend:
 stylesheets-remove:
   - '@argue_proscons/css/rate-widget-number-up-down.css'
   - '@argue_proscons/css/argument-teaser.css'
+  - '@change_requests/assets/css/cr-patch-view.css'
   - '@classy/css/components/details.css'
   - '@classy/css/components/field.css'
   - '@classy/css/components/menu.css'

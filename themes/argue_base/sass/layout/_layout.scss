@@ -8,9 +8,8 @@ html {
 }
 
 body {
-  box-sizing: border-box;
   height: calc(100vh - 1px);
-  font-family: 'Roboto', sans-serif;
+  @include mdc-typography(body1);
 }
 
 

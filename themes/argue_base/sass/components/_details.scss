@@ -5,6 +5,7 @@ details {
     position: relative;
     padding: 1rem;
     outline: none;
+    cursor: pointer;
     &:after {
       content: '';
       position: absolute;

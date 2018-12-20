@@ -1,5 +1,13 @@
 .field__label {
-  font-weight: bold;
+  font-weight: 400;
+  span {
+    display: inline-block;
+    line-height: 1.5rem;
+  }
+  i.material-icons {
+    vertical-align: text-bottom;
+    margin: 0 .125em;
+  }
 }
 .field--label-inline .field__label,
 .field--label-inline .field__items {
@@ -17,4 +25,8 @@
 }
 .field--label-inline .field__label::after {
   content: ':';
+}
+
+.field--name-field-change-requests {
+  @include reference_list();
 }

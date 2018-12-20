@@ -1,0 +1,12 @@
+
+.links.inline.icon-menu {
+  display: flex;
+  flex-direction: row;
+  margin: -6px 0 -6px 2rem;
+
+  li {
+    flex: 0 0 48px;
+    padding: 0;
+    color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));
+  }
+}

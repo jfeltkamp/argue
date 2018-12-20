@@ -85,7 +85,7 @@
 <article{{ attributes.addClass(classes) }}>
 
   <header class="card-header leading-icon">
-    <div class="card-header__icon" aria-hidden="true"><i class="material-icons ">account_balance</i></div>
+    <div class="card-header__icon" aria-hidden="true"><i class="material-icons ">priority_high</i></div>
     <div class="card-header__text">
       <h2 class="card-header__first">{{ label }}</h2>
       <h3 class="card-header__second">{% trans %}by{% endtrans %} {{ author_name }} {% trans %}on{% endtrans %} <time property="datePublished">{{ date }}</time></h3>
@@ -93,19 +93,23 @@
   </header>
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_causal_problems', 'meta') }}
+    {{ content|without('field_comments', 'votingapi_links', 'links') }}
   </div>
 
   <div class="node__details">
-    {{ content.field_causal_problems }}
+
   </div>
 
   <div class="node__footer mdc-card__actions">
     <div class="mdc-card__action-buttons">
       <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">{% trans %}Context{% endtrans %}</button>
+
+      {{ content.links }}
     </div>
     <div class="mdc-card__action-icons">
-      {{ content.meta }}
+      {{ content.votingapi_links }}
     </div>
   </div>
 </article>
+{{ content.field_comments }}
+

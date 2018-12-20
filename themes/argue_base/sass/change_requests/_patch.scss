@@ -1,0 +1,72 @@
+body.path-patch {
+  .patch {
+    @include cards;
+    padding: 1rem;
+  }
+}
+
+form.patch-form,
+.patch {
+  &__header {
+    border-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .cr-patch-header {
+    border-top: 0;
+  }
+
+  .group_left,
+  .group_right {
+    .form-wrapper {
+      padding: 0;
+      border-bottom: none;
+    }
+    
+    .header_left,
+    .header_right {
+      @include mdc-typography(body2);
+      font-weight: 400;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--argue-base-cards-border-color);
+    }
+  }
+
+  fieldset {
+    border: none;
+    margin: 0 0 2rem;
+    padding: 0;
+  }
+
+  legend {
+    position: static;
+    width: 100%;
+    padding: .25em 0;
+    border-bottom: 1px solid var(--argue-base-cards-border-color);
+  }
+
+  dl.field_patch_items {
+    dt {
+      @include mdc-typography(body2);
+      color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
+      & b {
+        font-weight: 400;
+      }
+      &:after {
+        content: ':'
+      }
+    }
+
+    dd {
+      margin-bottom: 1rem;
+      margin-left: 0;
+    }
+  }
+
+  .field--type-created {
+    @include mdc-typography(body2);
+    color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
+    text-align: right;
+    
+  }
+}

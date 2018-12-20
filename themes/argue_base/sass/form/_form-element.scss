@@ -34,10 +34,6 @@
     padding: 1.5rem 1.5rem;
   }
 
-  select {
-    min-width: 200px;
-  }
-
   .field-multiple-table {
     thead th {
       background-color: transparent;
@@ -54,6 +50,13 @@
     }
   }
 }
+
+.form-item {
+  + .description {
+    @include mdc-typography(subtitle2);
+  }
+}
+
 
 .entity-meta {
   &__header {

@@ -1,6 +1,17 @@
 :root {
+  --mdc-theme-primary: #950000;
+  --mdc-theme-on-primary: #FFFFFF;
+  --mdc-theme-secondary: #BEAF75;
+  --mdc-theme-on-secondary: #FFFFFF;
+  --argue-base-theme-secondary: #BEAF75;
+  --argue-base-theme-on-secondary: #FFFFFF;
   --argue-base-main-padding: 18px;
   --argue-base-cards-border-color: #E8E8E8;
+  --argue-base-subtitle-color: #909090;
+  --argue-base-subtitle-border-color: #909090;
+  --argue-base-text-default-color: #000000;
+  --card-header-icon-bg-on-card: rgba(0,0,0,.3);
+  --card-header-icon-color-on-card: #FFFFFF;
 }
 
 *, *:after, *:before {
@@ -39,20 +50,28 @@
 
 
 @import "mixins";
-
+@import "global/typo";
+@import "global/card";
 @import "block/block-argue-proscons";
+@import "change_requests/patch";
+@import "content/argument";
+@import "content/comment";
+@import "content/node-rule";
 @import "components/details";
+@import "components/overview";
 @import "components/table";
 @import "layout/layout";
 @import "layout/layout-region";
 @import 'field/field';
-@import "navigation/drawer";
-@import "navigation/breadcrumbs";
-@import "navigation/tabs";
-@import "navigation/toolbar";
+@import "form/comment-form";
 @import "form/form-element";
 @import "form/input";
+@import "form/patch-form";
 @import "form/preview";
-@import "content/argument";
+@import "navigation/breadcrumbs";
+@import "navigation/drawer";
+@import "navigation/links";
+@import "navigation/tabs";
+@import "navigation/toolbar";
 @import "rate/rate";
-@import "content/node-rule";
+@import "user/user";

@@ -15,6 +15,25 @@
         color: red;
       }
     }
+
+
+    a.add-link {
+      background-color: var(--mdc-theme-secondary);
+      color: var(--mdc-theme-on-secondary, #fff);
+      display: inline-block;
+      vertical-align: text-bottom;
+      font-weight: 400;
+      padding: 0 .5em 0 .15em;
+      border-radius: .75em;
+      text-decoration: none;
+      margin-left: .5rem;
+      @include mdc-typography(body2);
+      &:before {
+        content: 'add';
+        @include material-icon(1.25em);
+        vertical-align: text-bottom;
+      }
+    }
   }
 
   .argument {

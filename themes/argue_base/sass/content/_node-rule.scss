@@ -1,20 +1,12 @@
 
 
 .node.mdc-card {
+
+  .card-header {
+    padding: 1rem;
+  }
+
   .node {
-    &__header {
-      .material-icons {
-        float: left;
-      }
-      
-
-      &__text {
-        margin-left: 60px;
-      }
-
-      h2, h3 { margin: 0; }
-      padding: 1rem;
-    }
 
     &__content {
       padding: 1rem 1rem 0;
@@ -31,10 +23,16 @@
 
     &__footer {
       border-top: 1px solid var(--argue-base-cards-border-color);
-
-      .proscons-chip {
-        margin: -6px;
-      }
     }
+  }
+}
+
+.proscons-chip {
+  margin-top: -6px;
+  margin-bottom: -6px;
+  flex-wrap: nowrap;
+
+  &--pro i {
+
   }
 }

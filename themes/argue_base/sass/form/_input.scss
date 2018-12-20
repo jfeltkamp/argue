@@ -42,4 +42,12 @@ a.button {
     width: calc(100% - 2px);
   }
 
+  + .filter-wrapper {
+    display: none;
+  }
+
+}
+
+.mdc-select {
+  min-width: 200px;
 }

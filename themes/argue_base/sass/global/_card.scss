@@ -5,10 +5,12 @@
   justify-content: stretch;
 
   &__icon {
+    display: block;
     padding: 12px;
     width: 48px;
     margin-right: 1rem;
     position: relative;
+    text-decoration: none;
 
     i.material-icons {
       position: relative;

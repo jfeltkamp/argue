@@ -101,7 +101,7 @@ class RuleOverviewController extends ControllerBase {
     $this->argueStructureConfig = $this->configManager->getConfigFactory()
       ->get('argue_structure.arguestructureconf');
     $this->vocabulary = $this->entityTypeManager->getStorage('taxonomy_vocabulary')
-        ->load($this->argueStructureConfig->get('argue_vocabulary'));
+      ->load($this->argueStructureConfig->get('argue_vocabulary'));
     $this->renderer = $renderer;
   }
 
@@ -159,7 +159,9 @@ class RuleOverviewController extends ControllerBase {
 
   /**
    * @param array $tree
-   * @param $index
+   * @param $i
+   *
+   * @return array
    */
   protected function getItems(array $tree, $i) {
     $return = [];
@@ -184,6 +186,9 @@ class RuleOverviewController extends ControllerBase {
    *
    * @return array
    *   Returns render array of the rule tree.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getTree() {
 

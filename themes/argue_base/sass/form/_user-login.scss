@@ -1,0 +1,75 @@
+
+.block-user-login-block {
+  @include cards;
+  max-width: 500px;
+  margin: 5rem auto;
+  
+  > h2 {
+    @include mdc-typography(headline5);
+    padding: 1rem;
+    margin: 0;
+
+    &:before {
+      @include material-icon(35px);
+      color: var(--mdc-theme-secondary);
+      content: 'verified_user';
+      vertical-align: text-bottom;
+      margin-right: .5rem;
+    }
+  }
+
+  form.user-login-form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .item-list {
+    padding: 1rem;
+
+    ul, li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+    li {
+      flex: 1 1 50%;
+      text-align: center;
+    }
+
+    a {
+      color: $font-base-color;
+      text-decoration: none;
+      
+
+      &.request-password-link:before,
+      &.create-account-link:before {
+        content: 'perm_identity';
+        @include material-icon();
+        vertical-align: text-bottom;
+        margin-right: .5em;
+      }
+
+      &.request-password-link:before {
+        content: 'undo';
+      }
+    }
+  }
+}
+
+form.user-pass {
+  @include cards;
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 1rem;
+}

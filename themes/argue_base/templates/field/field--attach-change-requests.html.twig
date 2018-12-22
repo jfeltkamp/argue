@@ -53,10 +53,7 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div{{ title_attributes.addClass(title_classes) }}>
-    <i class="material-icons">input</i>
-    {{ label }}
-  </div>
+  <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
   {% if items %}
     <div class="field__items mdc-list">
       {% for item in items %}

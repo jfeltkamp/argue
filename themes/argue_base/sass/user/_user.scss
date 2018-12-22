@@ -26,7 +26,7 @@
       justify-content: center;
     }
 
-    .field--name-field-full-name {
+    .user__name {
       @include mdc-typography-overflow-ellipsis;
 
       a {
@@ -43,6 +43,46 @@
     .user__roles {
       @include mdc-typography(body2);
       color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
+    }
+  }
+
+  &.full{
+    @include cards;
+    .card-header {
+      padding: 1rem;
+    }
+
+    .user--content-primary,
+    .user--content-secondary {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem 0;
+      min-height: 240px;
+      > * {
+        flex: 1 1 auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+
+    .field__label {
+      @include mdc-typography(subtitle1);
+      padding-bottom: .375rem;
+      border-bottom: 1px solid var(--argue-base-cards-border-color);
+      margin: .25em 0 0
+    }
+
+    .field__items {
+      margin: .5rem 0;
+    }
+
+    .field--name-field-user-image {
+      flex: 0 0 auto;
+      img {
+        display: block;
+        margin: 0 auto;
+        @include mdc-elevation(2);
+      }
     }
   }
 }

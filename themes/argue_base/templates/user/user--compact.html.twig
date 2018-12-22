@@ -16,10 +16,14 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes.addClass('profile', 'compact') }}>
-  {{ content.field_user_image }}
+<article{{ attributes.addClass('profile', 'compact', 'mdc-list-item', 'mdc-ripple') }}>
+  {% if content.field_user_image|render|trim %}
+    {{ content.field_user_image }}
+  {% else %}
+    <a href="{{ path('entity.user.canonical', {'user': user.id}) }}" class="card-header__icon" aria-hidden="true"><i class="material-icons ">perm_identity</i></a>
+  {% endif %}
   <div class="user__text">
-    {{ content.field_full_name }}
+    <div class="user__name"><a href="{{ path('entity.user.canonical', {'user': user.id}) }}">{{ user.username }}</a></div>
     <div class="user__roles">{{ content.field_roles }}</div>
   </div>
 </article>

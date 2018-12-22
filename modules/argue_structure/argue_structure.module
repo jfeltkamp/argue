@@ -20,14 +20,10 @@ function argue_structure_help($route_name, RouteMatchInterface $route_match) {
       return $output;
 
     default:
+      return '';
   }
 }
 
-
-
-/**
- * Implements hook_help().
- */
 /**
  * Implements hook_theme().
  */
@@ -84,5 +80,14 @@ function argue_structure_preprocess_node(&$vars) {
       '#pro' => $result['pro'],
       '#con' => $result['con'],
     ];
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function argue_structure_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if(isset($form['account']['name']['#title'])) {
+    $form['account']['name']['#title'] = t('First and last name');
   }
 }

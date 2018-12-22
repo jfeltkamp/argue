@@ -68,6 +68,11 @@ function argue_structure_theme() {
   ];
 }
 
+/**
+ * Implements hook_preprocess_node()
+ *
+ * Prepare pills with the number of arguments pro and con a rule.
+ */
 function argue_structure_preprocess_node(&$vars) {
 
   /** @var \Drupal\argue_proscons\EvaluatingService $eval */

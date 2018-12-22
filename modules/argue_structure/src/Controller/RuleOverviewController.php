@@ -217,7 +217,7 @@ class RuleOverviewController extends ControllerBase {
         'list' => $list,
         '#cache' => [
           'tags' => ['sections', 'taxonomy_term', 'taxonomy_vocabulary:' . $vid],
-          'contexts' => ['taxonomy_term']
+          'contexts' => ['route', 'user.permissions']
         ]
       ];
 

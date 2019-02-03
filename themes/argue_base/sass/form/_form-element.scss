@@ -1,4 +1,9 @@
 
+// Fix https://github.com/material-components/material-components-web/issues/2718
+// Check if it can be removed.
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--mdc-theme-primary);
+}
 
 .form-element {
   margin: 24px 0;

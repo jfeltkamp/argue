@@ -57,7 +57,7 @@
   errors ? 'form-item--error',
 ]
 %}
-<div{{ attributes.addClass(classes) }}>
+<label{{ attributes.addClass(classes) }}>
 
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
@@ -76,13 +76,13 @@
   {% if label_display == 'after' %}
     {{ label }}
   {% elseif label_display == 'mdc-floating-label' %}
-    <label for="" class="mdc-floating-label">{{ title }}</label>
+    <span class="mdc-floating-label">{{ title }}</span>
   {% endif %}
 
   {% if ripple %}
     <div class="mdc-line-ripple"></div>
   {% endif %}
-</div>
+</label>
 
 {% if errors or description %}
   <div{{ description.attributes.addClass(description_classes, 'description') }}>

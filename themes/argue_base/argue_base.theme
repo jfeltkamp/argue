@@ -187,6 +187,10 @@ function argue_base_preprocess_input(&$variables) {
 
 function argue_base_preprocess_select(&$variables) {
   $variables['attributes']['class'][] = 'mdc-select__native-control';
+  $first_opt = reset($variables['element']['#options']);
+  if($first_opt instanceof TranslatableMarkup && $first_opt->getUntranslatedString() == "- None -") {
+    $variables['element']['#options'][''] = ' ';
+  }
 }
 
 

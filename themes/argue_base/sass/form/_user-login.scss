@@ -1,8 +1,10 @@
 
-.block-user-login-block {
+.block-user-login-block-argue {
   @include cards;
   max-width: 500px;
-  margin: 5rem auto;
+  margin: 0 auto;
+  margin-top: 10vh;
+  
   
   > h2 {
     @include mdc-typography(headline5);
@@ -40,11 +42,12 @@
 
     ul {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+
     }
     li {
       flex: 1 1 50%;
-      text-align: center;
+      text-align: left;
     }
 
     a {
@@ -64,6 +67,16 @@
         content: 'undo';
       }
     }
+
+    @media (min-width: 470px) {
+      ul {
+        flex-direction: row;
+      }
+      li {
+        text-align: center;
+      }
+    }
+
   }
 }
 

@@ -1,0 +1,5 @@
+services:
+  argue_structure.route_subscriber:
+    class: Drupal\argue_structure\Routing\AlterRouteSubscriber
+    tags:
+      - { name: event_subscriber }

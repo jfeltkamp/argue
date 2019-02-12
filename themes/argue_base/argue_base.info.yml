@@ -57,6 +57,7 @@ stylesheets-remove:
   - '@classy/css/components/field.css'
   - '@classy/css/components/menu.css'
   - '@classy/css/components/tabs.css'
+  - '@classy/css/components/user.css'
   - '@seven/css/components/tabs.css'
   - '@seven/css/base/elements.css'
   - '@seven/css/components/entity-meta.css'

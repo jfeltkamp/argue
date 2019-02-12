@@ -10,6 +10,8 @@
   --argue-base-cards-border-color: #E8E8E8;
   --argue-base-subtitle-color: #909090;
   --argue-base-subtitle-border-color: #909090;
+  --argue-base-form-content: rgba(0,0,0,.87);
+  --argue-base-form-background: #e0e0e0;
   --argue-base-text-default-color: #000000;
   --card-header-icon-bg-on-card: rgba(0,0,0,.3);
   --card-header-icon-color-on-card: #FFFFFF;
@@ -67,6 +69,7 @@
 @import "form/comment-form";
 @import "form/form-element";
 @import "form/input";
+@import "form/password-confirm";
 @import "form/patch-form";
 @import "form/preview";
 @import "form/user-login";

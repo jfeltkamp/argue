@@ -8,12 +8,7 @@
 }
 
 @mixin button() {
-  @include mdc-button-base_;
-  @include mdc-button-shape-radius(small);
-  @include mdc-button-container-fill-color(secondary);
-  @include mdc-button-ink-color(white);
-  @include mdc-states(white);
-  @include mdc-button--raised_;
+  @include mdc-button();
 }
 
 

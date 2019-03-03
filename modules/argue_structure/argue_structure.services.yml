@@ -1,4 +1,8 @@
 services:
+  theme.negotiator.example:
+    class: Drupal\argue_structure\Theme\ThemeNegotiator
+    tags:
+      - { name: theme_negotiator, priority: 0 }
   argue_structure.route_subscriber:
     class: Drupal\argue_structure\Routing\AlterRouteSubscriber
     tags:

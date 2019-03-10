@@ -214,7 +214,13 @@ function argue_base_preprocess_links(&$variables) {
       : ['class' => []];
     $variables['attributes']['class'][] = 'icon-menu';
     foreach ($variables['links'] as &$link) {
-      _make_mdc_button_from_link($link);
+      _make_mdc_icon_button_from_link($link);
+    }
+  } elseif (in_array($variables['theme_hook_original'], ['links__node'])) {
+    foreach ($variables['links'] as &$link) {
+      if($link['link']['#url'] instanceof \Drupal\Core\Url) {
+        $link['link']['#url']->setOption('attributes', ['class' => ['mdc-button']]);
+      }
     }
   }
 }
@@ -223,7 +229,7 @@ function argue_base_preprocess_links(&$variables) {
  * @param $link array
  * @param $include_text bool
  */
-function _make_mdc_button_from_link(&$link) {
+function _make_mdc_icon_button_from_link(&$link) {
   $url = &$link['link']['#url'];
   if($url instanceof \Drupal\Core\Url) {
     $attributes = $url->getOption('attributes') ?: [];
@@ -243,6 +249,17 @@ function _make_mdc_button_from_link(&$link) {
         break;
     }
     $link['text'] = $link['link']['#title'];
+  }
+}
+
+/**
+ * @param $link array
+ * @param $include_text bool
+ */
+function _make_mdc_button_from_link(&$link) {
+  $url = &$link['link']['#url'];
+  if($url instanceof \Drupal\Core\Url) {
+    $url->setOption('class', ['mdc-button']);
   }
 }
 

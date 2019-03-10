@@ -66,6 +66,7 @@
     @include mdc-elevation(2);
     border-top: 1px solid var(--argue-base-cards-border-color);
     margin: 0;
+
     &.by-node-author {
       background-color: #EEFEFE;
     }
@@ -92,17 +93,21 @@
 
     .compact {
       width: auto;
-      
+      overflow: visible;
+
       .user__text {
-        position: relative;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
       .user__roles {
         display: none;
       }
-      .field--name-field-full-name {
+      .user__name {
         position: absolute;
         top: 0;
         left: 0;
+        
       }
     }
 

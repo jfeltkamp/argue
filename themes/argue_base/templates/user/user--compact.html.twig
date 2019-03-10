@@ -16,7 +16,7 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes.addClass('profile', 'compact', 'mdc-list-item', 'mdc-ripple') }}>
+<article{{ attributes.addClass('profile', 'compact', 'mdc-list-item', 'mdc-list-item--disabled') }}>
   {% if content.field_user_image|render|trim %}
     {{ content.field_user_image }}
   {% else %}

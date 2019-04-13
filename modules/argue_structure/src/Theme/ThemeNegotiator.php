@@ -16,10 +16,15 @@ class ThemeNegotiator implements ThemeNegotiatorInterface {
     $possible_routes = array(
       'entity.argument.add_form',
       'entity.argument.edit_form',
-      'entity.argument.delete_form'
+      'entity.argument.delete_form',
+      'entity.argument.version_history',
+      'entity.patch.edit_form',
+      'entity.user.edit_form'
     );
 
-    return (in_array($route_match->getRouteName(), $possible_routes));
+    $current_route = $route_match->getRouteName();
+
+    return (in_array($current_route, $possible_routes));
   }
 
   /**

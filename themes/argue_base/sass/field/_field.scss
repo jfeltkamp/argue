@@ -26,3 +26,19 @@
 .field--name-field-change-requests {
   @include reference_list();
 }
+
+.field--type-address .details-wrapper {
+  label.form-item {
+    margin: 1rem 0;
+
+    &[class*=address-address-line1],
+    &[class*=address-address-line2] {
+      display: flex;
+      max-width: 407px;
+    }
+  }
+}
+
+fieldset.fieldgroup {
+  margin: 1rem 0;
+}

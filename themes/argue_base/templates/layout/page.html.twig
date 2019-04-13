@@ -55,7 +55,7 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-          <span class="mdc-top-app-bar__title">{{ title }}</span>
+          <span class="mdc-top-app-bar__title">{{ page.header|render|striptags|trim }}</span>
 
           <div id="primary-context" class="mdc-top-app-bar__section">
             {{ page.context_menu }}
@@ -73,7 +73,6 @@
     <main class="drawer-main-content main-content" id="main-content" role="main">
       <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
       <div class="mdc-top-app-bar--fixed-adjust"></div>
-        {{ page.header }}
         {{ page.pre_content }}
         {{ page.breadcrumb }}
         {{ page.highlighted }}

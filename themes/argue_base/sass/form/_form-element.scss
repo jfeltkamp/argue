@@ -57,8 +57,10 @@
 }
 
 .form-item {
+  .description,
   + .description {
     @include mdc-typography(subtitle2);
+    margin-bottom: 1rem;
   }
 }
 

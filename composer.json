@@ -26,7 +26,6 @@
     "league/commonmark": "^0.11",
 
     "drupal/core": "^8.5",
-
     "drupal/address": "^1.4",
     "drupal/admin_toolbar": "^2.0",
     "drupal/change_requests": "1.x-dev",

@@ -7,3 +7,9 @@ services:
     class: Drupal\argue_structure\Routing\AlterRouteSubscriber
     tags:
       - { name: event_subscriber }
+  logger.channel.argue_structure:
+    parent: logger.channel_base
+    arguments: ['argue_structure']
+  argue_structure.section_tree:
+    class: Drupal\argue_structure\SectionTreeService
+    arguments: ['@entity_type.manager', '@config.manager', '@cache.render', '@renderer']

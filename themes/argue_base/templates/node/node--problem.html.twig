@@ -93,7 +93,7 @@
   </header>
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_comments', 'votingapi_links', 'links') }}
+    {{ content|without('field_comments', 'rate_vote_widget', 'links') }}
   </div>
 
   <div class="node__details">
@@ -105,7 +105,7 @@
       {{ content.links }}
     </div>
     <div class="mdc-card__action-icons">
-      {{ content.votingapi_links }}
+      {{ content.rate_vote_widget }}
     </div>
   </div>
 </article>

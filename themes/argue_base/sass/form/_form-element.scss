@@ -50,8 +50,15 @@
     }
     h4.label {
       margin: 0;
-      //  headline1, headline2, headline3, headline4, headline5, headline6, subtitle1, subtitle2, body1, body2, caption, button, overline
+      //  headline1, headline2, headline3, headline4, headline5, headline6, subtitle1, subtitle2,
+      //  body1, body2, caption, button, overline
       @include mdc-typography(subtitle1);
+    }
+  }
+
+  &.field--widget-text-textarea-with-summary {
+    .text-summary-wrapper {
+      margin-bottom: 2rem;
     }
   }
 }

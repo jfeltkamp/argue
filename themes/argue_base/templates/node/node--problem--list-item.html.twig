@@ -88,7 +88,7 @@
   <span class="mdc-list-item__text">
     <span class="mdc-list-item__primary-text">{{ label }}</span>
     {% if display_submitted %}
-    <span class="mdc-list-item__secondary-text">{% trans %}Submitted by {% endtrans %}</span>
+    <span class="mdc-list-item__secondary-text">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
     {% endif %}
   </span>
   {% if content.meta %}

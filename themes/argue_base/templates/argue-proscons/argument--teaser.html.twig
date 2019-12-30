@@ -16,12 +16,14 @@
  */
 #}
 {% if content %}
+
+  {% set date = content.created|render|striptags|trim %}
 <div{{ attributes.addClass('argument', 'argument-teaser', 'mdc-card') }}>
   <div class="argument__header">
     <span class="mdc-icon-button material-icons argument__type" aria-hidden="true">{{ header_icon }}</span>
     <div class="argument__header__text">
       <h2 class="mdc-typography--headline6">{{ content.name }}</h2>
-      <h3 class="mdc-typography--subtitle2">{% trans %}By{% endtrans %} {{ content.user_id }} {% trans %}on{% endtrans %} {{ content.created }}</h3>
+      <h3 class="mdc-typography--subtitle2">{% trans %}Submitted on {{ date }}{% endtrans %}</h3>
     </div>
   </div>
 

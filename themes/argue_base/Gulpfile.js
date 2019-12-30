@@ -48,7 +48,7 @@ gulp.task('sass', function ()
 gulp.task('watch', function ()
 {
   browserSync.init({
-    proxy: 'arg_inst.docker.amazee.io'
+    proxy: 'argue.org.ddev.site'
   });
 
   gulp.watch('./sass/**/*', ['sass']);

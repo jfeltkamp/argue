@@ -10,10 +10,12 @@
 {% if breadcrumb %}
   <nav id="breadcrumbs" class="mdc-breadcrumbs mdc-breadcrumbs--default mdc-elevation--z4" role="navigation" aria-label="Breadcrumbs">
     {% for item in breadcrumb %}
+      {% set label_attribute = create_attribute() %}
       {% if item.url %}
-        <a class="mdc-breadcrumbs__link{% if not loop.first %} mdc-breadcrumbs__link--svg-icon{% endif %}" href="{{ item.url }}">{{ item.text }}</a>
+        <a class="mdc-breadcrumbs__link{% if not loop.first %} mdc-breadcrumbs__link--svg-icon{% endif %}"
+           href="{{ item.url }}"><span{{ label_attribute.addClass('elliptic').setAttribute('title', item.text|render) }}>{{ item.text }}</span></a>
       {% else %}
-        <span class="mdc-breadcrumbs__link{% if not loop.first %} mdc-breadcrumbs__link--svg-icon{% endif %}">{{ item.text }}</span>
+        <span class="mdc-breadcrumbs__link{% if not loop.first %} mdc-breadcrumbs__link--svg-icon{% endif %}"><span{{ label_attribute.addClass('elliptic').setAttribute('title', item.text|render) }}>{{ item.text }}</span></span>
       {% endif %}
     {% endfor %}
   </nav>

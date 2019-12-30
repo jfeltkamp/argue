@@ -48,6 +48,7 @@
 .mdc-breadcrumbs__link {
   position: relative;
   display: inline-flex;
+  max-width: 33.3333%;
   align-items: center;
   color: inherit;
   text-decoration: none;
@@ -94,6 +95,7 @@
   content: '\E5CC';
   font-family: 'Material Icons';
   font-size: 24px;
+  width: 24px;
   color: var(--mdc-breadcrumbs-icon);
 }
 

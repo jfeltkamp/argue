@@ -80,8 +80,6 @@ import { MDCMenuSurface } from '@material/menu-surface';
         new MDCFormField(formField);
       }
 
-
-
     }
   };
 

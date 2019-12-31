@@ -10,7 +10,7 @@ module.exports = [{
     publicPath: '/profiles/contrib/argue/themes/argue_base',
     proxy: {
       '/': {
-        target: 'http://arg_inst.docker.amazee.io/',
+        target: 'http://argue.org.ddev.site/',
         changeOrigin: true
       }
     }
@@ -40,8 +40,10 @@ module.exports = [{
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['./node_modules']
-            }
+              sassOptions: {
+                includePaths: ['./node_modules'],
+              }
+            },
           }
         ]
       },
@@ -49,8 +51,7 @@ module.exports = [{
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015'],
-          plugins: ['transform-object-assign']
+          presets: ['@babel/preset-env']
         }
       }
     ]

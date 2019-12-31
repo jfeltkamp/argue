@@ -57,32 +57,22 @@
   errors ? 'form-item--error',
 ]
 %}
-<label{{ attributes.addClass(classes) }}>
-
-  {% if label_display in ['before', 'invisible'] %}
-    {{ label }}
-  {% endif %}
-
-  {% if prefix is not empty %}
-    <span class="field-prefix">{{ prefix }}</span>
-  {% endif %}
+<div{{ attributes.addClass(classes) }}>
 
   {{ children }}
-
-  {% if suffix is not empty %}
-    <span class="field-suffix">{{ suffix }}</span>
-  {% endif %}
 
   {% if label_display == 'after' %}
     {{ label }}
   {% elseif label_display == 'mdc-floating-label' %}
-    <span class="mdc-floating-label">{{ title }}</span>
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="textarea" class="mdc-floating-label">{{ title }}</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
   {% endif %}
-
-  {% if ripple %}
-    <div class="mdc-line-ripple"></div>
-  {% endif %}
-</label>
+</div>
 
 {% if errors or description %}
 <div class="mdc-text-field-helper-line">

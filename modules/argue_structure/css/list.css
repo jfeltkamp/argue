@@ -11,6 +11,7 @@ ol.argue-structure-nested-list ol li {
 
 ol.argue-structure-nested-list li > strong:before,
 ol.argue-structure-nested-list ol li > strong:before {
-  content: counters(item, ".")". ";
+  /* content: counters(item, ".")". ";
   counter-increment: item
+   */
 }

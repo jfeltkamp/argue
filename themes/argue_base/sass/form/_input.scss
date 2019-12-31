@@ -8,6 +8,11 @@ input[type="submit"] {
   @include mdc-states($argue-base-states);
 }
 
+button.link.tabledrag-toggle-weight {
+  color: $help-text;
+  font-size: .8rem;
+}
+
 a.button {
   @include button();
 

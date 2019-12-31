@@ -20,12 +20,36 @@ function argue_base_preprocess_page(&$variables) {
   }
 }
 
+
+function argue_base_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  _mdc_style_delete_button($form);
+}
+
+function argue_base_form_patch_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  _mdc_style_delete_button($form);
+}
+
+/**
+ *
+ */
+function _mdc_style_delete_button(&$form) {
+  if(isset($form["actions"]["delete"])) {
+    if(!isset($form["actions"]["delete"]['#attributes'])) {
+      $form["actions"]["delete"]['#attributes'] = ['class' => []];
+    }
+    $form["actions"]["delete"]['#attributes']['class'][] = 'mdc-button';
+    $form["actions"]["delete"]['#attributes']['class'][] = 'mdc-button--raised';
+  }
+}
+
+
 /**
  * Implements hook_form_BASE_FORM_ID_alter()
  *
  * Changes vertical tabs to container.
  */
 function argue_base_form_argument_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  _mdc_style_delete_button($form);
   // Use node display to keep it simple.
   $form['#theme'] = ['argument_edit_form'];
   $form['#attached']['library'][] = 'seven/node-form';

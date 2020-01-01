@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains argue_user.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function argue_user_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the argue_user module.
+    case 'help.page.argue_user':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Customize user UI for Argue.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function argue_user_theme() {
+  return [
+    'argue_user_address' => [
+      'variables' => [
+        'header' => NULL,
+        'content' => NULL,
+      ],
+    ],
+  ];
+}

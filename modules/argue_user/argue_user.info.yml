@@ -1,0 +1,5 @@
+name: 'Argue user'
+type: module
+description: 'Customize user UI for Argue.'
+core: 8.x
+package: 'Argue'

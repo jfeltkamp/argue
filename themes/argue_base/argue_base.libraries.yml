@@ -2,11 +2,11 @@ global-styling:
   version: 0.1
   css:
     layout:
-      assets/argue_theme.css: {}
+      dist/assets/argue_theme.css: {}
       css/fonts.css: {}
-      assets/iconfont.css: {}
+      css/iconfont.css: {}
   js:
-    assets/argue_theme.js: {}
+    dist/assets/argue_theme.js: {}
   dependencies:
     - core/jquery
     - core/drupal

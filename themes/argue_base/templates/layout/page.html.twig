@@ -54,7 +54,7 @@
     <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
           <span class="mdc-top-app-bar__title">{{ page.header|render|striptags|trim }}</span>
 
           <div id="primary-context" class="mdc-top-app-bar__section">
@@ -63,7 +63,8 @@
         </section>
 
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <a href="?tour" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" title="Make a tour through Argue and learn how to use it.">help_outline</a>
+          <a href="?tour" class="material-icons mdc-top-app-bar__action-item material-icon-button"
+             aria-label="Tour" title="Make a tour through Argue and learn how to use it.">help_outline</a>
           {#
           <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Print this page"
              alt="Print this page">print</a>

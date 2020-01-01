@@ -140,17 +140,6 @@ class SectionTreeService {
   }
 
   /**
-   * Returns a page title.
-   */
-  public function getDescription() {
-    $description = $this->vocabulary
-      ? $this->vocabulary->getDescription()
-      : $this->t('No rule description found.');
-    return $this->argueStructureConfig->get('description_section_term_overview_page')
-      ?: $description;
-  }
-
-  /**
    * @param array $tree
    * @param $term_id
    *
@@ -231,9 +220,6 @@ class SectionTreeService {
 
       $render_array = [
         '#type' => '#container',
-        'head' => [
-          '#markup' => $this->getDescription(),
-        ],
         'list' => $list,
         '#cache' => [
           'tags' => ['sections', 'taxonomy_term', 'taxonomy_vocabulary:' . $vid],

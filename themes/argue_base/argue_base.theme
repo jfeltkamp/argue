@@ -368,3 +368,31 @@ function argue_base_theme_suggestions_user_alter(array &$suggestions, array $var
     $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
   }
 }
+
+/**
+ * @implements template_preprocess_menu_local_action()
+ *
+ * @param $variables
+ */
+function argue_base_preprocess_menu_local_action(&$variables) {
+  /** @var \Drupal\Core\Url $url */
+  $url = $variables["link"]["#url"];
+  $route_name = $url->getRouteName();
+  $icon = '';
+  if($route_name && preg_match('/add(_form)?$/', $route_name)) {
+    $icon = 'add';
+  }
+  $icon = (!empty($icon))
+    ? t('<i class="mdc-fab__icon material-icons">@icon</i>', ['@icon' => $icon])
+    : '';
+
+  $variables["link"]["#title"] = t('<div class="mdc-fab__ripple"></div>@icon<span class="mdc-fab__label">@label</span>', [
+    '@label' => $variables["link"]["#title"],
+    '@icon' => $icon,
+  ]);
+  $variables['link']['#options']['attributes']['class'] = [
+    'mdc-fab',
+    'mdc-fab--extended'
+  ];
+
+}

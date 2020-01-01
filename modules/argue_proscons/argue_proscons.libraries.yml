@@ -1,0 +1,10 @@
+proscons.list:
+  css:
+    theme:
+      css/list.css: {}
+      css/rate-widget-number-up-down.css: {}
+proscons.teaser:
+  css:
+    theme:
+      css/argument-teaser.css: {}
+

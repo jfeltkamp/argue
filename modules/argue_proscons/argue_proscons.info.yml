@@ -1,0 +1,14 @@
+name: Argue ProsCons
+type: module
+description: Provides a subentity list with arguments for a rule represented by a node.
+core: 8.x
+package: Argue
+dependencies:
+  - votingapi
+  - rate
+
+libraries-override:
+  rate/number-up-down:
+    css:
+      theme:
+        css/number-up-down.css: css/rate-widget-number-up-down.css

@@ -1,0 +1,27 @@
+# Argument routing definition
+argument.settings_tab:
+  route_name: argument.settings
+  title: 'Settings'
+  base_route: argument.settings
+
+entity.argument.canonical:
+  route_name: entity.argument.canonical
+  base_route: entity.argument.canonical
+  title: 'View'
+
+entity.argument.edit_form:
+  route_name: entity.argument.edit_form
+  base_route: entity.argument.canonical
+  title: 'Edit'
+
+entity.argument.version_history:
+  route_name: entity.argument.version_history
+  base_route: entity.argument.canonical
+  title: 'Revisions'
+
+entity.argument.delete_form:
+  route_name:  entity.argument.delete_form
+  base_route:  entity.argument.canonical
+  title: Delete
+  weight: 10
+

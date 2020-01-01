@@ -1,0 +1,14 @@
+
+# Argument menu items definition
+entity.argument.collection:
+  title: 'Argument list'
+  route_name: entity.argument.collection
+  description: 'List Argument entities'
+  parent: system.admin_structure
+  weight: 100
+
+argument.admin.structure.settings:
+  title: Argument settings
+  description: 'Configure Argument entities'
+  route_name: argument.settings
+  parent: system.admin_structure

@@ -1,0 +1,33 @@
+add argument entities:
+  title: 'Create new Argument entities'
+
+administer argument entities:
+  title: 'Administer Argument entities'
+  description: 'Allow to access the administration form to configure Argument entities.'
+  restrict access: true
+
+delete argument entities:
+  title: 'Delete Argument entities'
+
+edit argument entities:
+  title: 'Edit Argument entities'
+
+access argument overview:
+  title: 'Access the Argument overview page'
+
+view published argument entities:
+  title: 'View published Argument entities'
+
+view unpublished argument entities:
+  title: 'View unpublished Argument entities'
+
+view all argument revisions:
+  title: 'View all Argument revisions'
+
+revert all argument revisions:
+  title: 'Revert all Argument revisions'
+  description: 'Role requires permission <em>view Argument revisions</em> and <em>edit rights</em> for argument entities in question or <em>administer argument entities</em>.'
+
+delete all argument revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Argument revisions</em> and <em>delete rights</em> for argument entities in question or <em>administer argument entities</em>.'

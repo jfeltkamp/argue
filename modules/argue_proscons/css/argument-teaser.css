@@ -1,0 +1,33 @@
+
+.argument {
+  position: relative;
+}
+
+.argument .argument-teaser + .dropbutton-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+}
+
+.argument-teaser::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.argument-teaser .header .field--name-name {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: .5em;
+}
+
+.argument-teaser .voting {
+  float: left;
+  width: 50px;
+
+}
+
+.argument-teaser .content {
+  margin-left: 60px;
+  margin-bottom: 2rem;
+}

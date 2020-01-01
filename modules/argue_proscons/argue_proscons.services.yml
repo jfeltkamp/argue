@@ -1,0 +1,7 @@
+services:
+  argue_proscons.argument_list_service:
+    class: Drupal\argue_proscons\ArgumentListService
+    arguments: ['@module_handler', '@entity_type.manager', '@plugin.manager.votingapi.resultfunction']
+  argue_proscons.evaluating_service:
+    class: Drupal\argue_proscons\EvaluatingService
+    arguments: ['@database']

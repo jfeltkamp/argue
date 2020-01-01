@@ -1,0 +1,176 @@
+<?php
+
+/**
+ * @file
+ * Contains argue_proscons.module.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_help().
+ */
+function argue_proscons_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the argue_proscons module.
+    case 'help.page.argue_proscons':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a subentity list with arguments for a rule represented by a node.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function argue_proscons_theme() {
+  return [
+    'argument' => [
+      'render element' => 'content',
+    ],
+    'argument__teaser' => [
+      'render element' => 'content',
+    ],
+    'argue_proscons' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function argue_proscons_theme_suggestions_argument(array $variables) {
+  $suggestions = [];
+  $sanitized_view_mode = strtr($variables['content']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'argument__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ *
+ * The canonical view of arguments will be redirected to its parent node.
+ *
+ * @param array $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ * @param $view_mode
+ *
+ * @throws \Drupal\Core\Entity\EntityMalformedException
+ */
+function argue_proscons_argument_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if($view_mode == 'full' && \Drupal::routeMatch()->getRouteName() == 'entity.argument.canonical') {
+    $parent = $entity->get("reference_id")->referencedEntities();
+    /** @var \Drupal\node\NodeInterface $parent */
+    if($parent = reset($parent)) {
+      $url = $parent->toUrl();
+      $url->setOption('fragment' ,'argument_' . $entity->id());
+      $url = (string) $url->toString();
+      $response = new RedirectResponse($url, 301);
+      $response->send();
+      exit();
+    }
+  } elseif($view_mode == 'teaser') {
+    // Set id to scroll to the id.
+    if(!isset($build['attributes'])) {
+      $build['#attributes'] = new \Drupal\Core\Template\Attribute();
+    }
+    $build['#attributes']->setAttribute('id', 'argument_' . $entity->id());
+  }
+}
+
+
+/**
+ * Implements hook_entity_view().
+ *
+ *
+ */
+function argue_proscons_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  $type = $entity->getEntityTypeId();
+  $bundle = $entity->bundle();
+
+  $view_string = "{$type}__{$bundle}__{$view_mode}";
+
+  $show = [
+    'argument__argument__teaser'
+  ];
+
+  if (in_array($view_string, $show) && $widget_config = $display->getComponent('rate_vote_widget')) {
+    $vote_widget_service = \Drupal::service('rate.entity.vote_widget');
+    $vote_widget = $vote_widget_service->buildRateVotingWidget(
+      $entity->id(),
+      $entity->getEntityTypeId(),
+      $entity->bundle()
+    );
+
+    if (isset($vote_widget['rate_vote_widget'])) {
+      $vote_widget['rate_vote_widget']['#weight'] = isset($widget_config['weight']) ? $widget_config['weight'] : 2;
+    }
+
+    // add library
+    if (!isset($vote_widget['#attached']['library'])) {
+      $vote_widget['#attached']['library'] = [];
+    }
+    $vote_widget['#attached']['library'][] = 'argue_proscons/proscons.teaser';
+    $vote_widget['#group'] = 'voting';
+
+    // move voting widget to own region.
+    $build['voting'] = [
+      '#type' => 'container',
+      '#weight' => 10,
+      '#attributes' => ['class' => ['voting']],
+      '#tree' => TRUE,
+      '#access' => TRUE,
+      'votingapi_links' => $vote_widget,
+    ];
+  }
+}
+
+
+/**
+ * Prepares variables for Argument templates.
+ *
+ * Default template: argument.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - content: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function argue_proscons_argument_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  /**
+  if ($build['#view_mode'] == 'teaser' && isset($build['rate_vote_widget'])) {
+    // add library
+    if (!isset($build['#attached']['library'])) {
+      $build['#attached']['library'] = [];
+    }
+    $build['#attached']['library'][] = 'argue_proscons/proscons.teaser';
+
+    // move voting widget to own region.
+    $build['voting'] = [
+      '#type' => 'container',
+      '#weight' => 10,
+      '#attributes' => ['class' => ['voting']],
+      '#tree' => TRUE,
+      '#access' => TRUE,
+      'votingapi_links' => $build['rate_vote_widget'],
+    ];
+    $build['voting']['votingapi_links']['#group'] = 'voting';
+    unset($build['rate_vote_widget']);
+
+    // @todo find better way as unset pre_render, problem: items come back in content.
+    unset($build['#pre_render']);
+  }
+  */
+}

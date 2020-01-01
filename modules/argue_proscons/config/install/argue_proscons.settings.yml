@@ -1,0 +1,5 @@
+argue_proscons:
+  max_argument_name_length: 256
+  max_argument_text_length: 512
+  argue_proscons_node_types:
+    rule: rule

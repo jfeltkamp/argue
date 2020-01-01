@@ -9,6 +9,9 @@ distribution:
 
 # Required modules
 dependencies:
+  # modules included in argue
+  - argue_proscons
+  - argue_structure
   # core
   - block
   - breakpoint
@@ -29,7 +32,6 @@ dependencies:
   - options
   - votingapi
   - rate
-  - argue_proscons
   - path
   - pathauto
   - page_cache
@@ -41,7 +43,6 @@ dependencies:
   - file
 # contrib
   - admin_toolbar_tools
-  - argue_structure
   - change_requests
   - diff
   - pathauto

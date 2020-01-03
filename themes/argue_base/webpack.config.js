@@ -5,6 +5,7 @@ const autoprefixer = require('autoprefixer');
 module.exports = [{
   context: __dirname,
   entry: ['./sass/app.scss', './js/app.js'],
+  mode: 'production',
   devServer: {
     port: 9100,
     publicPath: '/profiles/contrib/argue/themes/argue_base',

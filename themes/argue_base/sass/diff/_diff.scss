@@ -1,0 +1,12 @@
+header.diff-header {
+  @include cards();
+  padding: 10px 12px;
+  margin-bottom: 2rem;
+
+  +.diff-controls {
+    @include cards();
+    padding: 10px 12px;
+    margin-bottom: 2rem;
+
+  }
+}

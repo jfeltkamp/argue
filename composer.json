@@ -48,7 +48,7 @@
     "phpunit/phpunit": "^6.0"
   },
   "config": {
-    "preferred-install": "source",
+    "preferred-install": "dist",
     "bin-dir": "bin/",
     "secure-http": false
   },

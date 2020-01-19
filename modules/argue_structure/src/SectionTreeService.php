@@ -180,7 +180,7 @@ class SectionTreeService {
    */
   public function getTree($term_id = 0) {
 
-    if ($cache = $this->cacheRender->get('sections')) {
+    if ($cache = $this->cacheRender->get("sections:taxonomy_term:{$term_id}")) {
       // Load from cache if available.
       return $cache->data;
     } elseif (is_a($this->vocabulary, '\Drupal\taxonomy\VocabularyInterface')) {
@@ -228,10 +228,10 @@ class SectionTreeService {
       ];
 
       $this->cacheRender->set(
-        'sections',
+        "sections:taxonomy_term:{$term_id}",
         $render_array,
         CacheBackendInterface::CACHE_PERMANENT,
-        ['taxonomy_term', 'taxonomy_term_list']);
+        ['taxonomy_term', "taxonomy_term:{$term_id}", 'taxonomy_term_list']);
     } else {
       $link_vocabs = Link::createFromRoute($this->t('vocabularies collection'), 'entity.taxonomy_vocabulary.collection');
       $link_argue_config = Link::createFromRoute($this->t('Argue config'), 'argue_structure.argue_structure_conf_form');

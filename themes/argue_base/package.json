@@ -45,6 +45,21 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@material/select": "^3.2.0"
-  }
+    "@material/select": "^3.2.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "readline-sync": "^1.4.10"
+  },
+  "browserslist": [
+    "> .25%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

@@ -1,0 +1,18 @@
+.node--type-problem {
+
+  &.node--view-mode-summary {
+    font-size: .9em;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      @include mdc-typography(subtitle1);
+      margin-bottom: .25em;
+    }
+    p:first-child {
+      margin-top: .25em;
+    }
+  }
+}

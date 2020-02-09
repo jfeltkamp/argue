@@ -4,7 +4,7 @@
 
 h3.field__label {
   @include mdc-typography(body1);
-  margin: .25em 0 0;
+  padding: .25em 0;
 
   .field--label-above & {
     border-bottom: 1px solid var(--argue-base-cards-border-color);

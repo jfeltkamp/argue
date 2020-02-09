@@ -1,5 +1,5 @@
 
-
+// Abstract definitions
 .node.mdc-card {
 
   .card-header {
@@ -13,7 +13,7 @@
 
       p {
         @include mdc-typography('body1');
-        margin: 0 0 1rem;
+        margin: 1rem 0;
       }
     }
 
@@ -33,6 +33,14 @@
   flex-wrap: nowrap;
 
   &--pro i {
+
+  }
+}
+
+.node--type-rule.node--view-mode-full {
+  .node__content p {
+    font-size: 1.125rem;
+    line-height: 1.5em;
 
   }
 }

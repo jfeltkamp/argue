@@ -4,8 +4,9 @@ ol.argue-structure-nested-list {
   flex-flow: wrap;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1rem -1rem;
+  margin: 0 -0.5rem 1rem;
   padding: 0;
+  max-width: calc(100% + 2rem);
 
   ol, li {
     margin: 0;
@@ -22,12 +23,16 @@ ol.argue-structure-nested-list {
 
     &.level_0 {
       @include cards();
-      width: calc(50% - 2rem);
-      flex: 1 1 calc(50% - 2rem);
-      margin: 1rem 1rem;
+      flex: 1 1 calc(100% - 1rem);
+      margin: .5rem;
+      overflow: hidden;
 
       > strong {
         border-bottom: 1px solid var(--argue-base-cards-border-color);
+      }
+
+      @media (min-width: 992px) {
+        flex: 1 1 calc(50% - 1rem);
       }
     }
 

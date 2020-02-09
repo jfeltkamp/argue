@@ -1,10 +1,18 @@
 .drawer-frame-root {
   position: relative;
   display: flex;
-  height: 100%;
+  height: 100vh;
+
+  .toolbar-vertical &,
+  .toolbar-horizontal & {
+    height: calc(100vh - 39px);
+  }
+  .toolbar-horizontal.toolbar-tray-open & {
+    height: calc(100vh - 79px);
+  }
 }
 
 .mdc-drawer-app-content {
-  flex: auto;
   overflow: auto;
+  height: 100%;
 }

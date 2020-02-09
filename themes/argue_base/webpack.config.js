@@ -11,8 +11,8 @@ module.exports = [{
     publicPath: '/profiles/contrib/argue/themes/argue_base',
     proxy: {
       '/': {
-        target: 'http://argue.org.ddev.site/',
-        changeOrigin: true
+        target: 'http://demo.arguepro.de.ddev.site/',
+        changeOrigin: false
       }
     }
   },

@@ -1,5 +1,4 @@
 var gulp            = require('gulp'),
-  sequence        = require('gulp-sequence'),
   concat          = require('gulp-concat'),
   sass            = require('gulp-sass'),
   sourcemaps      = require('gulp-sourcemaps'),
@@ -20,12 +19,11 @@ gulp.task('sass', function ()
         includePaths: ['./node_modules/']
       }))
       .pipe(prefixer({
-        browsers: ['last 2 versions', 'IE 11'],
         cascade: false
       }))
       .pipe(sourcemaps.write())
       .pipe(concat('argue_theme.css'))
-      .pipe(gulp.dest('./assets'))
+      .pipe(gulp.dest('./dist/assets'))
       .pipe(browserSync.stream());
   }
   else
@@ -37,21 +35,20 @@ gulp.task('sass', function ()
         outputStyle: 'compressed'
       }))
       .pipe(prefixer({
-        browsers: ['last 2 versions', 'IE 11'],
         cascade: false
       }))
       .pipe(concat('argue_theme.css'))
-      .pipe(gulp.dest('./assets'));
+      .pipe(gulp.dest('./dist/assets'));
   }
 });
 
 gulp.task('watch', function ()
 {
   browserSync.init({
-    proxy: 'argue.org.ddev.site'
+    proxy: 'https://demo.arguepro.de.ddev.site'
   });
 
-  gulp.watch('./sass/**/*', ['sass']);
+  gulp.watch('./sass/**/*', gulp.series('sass'));
   // .on('change', browserSync.reload);
 
   //gulp.watch('./js/**')
@@ -63,6 +60,9 @@ gulp.task('watch', function ()
 });
 
 
-gulp.task('default', function(callback) {
-  sequence('sass')(callback);
+gulp.task('default', function(done) {
+  'use strict';
+
+  gulp.series('sass');
+  done();
 });

@@ -71,46 +71,23 @@
  */
 #}
 {%
-  set classes = [
-    'mdc-card',
+    set classes = [
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
+]
 %}
 
 <article{{ attributes.addClass(classes) }}>
-
-  <header class="card-header leading-icon">
-    <div class="card-header__icon" aria-hidden="true"><i class="material-icons ">account_balance</i></div>
-    <div class="card-header__text">
-      <h2 class="card-header__first">{{ label }}</h2>
-      <h3 class="card-header__second">{% trans %}Submitted on {{ date }}{% endtrans %}</h3>
+    <header class="">
+        <h3>{{ label }}</h3>
+    </header>
+    <div{{ content_attributes.addClass('node__sub_content') }}>
+        {{ content }}
     </div>
-  </header>
-
-  {% if content.field_causal_problems %}
-  <div class="node__details">
-    {{ content.field_causal_problems }}
-  </div>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_causal_problems', 'meta') }}
-  </div>
-
-  <div class="node__footer mdc-card__actions">
-    <div class="mdc-card__action-buttons">
-      {#
-      Place for action buttons like this one:
-      <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">{% trans %}Context{% endtrans %}</button>
-      #}
-    </div>
-    <div class="mdc-card__action-icons">
-      {{ content.meta }}
-    </div>
-  </div>
+    <footer><a href="{{ url }}" class="mdc-button">{{ 'See details and comments'|t }}</a></footer>
 </article>
+

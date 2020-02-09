@@ -11,6 +11,10 @@ body {
   @include mdc-typography(body1);
 }
 
+h1,
+h1.page-title {
+  @include mdc-typography('headline4');
+}
 
 .main-content {
   overflow: auto;

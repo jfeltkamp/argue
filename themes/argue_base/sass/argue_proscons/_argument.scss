@@ -3,3 +3,10 @@
     box-shadow: 0 0 15px 0 rgba(255,170,170, .5), 0 1px 3px 0 rgba(0, 0, 0, 0.32);
   }
 }
+
+// Argument edit form
+.layout-region-node-header {
+  h1:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -6,6 +6,11 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface ;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -88,8 +93,55 @@ function argue_structure_preprocess_node(&$vars) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function argue_structure_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function argue_structure_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if(isset($form['account']['name']['#title'])) {
     $form['account']['name']['#title'] = t('First and last name');
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_links_alter()
+ *
+ * Adding action link at problem node to add a rule.
+ */
+function argue_structure_node_links_alter(array &$links, EntityInterface $entity, array $context) {
+  if($context['view_mode'] == 'full' && $entity->bundle() == 'problem') {
+    if(\Drupal::currentUser()->hasPermission('create rule content')) {
+      $text = t('Add rule handling this problem');
+      $url = Url::fromRoute('node.add', ['node_type' => 'rule']);
+      $field_section = $entity->get('field_sector')->getValue();
+      $sector = count($field_section) ? $field_section[0]['target_id'] : 0;
+      $url->setOption('query', [
+        'causal_problem' => $entity->id(),
+        'sector' => $sector
+      ]);
+      $links['node']['#links']['add_rule'] = [
+        'title' => $text,
+        'url' => $url
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Insert default values when creating a rule from action link at problem node.
+ * see above: argue_structure_node_links_alter()
+ */
+function argue_structure_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if($form_id == 'node_rule_form') {
+    $request = \Drupal::request();
+
+    $sector = $request->get('sector');
+    if($sector && empty($form["field_sector"]["widget"]["#default_value"])) {
+      $form["field_sector"]["widget"]["#default_value"] = $sector;
+    }
+
+    $causal_problem = $request->get('causal_problem');
+    if($causal_problem && empty($form["field_causal_problems"]["widget"][0]["target_id"]["#default_value"])) {
+      $causal_problem = \Drupal\node\Entity\Node::load($causal_problem);
+      $form["field_causal_problems"]["widget"][0]["target_id"]["#default_value"] = $causal_problem;
+    }
   }
 }

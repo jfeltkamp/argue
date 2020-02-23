@@ -85,13 +85,6 @@ class ArgueStructureConfForm extends ConfigFormBase {
       '#description' => $this->t('Override description of the rule page. Leave empty to use the Vocabulary description.'),
     ];
 
-    $form['link_section_terms_to_the_term_page'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Link rule terms to the term page.'),
-      '#default_value' => $config->get('link_section_terms_to_the_term_page'),
-      '#description' => $this->t('Enable to link rules to their separate overview page.'),
-    ];
-
     $form['argue_header_main_vocab'] = [
       '#type' => 'html_tag',
       '#tag' => 'h3',
@@ -101,10 +94,21 @@ class ArgueStructureConfForm extends ConfigFormBase {
 
     $form['argue_vocabulary'] = [
       '#type' => 'select',
-      '#title' => $this->t('Vocabulary containing the argued content.'),
+      '#title' => $this->t('Sections vocabulary structuring the argued content.'),
       '#options' => $options,
       '#default_value' => $config->get('argue_vocabulary'),
       '#description' => $this->t('Change main vocabulary. (not recommended, default: sections )'),
+    ];
+
+    $form['argue_displayed_nesting_levels'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Displayed nesting levels'),
+      '#min' => 1,
+      '#max' => 5,
+      '#step' => 1,
+      '#size' => 3,
+      '#default_value' => $config->get('argue_displayed_nesting_levels') ?: 2,
+      '#description' => $this->t('Number of displayed levels in one view, starting from the routed term.'),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -140,7 +144,8 @@ class ArgueStructureConfForm extends ConfigFormBase {
       ->set('argue_vocabulary', $form_state->getValue('argue_vocabulary'))
       ->set('title_section_term_overview_page', $form_state->getValue('title_section_term_overview_page'))
       ->set('description_section_term_overview_page', $form_state->getValue('description_section_term_overview_page'))
-      ->set('link_section_terms_to_the_term_page', $form_state->getValue('link_section_terms_to_the_term_page'))
+      ->set('argue_max_nesting_level', $form_state->getValue('argue_max_nesting_level'))
+      ->set('argue_displayed_nesting_levels', $form_state->getValue('argue_displayed_nesting_levels'))
       ->save();
   }
 

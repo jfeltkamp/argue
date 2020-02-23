@@ -197,8 +197,10 @@ class SectionTreeService {
       $vid = $this->vocabulary->id();
 
       $this->termStorage = $this->entityTypeManager->getStorage('taxonomy_term');
+
+      $max_depth = $this->argueStructureConfig->get('argue_displayed_nesting_levels');
       /** @var \stdClass[] $tree */
-      $tree = $this->termStorage->loadTree($vid, $term_id, 5);
+      $tree = $this->termStorage->loadTree($vid, $term_id, $max_depth);
 
       if ($term_id != 0) {
         /** @var \Drupal\taxonomy\Entity\Term $item */

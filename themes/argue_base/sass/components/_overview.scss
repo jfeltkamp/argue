@@ -19,6 +19,11 @@ ol.argue-structure-nested-list {
       display: block;
       @include mdc-typography(headline4);
       padding: .5em 1rem;
+
+    }
+    .description {
+      @include mdc-typography(subtitle1);
+      color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
     }
 
     &.level_0 {

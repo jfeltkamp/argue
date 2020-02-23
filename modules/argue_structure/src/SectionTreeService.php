@@ -201,11 +201,13 @@ class SectionTreeService {
       $tree = $this->termStorage->loadTree($vid, $term_id, 5);
 
       if ($term_id != 0) {
+        /** @var \Drupal\taxonomy\Entity\Term $item */
         $item = $this->termStorage->load($term_id);
         $level = 0;
         $list = [
           '#theme' => 'argue_structure_nested_list',
           '#label' => $item->get('name')->getString(),
+          '#description' => $item->getDescription(),
           '#node_list' => $this->getNodeRow($item->id()),
           '#items' => $this->getItems($tree, $item->id(), $level),
           '#level' => $level,

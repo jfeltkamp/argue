@@ -91,7 +91,13 @@
     <span class="mdc-list-item__secondary-text">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
     {% endif %}
   </span>
-  {% if content.meta %}
-    <span class="mdc-list-item__meta">{{ content.meta }}</span>
-  {% endif %}
+  <span class="mdc-list-item__meta">
+    <span class="mdc-chip-set proscons-chip">
+      <span class="mdc-chip proscons-chip--con">
+        <i class="material-icons mdc-chip__icon mdc-chip__icon--leading">account_balance</i>
+        <span
+          class="mdc-chip__text">{{ drupal_view_result('argue_rules_ref_this_problem', 'embed_1', node.id)|length }}</span>
+      </span>
+    </span>
+  </span>
 </a>

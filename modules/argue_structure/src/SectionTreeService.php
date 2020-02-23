@@ -12,6 +12,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Link;
+use Drupal\Core\Path\AliasManager;
 
 /**
  * Class SectionTreeService.
@@ -81,23 +82,30 @@ class SectionTreeService {
   protected $nodeViewBuilder;
 
   /**
+   * @var AliasManager
+   */
+  protected $pathAliasManager;
+
+  /**
    * Constructs a new SectionTreeService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    * @param \Drupal\Core\Config\ConfigManagerInterface $config_manager
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache_render
    * @param \Drupal\Core\Render\RendererInterface $renderer
+   * @param \Drupal\Core\Path\AliasManager $path_alias_manager
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, ConfigManagerInterface $config_manager, CacheBackendInterface $cache_render, RendererInterface $renderer) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, ConfigManagerInterface $config_manager, CacheBackendInterface $cache_render, RendererInterface $renderer, AliasManager $path_alias_manager) {
     $this->entityTypeManager = $entity_type_manager;
     $this->configManager = $config_manager;
     $this->argueStructureConfig = $this->configManager->getConfigFactory()
       ->get('argue_structure.arguestructureconf');
     $this->cacheRender = $cache_render;
     $this->renderer = $renderer;
+    $this->pathAliasManager = $path_alias_manager;
     $this->vocabulary = $this->entityTypeManager->getStorage('taxonomy_vocabulary')
       ->load($this->argueStructureConfig->get('argue_vocabulary'));
   }
@@ -157,6 +165,7 @@ class SectionTreeService {
         $return['term_' . $item->tid] = [
           '#theme' => 'argue_structure_nested_list',
           '#label' => $item->name,
+          '#link' => $this->pathAliasManager->getAliasByPath('/taxonomy/term/' . $item->tid),
           '#node_list' => $this->getNodeRow($item->tid),
           '#items' => $this->getItems($tree, $item->tid, $level),
           '#level' => $level,

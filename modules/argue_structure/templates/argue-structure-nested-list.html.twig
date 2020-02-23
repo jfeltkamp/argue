@@ -1,7 +1,8 @@
 
 
 {% if level >= 0 %}
-<li{{ attributes.addClass('list-item') }}><strong>{{ label }}</strong>
+<li{{ attributes.addClass('list-item') }}><strong><span>{{ label }}</span>{% if link %}&nbsp;<a
+      href="{{ link }}" class="material-icons">navigate_next</a>{% endif %}</strong>
   {{ node_list }}
   <ol>
 {% else %}

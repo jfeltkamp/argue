@@ -16,3 +16,13 @@ argue_structure.add_rule:
   appears_on:
     - argue_structure.rule_overview_controller_getTree
 
+argue_structure.add_problem:
+  route_name: node.add
+  route_parameters:
+    node_type: 'problem'
+  title: 'Add problem'
+  weight: 10
+  appears_on:
+    - argue_structure.problem_overview_controller_getTree
+    - argue_structure.problem_overview_controller_getSubtree
+

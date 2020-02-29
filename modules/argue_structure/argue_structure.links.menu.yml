@@ -5,3 +5,16 @@ argue_structure.argue_structure_conf_form:
   parent: system.admin_config
   weight: 99
 
+argue_structure.argue_problems_overview:
+  title: 'Problems overview'
+  route_name: argue_structure.problem_overview_controller_getTree
+  description: 'Overview of all problems brought up structured by sections.'
+  parent: system.tools
+  weight: -50
+
+argue_structure.argue_rules_overview:
+  title: 'Rules overview'
+  route_name: argue_structure.rule_overview_controller_getTree
+  description: 'Overview of all rules structured by sections.'
+  parent: system.tools
+  weight: -40

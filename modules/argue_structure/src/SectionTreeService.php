@@ -13,6 +13,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Link;
 use Drupal\Core\Path\AliasManager;
+use Drupal\Core\Url;
 
 /**
  * Class SectionTreeService.
@@ -149,25 +150,31 @@ class SectionTreeService {
 
   /**
    * @param array $tree
-   * @param $term_id
+   * @param int $term_id
+   * @param string $bundle
+   * @param int $level
    *
    * @return array
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function getItems(array $tree, $term_id, $level = 0) {
+  protected function getItems(array $tree, $term_id, $bundle, $level = 0) {
     $return = [];
     $level = ++$level;
     foreach($tree as $index => $item) {
       if(in_array($term_id, $item->parents)) {
         unset($tree[$index]);
+        $link = ($bundle == 'rule')
+          ? $this->pathAliasManager->getAliasByPath('/taxonomy/term/' . $item->tid)
+          : Url::fromRoute('argue_structure.problem_overview_controller_getSubtree',
+            ['tid' => $item->tid]);
         $return['term_' . $item->tid] = [
           '#theme' => 'argue_structure_nested_list',
           '#label' => $item->name,
-          '#link' => $this->pathAliasManager->getAliasByPath('/taxonomy/term/' . $item->tid),
-          '#node_list' => $this->getNodeRow($item->tid),
-          '#items' => $this->getItems($tree, $item->tid, $level),
+          '#link' => $link,
+          '#node_list' => $this->getNodeRow($item->tid, $bundle),
+          '#items' => $this->getItems($tree, $item->tid, $bundle, $level),
           '#level' => $level,
           '#attributes' => new Attribute(['class' => ['level_'.$level]]),
         ];
@@ -180,6 +187,9 @@ class SectionTreeService {
    * Get rule tree.
    *
    * @param int $term_id
+   *   The term ID.
+   * @param string $bundle
+   *   The required node bundle.
    *
    * @return array
    *   Returns render array of the rule tree.
@@ -187,12 +197,16 @@ class SectionTreeService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getTree($term_id = 0) {
+  public function getTree($term_id = 0, $bundle = 'rule') {
+    // Build cache id = sections:taxonomy_term:12:rule
+    $cache_id_comp = ['sections', 'taxonomy_term', $term_id];
+    if($bundle) { $cache_id_comp[] = $bundle; }
+    $cache_id = implode(':', $cache_id_comp);
 
-    if ($cache = $this->cacheRender->get("sections:taxonomy_term:{$term_id}")) {
+    if ($cache = $this->cacheRender->get($cache_id)) {
       // Load from cache if available.
       return $cache->data;
-    } elseif (is_a($this->vocabulary, '\Drupal\taxonomy\VocabularyInterface')) {
+    } elseif ($this->vocabulary instanceof \Drupal\taxonomy\VocabularyInterface) {
 
       $vid = $this->vocabulary->id();
 
@@ -210,13 +224,13 @@ class SectionTreeService {
           '#theme' => 'argue_structure_nested_list',
           '#label' => $item->get('name')->getString(),
           '#description' => $item->getDescription(),
-          '#node_list' => $this->getNodeRow($item->id()),
-          '#items' => $this->getItems($tree, $item->id(), $level),
+          '#node_list' => $this->getNodeRow($item->id(), $bundle),
+          '#items' => $this->getItems($tree, $item->id(), $bundle, $level),
           '#level' => $level,
           '#attributes' => new Attribute(['class' => ['level_0']]),
         ];
       } else {
-        $list = $this->getItems($tree, $term_id, -1);
+        $list = $this->getItems($tree, $term_id, $bundle, -1);
       }
 
       $list = [
@@ -235,16 +249,16 @@ class SectionTreeService {
         '#type' => '#container',
         'list' => $list,
         '#cache' => [
-          'tags' => ['sections', 'taxonomy_term', 'taxonomy_vocabulary:' . $vid],
+          'tags' => ['sections', 'node', 'taxonomy_term', 'taxonomy_vocabulary:' . $vid],
           'contexts' => ['route', 'user.permissions']
         ]
       ];
 
       $this->cacheRender->set(
-        "sections:taxonomy_term:{$term_id}",
+        $cache_id,
         $render_array,
         CacheBackendInterface::CACHE_PERMANENT,
-        ['taxonomy_term', "taxonomy_term:{$term_id}", 'taxonomy_term_list']);
+        ['taxonomy_term', "taxonomy_term:{$term_id}:{$bundle}", 'taxonomy_term_list']);
     } else {
       $link_vocabs = Link::createFromRoute($this->t('vocabularies collection'), 'entity.taxonomy_vocabulary.collection');
       $link_argue_config = Link::createFromRoute($this->t('Argue config'), 'argue_structure.argue_structure_conf_form');
@@ -274,6 +288,7 @@ class SectionTreeService {
   protected function getNodesByTermId($tid) {
     $query = \Drupal::database()->select('taxonomy_index', 'ti');
     $query->fields('ti', ['nid']);
+    $query->condition('ti.status', 1);
     $query->condition('ti.tid', $tid);
     $results = $query->execute()->fetchAll();
     $nodes = [];
@@ -288,6 +303,8 @@ class SectionTreeService {
    *
    * @param integer $tid
    *   The node ID.
+   * @param string $bundle
+   *   The depth level for the text indent.
    * @param int $term_depth
    *   The depth level for the text indent.
    *
@@ -295,10 +312,17 @@ class SectionTreeService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function getNodeRow($tid, $term_depth = 0) {
+  protected function getNodeRow($tid, $bundle, $term_depth = 0) {
     $nids = $this->getNodesByTermId($tid);
     if ($nids) {
       $nodes = $this->getNodeStorage()->loadMultiple($nids);
+      // Filter by bundle.
+      if($bundle) {
+        foreach($nodes as $key => $node) {
+          if($node->bundle() != $bundle) unset($nodes[$key]);
+        }
+      }
+
       $nodes_view = $this->getNodeViewBuilder()->viewMultiple($nodes, 'list_item');
 
       $list = [

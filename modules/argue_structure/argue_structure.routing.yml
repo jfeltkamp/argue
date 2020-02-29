@@ -1,9 +1,25 @@
 
 argue_structure.rule_overview_controller_getTree:
-  path: '/argue/overview'
+  path: '/argue/rules'
   defaults:
     _controller: '\Drupal\argue_structure\Controller\RuleOverviewController::getTree'
     _title_callback: '\Drupal\argue_structure\Controller\RuleOverviewController::getTitle'
+  requirements:
+    _permission: 'access the rule overview page'
+
+argue_structure.problem_overview_controller_getTree:
+  path: '/argue/problems'
+  defaults:
+    _controller: '\Drupal\argue_structure\Controller\ProblemOverviewController::getTree'
+    _title_callback: '\Drupal\argue_structure\Controller\ProblemOverviewController::getTitle'
+  requirements:
+    _permission: 'access the rule overview page'
+
+argue_structure.problem_overview_controller_getSubtree:
+  path: '/argue/problems/{tid}'
+  defaults:
+    _controller: '\Drupal\argue_structure\Controller\ProblemOverviewController::getSubtree'
+    _title_callback: '\Drupal\argue_structure\Controller\ProblemOverviewController::getSubtreeTitle'
   requirements:
     _permission: 'access the rule overview page'
 

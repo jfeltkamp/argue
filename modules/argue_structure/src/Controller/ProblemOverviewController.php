@@ -4,12 +4,13 @@ namespace Drupal\argue_structure\Controller;
 
 use Drupal\argue_structure\SectionTreeService;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class RuleOverviewController.
  */
-class RuleOverviewController extends ControllerBase {
+class ProblemOverviewController extends ControllerBase {
 
   /**
    * Drupal\Core\Entity\EntityTypeManager definition.
@@ -38,11 +39,21 @@ class RuleOverviewController extends ControllerBase {
    * Returns a page title.
    */
   public function getTitle() {
-    return $this->sectionTreeService->getTitle();
+    return $this->t('Problems brought up');
   }
 
   /**
-   * Get rule tree.
+   * @param $tid
+   *
+   * @return mixed
+   */
+  public function getSubtreeTitle($tid) {
+    $term = Term::load($tid);
+    return $term->getName();
+  }
+
+  /**
+   * Get rule tree stating with origin.
    *
    * @return array
    *   Returns render array of the rule tree.
@@ -51,7 +62,22 @@ class RuleOverviewController extends ControllerBase {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getTree() {
-    return $this->sectionTreeService->getTree(0, 'rule');
+    return $this->sectionTreeService->getTree(0, 'problem');
+  }
+
+
+  /**
+   * Get rule tree starting with branch.
+   *
+   * @param $tid
+   *   The term id to start with.
+   *
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getSubtree($tid) {
+    return $this->sectionTreeService->getTree($tid, 'problem');
   }
 
 }

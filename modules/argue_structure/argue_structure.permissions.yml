@@ -1,4 +1,8 @@
 
 access the rule overview page:
-  title: 'Access the Rule overview page'
+  title: 'Access the rule overview page'
   description: 'Allow to access the rule tree page used as front page.'
+
+access the problems overview page:
+  title: 'Access the problems overview page'
+  description: 'Allow to access the problems tree page.'

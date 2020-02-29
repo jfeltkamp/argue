@@ -303,7 +303,7 @@ class SectionTreeService {
 
       $list = [
         '#theme' => 'argue_structure_list',
-        '#attributes' => new Attribute(['class' => ['mdc-list--two-line', 'mdc-list--avatar-list', 'level_'.$term_depth]]),
+        '#attributes' => new Attribute(['class' => ['level_'.$term_depth]]),
         '#content' => $nodes_view
       ];
 

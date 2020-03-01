@@ -6,3 +6,8 @@ access the rule overview page:
 access the problems overview page:
   title: 'Access the problems overview page'
   description: 'Allow to access the problems tree page.'
+
+set rule ratified:
+  title: 'Set rules ratified'
+  description: 'Allow to change the field ratified .'
+  restrict access: true

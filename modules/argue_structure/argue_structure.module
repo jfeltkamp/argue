@@ -138,10 +138,22 @@ function argue_structure_form_node_form_alter(&$form, FormStateInterface $form_s
       $form["field_sector"]["widget"]["#default_value"] = $sector;
     }
 
+    /* Set causal problem from get param, if param set. See link set in
+       argue_structure_node_links_alter(). */
     $causal_problem = $request->get('causal_problem');
     if($causal_problem && empty($form["field_causal_problems"]["widget"][0]["target_id"]["#default_value"])) {
       $causal_problem = \Drupal\node\Entity\Node::load($causal_problem);
       $form["field_causal_problems"]["widget"][0]["target_id"]["#default_value"] = $causal_problem;
+    }
+
+    // Remove field_ratified if user has no permission.
+    if(isset($form["field_ratified"]) && !\Drupal::currentUser()->hasPermission('set rule ratified') ) {
+      unset($form["field_ratified"]);
+    }
+  } elseif ($form_id == 'node_rule_edit_form') {
+    // Disable field_ratified if user has no permission.
+    if(isset($form["field_ratified"]) && !\Drupal::currentUser()->hasPermission('set rule ratified') ) {
+      $form["field_ratified"]['#disabled'] = TRUE;
     }
   }
 }

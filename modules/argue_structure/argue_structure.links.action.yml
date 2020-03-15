@@ -5,7 +5,7 @@ argue_structure.add_section:
   title: 'Add Section'
   weight: 10
   appears_on:
-    - argue_structure.rule_overview_controller_getTree
+    - argue_structure.rule_overview_controller
 
 argue_structure.add_rule:
   route_name: node.add
@@ -14,7 +14,7 @@ argue_structure.add_rule:
   title: 'Add new Rule'
   weight: 20
   appears_on:
-    - argue_structure.rule_overview_controller_getTree
+    - argue_structure.rule_overview_controller
 
 argue_structure.add_problem:
   route_name: node.add
@@ -23,6 +23,6 @@ argue_structure.add_problem:
   title: 'Add problem'
   weight: 10
   appears_on:
-    - argue_structure.problem_overview_controller_getTree
+    - argue_structure.problem_overview_controller
     - argue_structure.problem_overview_controller_getSubtree
 

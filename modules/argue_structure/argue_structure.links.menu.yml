@@ -7,14 +7,21 @@ argue_structure.argue_structure_conf_form:
 
 argue_structure.argue_problems_overview:
   title: 'Problems overview'
-  route_name: argue_structure.problem_overview_controller_getTree
+  route_name: argue_structure.problem_overview_controller
   description: 'Overview of all problems brought up structured by sections.'
   parent: system.tools
   weight: -50
 
 argue_structure.argue_rules_overview:
   title: 'Rules overview'
-  route_name: argue_structure.rule_overview_controller_getTree
+  route_name: argue_structure.rule_overview_controller
   description: 'Overview of all rules structured by sections.'
   parent: system.tools
   weight: -40
+
+argue_structure.argue_ratified_rules_overview:
+  title: 'Ratified Rules overview'
+  route_name: argue_structure.ratified_rule_overview_controller
+  description: 'Overview of all rules structured by sections.'
+  parent: system.tools
+  weight: -30

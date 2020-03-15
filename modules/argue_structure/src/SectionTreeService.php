@@ -152,6 +152,7 @@ class SectionTreeService {
    * @param array $tree
    * @param int $term_id
    * @param string $bundle
+   * @param array $options
    * @param int $level
    *
    * @return array
@@ -159,7 +160,7 @@ class SectionTreeService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function getItems(array $tree, $term_id, $bundle, $level = 0) {
+  protected function getItems(array $tree, $term_id, $bundle, $options, $level = 0) {
     $return = [];
     $level = ++$level;
     foreach($tree as $index => $item) {
@@ -167,14 +168,14 @@ class SectionTreeService {
         unset($tree[$index]);
         $link = ($bundle == 'rule')
           ? $this->pathAliasManager->getAliasByPath('/taxonomy/term/' . $item->tid)
-          : Url::fromRoute('argue_structure.problem_overview_controller_getSubtree',
+          : Url::fromRoute('argue_structure.problem_overview_controller',
             ['tid' => $item->tid]);
         $return['term_' . $item->tid] = [
           '#theme' => 'argue_structure_nested_list',
           '#label' => $item->name,
           '#link' => $link,
-          '#node_list' => $this->getNodeRow($item->tid, $bundle),
-          '#items' => $this->getItems($tree, $item->tid, $bundle, $level),
+          '#node_list' => $this->getNodeRow($item->tid, $bundle, $options),
+          '#items' => $this->getItems($tree, $item->tid, $bundle, $options, $level),
           '#level' => $level,
           '#attributes' => new Attribute(['class' => ['level_'.$level]]),
         ];
@@ -190,6 +191,8 @@ class SectionTreeService {
    *   The term ID.
    * @param string $bundle
    *   The required node bundle.
+   * @param array $options
+   *   Optional filter options.
    *
    * @return array
    *   Returns render array of the rule tree.
@@ -197,10 +200,13 @@ class SectionTreeService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getTree($term_id = 0, $bundle = 'rule') {
+  public function getTree($term_id = 0, $bundle = 'rule', array $options = []) {
     // Build cache id = sections:taxonomy_term:12:rule
     $cache_id_comp = ['sections', 'taxonomy_term', $term_id];
     if($bundle) { $cache_id_comp[] = $bundle; }
+    foreach ($options as $filter_field => $filter_value) {
+      $cache_id_comp[] = "$filter_field\__$filter_value";
+    }
     $cache_id = implode(':', $cache_id_comp);
 
     if ($cache = $this->cacheRender->get($cache_id)) {
@@ -224,13 +230,13 @@ class SectionTreeService {
           '#theme' => 'argue_structure_nested_list',
           '#label' => $item->get('name')->getString(),
           '#description' => $item->getDescription(),
-          '#node_list' => $this->getNodeRow($item->id(), $bundle),
-          '#items' => $this->getItems($tree, $item->id(), $bundle, $level),
+          '#node_list' => $this->getNodeRow($item->id(), $bundle, $options),
+          '#items' => $this->getItems($tree, $item->id(), $bundle, $options, $level),
           '#level' => $level,
           '#attributes' => new Attribute(['class' => ['level_0']]),
         ];
       } else {
-        $list = $this->getItems($tree, $term_id, $bundle, -1);
+        $list = $this->getItems($tree, $term_id, $bundle, $options,-1);
       }
 
       $list = [
@@ -305,6 +311,8 @@ class SectionTreeService {
    *   The node ID.
    * @param string $bundle
    *   The depth level for the text indent.
+   * @param array $options
+   *   Filter options.
    * @param int $term_depth
    *   The depth level for the text indent.
    *
@@ -312,14 +320,33 @@ class SectionTreeService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function getNodeRow($tid, $bundle, $term_depth = 0) {
+  protected function getNodeRow($tid, $bundle, array $options, $term_depth = 0) {
     $nids = $this->getNodesByTermId($tid);
     if ($nids) {
       $nodes = $this->getNodeStorage()->loadMultiple($nids);
-      // Filter by bundle.
-      if($bundle) {
+
+      if ($bundle || count($options)) {
+        // Filter by bundle.
         foreach($nodes as $key => $node) {
-          if($node->bundle() != $bundle) unset($nodes[$key]);
+          /** @var  $nodes */
+          if($bundle) {
+            if($node->bundle() != $bundle) {
+              unset($nodes[$key]);
+              continue;
+            }
+          }
+          // Filter by options
+          if (count($options)) {
+            foreach ($options as $filter_name => $filter_condition) {
+              $valid = FALSE;
+              if($node->hasField($filter_name) && $value_list = $node->get($filter_name)) {
+                foreach ($value_list as $field_index => $field_value) {
+                  if ($field_value->getString() == $filter_condition) $valid = TRUE;
+                }
+              }
+              if(!$valid) unset($nodes[$key]);
+            }
+          }
         }
       }
 

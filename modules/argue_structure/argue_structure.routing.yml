@@ -1,5 +1,5 @@
 
-argue_structure.rule_overview_controller_getTree:
+argue_structure.rule_overview_controller:
   path: '/argue/rules'
   defaults:
     _controller: '\Drupal\argue_structure\Controller\RuleOverviewController::getTree'
@@ -7,7 +7,15 @@ argue_structure.rule_overview_controller_getTree:
   requirements:
     _permission: 'access the rule overview page'
 
-argue_structure.problem_overview_controller_getTree:
+argue_structure.ratified_rule_overview_controller:
+  path: '/argue/rules/ratified'
+  defaults:
+    _controller: '\Drupal\argue_structure\Controller\RuleOverviewController::getRatifiedRulesTree'
+    _title_callback: '\Drupal\argue_structure\Controller\RuleOverviewController::getRatifiedRulesTitle'
+  requirements:
+    _permission: 'access the rule overview page'
+
+argue_structure.problem_overview_controller:
   path: '/argue/problems'
   defaults:
     _controller: '\Drupal\argue_structure\Controller\ProblemOverviewController::getTree'
@@ -15,7 +23,7 @@ argue_structure.problem_overview_controller_getTree:
   requirements:
     _permission: 'access the rule overview page'
 
-argue_structure.problem_overview_controller_getSubtree:
+argue_structure.problem_overview_subtree_controller:
   path: '/argue/problems/{tid}'
   defaults:
     _controller: '\Drupal\argue_structure\Controller\ProblemOverviewController::getSubtree'

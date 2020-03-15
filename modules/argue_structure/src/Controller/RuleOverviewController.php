@@ -54,4 +54,24 @@ class RuleOverviewController extends ControllerBase {
     return $this->sectionTreeService->getTree(0, 'rule');
   }
 
+  /**
+   * Returns a page title.
+   */
+  public function getRatifiedRulesTitle() {
+    return $this->t('Ratified Rules (Preview)');
+  }
+
+  /**
+   * Get rule tree.
+   *
+   * @return array
+   *   Returns render array of the rule tree.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getRatifiedRulesTree() {
+    return $this->sectionTreeService->getTree(0, 'rule', ['field_ratified' => '1']);
+  }
+
 }

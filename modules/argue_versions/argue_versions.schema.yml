@@ -1,0 +1,10 @@
+field.widget.settings.vocab_clone_widget_type:
+  type: mapping
+  label: 'Default widget settings'
+  mapping:
+    size:
+      type: integer
+      label: 'Size'
+    placeholder:
+      type: textfield
+      label: 'Placeholder'

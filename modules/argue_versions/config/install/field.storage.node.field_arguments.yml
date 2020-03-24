@@ -1,0 +1,21 @@
+uuid: 168f5514-3556-47a6-aef1-503015812334
+langcode: en
+status: true
+dependencies:
+  module:
+    - argue_proscons
+    - entity_reference_revisions
+    - node
+id: node.field_arguments
+field_name: field_arguments
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: argument
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

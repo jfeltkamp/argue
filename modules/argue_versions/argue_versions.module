@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Contains argue_versions.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function argue_versions_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the argue_versions module.
+    case 'help.page.argue_versions':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creates a permanent version of all ratified rules (with context) in the current version.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function argue_versions_theme() {
+  return [
+    'argue_versions' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function argue_versions_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if($entity->bundle() == 'version' && $entity->isNew()) {
+    /** @var Drupal\argue_versions\SnapshotService $snapshot_service */
+    $snapshot_service = \Drupal::service('argue_versions.snapshot_service');
+    // Save terms snapshot.
+    $entity->set('field_sections', $snapshot_service->getSectionsSnapshot());
+    $entity->set('field_rules', $snapshot_service->getRulesSnapshot());
+    $entity->set('field_problems', $snapshot_service->getProblemsSnapshot());
+    $entity->set('field_arguments', $snapshot_service->getArgumentsSnapshot());
+  }
+  // @ToDo Overwrite version number in key_value store.
+  // https://www.drupal.org/node/2841658
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function argue_versions_form_node_form_alter(&$form, FormStateInterface $form_state) {
+  if($form['#form_id'] == 'node_version_form') {
+    /** @var Drupal\argue_versions\SnapshotService $snapshot_service */
+    $snapshot_service = \Drupal::service('argue_versions.snapshot_service');
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $form_state->getFormObject()->getEntity();
+    if($node->isNew()) {
+      $form['title']['widget'][0]['value']['#default_value'] = $snapshot_service->getTitle();
+      $form['field_description']['widget'][0]['value']['#default_value'] = $snapshot_service->getDesc();
+    }
+    // @ToDo Get previous version number from key_value store
+    // https://www.drupal.org/node/2841658
+  }
+}

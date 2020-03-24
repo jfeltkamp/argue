@@ -1,0 +1,9 @@
+name: 'Argue versions'
+type: module
+description: 'Creates a permanent version of all ratified rules (with context) in the current version.'
+core: 8.x
+package: 'Argue'
+dependencies:
+  - argue_proscons
+  - argue_structure
+  - entity_reference_revisions

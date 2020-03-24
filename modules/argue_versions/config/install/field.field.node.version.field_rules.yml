@@ -1,0 +1,30 @@
+uuid: 7ea2dec2-65a3-4e17-902d-1af6016806af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rules
+    - node.type.rule
+    - node.type.version
+  module:
+    - entity_reference_revisions
+id: node.version.field_rules
+field_name: field_rules
+entity_type: node
+bundle: version
+label: Rules
+description: 'List of ratified rules.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      rule: rule
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

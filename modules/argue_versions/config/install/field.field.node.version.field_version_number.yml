@@ -1,0 +1,23 @@
+uuid: 61394c5e-fb9d-48df-9573-d57ff3f26756
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_version_number
+    - node.type.version
+id: node.version.field_version_number
+field_name: field_version_number
+entity_type: node
+bundle: version
+label: 'Version number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: Version
+  suffix: ''
+field_type: integer

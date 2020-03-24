@@ -1,0 +1,17 @@
+uuid: 2ac5c49c-08bd-45dd-a924-36a3d3ea9ace
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Version
+type: version
+description: 'Creates a permanent version of all ratified rules (with context) in the current version.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

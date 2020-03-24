@@ -1,0 +1,30 @@
+uuid: f6758cae-409b-423d-8ee9-5d7a878cb3bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_problems
+    - node.type.problem
+    - node.type.version
+  module:
+    - entity_reference_revisions
+id: node.version.field_problems
+field_name: field_problems
+entity_type: node
+bundle: version
+label: Problems
+description: 'List of problems referenced by ratified rules.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      problem: problem
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

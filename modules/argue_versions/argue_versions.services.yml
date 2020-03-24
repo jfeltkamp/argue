@@ -1,0 +1,7 @@
+services:
+  logger.channel.argue_versions:
+    parent: logger.channel_base
+    arguments: ['argue_versions']
+  argue_versions.snapshot_service:
+    class: Drupal\argue_versions\SnapshotService
+    arguments: ['@entity_type.manager', '@config.factory']

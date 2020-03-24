@@ -1,0 +1,81 @@
+uuid: c9e77198-a0e8-492a-95e1-4c0ae2a5b552
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.version.body
+    - field.field.node.version.field_arguments
+    - field.field.node.version.field_problems
+    - field.field.node.version.field_rules
+    - field.field.node.version.field_valid_date
+    - field.field.node.version.field_version_number
+    - node.type.version
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.version.default
+targetEntityType: node
+bundle: version
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_arguments:
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_problems:
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_rules:
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_valid_date:
+    weight: 1
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_version_number:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

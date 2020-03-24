@@ -1,0 +1,21 @@
+uuid: f2530809-faab-4c90-84ed-5ea12f039f7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valid_date
+    - node.type.version
+  module:
+    - datetime
+id: node.version.field_valid_date
+field_name: field_valid_date
+entity_type: node
+bundle: version
+label: 'Valid from'
+description: 'Enter a date from when the regulation should come into force.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

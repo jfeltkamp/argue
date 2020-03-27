@@ -3,6 +3,7 @@
 namespace Drupal\argue_versions;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\KeyValueStore\KeyValueFactory;
 
 /**
  * Class SnapshotService.
@@ -31,11 +32,17 @@ class SnapshotService {
   protected $argueStructureConf;
 
   /**
+   * @var \Drupal\Core\KeyValueStore\KeyValueStoreInterface
+   */
+  protected $versionStore;
+
+  /**
    * Constructs a new SnapshotService object.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, ConfigFactoryInterface $config_factory) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, ConfigFactoryInterface $config_factory, KeyValueFactory $keyValueFactory) {
     $this->entityTypeManager = $entity_type_manager;
     $this->configFactory = $config_factory;
+    $this->versionStore = $keyValueFactory->get('argue.argue_versions');
     $this->argueStructureConf = $this->configFactory
       ->get('argue_structure.arguestructureconf');
   }
@@ -56,6 +63,26 @@ class SnapshotService {
    */
   public function getDesc() {
     return $this->argueStructureConf->get('description_section_term_overview_page');
+  }
+
+  /**
+   * Return number of the next version.
+   *
+   * @return int|mixed
+   */
+  public function getNextVersionNum() {
+    return $this->versionStore->get('version', 0) + 1;
+  }
+
+  /**
+   * Set number of the recent version.
+   *
+   * @param int $num
+   */
+  public function setVersionNum(int $num) {
+    if ($num > $this->versionStore->get('version', 0)) {
+      $this->versionStore->set('version', $num);
+    }
   }
 
   /**

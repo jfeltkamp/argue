@@ -5,8 +5,10 @@
  * Contains argue_versions.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
@@ -42,7 +44,7 @@ function argue_versions_theme() {
  * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
  * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
-function argue_versions_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+function argue_versions_node_presave(EntityInterface $entity) {
   if($entity->bundle() == 'version' && $entity->isNew()) {
     /** @var Drupal\argue_versions\SnapshotService $snapshot_service */
     $snapshot_service = \Drupal::service('argue_versions.snapshot_service');
@@ -52,8 +54,6 @@ function argue_versions_node_presave(Drupal\Core\Entity\EntityInterface $entity)
     $entity->set('field_problems', $snapshot_service->getProblemsSnapshot());
     $entity->set('field_arguments', $snapshot_service->getArgumentsSnapshot());
   }
-  // @ToDo Overwrite version number in key_value store.
-  // https://www.drupal.org/node/2841658
 }
 
 /**
@@ -67,9 +67,45 @@ function argue_versions_form_node_form_alter(&$form, FormStateInterface $form_st
     $node = $form_state->getFormObject()->getEntity();
     if($node->isNew()) {
       $form['title']['widget'][0]['value']['#default_value'] = $snapshot_service->getTitle();
+      $form['title']['widget'][0]['value']['#disabled'] = 1;
       $form['field_description']['widget'][0]['value']['#default_value'] = $snapshot_service->getDesc();
+      $form['field_description']['widget'][0]['value']['#disabled'] = 1;
+      $form['field_version_number']['widget'][0]['value']['#default_value'] = $snapshot_service->getNextVersionNum();
+      $form['field_version_number']['widget'][0]['value']['#disabled'] = 1;
     }
-    // @ToDo Get previous version number from key_value store
-    // https://www.drupal.org/node/2841658
+  } elseif ($form['#form_id'] == 'node_version_edit_form') {
+    $form['title']['widget'][0]['value']['#disabled'] = 1;
+    $form['field_description']['widget'][0]['value']['#disabled'] = 1;
+    $form['field_version_number']['widget'][0]['value']['#disabled'] = 1;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * Update version iterator on a new version entity.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $node
+ */
+function argue_versions_node_insert(EntityInterface $node) {
+  /** @var \Drupal\node\NodeInterface $node */
+  if($node->bundle() == 'version') {
+    /** @var Drupal\argue_versions\SnapshotService $snapshot_service */
+    $snapshot_service = \Drupal::service('argue_versions.snapshot_service');
+    $version = (int) $node->get('field_version_number')->getString();
+    $snapshot_service->setVersionNum($version);
+  }
+}
+
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function argue_versions_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
+  if ($entity_type->id() == 'node' && $bundle === 'version') {
+    if (isset($fields['field_valid_date'])) {
+      // Use the ID as defined in the annotation of the constraint definition.
+      $fields['field_valid_date']->addConstraint('version_valid_date_constraint', []);
+    }
   }
 }

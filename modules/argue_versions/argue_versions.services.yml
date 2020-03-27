@@ -4,4 +4,4 @@ services:
     arguments: ['argue_versions']
   argue_versions.snapshot_service:
     class: Drupal\argue_versions\SnapshotService
-    arguments: ['@entity_type.manager', '@config.factory']
+    arguments: ['@entity_type.manager', '@config.factory', '@keyvalue']

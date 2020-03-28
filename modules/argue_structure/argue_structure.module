@@ -80,7 +80,7 @@ function argue_structure_preprocess_node(&$vars) {
 
   /** @var \Drupal\argue_proscons\EvaluatingService $eval */
   $eval = \Drupal::service('argue_proscons.evaluating_service');
-  if(isset($vars['node']) && $vars['node']->bundle() == 'rule') {
+  if($vars['node']->bundle() == 'rule' && in_array($vars["view_mode"], ['full', 'teaser', 'list_item'])) {
     $result = $eval->getRuleArgumentCounts($vars['node']->id());
     $vars['content']['meta'] = [
       '#theme' => 'argue_structure_proscons_pill',

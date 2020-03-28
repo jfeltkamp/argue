@@ -7,6 +7,7 @@ use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Plugin implementation of the 'vocab_clone_formatter_type' formatter.
@@ -54,27 +55,11 @@ class VocabularyCloneFormatterType extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
-
-    foreach ($items as $delta => $item) {
-      $elements[$delta] = ['#markup' => $this->viewValue($item)];
-    }
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $items->getParent()->getEntity();
+    $elements = \Drupal::service('argue_versions.viewbuilder')->getRenderedView($node);
 
     return $elements;
-  }
-
-  /**
-   * Generate the output appropriate for one field item.
-   *
-   * @param \Drupal\Core\Field\FieldItemInterface $item
-   *   One field item.
-   *
-   * @return string
-   *   The textual output generated.
-   */
-  protected function viewValue(FieldItemInterface $item) {
-    // The text value has no text format assigned to it, so the user input
-    // should equal the output, including newlines.
-    return nl2br(Html::escape($item->value));
   }
 
 }

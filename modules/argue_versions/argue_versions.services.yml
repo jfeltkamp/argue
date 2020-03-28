@@ -5,3 +5,6 @@ services:
   argue_versions.snapshot_service:
     class: Drupal\argue_versions\SnapshotService
     arguments: ['@entity_type.manager', '@config.factory', '@keyvalue']
+  argue_versions.viewbuilder:
+    class: Drupal\argue_versions\VersionsViewBuilderService
+    arguments: ['@entity_type.manager']

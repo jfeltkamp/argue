@@ -13,9 +13,12 @@ entity_type: node
 bundle: version
 label: 'Valid from'
 description: 'Enter a date from when the regulation should come into force.'
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+1 day'
 default_value_callback: ''
 settings: {  }
 field_type: datetime

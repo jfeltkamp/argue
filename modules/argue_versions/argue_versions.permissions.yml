@@ -1,0 +1,6 @@
+access argue version overview:
+  title: 'Access argue version overview'
+  description: 'Allow user to access the overview page of the version history of final validated results.'
+access argue version history:
+  title: 'Access argue version history'
+  description: 'Allow user to view the history  of final validated results. This requires also permission "Acces argue version overview".'

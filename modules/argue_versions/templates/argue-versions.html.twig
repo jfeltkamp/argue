@@ -1,1 +1,38 @@
 <!-- Add you custom twig html here -->
+<div class="mdc-card ">
+  {{description}}
+</div>
+
+{% if latest %}
+<div class="mdc-card argue-versions--latest">
+  <div class="argue-versions--card-header">
+    <h2 class="argue-versions--card-header--h2 mdc-typography mdc-typography--headline6">{{ 'Latest version'|t }}</h2>
+  </div>
+  <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
+    {{latest}}
+  </div>
+</div>
+{% endif %}
+
+{% if current %}
+<div class="mdc-card argue-versions--current">
+  <div class="argue-versions--card-header">
+    <h2 class="argue-versions--card-header--h2 mdc-typography mdc-typography--headline6">{{ 'Current version'|t }}</h2>
+  </div>
+  <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
+    {{current}}
+  </div>
+</div>
+{% endif %}
+
+
+{% if history %}
+<div class="mdc-card argue-versions--history">
+  <div class="argue-versions--card-header">
+    <h2 class="argue-versions--card-header--h2 mdc-typography mdc-typography--headline6">{{ 'Version history'|t }}</h2>
+  </div>
+  <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
+    {{history}}
+  </div>
+</div>
+{% endif %}

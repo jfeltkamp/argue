@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: (optional) The title of the node.
+ * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: (optional) Themed creation date field.
- * - author_name: (optional) Themed author name field.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -72,6 +72,8 @@
 #}
 {%
   set classes = [
+    'mdc-list-item',
+    'mdc-ripple',
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -80,24 +82,18 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  <h1{{ title_attributes }}>{{ label }}</h1>
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
+<a href="{{ url }}"{{ attributes.addClass(classes) }}>
+  <span class="material-icons mdc-list-item__graphic" aria-hidden="true">verified_user</span>
+  {% spaceless %}
+  <span class="mdc-list-item__text">
+    <span class="mdc-list-item__primary-text">{{- label -}}</span>
+    {% if display_submitted %}
+    <span class="mdc-list-item__secondary-text">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+    {% endif %}
+  </span>
+  {% endspaceless %}
+  {% if content.meta %}
+    <span class="mdc-list-item__meta">{{ content.meta }}</span>
   {% endif %}
-
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
-  </div>
-
-</article>
+</a>

@@ -31,6 +31,14 @@ function argue_versions_help($route_name, RouteMatchInterface $route_match) {
  */
 function argue_versions_theme() {
   return [
+    'argue_versions' => [
+      'variables' => [
+        'description' => NULL,
+        'latest' => NULL,
+        'current' => NULL,
+        'history' => NULL,
+      ],
+    ],
     'argue_versions_tree' => [
       'variables' => [
         'title' => NULL,

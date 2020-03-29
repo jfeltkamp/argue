@@ -1,0 +1,8 @@
+
+argue_versions.version_overview_controller_title:
+  path: '/version'
+  defaults:
+    _controller: '\Drupal\argue_versions\Controller\VersionOverviewController::viewVersions'
+    _title: 'Version overview'
+  requirements:
+    _permission: 'access argue version overview'

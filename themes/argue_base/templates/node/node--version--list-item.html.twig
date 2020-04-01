@@ -89,7 +89,7 @@
   <span class="mdc-list-item__text">
     <span class="mdc-list-item__primary-text">{{- label -}}</span>
     {% if display_submitted %}
-    <span class="mdc-list-item__secondary-text">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+    <span class="mdc-list-item__secondary-text">{{ content.field_version_number|render|striptags|trim }}, {{ content.field_valid_date|render|striptags|trim }}, {% trans %}Submitted {{ date }}{% endtrans %}</span>
     {% endif %}
   </span>
   {% endspaceless %}

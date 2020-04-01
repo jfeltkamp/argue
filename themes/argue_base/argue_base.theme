@@ -147,9 +147,7 @@ function argue_base_preprocess_form_element(&$variables) {
     $variables['title'] = isset($variables['element']['#title']) ? $variables['element']['#title'] : '';
       break;
     case 'select':
-      $variables['attributes']['class'][] = 'mdc-select';
       $variables['ripple'] = TRUE;
-      $variables['label_display'] = 'mdc-floating-label';
       $variables['title'] = isset($variables['element']['#title']) ? $variables['element']['#title'] : '';
       break;
     case 'checkbox':

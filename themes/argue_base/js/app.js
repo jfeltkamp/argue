@@ -40,11 +40,26 @@ import { MDCMenuSurface } from '@material/menu-surface';
         });
       }
 
-      for (let menuSurface of $('.mdc-menu-surface', context)) {
-        new MDCMenuSurface(menuSurface);
+
+      for (let ripple of $('.mdc-ripple', context)) {
+        new MDCRipple(ripple);
       }
-      
-      for (let menu of $('.mdc-menu', context)) {
+
+      for (let textField of $('.mdc-text-field', context)) {
+        new MDCTextField(textField);
+      }
+
+      for (let select of $('.mdc-select', context)) {
+        const selector = new MDCSelect(select);
+        const input = $(select).find('input[type=hidden]');
+        input.val(selector.value);
+
+        selector.listen('MDCSelect:change', () => {
+          input.val(selector.value);
+        });
+      }
+
+      for (let menu of $('.region-context-menu .mdc-menu', context)) {
         let mdcmenu = new MDCMenu(menu);
         let toggle = menu.parentElement.querySelector('.js--toggle-menu');
         if (toggle) {
@@ -56,16 +71,8 @@ import { MDCMenuSurface } from '@material/menu-surface';
         }
       }
 
-      for (let ripple of $('.mdc-ripple', context)) {
-        new MDCRipple(ripple);
-      }
-
-      for (let textField of $('.mdc-text-field', context)) {
-        new MDCTextField(textField);
-      }
-
-      for (let select of $('.mdc-select', context)) {
-        new MDCSelect(select);
+      for (let menuSurface of $('.region-context-menu .mdc-menu-surface', context)) {
+        new MDCMenuSurface(menuSurface);
       }
 
       for (let button of $('.mdc-button', context)) {

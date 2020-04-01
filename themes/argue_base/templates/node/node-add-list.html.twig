@@ -18,9 +18,11 @@
     <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
         {% for type in types %}
             {% if type.url == '/node/add/rule' %}
-                {% set icon = 'account_balance' %}
+              {% set icon = 'account_balance' %}
             {% elseif  type.url == '/node/add/problem' %}
-                {% set icon = 'priority_high' %}
+              {% set icon = 'priority_high' %}
+            {% elseif  type.url == '/node/add/version' %}
+              {% set icon = 'verified_user' %}
             {% else %}
                 {% set icon = 'chevron_right' %}
             {% endif %}

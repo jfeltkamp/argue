@@ -10,18 +10,26 @@
  * @see template_preprocess_select()
  */
 #}
-{% spaceless %}
-  <select{{ attributes }}>
+
+<div class="mdc-select__menu mdc-menu mdc-menu-surface" data-name="{{ attributes.name }}">
+  <ul class="mdc-list">
     {% for option in options %}
       {% if option.type == 'optgroup' %}
-        <optgroup label="{{ option.label }}">
-          {% for sub_option in option.options %}
-            <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
-          {% endfor %}
-        </optgroup>
+        {# OPTGROUP #}
+        <li class="mdc-list-item">{{ option.label }}</li>
+        {% for sub_option in option.options %}
+          <li class="mdc-list-item{{ sub_option.selected ? ' mdc-list-item--selected'}}"
+              data-value="{{ sub_option.value }}"{{ sub_option.selected ? ' aria-selected="true"' }}>
+              <span class="mdc-list-item__text">{{ sub_option.label }}</span>
+          </li>
+        {% endfor %}
       {% elseif option.type == 'option' %}
-        <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
+        <li class="mdc-list-item {{ option.selected ? ' mdc-list-item--selected'}}"
+            data-value="{{ option.value }}"{{ option.selected ? ' aria-selected="true"' }}>
+          <span class="mdc-list-item__text">{{ option.label }}</span>
+        </li>
       {% endif %}
     {% endfor %}
-  </select>
-{% endspaceless %}
+  </ul>
+</div>
+<input type="hidden" {{ attributes|without('class') }} />

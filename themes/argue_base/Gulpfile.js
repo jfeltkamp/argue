@@ -16,7 +16,7 @@ gulp.task('sass', function ()
       .src('./sass/app.scss')
       .pipe(sourcemaps.init())
       .pipe(sass({
-        includePaths: ['./node_modules/']
+        includePaths: ['node_modules']
       }))
       .pipe(prefixer({
         cascade: false
@@ -31,7 +31,7 @@ gulp.task('sass', function ()
     return gulp
       .src('./sass/app.scss')
       .pipe(sass({
-        includePaths: ['./node_modules/'],
+        includePaths: ['node_modules'],
         outputStyle: 'compressed'
       }))
       .pipe(prefixer({

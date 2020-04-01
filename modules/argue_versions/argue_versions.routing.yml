@@ -6,3 +6,12 @@ argue_versions.version_overview_controller_title:
     _title: 'Version overview'
   requirements:
     _permission: 'access argue version overview'
+argue_versions.settings:
+  path: '/admin/config/argue_versions/settings'
+  defaults:
+    _form: '\Drupal\argue_versions\Form\ArgueVersionsSettingsForm'
+    _title: 'Argue Versions settings'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,6 @@
+argue_versions.settings:
+  title: 'Argue versions settings'
+  route_name: argue_versions.settings
+  description: 'Edit Argue versions setting.'
+  parent: system.admin_config
+  weight: 99

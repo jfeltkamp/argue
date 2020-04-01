@@ -33,13 +33,20 @@ class VersionOverviewController extends ControllerBase {
   protected $currentUser;
 
   /**
+   * Drupal\Core\Config\ImmutableConfig definition.
+   *
+   * @var \Drupal\Core\Config\ImmutableConfig
+   */
+  protected $settings;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
     $instance = parent::create($container);
     $instance->entityTypeManager = $container->get('entity_type.manager');
-    $instance->configFactory = $container->get('config.factory');
     $instance->currentUser = $container->get('current_user');
+    $instance->settings = $container->get('config.factory')->get('argue_versions.settings');
     return $instance;
   }
 
@@ -63,9 +70,11 @@ class VersionOverviewController extends ControllerBase {
       // Sort newest first.
       krsort($versions);
 
+      $description = check_markup($this->settings->get('description'));
+
       $view = [
         '#theme' => 'argue_versions',
-        '#description' => $this->t('Implement method: title'),
+        '#description' => $description,
       ];
 
       $date = new DrupalDateTime('now');

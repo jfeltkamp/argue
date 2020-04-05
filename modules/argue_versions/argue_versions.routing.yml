@@ -1,5 +1,5 @@
 
-argue_versions.version_overview_controller_title:
+argue_versions.overview:
   path: '/version'
   defaults:
     _controller: '\Drupal\argue_versions\Controller\VersionOverviewController::viewVersions'

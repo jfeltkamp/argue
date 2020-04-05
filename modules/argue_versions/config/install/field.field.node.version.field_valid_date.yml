@@ -1,4 +1,3 @@
-uuid: f2530809-faab-4c90-84ed-5ea12f039f7e
 langcode: en
 status: true
 dependencies:
@@ -12,13 +11,13 @@ field_name: field_valid_date
 entity_type: node
 bundle: version
 label: 'Valid from'
-description: 'Enter a date from when the regulation should come into force.'
+description: 'Enter the date from when this version comes into force.'
 required: true
 translatable: false
 default_value:
   -
     default_date_type: relative
-    default_date: '+1 day'
+    default_date: '+1 week'
 default_value_callback: ''
 settings: {  }
 field_type: datetime

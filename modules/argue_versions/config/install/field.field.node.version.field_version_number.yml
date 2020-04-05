@@ -1,4 +1,3 @@
-uuid: 61394c5e-fb9d-48df-9573-d57ff3f26756
 langcode: en
 status: true
 dependencies:
@@ -9,7 +8,7 @@ id: node.version.field_version_number
 field_name: field_version_number
 entity_type: node
 bundle: version
-label: 'Version number'
+label: Version
 description: ''
 required: true
 translatable: false

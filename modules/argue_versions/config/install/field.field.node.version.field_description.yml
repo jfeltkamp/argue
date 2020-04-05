@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.version
+id: node.version.field_description
+field_name: field_description
+entity_type: node
+bundle: version
+label: Description
+description: 'The content of title and description for a new and future versions <a href="/admin/config/argue_structure/settings" target="_blank">are set here</a>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,4 +1,3 @@
-uuid: c9e77198-a0e8-492a-95e1-4c0ae2a5b552
 langcode: en
 status: true
 dependencies:
@@ -25,7 +24,7 @@ content:
   body:
     label: above
     type: text_default
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -38,17 +37,17 @@ content:
     region: content
   field_sections:
     type: vocab_clone_formatter_type
-    weight: 5
+    weight: 4
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   field_valid_date:
     weight: 2
     label: inline
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: html_date
     third_party_settings: {  }
     type: datetime_default
     region: content

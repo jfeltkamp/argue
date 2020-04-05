@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sections
+    - node.type.version
+  module:
+    - argue_versions
+id: node.version.field_sections
+field_name: field_sections
+entity_type: node
+bundle: version
+label: Sections
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: vocab_clone_field_type

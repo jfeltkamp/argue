@@ -2,15 +2,17 @@ langcode: en
 status: true
 dependencies:
   module:
-    - entity_reference_revisions
+    - argue_versions
     - node
-id: node.field_problems
-field_name: field_problems
+id: node.field_sections
+field_name: field_sections
 entity_type: node
-type: entity_reference_revisions
+type: vocab_clone_field_type
 settings:
-  target_type: node
-module: entity_reference_revisions
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: argue_versions
 locked: false
 cardinality: -1
 translatable: true

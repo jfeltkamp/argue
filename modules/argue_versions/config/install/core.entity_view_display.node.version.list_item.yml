@@ -1,8 +1,8 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.list_item
     - field.field.node.version.body
     - field.field.node.version.field_arguments
     - field.field.node.version.field_description
@@ -14,44 +14,37 @@ dependencies:
     - node.type.version
   module:
     - datetime
-    - text
     - user
-id: node.version.teaser
+id: node.version.list_item
 targetEntityType: node
 bundle: version
-mode: teaser
+mode: list_item
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 3
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_valid_date:
-    type: datetime_default
-    weight: 2
-    region: content
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-  field_version_number:
-    type: number_integer
     weight: 1
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
     region: content
-    label: above
+  field_version_number:
+    weight: 2
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
+    type: number_integer
+    region: content
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_arguments: true
   field_description: true
   field_problems: true

@@ -1,3 +1,5 @@
+import '../sass/app.scss';
+
 import { MDCTextField } from '@material/textfield';
 import { MDCSelect }    from '@material/select';
 import { MDCRipple }    from '@material/ripple';

@@ -123,3 +123,4 @@ function argue_versions_entity_bundle_field_info_alter(&$fields, EntityTypeInter
     }
   }
 }
+

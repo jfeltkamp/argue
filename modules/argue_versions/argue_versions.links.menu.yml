@@ -4,3 +4,15 @@ argue_versions.settings:
   description: 'Edit Argue versions setting.'
   parent: system.admin_config
   weight: 99
+
+
+argue_versions.overview:
+  title: 'Versions'
+  route_name: argue_versions.overview
+  description: 'Overview of final Versions.'
+  parent: system.tools
+  weight: -20
+  options:
+    attributes:
+      data-icon: verified_user
+

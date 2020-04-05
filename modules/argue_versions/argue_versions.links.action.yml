@@ -1,0 +1,10 @@
+
+argue_versions.overview:
+  route_name: node.add
+  route_parameters:
+    node_type: 'version'
+  title: 'Create new Version'
+  weight: 10
+  appears_on:
+    - argue_versions.overview
+

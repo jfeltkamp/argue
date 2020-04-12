@@ -16,7 +16,6 @@
       }
     }
 
-
     a.add-link {
       background-color: var(--mdc-theme-secondary);
       color: var(--mdc-theme-on-secondary, #fff);
@@ -66,6 +65,17 @@
 
     &__footer {
       border-top: 1px solid var(--argue-base-cards-border-color);
+
+      .mdc-chip {
+        &.chip-label {
+          background-color: transparent;
+        }
+        cursor: default;
+      }
+
+      a.mdc-chip {
+        cursor: pointer;
+      }
     }
   }
 }

@@ -68,7 +68,7 @@
             </span>
           </a>
         {% else %}
-          <a href="{{ up_url }}" {{ yes_li_attributes.addClass('mdc-chip', 'rate-undo', 'use-ajax', yes_li_classes).setAttribute('role', 'row') }}>
+          <a href="{{ up_url }}" {{ yes_li_attributes.addClass('mdc-chip', 'rate-up', 'use-ajax', yes_li_classes).setAttribute('role', 'row') }}>
             <div class="mdc-chip__ripple"></div>
             <span role="gridcell">
               <span role="button" class="mdc-chip__primary-action">
@@ -107,7 +107,7 @@
             </span>
           </a>
         {% else %}
-          <a href="{{ down_url }}"{{ no_li_attributes.addClass('mdc-chip', 'rate-undo', 'use-ajax', no_li_classes).setAttribute('role', 'row') }}>
+          <a href="{{ down_url }}"{{ no_li_attributes.addClass('mdc-chip', 'rate-down', 'use-ajax', no_li_classes).setAttribute('role', 'row') }}>
             <div class="mdc-chip__ripple"></div>
             <span role="gridcell">
               <span role="button" class="rate-undo mdc-chip__primary-action">

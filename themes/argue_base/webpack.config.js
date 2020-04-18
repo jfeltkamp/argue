@@ -8,7 +8,7 @@ module.exports = [{
   mode: 'production',
   devServer: {
     port: 8080,
-    publicPath: 'http://[::1]:8080/profiles/contrib/argue/themes/argue_base/dist',
+    publicPath: 'https://[::1]:8080/profiles/contrib/argue/themes/argue_base/dist',
     proxy: {
       '/': {
         target: 'https://demo.arguepro.de.ddev.site',

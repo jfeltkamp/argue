@@ -1,7 +1,6 @@
 
 // Abstract definitions
 .node.mdc-card {
-
   .card-header {
     padding: 1rem;
   }
@@ -22,8 +21,16 @@
     }
 
     &__footer {
-      border-top: 1px solid var(--argue-base-cards-border-color);
+      border-top: 1px solid var(--argue-base-cards-border-color, #E8E8E8);
     }
+  }
+}
+
+.status-chips {
+  .mdc-chip {
+    background-color: #FFF;
+    color: #888;
+    cursor: default;
   }
 }
 

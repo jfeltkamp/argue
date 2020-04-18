@@ -99,18 +99,21 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_causal_problems', 'meta') }}
+    {{ content|without('field_causal_problems', 'field_ratified', 'meta') }}
   </div>
 
-  <div class="node__footer mdc-card__actions">
+  <div class="node__footer">
     <div class="mdc-card__action-buttons">
       {#
       Place for action buttons like this one:
       <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">{% trans %}Context{% endtrans %}</button>
       #}
+      <div class="mdc-chip-set status-chips">
+        {{ content.field_ratified }}
+        {{ content.meta }}
+      </div>
     </div>
     <div class="mdc-card__action-icons">
-      {{ content.meta }}
     </div>
   </div>
 </article>

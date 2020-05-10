@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\EntityInterface ;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
@@ -94,14 +95,13 @@ function argue_structure_preprocess_node(&$vars) {
         '#pro' => $result['pro'],
         '#con' => $result['con'],
       ];
-    } else {
+    } elseif (in_array($vars["view_mode"], ['list_item'])) {
       $vars['content']['meta'] = [
         '#theme' => 'argue_structure_proscons_pill',
         '#pro' => $result['pro'],
         '#con' => $result['con'],
       ];
     }
-
   }
 }
 
@@ -137,6 +137,36 @@ function argue_structure_node_links_alter(array &$links, EntityInterface $entity
     }
   }
 }
+
+function argue_structure_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
+  // For nodes, change the view mode when it is teaser.
+  if ($entity->getEntityTypeId() == 'argument' && $view_mode == 'teaser') {
+    if($entity->getTypeStr() == 'pro') {
+      $view_mode = 'teaser_pro';
+    };
+  }
+
+}
+
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function argue_structure_entity_form_display_alter(EntityFormDisplayInterface &$form_display, array $context) {
+  if ($context['entity_type'] == 'argument' && $context["form_mode"] == 'edit') {
+    /** @var \Drupal\Core\Entity\EntityDisplayRepository $entity_display_repo */
+    $entity_display_repo = \Drupal::service('entity_display.repository');
+    $form_mode_opts = $entity_display_repo->getFormModeOptionsByBundle('argument', 'argument');
+
+    /** @var \Drupal\argue_proscons\Entity\Argument $argument */
+    $argument = \Drupal::routeMatch()->getParameter('argument');
+    $type_str = $argument->getTypeStr();
+    if (isset($form_mode_opts["edit_{$type_str}"])) {
+      $form_display = $entity_display_repo->getFormDisplay('argument', 'argument', "edit_{$type_str}") ?: $form_display;
+    }
+  }
+}
+
 
 /**
  * Implements hook_form_FORM_ID_alter().

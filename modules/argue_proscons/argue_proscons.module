@@ -103,7 +103,8 @@ function argue_proscons_entity_view(array &$build, EntityInterface $entity, Enti
   $view_string = "{$type}__{$bundle}__{$view_mode}";
 
   $show = [
-    'argument__argument__teaser'
+    'argument__argument__teaser',
+    'argument__argument__teaser_pro'
   ];
 
   if (in_array($view_string, $show) && $widget_config = $display->getComponent('rate_vote_widget')) {

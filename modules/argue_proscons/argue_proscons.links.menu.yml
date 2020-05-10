@@ -1,14 +1,34 @@
 
 # Argument menu items definition
 entity.argument.collection:
-  title: 'Argument list'
+  title: 'Arguments'
   route_name: entity.argument.collection
   description: 'List Argument entities'
-  parent: system.admin_structure
-  weight: 100
+  parent: system.admin_content
 
 argument.admin.structure.settings:
-  title: Argument settings
-  description: 'Configure Argument entities'
+  title: Arguments
+  description: 'Configure argument entities'
   route_name: argument.settings
   parent: system.admin_structure
+
+argument.admin.structure.manage_fields:
+  title: 'Manage Fields'
+  description: 'Configure argument field configuration'
+  route_name: entity.argument.field_ui_fields
+  parent: argument.admin.structure.settings
+  weight: 100
+
+argument.admin.structure.form_display:
+  title: 'Manage form display'
+  description: 'Configure argument form displays and fields form.'
+  route_name: entity.entity_form_display.argument.default
+  parent: argument.admin.structure.settings
+  weight: 200
+
+argument.admin.structure.view_display:
+  title: 'Manage display'
+  description: 'Configure Argument view modes and field display.'
+  route_name: entity.entity_view_display.argument.default
+  parent: argument.admin.structure.settings
+  weight: 300

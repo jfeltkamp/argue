@@ -175,3 +175,7 @@ function argue_proscons_argument_view_alter(array &$build, Drupal\Core\Entity\En
   }
   */
 }
+
+function argue_proscons_preprocess_page(&$vars) {
+  $vars = $vars;
+}

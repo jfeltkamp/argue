@@ -47,8 +47,7 @@
     "drupal/votingapi_widgets": "1.x-dev"
   },
   "require-dev": {
-    "drupal/drupal-extension": "^3.1",
-    "phpunit/phpunit": "^6.0"
+    "drupal/drupal-extension": "^3.1"
   },
   "config": {
     "preferred-install": "dist",

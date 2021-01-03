@@ -2,6 +2,7 @@ name: Argue
 type: profile
 description: 'Drupal based Argue app for community decision on practical rules.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 distribution:
   name: Argue
   install:

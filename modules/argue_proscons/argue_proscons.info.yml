@@ -2,6 +2,7 @@ name: Argue ProsCons
 type: module
 description: Provides a subentity list with arguments for a rule represented by a node.
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Argue
 dependencies:
   - votingapi

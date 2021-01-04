@@ -2,4 +2,5 @@ name: 'Argue user'
 type: module
 description: 'Customize user UI for Argue.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Argue'

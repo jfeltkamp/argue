@@ -42,6 +42,11 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
  *   data_table = "argument_field_data",
  *   revision_table = "argument_revision",
  *   revision_data_table = "argument_field_revision",
+ *   revision_metadata_keys = {
+ *     "revision_user" = "revision_user",
+ *     "revision_created" = "revision_created",
+ *     "revision_log_message" = "revision_log",
+ *   },
  *   translatable = TRUE,
  *   admin_permission = "administer argument entities",
  *   entity_keys = {

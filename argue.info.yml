@@ -22,7 +22,6 @@ dependencies:
   - menu_link_content
   - datetime
   - editor
-  - entity_reference
   - image
   - menu_ui
   - language

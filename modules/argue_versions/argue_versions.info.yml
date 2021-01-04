@@ -2,6 +2,7 @@ name: 'Argue versions'
 type: module
 description: 'Creates a permanent version of all ratified rules (with context) in the current version.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Argue'
 dependencies:
   - argue_proscons

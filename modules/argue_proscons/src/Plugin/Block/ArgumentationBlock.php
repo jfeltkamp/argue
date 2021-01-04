@@ -19,11 +19,8 @@ use Drupal\Core\Config\ConfigManager;
  *  id = "argumentation_block",
  *  admin_label = @Translation("Argumentation"),
  *  category = @Translation("Argue"),
- *  context = {
- *   "node" = @ContextDefinition(
- *    "entity:node",
- *    label = @Translation("Current Node")
- *   )
+ *  context_definitions = {
+ *   "node" = @ContextDefinition("entity:node", label = @Translation("Current Node"))
  *  }
  * )
  */

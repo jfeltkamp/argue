@@ -12,7 +12,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Link;
-use Drupal\Core\Path\AliasManager;
+use Drupal\path_alias\AliasManager;
 use Drupal\Core\Url;
 
 /**
@@ -94,7 +94,7 @@ class SectionTreeService {
    * @param \Drupal\Core\Config\ConfigManagerInterface $config_manager
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache_render
    * @param \Drupal\Core\Render\RendererInterface $renderer
-   * @param \Drupal\Core\Path\AliasManager $path_alias_manager
+   * @param \Drupal\path_alias\AliasManager $path_alias_manager
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException

@@ -273,7 +273,7 @@ class SectionTreeService {
         '%config' => $link_argue_config->toString(),
       ]);
 
-      drupal_set_message($message, 'error');
+       \Drupal::messenger()->addMessage($message, 'error');
 
       $render_array = [
         '#markup' => '<strong>No content found.</strong>'

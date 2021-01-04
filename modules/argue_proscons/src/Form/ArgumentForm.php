@@ -91,13 +91,13 @@ class ArgumentForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Argument.', [
+         \Drupal::messenger()->addMessage($this->t('Created the %label Argument.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Argument.', [
+         \Drupal::messenger()->addMessage($this->t('Saved the %label Argument.', [
           '%label' => $entity->label(),
         ]));
     }

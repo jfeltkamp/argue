@@ -49,7 +49,7 @@ class ArgumentController extends ControllerBase implements ContainerInjectionInt
    */
   public function revisionPageTitle($argument_revision) {
     $argument = $this->entityTypeManager()->getStorage('argument')->loadRevision($argument_revision);
-    return $this->t('Revision of %title from %date', ['%title' => $argument->label(), '%date' => format_date($argument->getRevisionCreationTime())]);
+    return $this->t('Revision of %title from %date', ['%title' => $argument->label(), '%date' => \Drupal::service('date.formatter')->format($argument->getRevisionCreationTime())]);
   }
 
   /**

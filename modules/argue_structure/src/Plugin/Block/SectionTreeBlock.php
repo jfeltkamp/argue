@@ -55,7 +55,7 @@ class SectionTreeBlock extends BlockBase implements ContainerFactoryPluginInterf
 
       if($term->bundle() == 'sections') {
         $build['#theme'] = 'section_tree_block';
-        $build['section_tree_block'] = $this->argueStructureSectionTree->getTree($term->id());
+        $build['#section_tree_block'] = $this->argueStructureSectionTree->getTree($term->id());
       }
     }
 

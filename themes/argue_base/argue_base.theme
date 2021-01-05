@@ -402,9 +402,8 @@ function argue_base_preprocess_menu_local_action(&$variables) {
  * @param $variables
  */
 function argue_base_preprocess_menu(&$variables) {
-  $variables = $variables;
 
-  if(in_array($variables["menu_name"], ['account', 'tools'])) {
+  if(isset($variables["menu_name"]) && in_array($variables["menu_name"], ['account', 'tools'])) {
     foreach ($variables["items"] as $key => &$item) {
       switch ($key) {
         case "user.page":

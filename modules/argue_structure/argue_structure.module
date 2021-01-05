@@ -73,7 +73,12 @@ function argue_structure_theme() {
         'level' => NULL,
         'node_list' => NULL,
         'items' => NULL,
-      ]
+      ],
+    ],
+    'section_tree_block' => [
+      'variables' => [
+        'section_tree_block' => NULL,
+      ],
     ],
   ];
 }

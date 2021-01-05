@@ -4,10 +4,6 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: seven
 
-dependencies:
-  - drupal:toolbar
-  - admin_toolbar
-
 libraries:
   - argue_base/global-styling
   - argue_base/material

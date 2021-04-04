@@ -34,7 +34,7 @@
     "drupal/entity_reference_revisions": "^1.8",
     "drupal/field_group": "^3.1",
     "drupal/pathauto": "^1.8",
-    "drupal/rate": "^1.0",
+    "drupal/rate": "1.0.0-alpha5",
     "drupal/login_emailusername": "^1.2",
     "drupal/menu_link_attributes": "^1.1",
     "drupal/taxonomy_menu": "^3.4",

@@ -44,7 +44,7 @@
     "drupal/twig_tweak": "^2.9",
     "drupal/token": "^1.0",
     "drupal/votingapi": "^3.0",
-    "drupal/votingapi_widgets": "1.x-dev"
+    "drupal/votingapi_widgets": "dev-1.x"
   },
   "require-dev": {
     "drupal/drupal-extension": "^3.1"

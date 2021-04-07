@@ -63,6 +63,10 @@
     {{ label }}
   {% endif %}
 
+  {% if ripple %}
+    <span class="mdc-text-field__ripple"></span>
+  {% endif %}
+
   {% if prefix is not empty %}
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
@@ -79,9 +83,7 @@
     <span class="mdc-floating-label">{{ title }}</span>
   {% endif %}
 
-  {% if ripple %}
-    <div class="mdc-line-ripple"></div>
-  {% endif %}
+  <span class="mdc-line-ripple"></span>
 </label>
 
 {% if errors or description %}

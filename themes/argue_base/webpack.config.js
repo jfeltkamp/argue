@@ -6,21 +6,6 @@ module.exports = [{
   context: __dirname,
   entry: ['./sass/app.scss', './js/app.js'],
   mode: 'production',
-  devServer: {
-    port: 8080,
-    publicPath: 'https://[::1]:8080/profiles/contrib/argue/themes/argue_base/dist',
-    proxy: {
-      '/': {
-        target: 'https://demo.arguepro.de.ddev.site',
-        "*": "http://[::1]:8080",
-        changeOrigin: true,
-        secure: false
-      }
-    },
-    allowedHosts: [
-      'demo.arguepro.de.ddev.site'
-    ]
-  },
   output: {
     filename: './assets/argue_theme.js'
   },

@@ -111,9 +111,11 @@ function argue_base_preprocess_form_element(&$variables) {
     case 'textarea':
     case 'entity_autocomplete':
       $variables['attributes']['class'][] = 'mdc-text-field';
+      $variables['attributes']['class'][] = 'mdc-text-field--filled';
 
       if (in_array($variables['type'], ['textarea'])) {
         $variables['attributes']['class'][] = 'mdc-text-field--textarea';
+        $variables['resizer'] = TRUE;
       } else {
         $variables['ripple'] = TRUE;
       }
@@ -144,7 +146,7 @@ function argue_base_preprocess_form_element(&$variables) {
 
       // LABEL handling
       $variables['label_display'] = 'mdc-floating-label';
-    $variables['title'] = isset($variables['element']['#title']) ? $variables['element']['#title'] : '';
+      $variables['title'] = isset($variables['element']['#title']) ? $variables['element']['#title'] : '';
       break;
     case 'select':
       $variables['ripple'] = TRUE;

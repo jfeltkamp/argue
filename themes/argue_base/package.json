@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "webpack serve --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -34,16 +34,25 @@
     "@material/top-app-bar": "^10.0",
     "autoprefixer": "^10.2",
     "babel-loader": "^8.2",
+    "browser-sync": "^2.26.7",
     "css-loader": "^5.2",
     "extract-loader": "^5.1.0",
     "fibers": "^5.0",
     "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^3.0",
     "postcss-loader": "^5.0",
+    "readline-sync": "^1.4.9",
     "sass": "^1.32.8",
     "sass-loader": "^11.0",
     "webpack": "^5.30",
-    "webpack-cli": "^4.6",
-    "webpack-dev-server": "^3.11"
+    "webpack-cli": "^4.6"
   },
   "browserslist": [
     "> .25%",

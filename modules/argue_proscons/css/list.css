@@ -5,13 +5,10 @@
     flex-direction: row;
 }
 
-.block-argue-proscons--col {
+.block-argue-proscons--col,
+.block-argue-proscons--col.panel {
     flex: 1 1 50%;
     box-sizing: border-box;
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-.block-argue-proscons--col-headline {
-    border-bottom: 2px solid #999;
 }

@@ -1,11 +1,9 @@
 <?php
 
-use Drupal\Core\StringTranslation\TranslatableMarkup;
-
 /**
  * Implements hook_theme().
  */
-function argue_base_theme() {
+function argue_gin_theme() {
   return [
     'argument_edit_form' => [
       'render element' => 'form',

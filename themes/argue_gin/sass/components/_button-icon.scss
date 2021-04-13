@@ -1,0 +1,33 @@
+@mixin icon-btn-sizer($icon-size: 24px) {
+  vertical-align: text-bottom;
+  width: $icon-size;
+  height: $icon-size;
+  line-height: $icon-size;
+  font-size: $icon-size;
+  margin: calc((16px - #{$icon-size}) / 2) 0;
+}
+
+.button {
+  .material-icons {
+    position: relative;
+    @include icon-btn-sizer();
+
+    &.icon--lead {
+      left: -.25em;
+    }
+
+    &.icon--trail {
+      left: .25em;
+    }
+  }
+
+  &.button--small .material-icons {
+    @include icon-btn-sizer(21px);
+  }
+
+  &.button--extrasmall .material-icons {
+    @include icon-btn-sizer(18px);
+  }
+
+
+}

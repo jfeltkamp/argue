@@ -1,0 +1,39 @@
+.card:target {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
+  z-index: 1;
+}
+
+.card-header {
+  @extend %argue-card-header;
+
+
+  &__icon {
+    @extend %argue-card-header__icon;
+  }
+  &__user-img {
+    @extend %argue-card-header__user-img;
+  }
+
+  &__text {
+    @extend %argue-card-header__text;
+
+    &__top {
+      @extend %argue-card-header__text__top;
+    }
+
+    &__bot {
+      @extend %argue-card-header__text__bot;
+    }
+  }
+}
+
+.card-footer {
+  @extend %argue-card-footer;
+
+  &__action-buttons {
+
+  }
+}
+
+

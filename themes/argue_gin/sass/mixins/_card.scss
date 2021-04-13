@@ -1,0 +1,168 @@
+@mixin argue-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-items: flex-start;
+  padding: 0;
+  border: var(--card-border-size) solid var(--card-border-color);
+  border-radius: var(--card-border-radius-size);
+  background-color: var(--card-bg-color);
+  box-shadow: var(--card-box-shadow);
+
+  &-list {
+    margin-bottom: 2rem;
+  }
+
+  &__image {
+    img {
+      border-radius: $borderDefault $borderDefault 0 0;
+
+      @include mq($breakpointXSmall) {
+        border-radius: $borderDefault 0 0 $borderDefault;
+      }
+    }
+  }
+
+  &__content-wrapper {
+    background-color: var(--colorGinLayerBackground);
+    border-radius: 0 0 $borderSmall $borderSmall;
+  }
+}
+
+
+@mixin argue-card-spacer() {
+  width: 100%;
+  padding: .75rem;
+  background: var(--colorGinLayerBackground);
+  border: 1px solid var(--colorGinLayerBorder);
+  box-sizing: border-box;
+
+  @include mq($breakpointSmall) {
+    padding: 1.5rem;
+  }
+
+  @include mq($breakpointLarge) {
+    min-width: 100%;
+    width: fit-content;
+  }
+}
+
+@mixin argue-card-header() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: -1.5rem -1.5rem 1rem;
+  padding: .8rem 1.5rem;
+  border-bottom: 1px solid var(--argue-base-cards-border-color, #E8E8E8);
+}
+
+@mixin argue-card-header__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  margin-right: 1rem;
+  position: relative;
+  text-decoration: none;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 48px;
+    height: 48px;
+    background-color: var(--card-header-icon-bg-on-card, rgba(0, 0, 0, 0.54));
+    z-index: 0;
+  }
+}
+
+@mixin argue-card-header__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin argue-card-header__text__top {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.3;
+
+  a {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin argue-card-header__text__bot {
+  margin: 0;
+  font-size: .875rem;
+  font-weight: normal;
+  line-height: 1.3;
+  color: var(--card-header-text-bot-color, $card-header-text-bot-color);
+}
+
+@mixin argue-card-footer() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 1rem -1.5rem -1.5rem;
+  padding: .8rem 1.5rem;
+  border-top: 1px solid var(--argue-base-cards-border-color, #E8E8E8);
+}
+
+%argue-card {
+  @include argue-card;
+}
+
+%argue-card-spacer {
+  @include argue-card-spacer;
+}
+
+%argue-card-header {
+  @include argue-card-header;
+}
+
+%argue-card-header__icon {
+  @include argue-card-header__icon;
+}
+
+%argue-card-header__user-img {
+  @include argue-card-header__icon;
+  img {
+    display: block;
+  }
+}
+
+%argue-card-header__text {
+  @include argue-card-header__text;
+}
+
+%argue-card-header__text__top {
+  @include argue-card-header__text__top;
+}
+
+%argue-card-header__text__bot {
+  @include argue-card-header__text__bot;
+}
+
+%argue-card-footer {
+  @include argue-card-footer;
+}

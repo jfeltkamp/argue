@@ -135,12 +135,12 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
         '#markup' => '<p>' . $this->configuration['introduction'] . '</p>',
       ];
 
-      $text = new TranslatableMarkup('<span class="material-icons mdc-fab__icon">add</span><span class="mdc-fab__label">Add Argument</span>');
+      $text = new TranslatableMarkup('Add Argument');
 
       $add_link = $this->argumentListService->getAddArgumentLink($reference_id, $text);
       if (isset($add_link['#attributes'])) {
         $add_link['#attributes']['class'] = [
-          'mdc-fab', 'mdc-fab--extended', 'mdc-ripple'
+          'button', 'button--primary', 'button--action'
         ];
         $build['argumentation_block_introduction']['add_link'] = $add_link;
       }

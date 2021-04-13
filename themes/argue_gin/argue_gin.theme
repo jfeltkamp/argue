@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+
+function argue_gin_preprocess_links(&$variables) {
+  // Styling classes for entity links.
+  $in_group = ['links__node', 'links__comment'];
+  if (in_array($variables["theme_hook_original"], $in_group)) {
+    // Add class to wrapper.
+    $variables["attributes"]["class"] = ['links', 'button--group'];
+
+    // Add button classes to links.
+    foreach ($variables['links'] as &$link) {
+      if($link['link']['#url'] instanceof \Drupal\Core\Url) {
+        $link['link']['#url']->setOption('attributes', [
+          'class' => [
+            'button',
+            'button--small'
+          ]
+        ]);
+      }
+    }
+  }
+}
+

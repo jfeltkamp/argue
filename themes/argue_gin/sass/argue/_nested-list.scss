@@ -1,0 +1,65 @@
+ol.argue-structure-nested-list {
+  &,
+  ol {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    max-width: calc(100% + 2rem);
+  }
+
+  li,
+  ol {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    > strong {
+      display: block;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-size: var(--mdc-typography-headline4-font-size, 2.125rem);
+      line-height: var(--mdc-typography-headline4-line-height, 2.5rem);
+      font-weight: var(--mdc-typography-headline4-font-weight, 400);
+      text-decoration: inherit;
+      text-decoration: var(--mdc-typography-headline4-text-decoration, inherit);
+      text-transform: var(--mdc-typography-headline4-text-transform, inherit);
+      padding: .5em 1rem;
+    }
+
+    &.level_0 {
+      flex: 1 1 calc(50% - 1rem);
+      border-radius: 4px;
+      background-color: #fff;
+      border-width: 0;
+      border-style: solid;
+      border-color: #fff;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12);
+      margin: .5rem;
+      overflow: hidden;
+
+      > strong {
+        border-bottom: 1px solid var(--argue-base-cards-border-color, rgba(0, 0, 0, .25));
+      }
+    }
+
+    &.level_1 > strong {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: var(--mdc-typography-headline5-font-size, 1.5rem);
+    line-height: var(--mdc-typography-headline5-line-height, 2rem);
+    font-weight: var(--mdc-typography-headline5-font-weight, 400);
+    letter-spacing: var(--mdc-typography-headline5-letter-spacing, normal);
+    text-decoration: var(--mdc-typography-headline5-text-decoration, inherit);
+    text-transform: var(--mdc-typography-headline5-text-transform, inherit);
+  }
+  }
+}

@@ -15,21 +15,49 @@
  * @ingroup themeable
  */
 #}
+{% set date = content.created|render|striptags|trim %}
+{% set arg_type = content.argument_type|render|trim %}
+{% set header_icon = (arg_type == 'pro') ? 'thumb_up' : 'thumb_down' %}
 
-{% if content %}
-<div{{ attributes.addClass('argument-teaser') }}>
-  <div class="header">
-    {% if content.name %}
-      {{- content.name -}}
-    {% endif %}
+{%
+set classes = [
+  'argument',
+  'argument-teaser',
+  'card',
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div class="argument-wrapper card__content-wrapper">
+    <header class="card-header">
+      <span class="card-header__icon material-icons" aria-hidden="true">{{ header_icon }}</span>
+      <div class="card-header__text">
+        <h3 class="card-header__text__top">{{ content.name }}</h3>
+        <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+      </div>
+    </header>
+
+
+    <div class="argument__content card__content-item">
+      {{ content.argument }}
+    </div>
+
+    <div class="argument__details card__content-item">
+      {{ content.type }}
+      {{ content.field_change_requests }}
+    </div>
+
+
+    <div class="card-footer argue-card__actions">
+      <div class="card-footer__action-buttons">
+        {{ content.operations }}
+      </div>
+
+      <div class="card-footer__action-icons">
+        {% if content.voting %}
+          {{- content.voting -}}
+        {% endif %}
+      </div>
+    </div>
   </div>
 
-  {% if content.voting %}
-    {{- content.voting -}}
-  {% endif %}
-
-  <div class="content">
-      {{ content | without('name', 'voting') }}
-  </div>
-</div>
-{% endif %}
+</article>

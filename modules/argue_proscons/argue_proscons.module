@@ -8,6 +8,7 @@
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -37,9 +38,12 @@ function argue_proscons_theme() {
     'argument__teaser' => [
       'render element' => 'content',
     ],
+    'argument__teaser_pro' => [
+      'render element' => 'content',
+    ],
     'argue_proscons' => [
       'render element' => 'children',
-    ],
+    ]
   ];
 }
 
@@ -80,12 +84,15 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
       $response->send();
       exit();
     }
-  } elseif($view_mode == 'teaser') {
+  } else {
     // Set id to scroll to the id.
     if(!isset($build['attributes'])) {
       $build['#attributes'] = new \Drupal\Core\Template\Attribute();
     }
+    $arg_type = $entity->getTypeStr();
     $build['#attributes']->setAttribute('id', 'argument_' . $entity->id());
+    $build['#attributes']->addClass('argument-' . $arg_type);
+    $build['argument_type'] = ['#markup' => $arg_type];
   }
 }
 
@@ -116,7 +123,8 @@ function argue_proscons_entity_view(array &$build, EntityInterface $entity, Enti
     );
 
     if (isset($vote_widget['rate_vote_widget'])) {
-      $vote_widget['rate_vote_widget']['#weight'] = isset($widget_config['weight']) ? $widget_config['weight'] : 2;
+      $vote_widget['rate_vote_widget']['#weight'] =
+        isset($widget_config['weight']) ? $widget_config['weight'] : 2;
     }
 
     // add library
@@ -136,46 +144,4 @@ function argue_proscons_entity_view(array &$build, EntityInterface $entity, Enti
       'votingapi_links' => $vote_widget,
     ];
   }
-}
-
-
-/**
- * Prepares variables for Argument templates.
- *
- * Default template: argument.html.twig.
- *
- * @param array $variables
- *   An associative array containing:
- *   - content: An associative array containing the user information and any
- *   - attributes: HTML attributes for the containing element.
- */
-function argue_proscons_argument_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
-  /**
-  if ($build['#view_mode'] == 'teaser' && isset($build['rate_vote_widget'])) {
-    // add library
-    if (!isset($build['#attached']['library'])) {
-      $build['#attached']['library'] = [];
-    }
-    $build['#attached']['library'][] = 'argue_proscons/proscons.teaser';
-
-    // move voting widget to own region.
-    $build['voting'] = [
-      '#type' => 'container',
-      '#weight' => 10,
-      '#attributes' => ['class' => ['voting']],
-      '#tree' => TRUE,
-      '#access' => TRUE,
-      'votingapi_links' => $build['rate_vote_widget'],
-    ];
-    $build['voting']['votingapi_links']['#group'] = 'voting';
-    unset($build['rate_vote_widget']);
-
-    // @todo find better way as unset pre_render, problem: items come back in content.
-    unset($build['#pre_render']);
-  }
-  */
-}
-
-function argue_proscons_preprocess_page(&$vars) {
-  $vars = $vars;
 }

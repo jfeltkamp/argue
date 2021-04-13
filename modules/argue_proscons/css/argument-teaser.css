@@ -3,31 +3,18 @@
   position: relative;
 }
 
-.argument .argument-teaser + .dropbutton-wrapper {
-  position: absolute;
-  bottom: 0;
-  right: 1rem;
-}
-
-.argument-teaser::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.argument-teaser .header .field--name-name {
-  font-size: 1.15em;
-  font-weight: 700;
-  margin-bottom: .5em;
-}
-
-.argument-teaser .voting {
-  float: left;
-  width: 50px;
-
+.argument-teaser .argument-header {
+  font-size: .875rem;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 
 .argument-teaser .content {
   margin-left: 60px;
   margin-bottom: 2rem;
+}
+
+.argument-teaser:target {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
 }

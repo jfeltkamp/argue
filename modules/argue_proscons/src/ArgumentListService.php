@@ -207,17 +207,17 @@ class ArgumentListService {
       '#attached' => ['library' => ['argue_proscons/proscons.list']],
       'pros_group' => [
         '#type' => 'container',
-        '#attributes' => ['id' => 'pros', 'class' => ['block-argue-proscons--col', 'pros']],
+        '#attributes' => ['id' => 'pros', 'class' => ['block-argue-proscons--col', 'pros', 'panel']],
         'header' => [
-          '#markup' => '<h3 class="block-argue-proscons--col-headline pro">'. $this->t('Pro') .'</h3>',
+          '#markup' => '<h3 class="pro panel__title">'. $this->t('Pro') .'</h3>',
           '#weight' => -101,
         ]
       ],
       'cons_group' => [
         '#type' => 'container',
-        '#attributes' => ['id' => 'cons', 'class' => ['block-argue-proscons--col', 'cons']],
+        '#attributes' => ['id' => 'cons', 'class' => ['block-argue-proscons--col', 'cons', 'panel']],
         'header' => [
-          '#markup' => '<h3 class="block-argue-proscons--col-headline con">'. $this->t('Contra') .'</h3>',
+          '#markup' => '<h3 class="con  panel__title">'. $this->t('Contra') .'</h3>',
           '#weight' => -101,
         ],
       ],

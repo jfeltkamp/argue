@@ -1,0 +1,11 @@
+global-styling:
+  version: 0.1
+  css:
+    layout:
+      icon-font/material-icons.css: {}
+      css/argue_gin.css: {}
+  js:
+    js/argue_gin.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

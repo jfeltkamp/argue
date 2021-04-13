@@ -1,0 +1,33 @@
+{
+  "name": "argue_base",
+  "version": "1.0.0",
+  "description": "Base theme for the Argue distribution.",
+  "main": "argue_base_theme.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfeltkamp/argue.git"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^3.0",
+    "readline-sync": "^1.4.9",
+    "sass": "^1.32.8"
+  },
+  "browserslist": [
+    "> .25%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

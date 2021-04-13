@@ -1,0 +1,50 @@
+.field--type-comment {
+  .indented {
+    margin: 0;
+    padding: 0 0 0 80px;
+    background-color: #DDDDDD;
+  }
+
+  > .indented {
+    margin: -2rem 0 2rem;
+  }
+}
+
+.comment {
+  margin-bottom: 2rem;
+
+  a.permalink {
+    color: #000000;
+  }
+
+  p {
+    margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.densed {
+    border-top: 1px solid var(--argue-base-cards-border-color);
+    margin: 0;
+
+    &.by-node-author {
+      background-color: #EEFEFE;
+    }
+
+    .comment--content {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+      align-content: stretch;
+    }
+
+    .content-links {
+      flex: 1 0 5%;
+      align-self: flex-end;
+      margin-right: -8px;
+    }
+
+  }
+}

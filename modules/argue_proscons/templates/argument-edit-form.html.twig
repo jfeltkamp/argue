@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for a argument edit form.
+ *
+ * Two column template for the argument add/edit form.
+ *
+ * This template will be used when a argument edit form specifies 'argument_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The argument add/edit form.
+ *
+ * @see argue_proscons_form_argument_form_alter()
+ */
+#}
+<div class="layout-node-form clearfix">
+  <div class="layout-region layout-region-node-header">
+    {{ form.header }}
+  </div>
+  <div class="layout-region layout-region-node-main">
+    {{ form|without('advanced', 'footer', 'actions', 'header') }}
+  </div>
+  <div class="layout-region layout-region-node-secondary">
+    {{ form.advanced }}
+  </div>
+  <div class="layout-region layout-region-node-footer">
+    <div class="layout-region-node-footer__content">
+      {{ form.footer }}
+      {{ form.actions }}
+    </div>
+  </div>
+</div>

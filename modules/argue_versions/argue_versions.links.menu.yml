@@ -10,7 +10,7 @@ argue_versions.overview:
   title: 'Versions'
   route_name: argue_versions.overview
   description: 'Overview of final Versions.'
-  parent: system.tools
+  parent: argue_structure.argue
   weight: -20
   options:
     attributes:

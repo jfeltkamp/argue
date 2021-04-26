@@ -5,11 +5,21 @@ argue_structure.argue_structure_conf_form:
   parent: system.admin_config
   weight: 99
 
+argue_structure.argue:
+  title: 'Argue'
+  route_name: argue_structure.problem_overview_controller
+  description: 'Overviews and Argue content.'
+  parent: system.admin
+  weight: -50
+  options:
+    attributes:
+      data-icon: priority_high
+
 argue_structure.argue_problems_overview:
   title: 'Problems'
   route_name: argue_structure.problem_overview_controller
   description: 'Overview of all problems brought up structured by sections.'
-  parent: system.tools
+  parent: argue_structure.argue
   weight: -50
   options:
     attributes:
@@ -19,7 +29,7 @@ argue_structure.argue_rules_overview:
   title: 'Rules'
   route_name: argue_structure.rule_overview_controller
   description: 'Overview of all rules structured by sections.'
-  parent: system.tools
+  parent: argue_structure.argue
   weight: -40
   options:
     attributes:
@@ -29,7 +39,7 @@ argue_structure.argue_ratified_rules_overview:
   title: 'Ratified rules'
   route_name: argue_structure.ratified_rule_overview_controller
   description: 'Overview of all rules structured by sections.'
-  parent: system.tools
+  parent: argue_structure.argue
   weight: -30
   options:
     attributes:

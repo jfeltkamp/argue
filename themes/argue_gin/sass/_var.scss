@@ -42,8 +42,11 @@ $argue-list-avatar-bg: #FFF;
 
 $card-header-text-bot-color: #666;
 
+$argue-accent-color: #0550e6;
+$argue-add-link-color: $argue-accent-color;
+
 :root {
-  --argue-list-avatar-bg: #FFF;
+  --argue-list-avatar-bg: #F2F2F2;
   --argue-base-theme-secondary: #BEAF75;
   --argue-base-theme-on-secondary: #FFFFFF;
   --argue-base-main-padding: 18px;

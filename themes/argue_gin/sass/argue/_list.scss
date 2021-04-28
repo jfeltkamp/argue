@@ -3,6 +3,14 @@
   margin: 0;
   padding: 6px 0;
   list-style-type: none;
+
+  &--title {
+    font-size: 1.125em;
+  }
+
+  &--items {
+    margin: 0 -16px;
+  }
 }
 
 .argue-list-item {
@@ -11,8 +19,8 @@
   position: relative;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 10px;
-  margin: 0 6px;
+  padding: 3px 10px;
+  margin: 7px 6px;
   overflow: hidden;
 
   .argue-list-item__graphic {

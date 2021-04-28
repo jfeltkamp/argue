@@ -1,0 +1,31 @@
+{#
+/**
+ * @file change-request--list-item.html.twig
+ * Default theme implementation to change request list view.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_argument()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('change_requests/cr_status') }}
+{%
+  set classes = [
+    'entity--change-request',
+    'argue-list-item',
+    status ? 'cr-status-' ~ status
+  ]
+%}
+<a href="{{ url }}"{{ attributes.addClass(classes) }}>
+  <span class="material-icons argue-list-item__graphic" aria-hidden="true">call_merge</span>
+  <span class="argue-list-item__text">
+    <span class="argue-list-item__primary-text">{{ label }}</span>
+  </span>
+  <span class="argue-list-item__meta">
+    <span class="cr-status {{ status }}">{{ status_literal }}</span>
+  </span>
+</a>

@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.argument-teaser {
+  margin: 1.5rem 0;
+}
+
 .argument-teaser .argument-header {
   font-size: .875rem;
   font-weight: 400;
@@ -17,4 +21,19 @@
 .argument-teaser:target {
   outline: 2px dotted transparent;
   box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
+}
+
+.argument__content.js-on {
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.argument__details.js-on {
+  display: none;
+}
+
+.argument-teaser__toggle {
+  align-self: flex-end;
 }

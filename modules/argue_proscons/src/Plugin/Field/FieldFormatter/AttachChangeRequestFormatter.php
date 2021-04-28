@@ -3,6 +3,7 @@
 namespace Drupal\argue_proscons\Plugin\Field\FieldFormatter;
 
 use Drupal\argue_proscons\Entity\Argument;
+use Drupal\change_requests\Events\ChangeRequests;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldDefinitionInterface;
@@ -11,6 +12,7 @@ use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 
 /**
@@ -101,13 +103,13 @@ class AttachChangeRequestFormatter extends FormatterBase {
       $add_link = (\Drupal::currentUser()->hasPermission('add patch entities'))
         ? [
             '#type' => 'link',
-            '#title' => t('Add'),
+            '#title' => 'control_point',
             '#url' => Url::fromRoute('entity.node.edit_form', [
               'node' => $argument->getReferenceId()
             ],
               ['query' => ['attach_to' => implode('/', $destination)]]
             ),
-            '#options' => ['attributes' => ['class' => ['add-link']]],
+            '#options' => ['attributes' => ['class' => ['material-icons', 'add-link']]],
           ]
         : ['#markup' => ''];
 
@@ -132,17 +134,11 @@ class AttachChangeRequestFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
-
     if (!$items->isEmpty()) {
-
+      $this->crStatusConstants = new ChangeRequests;
       foreach ($items as $delta => $item) {
         /** @var Argument $entity */
-        $elements[] = [
-          '#type' => 'container',
-          'content' => [
-            '#markup' => $this->getEntityLink($item->entity)
-          ]
-        ];
+        $elements[] = $this->getEntityLink($item->entity);
       }
     } elseif ($this->getSetting('show_empty_field')) {
       $elements[] = [
@@ -168,15 +164,16 @@ class AttachChangeRequestFormatter extends FormatterBase {
    *
    * @param EntityInterface $entity
    *
-   * @return \Drupal\Core\GeneratedLink|string
+   * @return array|string
    */
   protected function getEntityLink($entity) {
 
     if ($this->getSetting('display_modal')) {
       $route = 'change_requests.patch_ajax_controller_getPatchAjax';
       $attr = [
-        'class' => 'use-ajax',
+        'class' => ['use-ajax'],
         'data-dialog-type' => 'modal',
+        'role' => 'article',
       ];
     } else {
       $route = 'entity.patch.canonical';
@@ -184,11 +181,15 @@ class AttachChangeRequestFormatter extends FormatterBase {
     }
 
     if($entity instanceof EntityInterface) {
-      return Link::createFromRoute(
-        $entity->label(),
-        $route,
-        ['patch' => $entity->id()],
-        ['attributes' => $attr])->toString();
+      $url = Url::fromRoute($route, ['patch' => $entity->id()]);
+      return [
+        '#theme' => 'change_request__list_item',
+        '#label' => $entity->label(),
+        '#url' => $url->toString(),
+        '#status' => $entity->getStatus(),
+        '#status_literal' => $entity->getStatus(TRUE),
+        '#attributes' => new Attribute($attr),
+      ];
     } else {
       return $this->t('Change request has been removed.')->render();
     }

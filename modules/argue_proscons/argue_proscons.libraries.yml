@@ -7,4 +7,8 @@ proscons.teaser:
   css:
     theme:
       css/argument-teaser.css: {}
-
+  js:
+    js/argument-teaser.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -32,18 +32,20 @@ set classes = [
       <span class="card-header__icon material-icons" aria-hidden="true">{{ header_icon }}</span>
       <div class="card-header__text">
         <h3 class="card-header__text__top">{{ content.name }}</h3>
-        <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
       </div>
     </header>
 
 
-    <div class="argument__content card__content-item">
+    <div class="argument__content card__content-item" data-js-class="js-on">
       {{ content.argument }}
     </div>
 
-    <div class="argument__details card__content-item">
+    <div class="argument__details card__content-item" data-js-class="js-on" data-slide-toggle-label="{{ 'Details'|t }}">
       {{ content.type }}
       {{ content.field_change_requests }}
+      <div class="argument__meta">
+        <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+      </div>
     </div>
 
 

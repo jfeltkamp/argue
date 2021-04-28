@@ -35,6 +35,15 @@ function argue_proscons_theme() {
     'argument' => [
       'render element' => 'content',
     ],
+    'change_request__list_item' => [
+      'variables' => [
+        'attributes' => NULL,
+        'url' => NULL,
+        'label' => NULL,
+        'status' => NULL,
+        'status_literal' => NULL,
+      ],
+    ],
     'argument__teaser' => [
       'render element' => 'content',
     ],

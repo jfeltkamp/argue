@@ -28,12 +28,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 0;
 }
 
 .argument__details.js-on {
   display: none;
 }
 
-.argument-teaser__toggle {
-  align-self: flex-end;
+.argument-teaser__toggle.button {
+  align-self: center;
+  background-color: transparent;
+}
+
+.argument-teaser__toggle.button:hover,
+.argument-teaser__toggle.button:focus,
+.argument-teaser__toggle.button:active {
+  background-color: transparent;
+}
+
+.argument-teaser__toggle + .card-footer {
+  margin-top: 0;
+}
+
+.argument-teaser__toggle .less {
+  display: none;
+}
+.argument-teaser__toggle.open .less {
+  display: inline;
+}
+.argument-teaser__toggle.open .more {
+  display: none;
 }

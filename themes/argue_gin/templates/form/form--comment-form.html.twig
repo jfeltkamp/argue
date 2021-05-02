@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+<article class="card comment-form--wrapper">
+  <div class="card__content-wrapper">
+    <header class="comment-form--header card-header">
+      <span class="card-header__icon material-icons" aria-hidden="true">question_answer</span>
+      <span class="card-header__text">
+        <span class="card-header__text__top">{{ 'Add new comment'|t }}</span>
+      </span>
+    </header>
+    <div class="card__content-item">
+      <form{{ attributes }}>
+        {{ children }}
+      </form>
+    </div>
+  </div>
+</article>

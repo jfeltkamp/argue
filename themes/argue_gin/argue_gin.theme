@@ -11,12 +11,12 @@ function argue_gin_preprocess_links(&$variables) {
     $variables["attributes"]["class"] = ['links', 'button--group'];
 
     // Add button classes to links.
-    foreach ($variables['links'] as &$link) {
+    foreach ($variables['links'] as $key => &$link) {
       if($link['link']['#url'] instanceof \Drupal\Core\Url) {
         $link['link']['#url']->setOption('attributes', [
           'class' => [
             'button',
-            'button--small'
+            'button--extrasmall'
           ]
         ]);
       }
@@ -24,3 +24,7 @@ function argue_gin_preprocess_links(&$variables) {
   }
 }
 
+function argue_gin_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $extension = str_replace('-', '_', $variables['element']['#id']);
+  $suggestions[] = 'form__' . $extension;
+}

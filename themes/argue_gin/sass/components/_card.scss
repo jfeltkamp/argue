@@ -23,14 +23,16 @@
     }
 
     &__bot {
-      @extend %argue-card-header__text__bot;
+      @extend %argue-card__metadata;
     }
   }
 }
 
 .card-footer {
   @extend %argue-card-footer;
-
+  &__metadata {
+    @extend %argue-card__metadata;
+  }
   &__action-buttons {
 
   }

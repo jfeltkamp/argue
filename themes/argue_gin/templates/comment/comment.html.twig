@@ -64,9 +64,6 @@
  * @see template_preprocess_comment()
  */
 #}
-{% if threaded %}
-  {{ attach_library('classy/indented') }}
-{% endif %}
 {%
   set classes = [
     'card',
@@ -86,7 +83,7 @@
       {{ content.comment_body }}
       <footer class="comment--footer card-footer">
         <div class="card-footer__action-buttons">
-          <div class="created" data-comment-timestamp="{{ new_indicator_timestamp }}">{{ submitted }}</div>
+          <div class="card-footer__metadata" data-comment-timestamp="{{ new_indicator_timestamp }}">{{ submitted }}</div>
         </div>
         <div class="card-footer__action-icons">
           {{ content.links }}

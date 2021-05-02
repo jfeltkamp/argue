@@ -69,7 +69,6 @@
   margin-right: 1rem;
   position: relative;
   text-decoration: none;
-  border-radius: 50%;
   overflow: hidden;
 
   &:before {
@@ -109,7 +108,7 @@
   }
 }
 
-@mixin argue-card-header__text__bot {
+@mixin argue-card__metadata {
   margin: 0;
   font-size: .875rem;
   font-weight: normal;
@@ -142,10 +141,12 @@
 
 %argue-card-header__icon {
   @include argue-card-header__icon;
+  border-radius: 50%;
 }
 
 %argue-card-header__user-img {
   @include argue-card-header__icon;
+  border-radius: 3px;
   img {
     display: block;
   }
@@ -159,8 +160,8 @@
   @include argue-card-header__text__top;
 }
 
-%argue-card-header__text__bot {
-  @include argue-card-header__text__bot;
+%argue-card__metadata {
+  @include argue-card__metadata;
 }
 
 %argue-card-footer {

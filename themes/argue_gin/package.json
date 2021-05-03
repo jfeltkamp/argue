@@ -5,6 +5,7 @@
   "main": "argue_base_theme.js",
   "license": "MIT",
   "scripts": {
+    "build:icons": "node ./iconfont/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,6 +15,8 @@
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.26.14",
+    "chalk": "^4.1.1",
+    "fontagon": "^1.0.10",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0",
     "gulp-clean-css": "^4.2.0",

@@ -40,42 +40,41 @@
 {% set undo_title = 'Undo your decision.'|t %}
 
 <div{{ widget_attributes }}>
-  {% if can_vote and not has_voted %}
-     <div class="rate-widget-yesno--label" role="row">{{ 'Do you agree?'|t }}</div>
-  {% endif %}
   <div class="rate-widget-yesno--actions" role="grid">
     {% if not can_vote or (has_voted and my_vote != 'yes') %}
       <div{{ yes_li_attributes.addClass(btn_class, 'is-disabled', yes_li_classes).setAttribute('role', 'row') }}>
-        <span class="material-icons">person</span>
-        {{ up_votes }} {{ 'agree'|t }}
+        <span class="argue-icon">user_confirm</span>
+        {{ up_votes }}
       </div>
     {% elseif (has_voted and my_vote == 'yes') %}
       <a href="{{ undo.url|render }}" {{ yes_li_attributes.addClass(btn_class, 'rate-undo', 'use-ajax', yes_li_classes).setAttribute('title', undo_title) }}>
-        <span class="material-icons icon--lead">person</span>
-        {{ up_votes }} {{ 'agree'|t }}
-        <span class="material-icons icon--trail">clear</span>
+        <span class="argue-icon icon--lead">user_confirm</span>
+        {{ up_votes }}
+        <span class="argue-icon icon--trail" aria-hidden="true">clear</span>
       </a>
     {% else %}
       <a href="{{ up_url }}" {{ yes_li_attributes.addClass(btn_class, 'button--primary', 'rate-up', 'use-ajax', yes_li_classes).setAttribute('role', 'row') }}>
-        {{ 'Yes'|t }} ({{ up_votes }})
+        <span class="argue-icon icon--lead">user_confirm</span>
+        {{ up_votes }}
       </a>
     {% endif %}
 
 
     {% if not can_vote or (has_voted and my_vote != 'no') %}
       <div{{ no_li_attributes.addClass(btn_class, 'is-disabled', no_li_classes).setAttribute('role', 'row') }}>
-        <i class="material-icons icon--lead">person</i>
-        {{ down_votes }} {{ 'not agree'|t }}
+        <span class="argue-icon icon--lead">user_decline</span>
+        {{ down_votes }}
       </div>
     {% elseif (has_voted and my_vote == 'no') %}
       <a href="{{ undo.url|render }}" {{ no_li_attributes.addClass(btn_class, 'rate-undo', 'use-ajax', no_li_classes).setAttribute('role', 'row').setAttribute('title', undo_title) }}>
-        <span class="material-icons icon--lead">person</span>
-        {{ down_votes }} {{ 'not agree'|t }}
-        <span class="material-icons icon--trail">clear</span>
+        <span class="argue-icon icon--lead">user_decline</span>
+        {{ down_votes }}
+        <span class="argue-icon icon--trail">clear</span>
       </a>
     {% else %}
       <a href="{{ down_url }}"{{ no_li_attributes.addClass(btn_class, 'button--primary', 'rate-down', 'use-ajax', no_li_classes).setAttribute('role', 'row') }}>
-        {{ 'No'|t }} ({{ down_votes }})
+        <span class="argue-icon icon--lead">user_decline</span>
+        {{ down_votes }}
       </a>
     {% endif %}
   </div>

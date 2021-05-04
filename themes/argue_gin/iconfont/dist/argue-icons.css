@@ -2,34 +2,17 @@
   font-family: 'argue-icons';
   font-style: normal;
   font-weight: 400;
-  src: url("argue-icons.eot?1bda7603c07e36c87d9062bf81f44c4c?#iefix") format("embedded-opentype"),
-url("argue-icons.woff2?1bda7603c07e36c87d9062bf81f44c4c") format("woff2"),
-url("argue-icons.woff?1bda7603c07e36c87d9062bf81f44c4c") format("woff");
+  src: url("argue-icons.eot?0a20cc627dbc359436dd90ba7a9e024d?#iefix") format("embedded-opentype"),
+url("argue-icons.woff2?0a20cc627dbc359436dd90ba7a9e024d") format("woff2"),
+url("argue-icons.woff?0a20cc627dbc359436dd90ba7a9e024d") format("woff");
   font-variant: normal;
 }
 
-.argue-icons, .arg-icons {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-}
-
-.arg-icons {
-  width: 1em;
-  height: 1em;
-  position: relative;
-  fill: currentColor;
-}
-
-.argue-icons {
+.argue-icon {
   font-family: 'argue-icons';
   font-weight: normal;
   font-style: normal;
+  font-size: 24px;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -50,7 +33,3 @@ url("argue-icons.woff?1bda7603c07e36c87d9062bf81f44c4c") format("woff");
   font-feature-settings: 'liga';
 }
 
-.arg-add_alert:before { content: "\f101"; }
-.arg-auto_delete:before { content: "\f102"; }
-.arg-problem:before { content: "\f103"; }
-.arg-warning:before { content: "\f104"; }

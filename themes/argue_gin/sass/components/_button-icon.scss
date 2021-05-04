@@ -8,7 +8,7 @@
 }
 
 .button {
-  .material-icons {
+  .argue-icon {
     position: relative;
     @include icon-btn-sizer();
 
@@ -21,11 +21,11 @@
     }
   }
 
-  &.button--small .material-icons {
+  &.button--small .argue-icon {
     @include icon-btn-sizer(21px);
   }
 
-  &.button--extrasmall .material-icons {
+  &.button--extrasmall .argue-icon {
     @include icon-btn-sizer(18px);
   }
 

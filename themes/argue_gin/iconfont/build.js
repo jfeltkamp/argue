@@ -1,4 +1,3 @@
-
 const Fontagon = require('fontagon')
 
 Fontagon({
@@ -8,15 +7,16 @@ Fontagon({
   dist: 'iconfont/dist/',
   fontName: 'argue-icons',
   style: 'css',
-  html: true,
   classOptions: {
-    baseClass: 'argue-icons',
+    baseClass: 'argue-icon',
     classPrefix: 'arg'
   },
   styleTemplate: {
     css: 'iconfont/src/css.hbs',
     html: 'iconfont/src/html.hbs'
   },
+  // html is not working
+  html: true,
   htmlTemplate: 'iconfont/src/html.hbs',
   htmlDist: 'iconfont/dist/index.htm'
 }).then((opts) => {

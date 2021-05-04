@@ -15,8 +15,8 @@
         if ($(jse).is('[data-slide-toggle-label]')) {
           let label = $(jse).attr('data-slide-toggle-label');
           $('<button class="argument-teaser__toggle details--handle button button--extrasmall" role="switch">'
-            + '<span class="material-icons more">unfold_more</span>'
-            + '<span class="material-icons less">unfold_less</span>'
+            + '<span class="argue-icon more">unfold_more</span>'
+            + '<span class="argue-icon less">unfold_less</span>'
             + '<span class="details--text">' + label +'</span></button>')
             .on('click', function() {
               $(jse).slideToggle(300);

@@ -3,6 +3,7 @@ global-styling:
   css:
     layout:
       icon-font/material-icons.css: {}
+      iconfont/dist/argue-icons.css: {}
       css/argue_gin.css: {}
   js:
     js/argue_gin.js: {}

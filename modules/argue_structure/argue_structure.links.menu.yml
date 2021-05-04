@@ -13,7 +13,7 @@ argue_structure.argue:
   weight: -50
   options:
     attributes:
-      data-icon: priority_high
+      data-icon: problem
 
 argue_structure.argue_problems_overview:
   title: 'Problems'
@@ -23,7 +23,7 @@ argue_structure.argue_problems_overview:
   weight: -50
   options:
     attributes:
-      data-icon: priority_high
+      data-icon: problem
 
 argue_structure.argue_rules_overview:
   title: 'Rules'
@@ -33,7 +33,7 @@ argue_structure.argue_rules_overview:
   weight: -40
   options:
     attributes:
-      data-icon: account_balance
+      data-icon: rule
 
 argue_structure.argue_ratified_rules_overview:
   title: 'Ratified rules'
@@ -43,4 +43,4 @@ argue_structure.argue_ratified_rules_overview:
   weight: -30
   options:
     attributes:
-      data-icon: account_balance
+      data-icon: rule

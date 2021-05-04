@@ -103,13 +103,13 @@ class AttachChangeRequestFormatter extends FormatterBase {
       $add_link = (\Drupal::currentUser()->hasPermission('add patch entities'))
         ? [
             '#type' => 'link',
-            '#title' => 'control_point',
+            '#title' => 'add_item',
             '#url' => Url::fromRoute('entity.node.edit_form', [
               'node' => $argument->getReferenceId()
             ],
               ['query' => ['attach_to' => implode('/', $destination)]]
             ),
-            '#options' => ['attributes' => ['class' => ['material-icons', 'add-link']]],
+            '#options' => ['attributes' => ['class' => ['argue-icon', 'add-link']]],
           ]
         : ['#markup' => ''];
 

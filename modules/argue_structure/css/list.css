@@ -15,7 +15,7 @@ ol.argue-structure-nested-list ol li > strong:before {
   counter-increment: item
    */
 }
-.argue-structure-nested-list a.material-icons {
+.argue-structure-nested-list a.argue-icon {
   color: inherit;
   font-size: inherit;
   text-decoration: none;

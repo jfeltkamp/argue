@@ -11,20 +11,20 @@
 
 {% if url %}
 <a href="{{ url }}"{{ attributes.addClass(class) }}>
-  <span class="argue-list-item__graphic material-icons" aria-hidden="true">{{ icon }}</span>
+  <span class="argue-list-item__graphic argue-icon" aria-hidden="true">{{ icon }}</span>
   <span class="argue-list-item__text">
     <span class="argue-list-item__primary-text">{{ line_1 }}</span>
     <span class="argue-list-item__secondary-text">{{ line_2 }}</span>
   </span>
-  <span class="argue-list-item__meta material-icons" aria-hidden="true">{{ meta }}</span>
+  <span class="argue-list-item__meta argue-icon" aria-hidden="true">{{ meta }}</span>
 </a>
 {% else %}
 <div{{ attributes.addClass(class) }}>
-  <span class="argue-list-item__graphic material-icons" aria-hidden="true">{{ icon }}</span>
+  <span class="argue-list-item__graphic argue-icon" aria-hidden="true">{{ icon }}</span>
   <span class="argue-list-item__text">
       <span class="argue-list-item__primary-text">{{ line_1 }}</span>
       <span class="argue-list-item__secondary-text">{{ line_2 }}</span>
     </span>
-  <span class="argue-list-item__meta material-icons" aria-hidden="true">{{ meta }}</span>
+  <span class="argue-list-item__meta argue-icon" aria-hidden="true">{{ meta }}</span>
 </div>
 {% endif %}

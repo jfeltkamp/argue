@@ -17,7 +17,7 @@
 #}
 {% set date = content.created|render|striptags|trim %}
 {% set arg_type = content.argument_type|render|trim %}
-{% set header_icon = (arg_type == 'pro') ? 'thumb_up' : 'thumb_down' %}
+{% set header_icon = (arg_type == 'pro') ? 'argue_pro' : 'argue_con' %}
 
 {%
 set classes = [
@@ -29,7 +29,7 @@ set classes = [
 <article{{ attributes.addClass(classes) }}>
   <div class="argument-wrapper card__content-wrapper">
     <header class="card-header">
-      <span class="card-header__icon material-icons" aria-hidden="true">{{ header_icon }}</span>
+      <span class="card-header__icon argue-icon" aria-hidden="true">{{ header_icon }}</span>
       <div class="card-header__text">
         <h3 class="card-header__text__top">{{ content.name }}</h3>
       </div>

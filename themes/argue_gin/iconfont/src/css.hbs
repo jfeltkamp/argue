@@ -6,28 +6,11 @@
   font-variant: normal;
 }
 
-.{{baseClass}}, .{{classPrefix}}-icons {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-}
-
-.{{classPrefix}}-icons {
-  width: 1em;
-  height: 1em;
-  position: relative;
-  fill: currentColor;
-}
-
 .{{baseClass}} {
   font-family: '{{fontName}}';
   font-weight: normal;
   font-style: normal;
+  font-size: 24px;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -48,6 +31,3 @@
   font-feature-settings: 'liga';
 }
 
-{{#each codepoints}}
-.{{../classPrefix}}-{{@key}}:before { content: "\\{{this}}"; }
-{{/each}}

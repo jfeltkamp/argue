@@ -83,7 +83,7 @@
 %}
 
 <a href="{{ url }}"{{ attributes.addClass(classes) }}>
-  <span class="material-icons argue-list-item__graphic" aria-hidden="true">priority_high</span>
+  <span class="argue-icon argue-list-item__graphic" aria-hidden="true">problem</span>
   <span class="argue-list-item__text">
     <span class="argue-list-item__primary-text">{{ label }}</span>
     {% if display_submitted %}
@@ -93,7 +93,7 @@
   <span class="argue-list-item__meta">
     <span class="argue-chip-set proscons-chip">
       <span class="argue-chip proscons-chip--con">
-        <i class="material-icons argue-chip__icon argue-chip__icon--leading">account_balance</i>
+        <i class="argue-icon argue-chip__icon argue-chip__icon--leading">rule</i>
         <span
           class="argue-chip__text">{{ drupal_view_result('argue_rules_ref_this_problem', 'embed_1', node.id)|length }}</span>
       </span>

@@ -85,11 +85,11 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="card__content-wrapper">
     <header class="card-header">
-      <div class="card-header__icon" aria-hidden="true"><i class="argue-icon ">rule</i></div>
-      <div class="card-header__text">
-        <h2 class="card-header__text__top heading-f">{{ label }}</h2>
-        <div class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</div>
-      </div>
+      <span class="card-header__icon argue-icon" aria-hidden="true">rule</span>
+      <span class="card-header__text">
+        <h2 class="card-header__text__top">{{ label }}</h2>
+        <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+      </span>
     </header>
 
     {% if content.field_causal_problems %}

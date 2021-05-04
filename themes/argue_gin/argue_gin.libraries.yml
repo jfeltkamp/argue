@@ -2,7 +2,6 @@ global-styling:
   version: 0.1
   css:
     layout:
-      icon-font/material-icons.css: {}
       iconfont/dist/argue-icons.css: {}
       css/argue_gin.css: {}
   js:

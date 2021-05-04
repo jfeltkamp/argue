@@ -71,6 +71,10 @@
   text-decoration: none;
   overflow: hidden;
 
+  &.argue-icon {
+    font-size: 34px;
+  }
+
   &:before {
     content: "";
     display: block;

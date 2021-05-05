@@ -73,6 +73,7 @@
 {%
   set classes = [
     'argue-list-item',
+    display_submitted ? 'two-line',
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -83,11 +84,11 @@
 %}
 
 <a href="{{ url }}"{{ attributes.addClass(classes) }}>
-  <span class="argue-icon argue-list-item__graphic" aria-hidden="true">problem</span>
+  <span class="argue-icon argue-list-item__graphic" aria-hidden="true">{{ node.bundle }}</span>
   <span class="argue-list-item__text">
-    <span class="argue-list-item__primary-text">{{ label }}</span>
+    <span class="argue-list-item__primary-text {{ text_class }}"> {{ label|render|striptags }} </span>
     {% if display_submitted %}
-    <span class="argue-list-item__secondary-text">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+    <span class="argue-list-item__secondary-text"> <span class="argue-icon argue-icon__inline">published</span> {{ date }} </span>
     {% endif %}
   </span>
   <span class="argue-list-item__meta">

@@ -47,7 +47,7 @@
   ]
 %}
 
-<div{{ attributes.addClass(classes) }}>
-  {#<i class="argue-icon mdc-chip__icon mdc-chip__icon--leading">thumb_up</i>#}
-  <div class="mdc-chip__text">{{ label }}: {% for item in items %}{{ item.content }}{% endfor %}</div>
+<div{{ attributes.addClass(classes).setAttribute('title', label) }}>
+  <i class="argue-icon argue-chip__icon argue-chip__icon--leading">ratified</i>
+  <span class="argue-chip__text">{% for item in items %}{{ item.content }}{% endfor %}</span>
 </div>

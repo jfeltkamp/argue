@@ -37,11 +37,63 @@
     fill: currentColor;
   }
 
-  &__text {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  &.two-line {
+    .argue-list-item {
+
+      &__text {
+        align-self: flex-start;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &__primary-text {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        margin-top: 0;
+        line-height: normal;
+        margin-bottom: -20px;
+
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 32px;
+          vertical-align: 0;
+        }
+        &:after {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 20px;
+          vertical-align: -20px;
+        }
+      }
+      &__secondary-text {
+        font-size: .875rem;
+        font-weight: 400;
+        text-decoration: inherit;
+        text-transform: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        margin-top: 0;
+        line-height: normal;
+
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 20px;
+          vertical-align: 0;
+        }
+      }
+    }
   }
+
 
   &__meta {
     margin-left: auto;

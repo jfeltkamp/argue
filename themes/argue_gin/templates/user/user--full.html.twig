@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<article{{ attributes.addClass('card','profile', 'full') }}>
+  <div class="card__content-wrapper">
+    <header class="card-header leading-icon">
+      <span class="card-header__icon" aria-hidden="true"><i class="argue-icon">user</i></span>
+      <span class="card-header__text">
+        <span class="card-header__first">{{ user.username }}</span>
+        <span class="card-header__second">{{ content.member_for|render|striptags|trim }}</span>
+      </span>
+    </header>
+    <div class="card__content-item card__content-item__row">
+      {{ content.field_user_image }}
+      <div class="user--roles">
+        <div class="field__label">{% trans %}Roles{% endtrans %}</div>
+        <div class="field__items">{{ content.field_roles }}</div>
+      </div>
+      {{ content.field_professions }}
+      {{ content.field_profiles }}
+    </div>
+    <div class="card__content-item card__content-item__row">
+      {{ content.field_cv }}
+      {{ content.field_connected_users }}
+    </div>
+  </div>
+</article>

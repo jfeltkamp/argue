@@ -120,6 +120,23 @@
   color: var(--card-header-text-bot-color, $card-header-text-bot-color);
 }
 
+@mixin argue-card__content-item {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@mixin argue-card__content-item__row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  > * {
+    flex: 1 1 auto;
+    margin: 0 1rem 1rem;
+  }
+}
+
+
 @mixin argue-card-footer() {
   display: flex;
   flex-direction: row;
@@ -162,6 +179,14 @@
 
 %argue-card-header__text__top {
   @include argue-card-header__text__top;
+}
+
+%argue-card__content-item {
+  @include argue-card__content-item;
+}
+
+%argue-card__content-item__row {
+  @include argue-card__content-item__row;
 }
 
 %argue-card__metadata {

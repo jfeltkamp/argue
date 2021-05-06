@@ -28,3 +28,28 @@ function argue_gin_theme_suggestions_form_alter(array &$suggestions, array $vari
   $extension = str_replace('-', '_', $variables['element']['#id']);
   $suggestions[] = 'form__' . $extension;
 }
+
+/**
+ * Implements hook_theme_suggestions_field_alter()
+ *
+ * Add theme hook specified by formatter id.
+ */
+function argue_gin_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#formatter'])) {
+    $suggestions[] = 'field__' . $variables['element']['#formatter'];
+    $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#formatter'];
+    $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#formatter'];
+    $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#field_name'] . '__' . $variables['element']['#formatter'];
+  }
+}
+
+/**
+ * @implements theme_theme_suggestions_HOOK_alter()
+ *
+ * Add templates for view modes.
+ */
+function argue_gin_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['#view_mode'])) {
+    $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
+  }
+}

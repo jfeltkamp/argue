@@ -28,6 +28,14 @@
   }
 }
 
+.card__content-item {
+  @extend %argue-card__content-item;
+
+  &__row {
+    @extend %argue-card__content-item__row;
+  }
+}
+
 .card-footer {
   @extend %argue-card-footer;
   &__metadata {

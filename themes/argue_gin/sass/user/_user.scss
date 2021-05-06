@@ -1,0 +1,65 @@
+.profile {
+
+  &.compact {
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    max-width: 100%;
+
+    .field--type-image {
+      width: 48px;
+      height: 48px;
+      margin-right: 1rem;
+      flex: 0 0 48px;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 24px;
+      }
+    }
+
+    .user__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .user__name {
+      a {
+        color: var(--argue-base-text-default-color);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .user__roles {
+      color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
+    }
+  }
+
+  &.full{
+
+    .field__label {
+      padding-bottom: .375rem;
+      border-bottom: 1px solid var(--argue-base-cards-border-color);
+      margin: .25em 0 0
+    }
+
+    .field__items {
+      margin: .5rem 0;
+    }
+
+    .field--name-field-user-image {
+      flex: 0 0 auto;
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+
+.argue-table {
+  &__table {
+    margin-top: 1rem;
+  }
+}
+
+.field--label-above {
+  .argue-table__table {
+    margin-top: 0;
+  }
+}

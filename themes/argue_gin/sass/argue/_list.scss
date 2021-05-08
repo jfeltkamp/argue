@@ -5,11 +5,11 @@
   list-style-type: none;
 
   &--title {
-    font-size: 1.125em;
+    @extend %field__label_above
   }
 
   &--items {
-    margin: 0 -16px;
+    @extend %field__items
   }
 }
 

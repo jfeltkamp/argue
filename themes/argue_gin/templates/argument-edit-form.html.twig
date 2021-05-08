@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme override for a argument edit form.
+ *
+ * Two column template for the argument add/edit form.
+ *
+ * This template will be used when a argument edit form specifies 'argument_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The argument add/edit form.
+ *
+ * @see argue_proscons_form_argument_form_alter()
+ */
+#}
+{% set icon = form.icon|render %}
+{% set form_class = icon|clean_class %}
+<div class="layout-node-form layout-argue-form clearfix">
+  <div class="layout-region layout-region--node-header">
+    <div class="layout-region__content">
+      {{ form.header }}
+    </div>
+  </div>
+  <div class="layout-region layout-region--node-main">
+    <div class="layout-region__content">
+
+      <article class="card argue-form {{ form_class }}-form">
+        <div class="card__content-wrapper">
+          <header class="card-header">
+            <span class="card-header__icon argue-icon" aria-hidden="true">{{ icon }}</span>
+            <span class="card-header__text">
+              <span class="card-header__text__top">{{ form.title|render|striptags }}</span>
+              {% if subtitle is not empty %}
+                <span class="card-header__text__bot">{{ subtitle }}</span>
+              {% endif %}
+            </span>
+          </header>
+          <div class="card__content-item">
+            {{ form|without('title', 'icon', 'advanced', 'footer', 'actions', 'header') }}
+          </div>
+          <div class="card-footer">
+            <div class="card-footer__action-buttons">{{ form.actions }}</div>
+            <div class="card-footer__action-icons"></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <div class="layout-region layout-region--node-secondary">
+    <div class="layout-region__content">
+      {{ form.advanced }}
+    </div>
+  </div>
+  <div class="layout-region layout-region--node-footer">
+    <div class="layout-region__content">
+      {{ form.footer }}
+    </div>
+  </div>
+</div>

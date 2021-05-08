@@ -16,10 +16,14 @@
  * @see template_preprocess_user()
  */
 #}
-{% if content.field_user_image|render|trim %}
-  <article{{ attributes.addClass('profile', 'teaser').setAttribute('title', content.name|render|trim ) }}>
+<article{{ attributes.addClass('profile', 'teaser') }}>
+  {% if content.field_user_image|render|trim %}
     {{ content.field_user_image }}
-  </article>
-{% else %}
-  <i class="argue-icon" aria-hidden="true">user</i>
-{% endif %}
+  {% else %}
+    <a href="{{ path('entity.user.canonical', {'user': user.id}) }}" class="card-header__icon" aria-hidden="true"><i class="argue-icon">user</i></a>
+  {% endif %}
+  <div class="user__text">
+    <div class="user__name"><a href="{{ path('entity.user.canonical', {'user': user.id}) }}">{{ content.name }}</a></div>
+    <div class="user__roles">{{ content.roles }}</div>
+  </div>
+</article>

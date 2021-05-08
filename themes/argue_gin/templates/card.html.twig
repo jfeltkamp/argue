@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Card temlate for custom use.
+ *
+ * Available variables:
+ * - attributes: for the wrapping element.
+ * - icon: string, ligatur string for the argue icon font.
+ * - title: The top title for card header.
+ * - subtitle: The subtitle for card header.
+ * - content: the child elements displayed in content section.
+ * - footer_left: actions or pills.
+ * - footer_right: actions or pills.
+ *
+ * @see argue_proscons_form_argument_form_alter()
+ */
+#}
+{%
+  set classes = ['card']
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div class="card__content-wrapper">
+    <header class="card-header">
+      {% if icon is not empty %}
+        <span class="card-header__icon argue-icon" aria-hidden="true">{{ icon }}</span>
+      {% endif %}
+      <span class="card-header__text">
+        <span class="card-header__text__top">{{ title }}</span>
+        {% if subtitle is not empty %}
+          <span class="card-header__text__bot">{{ subtitle }}</span>
+        {% endif %}
+      </span>
+    </header>
+    <div class="card__content-item">
+      {{ content }}
+    </div>
+    <div class="card-footer">
+      <div class="card-footer__action-buttons">{{ footer_left }}</div>
+      <div class="card-footer__action-icons">{{ footer_right }}</div>
+    </div>
+  </div>
+</article>

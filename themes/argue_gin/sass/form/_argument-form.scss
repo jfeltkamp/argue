@@ -1,0 +1,36 @@
+
+.layout-argue-form {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.argue-form {
+  margin: 1.5rem 0;
+}
+
+.card-footer {
+  .form-actions {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .button {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: calc(.75rem - 1px) calc(1.5rem - 1px);
+    }
+
+    .action-link {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: .5rem 1rem;
+    }
+  }
+}
+
+.claro-autocomplete {
+  .form-element {
+    width: 100%;
+    max-width: 40rem;
+  }
+}

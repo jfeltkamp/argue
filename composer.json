@@ -42,6 +42,7 @@
     "drupal/rate": "^1.0-alpha6",
     "drupal/login_emailusername": "^1.2",
     "drupal/menu_link_attributes": "^1.1",
+    "drupal/select2": "^1.13",
     "drupal/taxonomy_menu": "^3.4",
     "drupal/tour_ui": "~1.0",
     "drupal/twig_tweak": "^2.9",

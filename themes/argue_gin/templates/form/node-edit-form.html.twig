@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Theme override for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see claro_form_node_form_alter()
+ */
+#}
+<div class="layout-node-form layout-argue-form clearfix">
+  <div class="layout-region layout-region--node-main">
+    <div class="layout-region__content">
+
+      <article class="card argue-form {{ form_class }}-form">
+        <div class="card__content-wrapper">
+          <header class="card-header">
+            <span class="card-header__icon argue-icon" aria-hidden="true">{{ form.icon }}</span>
+            <span class="card-header__text">
+              <span class="card-header__text__top">{{ form.label|render }}</span>
+              {% if subtitle is not empty %}
+                <span class="card-header__text__bot">{{ subtitle }}</span>
+              {% endif %}
+            </span>
+          </header>
+          <div class="card__content-item">
+            {{ form|without('icon', 'label', 'advanced', 'footer', 'actions') }}
+          </div>
+          <div class="card-footer">
+            <div class="card-footer__action-buttons">{{ form.actions }}</div>
+            <div class="card-footer__action-icons"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="layout-region layout-region--node-secondary">
+    <div class="layout-region__content">
+      {{ form.advanced }}
+    </div>
+  </div>
+  <div class="layout-region layout-region--node-footer">
+    <div class="layout-region__content">
+      {% if form.footer|render|striptags|trim %}
+        <div class="divider"></div>
+        {{ form.footer }}
+      {% endif %}
+    </div>
+  </div>
+</div>

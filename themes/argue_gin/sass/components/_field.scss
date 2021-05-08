@@ -1,0 +1,29 @@
+
+%field__label_above {
+  font-weight: bold;
+  padding-bottom: .375rem;
+  border-bottom: 1px solid var(--argue-base-cards-border-color);
+  margin: .25em 0 0
+}
+
+%field__items {
+  margin: 1rem 0;
+}
+
+%field__item {
+  margin: .5rem 0;
+}
+
+
+.field--label-above {
+  .field__label {
+    @extend %field__label_above
+  }
+}
+
+.field__items {
+  @extend %field__items
+}
+.field__item {
+  @extend %field__item
+}

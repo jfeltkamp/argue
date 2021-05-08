@@ -53,14 +53,14 @@
 %}
 
 {% if label_hidden %}
-<div{{ attributes.addClass(classes, 'mdc-data-table') }}>
-  <table class="mdc-data-table__table" aria-label="{{ label }}">
+<div{{ attributes.addClass(classes) }}>
+  <table class="argue-table" aria-label="{{ label }}">
     {% for item in items %}
       {% if loop.first %}
         <thead>
-        {% set row_class = 'mdc-data-table__header-row' %}
+        {% set row_class = 'argue-table__header-row' %}
       {% else %}
-        {% set row_class = 'mdc-data-table__row' %}
+        {% set row_class = 'argue-table__row' %}
       {% endif %}
       <tr{{ item.attributes.addClass(row_class) }}>{{ item.content }}</tr>
       {% if loop.first %}
@@ -76,14 +76,14 @@
 {% else %}
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    <div class="mdc-data-table field__items">
-      <table class="mdc-data-table__table" aria-label="{{ label }}">
+    <div class="argue-table field__items">
+      <table class="argue-table__table" aria-label="{{ label }}">
         {% for item in items %}
           {% if loop.first %}
             <thead>
-            {% set row_class = 'mdc-data-table__header-row' %}
+            {% set row_class = 'argue-table__header-row' %}
           {% else %}
-            {% set row_class = 'mdc-data-table__row' %}
+            {% set row_class = 'argue-table__row' %}
           {% endif %}
           <tr{{ item.attributes.addClass(row_class) }}>{{ item.content }}</tr>
           {% if loop.first %}

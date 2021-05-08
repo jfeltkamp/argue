@@ -31,7 +31,7 @@ set classes = [
     <header class="card-header">
       <span class="card-header__icon argue-icon" aria-hidden="true">{{ header_icon }}</span>
       <div class="card-header__text">
-        <h3 class="card-header__text__top">{{ content.name }}</h3>
+        <h3 class="card-header__text__top">{{ content.name|render|striptags|trim }}</h3>
       </div>
     </header>
 

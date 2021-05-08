@@ -1,7 +1,28 @@
 <?php
 
-use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Implements hook_theme().
+ */
+function argue_gin_theme() {
+  return [
+    'argument_edit_form' => [
+      'render element' => 'form',
+    ],
+    'card' => [
+      'variables' => [
+        'attributes' => NULL,
+        'icon' => NULL,
+        'title' => NULL,
+        'subtitle' => NULL,
+        'content' => NULL,
+        'footer_left' => [],
+        'footer_right' => []
+      ]
+    ],
+  ];
+}
 
 function argue_gin_preprocess_links(&$variables) {
   // Styling classes for entity links.
@@ -51,5 +72,123 @@ function argue_gin_theme_suggestions_field_alter(array &$suggestions, array $var
 function argue_gin_theme_suggestions_user_alter(array &$suggestions, array $variables) {
   if (isset($variables['elements']['#view_mode'])) {
     $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
+  }
+}
+
+
+/**
+ * @implements theme_preprocess_user()
+ *
+ * Set users roles to display.
+ */
+function argue_gin_preprocess_user(&$variables) {
+  $roles = user_roles(TRUE);
+  $user_roles = [];
+  /** @var \Drupal\user\UserInterface $user */
+  $user = $variables['user'];
+  foreach ($user->get('roles') as $value) {
+    $role_name = $value->getString();
+    if (isset($roles[$role_name])) {
+      $user_roles[] = $roles[$role_name]->label();
+    }
+  }
+
+  $variables['content']['name'] = ['#markup' => $user->getAccountName()];
+  $variables['content']['roles'] = ['#markup' => implode(', ', $user_roles)];
+}
+
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter()
+ *
+ * Changes vertical tabs to container.
+ */
+function argue_gin_form_argument_form_alter(&$form, FormStateInterface $form_state) {
+  $icon = 'argue_pro_con';
+  if ($storage = $form_state->getStorage()) {
+    if (isset($storage['form_display'])) {
+      /** @var \Drupal\Core\Entity\Entity\EntityFormDisplay $form_display */
+      $form_display = $storage['form_display'];
+      $form_mode = $form_display->get('mode');
+      switch($form_display->get('mode')) {
+        case 'edit_pro':
+          $icon = 'argue_pro';
+          break;
+        case 'edit_con':
+          $icon = 'argue_con';
+          break;
+        default:
+          $icon = 'argue_pro_con';
+      }
+    }
+  }
+  // Use node display to keep it simple.
+  $form['#theme'] = ['argument_edit_form'];
+  $form['#attached']['library'][] = 'claro/node-form';
+  $form['icon'] = ['#markup' => $icon];
+
+  $form['header'] = [
+    '#type' => 'container',
+    '#weight' => 10,
+    '#attributes' => ['class' => ['argue_header']],
+    '#tree' => TRUE,
+    '#access' => TRUE,
+    'reference' => $form['reference'],
+  ];
+  unset($form['reference']);
+  # unset($form['title']);
+
+  $form['header']['reference']['#group'] = 'header';
+  $form['header']['title']['#group'] = 'header';
+
+  $form['meta'] = [
+    '#type' => 'container',
+    '#group' => 'advanced',
+    '#weight' => -10,
+    '#title' => t('Published'),
+    '#attributes' => ['class' => ['entity-meta__header']],
+    '#tree' => TRUE,
+    '#access' => TRUE,
+    'title' => [
+      '#type' => 'container',
+      'title' => [
+        '#markup' => t('Header data'),
+      ],
+      '#attributes' => [
+        'class' => ['entity-meta__title'],
+      ]
+    ],
+  ];
+
+  $form['advanced']['#type'] = 'container';
+  $form['advanced']['#attributes']['class'][] = 'entity-meta';
+
+  $form['revision_information']['#type'] = 'container';
+  $form['revision_information']['#group'] = 'meta';
+
+}
+
+
+function argue_gin_form_node_form_alter(&$form, FormStateInterface $form_state) {
+  $icon = 'default';
+  if ($storage = $form_state->getStorage()) {
+    if (isset($storage['form_display'])) {
+      /** @var \Drupal\Core\Entity\Entity\EntityFormDisplay $form_display */
+      $form_display = $storage['form_display'];
+      $icon = $form_display->get('bundle');
+      $form['icon'] = ['#markup' => $icon];
+
+      // Set card header label.
+      if (isset($form['#title'])) {
+        $title = $form['#title'];
+      } else {
+        $label = \Drupal::entityTypeManager()
+          ->getStorage('node_type')
+          ->load($icon)
+          ->label();
+        $title = t('Add new @type', ['@type' => $label]);
+      }
+      $form['label'] = ['#markup' => $title];
+    }
   }
 }

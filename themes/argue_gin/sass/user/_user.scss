@@ -1,15 +1,16 @@
 .profile {
 
-  &.compact {
+  &.teaser {
     display: flex;
     flex-direction: row;
     width: 320px;
     max-width: 100%;
+    margin: .75rem 0;
 
     .field--type-image {
       width: 48px;
       height: 48px;
-      margin-right: 1rem;
+      margin: 0 1rem 0 0;
       flex: 0 0 48px;
 
       img {
@@ -43,17 +44,6 @@
   }
 
   &.full{
-
-    .field__label {
-      padding-bottom: .375rem;
-      border-bottom: 1px solid var(--argue-base-cards-border-color);
-      margin: .25em 0 0
-    }
-
-    .field__items {
-      margin: .5rem 0;
-    }
-
     .field--name-field-user-image {
       flex: 0 0 auto;
       img {

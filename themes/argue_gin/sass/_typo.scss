@@ -1,0 +1,193 @@
+@import "mixins/typo";
+
+:root {
+  --arg-typo-font-family: #{$arg-typo-font-family};
+  --arg-typo-h1-font-family: #{$arg-typo-h1-font-family};
+  --arg-typo-h1-font-size: #{$arg-typo-h1-font-size};
+  --arg-typo-h1-line-height: #{$arg-typo-h1-line-height};
+  --arg-typo-h1-font-weight: #{$arg-typo-h1-font-weight};
+  --arg-typo-h1-letter-spacing: #{$arg-typo-h1-letter-spacing};
+  --arg-typo-h2-font-family: #{$arg-typo-h2-font-family};
+  --arg-typo-h2-font-size: #{$arg-typo-h2-font-size};
+  --arg-typo-h2-line-height: #{$arg-typo-h2-line-height};
+  --arg-typo-h2-font-weight: #{$arg-typo-h2-font-weight};
+  --arg-typo-h2-letter-spacing: #{$arg-typo-h2-letter-spacing};
+  --arg-typo-h3-font-family: #{$arg-typo-h3-font-family};
+  --arg-typo-h3-font-size: #{$arg-typo-h3-font-size};
+  --arg-typo-h3-line-height: #{$arg-typo-h3-line-height};
+  --arg-typo-h3-font-weight: #{$arg-typo-h3-font-weight};
+  --arg-typo-h3-letter-spacing: #{$arg-typo-h3-letter-spacing};
+  --arg-typo-h4-font-family: #{$arg-typo-h4-font-family};
+  --arg-typo-h4-font-size: #{$arg-typo-h4-font-size};
+  --arg-typo-h4-line-height: #{$arg-typo-h4-line-height};
+  --arg-typo-h4-font-weight: #{$arg-typo-h4-font-weight};
+  --arg-typo-h4-letter-spacing: #{$arg-typo-h4-letter-spacing};
+  --arg-typo-h5-font-family: #{$arg-typo-h5-font-family};
+  --arg-typo-h5-font-size: #{$arg-typo-h5-font-size};
+  --arg-typo-h5-line-height: #{$arg-typo-h5-line-height};
+  --arg-typo-h5-font-weight: #{$arg-typo-h5-font-weight};
+  --arg-typo-h5-letter-spacing: #{$arg-typo-h5-letter-spacing};
+  --arg-typo-h6-font-family: #{$arg-typo-h6-font-family};
+  --arg-typo-h6-font-size: #{$arg-typo-h6-font-size};
+  --arg-typo-h6-line-height: #{$arg-typo-h6-line-height};
+  --arg-typo-h6-font-weight: #{$arg-typo-h6-font-weight};
+  --arg-typo-h6-letter-spacing: #{$arg-typo-h6-letter-spacing};
+  --arg-typo-subtitle1-font-family: #{$arg-typo-subtitle1-font-family};
+  --arg-typo-subtitle1-font-size: #{$arg-typo-subtitle1-font-size};
+  --arg-typo-subtitle1-line-height: #{$arg-typo-subtitle1-line-height};
+  --arg-typo-subtitle1-font-weight: #{$arg-typo-subtitle1-font-weight};
+  --arg-typo-subtitle1-letter-spacing: #{$arg-typo-subtitle1-letter-spacing};
+  --arg-typo-subtitle2-font-family: #{$arg-typo-subtitle2-font-family};
+  --arg-typo-subtitle2-font-size: #{$arg-typo-subtitle2-font-size};
+  --arg-typo-subtitle2-line-height: #{$arg-typo-subtitle2-line-height};
+  --arg-typo-subtitle2-font-weight: #{$arg-typo-subtitle2-font-weight};
+  --arg-typo-subtitle2-letter-spacing: #{$arg-typo-subtitle2-letter-spacing};
+  --arg-typo-body1-font-family: #{$arg-typo-body1-font-family};
+  --arg-typo-body1-font-size: #{$arg-typo-body1-font-size};
+  --arg-typo-body1-line-height: #{$arg-typo-body1-line-height};
+  --arg-typo-body1-font-weight: #{$arg-typo-body1-font-weight};
+  --arg-typo-body1-letter-spacing: #{$arg-typo-body1-letter-spacing};
+  --arg-typo-body2-font-family: #{$arg-typo-body2-font-family};
+  --arg-typo-body2-font-size: #{$arg-typo-body2-font-size};
+  --arg-typo-body2-line-height: #{$arg-typo-body2-line-height};
+  --arg-typo-body2-font-weight: #{$arg-typo-body2-font-weight};
+  --arg-typo-body2-letter-spacing: #{$arg-typo-body2-letter-spacing};
+  --arg-typo-caption-font-family: #{$arg-typo-caption-font-family};
+  --arg-typo-caption-font-size: #{$arg-typo-caption-font-size};
+  --arg-typo-caption-line-height: #{$arg-typo-caption-line-height};
+  --arg-typo-caption-font-weight: #{$arg-typo-caption-font-weight};
+  --arg-typo-caption-letter-spacing: #{$arg-typo-caption-letter-spacing};
+  --arg-typo-button-font-family: #{$arg-typo-button-font-family};
+  --arg-typo-button-font-size: #{$arg-typo-button-font-size};
+  --arg-typo-button-line-height: #{$arg-typo-button-line-height};
+  --arg-typo-button-font-weight: #{$arg-typo-button-font-weight};
+  --arg-typo-button-letter-spacing: #{$arg-typo-button-letter-spacing};
+  --arg-typo-overline-font-family: #{$arg-typo-overline-font-family};
+  --arg-typo-overline-font-size: #{$arg-typo-overline-font-size};
+  --arg-typo-overline-line-height: #{$arg-typo-overline-line-height};
+  --arg-typo-overline-font-weight: #{$arg-typo-overline-font-weight};
+  --arg-typo-overline-letter-spacing: #{$arg-typo-overline-letter-spacing};
+  --arg-typo-overline-text-transform: #{$arg-typo-overline-text-transform};
+}
+
+%arg-typo-base {
+  @include arg-typo-base;
+}
+
+%arg-typo--h1 {
+  @extend %arg-typo-base;
+  @include arg-typo--h1;
+}
+
+%arg-typo--h2 {
+  @extend %arg-typo-base;
+  @include arg-typo--h2;
+}
+
+%arg-typo--h3 {
+  @extend %arg-typo-base;
+  @include arg-typo--h3;
+}
+
+%arg-typo--h4 {
+  @extend %arg-typo-base;
+  @include arg-typo--h4;
+}
+
+%arg-typo--h5 {
+  @extend %arg-typo-base;
+  @include arg-typo--h5;
+}
+
+%arg-typo--h6 {
+  @extend %arg-typo-base;
+  @include arg-typo--h6;
+}
+
+%arg-typo--subtitle1 {
+  @extend %arg-typo-base;
+  @include arg-typo--subtitle1;
+}
+
+%arg-typo--subtitle2 {
+  @extend %arg-typo-base;
+  @include arg-typo--subtitle2;
+}
+
+%arg-typo--body1 {
+  @extend %arg-typo-base;
+  @include arg-typo--body1;
+}
+
+%arg-typo--body2 {
+  @extend %arg-typo-base;
+  @include arg-typo--body2;
+}
+
+%arg-typo--caption {
+  @extend %arg-typo-base;
+  @include arg-typo--caption;
+}
+
+%arg-typo--button {
+  @extend %arg-typo-base;
+  @include arg-typo--button;
+}
+
+%arg-typo--overline {
+  @extend %arg-typo-base;
+  @include arg-typo-base;
+}
+
+// Finally the classes with the first extend of collection.
+.arg-typo--h1 {
+  @extend %arg-typo--h1;
+}
+
+.arg-typo--h2 {
+  @extend %arg-typo--h2;
+}
+
+.arg-typo--h3 {
+  @extend %arg-typo--h3;
+}
+
+.arg-typo--h4 {
+  @extend %arg-typo--h4;
+}
+
+.arg-typo--h5 {
+  @extend %arg-typo--h5;
+}
+
+.arg-typo--h6 {
+  @extend %arg-typo--h6;
+}
+
+.arg-typo--subtitle1 {
+  @extend %arg-typo--subtitle1;
+}
+
+.arg-typo--subtitle2 {
+  @extend %arg-typo--subtitle2;
+}
+
+.arg-typo--body1 {
+  @extend %arg-typo--body1;
+}
+
+.arg-typo--body2 {
+  @extend %arg-typo--body2;
+}
+
+.arg-typo--caption {
+  @extend %arg-typo--caption;
+}
+
+.arg-typo--button {
+  @extend %arg-typo--button;
+}
+
+.arg-typo--overline {
+  @extend %arg-typo--overline;
+}

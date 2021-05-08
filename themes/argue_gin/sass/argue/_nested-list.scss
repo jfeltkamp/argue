@@ -23,20 +23,13 @@ ol.argue-structure-nested-list {
     padding: 0;
 
     > strong {
+      @extend %arg-typo--h4;
       display: block;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      font-size: var(--mdc-typography-headline4-font-size, 2.125rem);
-      line-height: var(--mdc-typography-headline4-line-height, 2.5rem);
-      font-weight: var(--mdc-typography-headline4-font-weight, 400);
-      text-decoration: inherit;
-      text-decoration: var(--mdc-typography-headline4-text-decoration, inherit);
-      text-transform: var(--mdc-typography-headline4-text-transform, inherit);
       padding: .5em 1rem;
     }
 
     &.level_0 {
-      flex: 1 1 calc(50% - 1rem);
+      flex: 1 1 calc(100% - 1rem);
       border-radius: 4px;
       background-color: #fff;
       border-width: 0;
@@ -49,17 +42,14 @@ ol.argue-structure-nested-list {
       > strong {
         border-bottom: 1px solid var(--argue-base-cards-border-color, rgba(0, 0, 0, .25));
       }
+
+      @media (min-width: 992px) {
+        flex: 1 1 calc(50% - 1rem);
+      }
     }
 
     &.level_1 > strong {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: var(--mdc-typography-headline5-font-size, 1.5rem);
-    line-height: var(--mdc-typography-headline5-line-height, 2rem);
-    font-weight: var(--mdc-typography-headline5-font-weight, 400);
-    letter-spacing: var(--mdc-typography-headline5-letter-spacing, normal);
-    text-decoration: var(--mdc-typography-headline5-text-decoration, inherit);
-    text-transform: var(--mdc-typography-headline5-text-transform, inherit);
-  }
+      @extend %arg-typo--h5;
+    }
   }
 }

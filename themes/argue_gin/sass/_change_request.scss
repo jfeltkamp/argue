@@ -1,0 +1,14 @@
+.patch {
+  &__body {
+    // Footer as line with space between.
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    fieldset.cr_field_view {
+      padding-top: 0;
+      flex: 1 1 100%;
+      width: 100%;
+    }
+  }
+}

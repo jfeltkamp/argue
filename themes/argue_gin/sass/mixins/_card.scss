@@ -98,9 +98,6 @@
 
 @mixin argue-card-header__text__top {
   margin: 0;
-  font-size: 1.125rem;
-  font-weight: bold;
-  line-height: 1.3;
 
   a {
     &,
@@ -114,9 +111,6 @@
 
 @mixin argue-card__metadata {
   margin: 0;
-  font-size: .875rem;
-  font-weight: normal;
-  line-height: 1.3;
   color: var(--card-header-text-bot-color, $card-header-text-bot-color);
 }
 

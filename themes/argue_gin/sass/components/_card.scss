@@ -20,10 +20,12 @@
 
     &__top {
       @extend %argue-card-header__text__top;
+      @extend %arg-typo--h6;
     }
 
     &__bot {
       @extend %argue-card__metadata;
+      @extend %arg-typo--subtitle2;
     }
   }
 }

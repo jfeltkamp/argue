@@ -1,0 +1,190 @@
+$arg-typo-font-family: Roboto, sans-serif;
+
+$arg-typo-h1-font-family: $arg-typo-font-family;
+$arg-typo-h1-font-size: 2.125rem;
+$arg-typo-h1-line-height: 1em;
+$arg-typo-h1-font-weight: 300;
+$arg-typo-h1-letter-spacing: -0.015625em;
+
+$arg-typo-h2-font-family: $arg-typo-font-family;
+$arg-typo-h2-font-size: 2rem;
+$arg-typo-h2-line-height: 1em;
+$arg-typo-h2-font-weight: 300;
+$arg-typo-h2-letter-spacing: -0.0083333333em;
+
+$arg-typo-h3-font-family: $arg-typo-font-family;
+$arg-typo-h3-font-size: 1.75rem;
+$arg-typo-h3-line-height: 1.125em;
+$arg-typo-h3-font-weight: 400;
+$arg-typo-h3-letter-spacing: normal;
+
+$arg-typo-h4-font-family: $arg-typo-font-family;
+$arg-typo-h4-font-size: 1.5rem;
+$arg-typo-h4-line-height: 1.25em;
+$arg-typo-h4-font-weight: 400;
+$arg-typo-h4-letter-spacing: 0.0073529412em;
+
+$arg-typo-h5-font-family: $arg-typo-font-family;
+$arg-typo-h5-font-size: 1.25rem;
+$arg-typo-h5-line-height: 1.25em;
+$arg-typo-h5-font-weight: 400;
+$arg-typo-h5-letter-spacing: normal;
+
+$arg-typo-h6-font-family: $arg-typo-font-family;
+$arg-typo-h6-font-size: 1.125rem;
+$arg-typo-h6-line-height: 1.25em;
+$arg-typo-h6-font-weight: 500;
+$arg-typo-h6-letter-spacing: 0.0125em;
+
+$arg-typo-subtitle1-font-family: $arg-typo-font-family;
+$arg-typo-subtitle1-font-size: 1rem;
+$arg-typo-subtitle1-line-height: 1.75em;
+$arg-typo-subtitle1-font-weight: 400;
+$arg-typo-subtitle1-letter-spacing: 0.009375em;
+
+$arg-typo-subtitle2-font-family: $arg-typo-font-family;
+$arg-typo-subtitle2-font-size: 0.875rem;
+$arg-typo-subtitle2-line-height: 1.25em;
+$arg-typo-subtitle2-font-weight: 500;
+$arg-typo-subtitle2-letter-spacing: 0.0071428571em;
+
+$arg-typo-body1-font-family: $arg-typo-font-family;
+$arg-typo-body1-font-size: 1rem;
+$arg-typo-body1-line-height: 1.5em;
+$arg-typo-body1-font-weight: 400;
+$arg-typo-body1-letter-spacing: 0.03125em;
+
+$arg-typo-body2-font-family: $arg-typo-font-family;
+$arg-typo-body2-font-size: 0.875rem;
+$arg-typo-body2-line-height: 1.25em;
+$arg-typo-body2-font-weight: 400;
+$arg-typo-body2-letter-spacing: 0.0178571429em;
+
+$arg-typo-caption-font-family: $arg-typo-font-family;
+$arg-typo-caption-font-size: 0.75rem;
+$arg-typo-caption-line-height: 1.5em;
+$arg-typo-caption-font-weight: 400;
+$arg-typo-caption-letter-spacing: 0.0333333333em;
+
+$arg-typo-button-font-family: $arg-typo-font-family;
+$arg-typo-button-font-size: 0.875rem;
+$arg-typo-button-line-height: 2.25em;
+$arg-typo-button-font-weight: 500;
+$arg-typo-button-letter-spacing: 0.0892857143em;
+
+$arg-typo-overline-font-family: $arg-typo-font-family;
+$arg-typo-overline-font-size: 0.75rem;
+$arg-typo-overline-line-height: 2em;
+$arg-typo-overline-font-weight: 500;
+$arg-typo-overline-letter-spacing: 0.1666666667em;
+$arg-typo-overline-text-transform: uppercase;
+
+@mixin arg-typo-base {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin arg-typo--h1 {
+  font-family: var(--arg-typo-h1-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-h1-font-size, $arg-typo-h1-font-size);
+  line-height: var(--arg-typo-h1-line-height, $arg-typo-h1-line-height);
+  font-weight: var(--arg-typo-h1-font-weight, $arg-typo-h1-font-weight);
+  letter-spacing: var(--arg-typo-h1-letter-spacing, $arg-typo-h1-letter-spacing);
+}
+
+@mixin arg-typo--h2 {
+  font-family: var(--arg-typo-h2-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-h2-font-size, $arg-typo-h2-font-size);
+  line-height: var(--arg-typo-h2-line-height, $arg-typo-h2-line-height);
+  font-weight: var(--arg-typo-h2-font-weight, $arg-typo-h2-font-weight);
+  letter-spacing: var(--arg-typo-h2-letter-spacing, $arg-typo-h2-letter-spacing);
+}
+
+@mixin arg-typo--h3 {
+  font-family: var(--arg-typo-h3-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-h3-font-size, $arg-typo-h3-font-size);
+  line-height: var(--arg-typo-h3-line-height, $arg-typo-h3-line-height);
+  font-weight: var(--arg-typo-h3-font-weight, $arg-typo-h3-font-weight);
+  letter-spacing: var(--arg-typo-h3-letter-spacing, $arg-typo-h3-letter-spacing);
+}
+
+@mixin arg-typo--h4 {
+  font-family: var(--arg-typo-h4-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-h4-font-size, $arg-typo-h4-font-size);
+  line-height: var(--arg-typo-h4-line-height, $arg-typo-h4-line-height);
+  font-weight: var(--arg-typo-h4-font-weight, $arg-typo-h4-font-weight);
+  letter-spacing: var(--arg-typo-h4-letter-spacing, $arg-typo-h4-letter-spacing);
+}
+
+@mixin arg-typo--h5 {
+  font-family: var(--arg-typo-h5-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-h5-font-size, $arg-typo-h5-font-size);
+  line-height: var(--arg-typo-h5-line-height, $arg-typo-h5-line-height);
+  font-weight: var(--arg-typo-h5-font-weight, $arg-typo-h5-font-weight);
+  letter-spacing: var(--arg-typo-h5-letter-spacing, $arg-typo-h5-letter-spacing);
+}
+
+@mixin arg-typo--h6 {
+  font-family: var(--arg-typo-h6-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-h6-font-size, $arg-typo-h6-font-size);
+  line-height: var(--arg-typo-h6-line-height, $arg-typo-h6-line-height);
+  font-weight: var(--arg-typo-h6-font-weight, $arg-typo-h6-font-weight);
+  letter-spacing: var(--arg-typo-h6-letter-spacing, $arg-typo-h6-letter-spacing);
+}
+
+@mixin arg-typo--subtitle1 {
+  font-family: var(--arg-typo-subtitle1-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-subtitle1-font-size, $arg-typo-subtitle1-font-size);
+  line-height: var(--arg-typo-subtitle1-line-height, $arg-typo-subtitle1-line-height);
+  font-weight: var(--arg-typo-subtitle1-font-weight, $arg-typo-subtitle1-font-weight);
+  letter-spacing: var(--arg-typo-subtitle1-letter-spacing, $arg-typo-subtitle1-letter-spacing);
+}
+
+@mixin arg-typo--subtitle2 {
+  font-family: var(--arg-typo-subtitle2-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-subtitle2-font-size, $arg-typo-subtitle2-font-size);
+  line-height: var(--arg-typo-subtitle2-line-height, $arg-typo-subtitle2-line-height);
+  font-weight: var(--arg-typo-subtitle2-font-weight, $arg-typo-subtitle2-font-weight);
+  letter-spacing: var(--arg-typo-subtitle2-letter-spacing, $arg-typo-subtitle2-letter-spacing);
+}
+
+@mixin arg-typo--body1 {
+  font-family: var(--arg-typo-body1-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-body1-font-size, $arg-typo-body1-font-size);
+  line-height: var(--arg-typo-body1-line-height, $arg-typo-body1-line-height);
+  font-weight: var(--arg-typo-body1-font-weight, $arg-typo-body1-font-weight);
+  letter-spacing: var(--arg-typo-body1-letter-spacing, $arg-typo-body1-letter-spacing);
+}
+
+@mixin arg-typo--body2 {
+  font-family: var(--arg-typo-body2-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-body2-font-size, $arg-typo-body2-font-size);
+  line-height: var(--arg-typo-body2-line-height, $arg-typo-body2-line-height);
+  font-weight: var(--arg-typo-body2-font-weight, $arg-typo-body2-font-weight);
+  letter-spacing: var(--arg-typo-body2-letter-spacing, $arg-typo-body2-letter-spacing);
+}
+
+@mixin arg-typo--caption {
+  font-family: var(--arg-typo-caption-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-caption-font-size, $arg-typo-caption-font-size);
+  line-height: var(--arg-typo-caption-line-height, $arg-typo-caption-line-height);
+  font-weight: var(--arg-typo-caption-font-weight, $arg-typo-caption-font-weight);
+  letter-spacing: var(--arg-typo-caption-letter-spacing, $arg-typo-caption-letter-spacing);
+}
+
+@mixin arg-typo--button {
+  font-family: var(--arg-typo-button-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-button-font-size, $arg-typo-button-font-size);
+  line-height: var(--arg-typo-button-line-height, $arg-typo-button-line-height);
+  font-weight: var(--arg-typo-button-font-weight, $arg-typo-button-font-weight);
+  letter-spacing: var(--arg-typo-button-letter-spacing, $arg-typo-button-letter-spacing);
+}
+
+@mixin arg-typo--overline {
+  font-family: var(--arg-typo-overline-font-family, var(--arg-typo-font-family, $arg-typo-font-family));
+  font-size: var(--arg-typo-overline-font-size, $arg-typo-overline-font-size);
+  line-height: var(--arg-typo-overline-line-height, $arg-typo-overline-line-height);
+  font-weight: var(--arg-typo-overline-font-weight, $arg-typo-overline-font-weight);
+  letter-spacing: var(--arg-typo-overline-letter-spacing, $arg-typo-overline-letter-spacing);
+  text-transform: var(--arg-typo-overline-text-transform, $arg-typo-overline-text-transform);
+}

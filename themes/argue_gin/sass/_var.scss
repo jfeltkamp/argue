@@ -45,6 +45,87 @@ $card-header-text-bot-color: #666;
 $argue-accent-color: #0550e6;
 $argue-add-link-color: $argue-accent-color;
 
+$arg-typo-font-family: Roboto, sans-serif;
+
+$arg-typo-h1-font-family: $arg-typo-font-family;
+$arg-typo-h1-font-size: 6rem;
+$arg-typo-h1-line-height: 6rem;
+$arg-typo-h1-font-weight: 300;
+$arg-typo-h1-letter-spacing: -0.015625em;
+
+$arg-typo-h2-font-family: $arg-typo-font-family;
+$arg-typo-h2-font-size: 3.75rem;
+$arg-typo-h2-line-height: 3.75rem;
+$arg-typo-h2-font-weight: 300;
+$arg-typo-h2-letter-spacing: -0.0083333333em;
+
+$arg-typo-h3-font-family: $arg-typo-font-family;
+$arg-typo-h3-font-size: 3rem;
+$arg-typo-h3-line-height: 3.125rem;
+$arg-typo-h3-font-weight: 400;
+$arg-typo-h3-letter-spacing: normal;
+
+$arg-typo-h4-font-family: $arg-typo-font-family;
+$arg-typo-h4-font-size: 2.125rem;
+$arg-typo-h4-line-height: 2.5rem;
+$arg-typo-h4-font-weight: 400;
+$arg-typo-h4-letter-spacing: 0.0073529412em;
+
+$arg-typo-h5-font-family: $arg-typo-font-family;
+$arg-typo-h5-font-size: 1.5rem;
+$arg-typo-h5-line-height: 2rem;
+$arg-typo-h5-font-weight: 400;
+$arg-typo-h5-letter-spacing: normal;
+
+$arg-typo-h6-font-family: $arg-typo-font-family;
+$arg-typo-h6-font-size: 1.25rem;
+$arg-typo-h6-line-height: 2rem;
+$arg-typo-h6-font-weight: 500;
+$arg-typo-h6-letter-spacing: 0.0125em;
+
+$arg-typo-subtitle1-font-family: $arg-typo-font-family;
+$arg-typo-subtitle1-font-size: 1rem;
+$arg-typo-subtitle1-line-height: 1.75rem;
+$arg-typo-subtitle1-font-weight: 400;
+$arg-typo-subtitle1-letter-spacing: 0.009375em;
+
+$arg-typo-subtitle2-font-family: $arg-typo-font-family;
+$arg-typo-subtitle2-font-size: 0.875rem;
+$arg-typo-subtitle2-line-height: 1.375rem;
+$arg-typo-subtitle2-font-weight: 500;
+$arg-typo-subtitle2-letter-spacing: 0.0071428571em;
+
+$arg-typo-body1-font-family: $arg-typo-font-family;
+$arg-typo-body1-font-size: 1rem;
+$arg-typo-body1-line-height: 1.5rem;
+$arg-typo-body1-font-weight: 400;
+$arg-typo-body1-letter-spacing: 0.03125em;
+
+$arg-typo-body2-font-family: $arg-typo-font-family;
+$arg-typo-body2-font-size: 0.875rem;
+$arg-typo-body2-line-height: 1.25rem;
+$arg-typo-body2-font-weight: 400;
+$arg-typo-body2-letter-spacing: 0.0178571429em;
+
+$arg-typo-caption-font-family: $arg-typo-font-family;
+$arg-typo-caption-font-size: 0.75rem;
+$arg-typo-caption-line-height: 1.25rem;
+$arg-typo-caption-font-weight: 400;
+$arg-typo-caption-letter-spacing: 0.0333333333em;
+
+$arg-typo-button-font-family: $arg-typo-font-family;
+$arg-typo-button-font-size: 0.875rem;
+$arg-typo-button-line-height: 2.25rem;
+$arg-typo-button-font-weight: 500;
+$arg-typo-button-letter-spacing: 0.0892857143em;
+
+$arg-typo-overline-font-family: $arg-typo-font-family;
+$arg-typo-overline-font-size: 0.75rem;
+$arg-typo-overline-line-height: 2rem;
+$arg-typo-overline-font-weight: 500;
+$arg-typo-overline-letter-spacing: 0.1666666667em;
+$arg-typo-overline-text-transform: uppercase;
+
 :root {
   --argue-list-avatar-bg: #F2F2F2;
   --argue-base-theme-secondary: #BEAF75;

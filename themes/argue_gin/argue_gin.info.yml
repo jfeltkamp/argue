@@ -1,7 +1,7 @@
 name: ArgueGin
 type: theme
 base theme: claro
-description: 'Argue UI based on Gin.'
+description: 'Argue UI based on Claro.'
 core_version_requirement: ^8.8 || ^9
 
 # Regions
@@ -24,6 +24,7 @@ libraries:
 
 
 libraries-override:
+  gin/gin_dialog: false
   rate/number-up-down:
     css:
       theme:

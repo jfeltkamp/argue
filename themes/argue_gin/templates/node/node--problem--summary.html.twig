@@ -83,11 +83,11 @@
 
 <article{{ attributes.addClass(classes) }}>
     <header class="">
-        <h3>{{ label }}</h3>
+        <h3 class="arg-typo--overline">{{ label }}</h3>
     </header>
     <div{{ content_attributes.addClass('node__sub_content') }}>
         {{ content }}
     </div>
-    <footer><a href="{{ url }}" class="argue-button">{{ 'See details and comments'|t }}</a></footer>
+    <footer><a href="{{ url }}" class="button button--extrasmall">{{ 'See details and comments'|t }}</a></footer>
 </article>
 

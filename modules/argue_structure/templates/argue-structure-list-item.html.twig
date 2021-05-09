@@ -1,13 +1,8 @@
 {%
   set class = [
-    'argue-list',
-    'argue-list--two-line',
-    'argue-list--avatar-list',
+    'argue-list-item',
   ]
 %}
-{#
-  # set meta_class = meta_icon ?
-#}
 
 {% if url %}
 <a href="{{ url }}"{{ attributes.addClass(class) }}>

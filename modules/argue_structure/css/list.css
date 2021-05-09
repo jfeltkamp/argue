@@ -1,23 +1,23 @@
-ol.argue-structure-nested-list,
-ol.argue-structure-nested-list ol {
-  counter-reset: item;
-  padding-left: 10px;
+.argue-structure-nested-list {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: -.5rem;
+  max-width: 100%;
 }
 
-ol.argue-structure-nested-list li,
-ol.argue-structure-nested-list ol li {
-  display: block
+.argue-structure-nested-list .level_0 {
+  flex: 1 1 calc(100% - 1rem);
+  box-sizing: border-box;
+  margin: .5rem;
+  overflow: hidden;
 }
 
-ol.argue-structure-nested-list li > strong:before,
-ol.argue-structure-nested-list ol li > strong:before {
-  /* content: counters(item, ".")". ";
-  counter-increment: item
-   */
-}
-.argue-structure-nested-list a.argue-icon {
-  color: inherit;
-  font-size: inherit;
-  text-decoration: none;
-  vertical-align: middle;
+@media (min-width: 1280px) {
+  .argue-structure-nested-list .level_0 {
+    flex: 1 1 calc(50% - 1rem);
+  }
 }

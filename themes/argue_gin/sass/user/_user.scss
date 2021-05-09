@@ -28,8 +28,9 @@
     }
 
     .user__name {
+      @extend %arg-typo--h6;
       a {
-        color: var(--argue-base-text-default-color);
+        color: var(--arg-base-text-default-color);
         text-decoration: none;
 
         &:hover {
@@ -39,6 +40,7 @@
     }
 
     .user__roles {
+      @extend %arg-typo--subtitle2;
       color: var(--arg-theme-text-secondary-on-background,rgba(0,0,0,.54));
     }
   }
@@ -46,6 +48,7 @@
   &.full{
     .field--name-field-user-image {
       flex: 0 0 auto;
+
       img {
         display: block;
         margin: 0 auto;

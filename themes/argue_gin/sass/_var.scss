@@ -38,13 +38,16 @@ $mixColor: $ginPrimary;
 $ginPrimaryHover: mix(black, $ginPrimary, 15%);
 $ginPrimaryActive: mix(black, $ginPrimary, 25%);
 
-$argue-list-avatar-bg: #FFF;
 
-$card-header-text-bot-color: #666;
+$arg-card-header-text-bot-color: #666;
 
 $argue-accent-color: #0550e6;
 $argue-add-link-color: $argue-accent-color;
 
+// List
+$arg-list-avatar-bg: #F2F2F2;
+
+// Typo
 $arg-typo-font-family: Roboto, sans-serif;
 
 $arg-typo-h1-font-family: $arg-typo-font-family;
@@ -126,19 +129,15 @@ $arg-typo-overline-font-weight: 500;
 $arg-typo-overline-letter-spacing: 0.1666666667em;
 $arg-typo-overline-text-transform: uppercase;
 
+// Card
+$arg-card-border-size: 1px;
+$arg-card-border-color: rgba(212, 212, 218, 0.8);
+$arg-card-border-radius-size: 2px;
+$arg-card-bg-color: #fff;
+$arg-card-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+$arg-card-header-icon-bg-on-card: rgba(0,0,0,.3);
 :root {
-  --argue-list-avatar-bg: #F2F2F2;
-  --argue-base-theme-secondary: #BEAF75;
-  --argue-base-theme-on-secondary: #FFFFFF;
-  --argue-base-main-padding: 18px;
-  --argue-base-cards-border-color: #E8E8E8;
-  --argue-base-cards-footer-bg: #E8E8E8;
-  --argue-base-subtitle-color: #909090;
-  --argue-base-subtitle-border-color: #909090;
-  --argue-base-form-content: rgba(0,0,0,.87);
-  --argue-base-form-background: #e0e0e0;
-  --argue-base-text-default-color: #000000;
-  --card-header-icon-bg-on-card: rgba(0,0,0,.3);
-  --card-header-icon-color-on-card: #FFFFFF;
-  --card-header-text-bot-color: $card-header-text-bot-color;
+  --arg-base-text-default-color: #000000;
+  --arg-card-header-icon-bg-on-card: #{$arg-card-header-icon-bg-on-card};
+  --arg-card-header-text-bot-color: #{$arg-card-header-text-bot-color};
 }

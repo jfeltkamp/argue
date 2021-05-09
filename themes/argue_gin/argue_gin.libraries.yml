@@ -1,7 +1,7 @@
 global-styling:
   version: 0.1
   css:
-    layout:
+    component:
       iconfont/dist/argue-icons.css: {}
       css/argue_gin.css: {}
   js:

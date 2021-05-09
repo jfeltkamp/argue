@@ -1,12 +1,70 @@
-.card:target {
-  outline: 2px dotted transparent;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
-  z-index: 1;
+
+%argue-card {
+  @include argue-card;
+}
+
+%argue-card-spacer {
+  @include argue-card-spacer;
+}
+
+%argue-card-header {
+  @include argue-card-header;
+}
+
+%argue-card-header__icon {
+  @include argue-card-header__icon;
+  border-radius: 50%;
+}
+
+%argue-card-header__user-img {
+  @include argue-card-header__icon;
+  border-radius: 3px;
+  img {
+    display: block;
+  }
+}
+
+%argue-card-header__text {
+  @include argue-card-header__text;
+}
+
+%argue-card-header__text__top {
+  @include argue-card-header__text__top;
+}
+
+%argue-card__content-item {
+  @include argue-card__content-item;
+}
+
+%argue-card__content-item__row {
+  @include argue-card__content-item__row;
+}
+
+%argue-card__metadata {
+  @include argue-card__metadata;
+}
+
+%argue-card-footer {
+  @include argue-card-footer;
+}
+
+:root {
+  --arg-card-border-color : #{$arg-card-border-color};
+  --arg-card-border-radius-size : #{$arg-card-border-radius-size};
+  --arg-card-bg-color : #{$arg-card-bg-color};
+  --arg-card-box-shadow : #{$arg-card-box-shadow};
+  --arg-card-header-icon-bg-on-card : #{$arg-card-header-icon-bg-on-card};
+  --arg-card-border-size: #{$arg-card-border-size};
+  --arg-card-header-text-bot-color: #{$arg-card-header-text-bot-color};
+}
+
+// Card first extend.
+.card {
+  @include argue-card;
 }
 
 .card-header {
   @extend %argue-card-header;
-
 
   &__icon {
     @extend %argue-card-header__icon;

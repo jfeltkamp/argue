@@ -136,7 +136,7 @@
 
 %arg-typo--overline {
   @extend %arg-typo-base;
-  @include arg-typo-base;
+  @include arg-typo--overline;
 }
 
 // Finally the classes with the first extend of collection.

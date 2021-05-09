@@ -1,10 +1,6 @@
 
-.node {
-  &--type-rule {
-    @extend %argue-card;
-
-    > .node__content {
-      @extend %argue-card-spacer;
-    }
+.node--type-rule {
+  > .node__content {
+    @extend %argue-card-spacer;
   }
 }

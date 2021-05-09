@@ -1,8 +1,7 @@
 
 %field__label_above {
-  font-weight: bold;
-  padding-bottom: .375rem;
-  border-bottom: 1px solid var(--argue-base-cards-border-color);
+  @extend %arg-typo--h6;
+  border-bottom: 1px solid var(--arg-card-border-color, $arg-card-border-color);
   margin: .25em 0 0
 }
 
@@ -11,12 +10,14 @@
 }
 
 %field__item {
-  margin: .5rem 0;
+  > p:first-child {
+    margin-top: .5rem;
+  }
 }
 
 
 .field--label-above {
-  .field__label {
+  > .field__label {
     @extend %field__label_above
   }
 }

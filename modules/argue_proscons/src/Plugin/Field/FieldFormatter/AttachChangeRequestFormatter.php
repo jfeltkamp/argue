@@ -191,7 +191,7 @@ class AttachChangeRequestFormatter extends FormatterBase {
         '#attributes' => new Attribute($attr),
       ];
     } else {
-      return $this->t('Change request has been removed.')->render();
+      return [];
     }
   }
 }

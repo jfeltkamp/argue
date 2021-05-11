@@ -1,3 +1,7 @@
+@import "var";
+@import "breakpoint-sass/stylesheets/breakpoint";
+@import "mixins/typo";
+@import "mixins/card";
 
 %argue-card {
   @include argue-card;
@@ -34,6 +38,14 @@
 
 %argue-card__content-item {
   @include argue-card__content-item;
+}
+
+%card__content-item__extend {
+  @include card__content-item__extend;
+}
+
+%card__content-item__extend__toggle {
+  @include card__content-item__extend__toggle;
 }
 
 %argue-card__content-item__row {
@@ -78,12 +90,12 @@
 
     &__top {
       @extend %argue-card-header__text__top;
-      @extend %arg-typo--h6;
+      @include arg-typo--h6;
     }
 
     &__bot {
       @extend %argue-card__metadata;
-      @extend %arg-typo--subtitle2;
+      @include arg-typo--subtitle2;
     }
   }
 }
@@ -94,6 +106,15 @@
   &__row {
     @extend %argue-card__content-item__row;
   }
+}
+
+.card__content-item__extend {
+  @extend %card__content-item__extend;
+
+}
+
+.card__content-item__extend__toggle {
+  @extend %card__content-item__extend__toggle;
 }
 
 .card-footer {

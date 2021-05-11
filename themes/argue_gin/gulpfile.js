@@ -14,21 +14,20 @@ gulp.task('sass', function ()
   if(process.argv[3] === '--' + 'dev' || process.argv[2] === 'watch')
   {
     return gulp
-      .src('./sass/app.scss')
+      .src('./sass/**/*.scss')
       .pipe(sass({
         includePaths: ['node_modules']
       }))
       .pipe(prefixer({
         cascade: false
       }))
-      .pipe(concat('argue_gin.css'))
       .pipe(gulp.dest('./css'))
       .pipe(browserSync.stream());
   }
   else
   {
     return gulp
-      .src('./sass/app.scss')
+      .src('./sass/**/*.scss')
       .pipe(sass({
         includePaths: ['node_modules'],
         outputStyle: 'compressed'
@@ -37,7 +36,6 @@ gulp.task('sass', function ()
         cascade: false
       }))
       .pipe(cleanCSS())
-      .pipe(concat('argue_gin.css'))
       .pipe(gulp.dest('./css'));
   }
 });

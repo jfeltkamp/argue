@@ -4,8 +4,20 @@ global-styling:
     component:
       iconfont/dist/argue-icons.css: {}
       css/argue_gin.css: {}
+      css/card.css: {}
   js:
     js/argue_gin.js: {}
+    js/card.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+card:
+  css:
+    theme:
+      css/card.css: {}
+  js:
+    js/card.js: {}
   dependencies:
     - core/jquery
     - core/drupal

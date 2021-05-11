@@ -39,6 +39,7 @@
     "drupal/gin_login": "^1.0",
     "drupal/gin_toolbar": "^1.0",
     "drupal/pathauto": "^1.8",
+    "drupal/r4032login": "^2.1",
     "drupal/rate": "^1.0-alpha6",
     "drupal/login_emailusername": "^1.2",
     "drupal/menu_link_attributes": "^1.1",

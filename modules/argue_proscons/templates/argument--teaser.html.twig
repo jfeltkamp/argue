@@ -35,19 +35,25 @@ set classes = [
       </div>
     </header>
 
+    <div class="card__content-item__extend" data-height="10em">
+      <div class="argument__content card__content-item">
+        {{ content.argument }}
+      </div>
 
-    <div class="argument__content card__content-item" data-js-class="js-on">
-      {{ content.argument }}
-    </div>
-
-    <div class="argument__details card__content-item" data-js-class="js-on" data-slide-toggle-label="{{ 'Details'|t }}">
-      {{ content.type }}
-      {{ content.field_change_requests }}
-      <div class="argument__meta">
-        <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+      <div class="argument__details card__content-item">
+        {{ content.type }}
+        {{ content.field_change_requests }}
+        <div class="argument__meta">
+          <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+        </div>
       </div>
     </div>
 
+    <button class="card__content-item__extend__toggle button button--extrasmall" role="switch">
+      <span class="argue-icon more" aria-hidden="true">unfold_more</span>
+      <span class="argue-icon less" aria-hidden="true">unfold_less</span>
+      <span class="details--text">{{ 'Details'|t }}</span>
+    </button>
 
     <div class="card-footer argue-card__actions">
       <div class="card-footer__action-buttons">

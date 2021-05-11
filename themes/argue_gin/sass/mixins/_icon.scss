@@ -1,14 +1,4 @@
-@font-face {
-  font-family: 'argue-icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url("argue-icons.eot?c3c3b1ad9a21accebc234fdd6b9b8986?#iefix") format("embedded-opentype"),
-url("argue-icons.woff2?c3c3b1ad9a21accebc234fdd6b9b8986") format("woff2"),
-url("argue-icons.woff?c3c3b1ad9a21accebc234fdd6b9b8986") format("woff");
-  font-variant: normal;
-}
-
-.argue-icon {
+@mixin argue-icon {
   font-family: 'argue-icons';
   font-weight: normal;
   font-style: normal;
@@ -32,4 +22,3 @@ url("argue-icons.woff?c3c3b1ad9a21accebc234fdd6b9b8986") format("woff");
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-

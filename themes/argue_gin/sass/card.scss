@@ -3,62 +3,6 @@
 @import "mixins/typo";
 @import "mixins/card";
 
-%argue-card {
-  @include argue-card;
-}
-
-%argue-card-spacer {
-  @include argue-card-spacer;
-}
-
-%argue-card-header {
-  @include argue-card-header;
-}
-
-%argue-card-header__icon {
-  @include argue-card-header__icon;
-  border-radius: 50%;
-}
-
-%argue-card-header__user-img {
-  @include argue-card-header__icon;
-  border-radius: 3px;
-  img {
-    display: block;
-  }
-}
-
-%argue-card-header__text {
-  @include argue-card-header__text;
-}
-
-%argue-card-header__text__top {
-  @include argue-card-header__text__top;
-}
-
-%argue-card__content-item {
-  @include argue-card__content-item;
-}
-
-%card__content-item__extend {
-  @include card__content-item__extend;
-}
-
-%card__content-item__extend__toggle {
-  @include card__content-item__extend__toggle;
-}
-
-%argue-card__content-item__row {
-  @include argue-card__content-item__row;
-}
-
-%argue-card__metadata {
-  @include argue-card__metadata;
-}
-
-%argue-card-footer {
-  @include argue-card-footer;
-}
 
 :root {
   --arg-card-border-color : #{$arg-card-border-color};
@@ -73,54 +17,67 @@
 // Card first extend.
 .card {
   @include argue-card;
+
+  &__image {
+    @include argue-card__image;
+  }
+
+  &__content-wrapper {
+    @include argue-card__content-wrapper;
+  }
 }
 
 .card-header {
-  @extend %argue-card-header;
+  @include argue-card-header;
 
   &__icon {
-    @extend %argue-card-header__icon;
+    @include argue-card-header__icon;
+    border-radius: 50%;
   }
+
   &__user-img {
-    @extend %argue-card-header__user-img;
+    @include argue-card-header__icon;
+    border-radius: 3px;
+    img {
+      display: block;
+    }
   }
 
   &__text {
-    @extend %argue-card-header__text;
+    @include argue-card-header__text;
 
     &__top {
-      @extend %argue-card-header__text__top;
+      @include argue-card-header__text__top;
       @include arg-typo--h6;
     }
 
     &__bot {
-      @extend %argue-card__metadata;
+      @include argue-card__metadata;
       @include arg-typo--subtitle2;
     }
   }
 }
 
 .card__content-item {
-  @extend %argue-card__content-item;
+  @include argue-card__content-item;
 
   &__row {
-    @extend %argue-card__content-item__row;
+    @include argue-card__content-item__row;
   }
 }
 
 .card__content-item__extend {
-  @extend %card__content-item__extend;
-
+  @include card__content-item__extend;
 }
 
 .card__content-item__extend__toggle {
-  @extend %card__content-item__extend__toggle;
+  @include card__content-item__extend__toggle;
 }
 
 .card-footer {
-  @extend %argue-card-footer;
+  @include argue-card-footer;
   &__metadata {
-    @extend %argue-card__metadata;
+    @include argue-card__metadata;
   }
   &__action-buttons {
 

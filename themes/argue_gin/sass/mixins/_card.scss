@@ -19,26 +19,26 @@
     box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
     z-index: 1;
   }
+}
 
-  &__image {
-    img {
-      border-radius: $borderDefault $borderDefault 0 0;
+@mixin argue-card__image {
+  img {
+    border-radius: $borderDefault $borderDefault 0 0;
 
-      @include mq($breakpointXSmall) {
-        border-radius: $borderDefault 0 0 $borderDefault;
-      }
+    @include mq($breakpointXSmall) {
+      border-radius: $borderDefault 0 0 $borderDefault;
     }
   }
+}
 
-  &__content-wrapper {
-    background-color: var(--arg-card-content-background-color, transparent);
-    border-radius: 0 0 $borderSmall $borderSmall;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 0;
-    padding: 1.5rem;
-  }
+@mixin argue-card__content-wrapper {
+  background-color: var(--arg-card-content-background-color, transparent);
+  border-radius: 0 0 $borderSmall $borderSmall;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 1.5rem;
 }
 
 @mixin argue-card-spacer() {

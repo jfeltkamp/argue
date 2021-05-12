@@ -1,6 +1,6 @@
 /**
  * @file
- * Drupal's off-canvas library.
+ * Argue card library.
  */
 (function ($, Drupal, debounce) {
 

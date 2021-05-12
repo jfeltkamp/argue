@@ -1,6 +1,7 @@
 
 :root {
   --arg-list-avatar-bg: #{$arg-list-avatar-bg};
+  --argue-list-item-secondary-text-color: #{$argue-list-item-secondary-text-color}
 }
 
 .argue-list {
@@ -26,17 +27,20 @@
   &--items {
     padding: 6px 0;
   }
-}
 
-.argue-list.card__content-item {
-  > .argue-list--items {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+  &.card__content-item {
+    .argue-list {
+      &--items {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+      }
 
-    > .argue-list-item {
-      padding-left: 1.5rem;
+      &-item {
+        padding-left: 1.5rem;
+      }
     }
   }
+
 }
 
 .argue-list-item {
@@ -51,7 +55,7 @@
   margin: 0;
   overflow: hidden;
 
-  .argue-list-item__graphic {
+  &__graphic {
     margin-left: 0;
     margin-right: 16px;
     width: 40px;
@@ -100,8 +104,8 @@
         }
       }
       &__secondary-text {
-        font-size: .875rem;
-        font-weight: 400;
+        @extend %arg-typo--subtitle2;
+        color: var(--argue-list-item-secondary-text-color, $argue-list-item-secondary-text-color);
         text-decoration: inherit;
         text-transform: inherit;
         text-overflow: ellipsis;
@@ -109,7 +113,6 @@
         overflow: hidden;
         display: block;
         margin-top: 0;
-        line-height: normal;
 
         &:before {
           content: "";

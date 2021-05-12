@@ -39,13 +39,14 @@ $ginPrimaryHover: mix(black, $ginPrimary, 15%);
 $ginPrimaryActive: mix(black, $ginPrimary, 25%);
 
 
-$arg-card-header-text-bot-color: #666;
+$arg-card-metadata-color: #777;
 
 $argue-accent-color: #0550e6;
 $argue-add-link-color: $argue-accent-color;
 
 // List
 $arg-list-avatar-bg: #F2F2F2;
+$argue-list-item-secondary-text-color: #666;
 
 // Typo
 $arg-typo-font-family: Roboto, sans-serif;
@@ -136,8 +137,3 @@ $arg-card-border-radius-size: 2px;
 $arg-card-bg-color: #fff;
 $arg-card-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $arg-card-header-icon-bg-on-card: rgba(0,0,0,.3);
-:root {
-  --arg-base-text-default-color: #000000;
-  --arg-card-header-icon-bg-on-card: #{$arg-card-header-icon-bg-on-card};
-  --arg-card-header-text-bot-color: #{$arg-card-header-text-bot-color};
-}

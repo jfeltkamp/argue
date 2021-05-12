@@ -131,14 +131,19 @@
   }
 }
 
-@mixin argue-card__metadata {
+@mixin argue-card-header__text__bot {
   margin: 0;
-  color: var(--arg-card-header-text-bot-color, $arg-card-header-text-bot-color);
+  color: var(--arg-card-header-text-bot-color, $arg-card-metadata-color);
 }
 
 @mixin argue-card__content-item {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+@mixin argue-card__metadata {
+  margin: .25rem 0;
+  color: var(--arg-card-metadata-color, $arg-card-metadata-color);
 }
 
 /**

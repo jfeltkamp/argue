@@ -43,9 +43,7 @@ set classes = [
       <div class="argument__details card__content-item">
         {{ content.type }}
         {{ content.field_change_requests }}
-        <div class="argument__meta">
-          <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
-        </div>
+        <div class="card__metadata">{% trans %}Submitted on {{ date }}{% endtrans %}</div>
       </div>
     </div>
 

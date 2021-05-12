@@ -41,6 +41,10 @@
   @include argue-card-header__text__top;
 }
 
+%argue-card-header__text__bot {
+  @include argue-card-header__text__bot;
+}
+
 %argue-card__content-item {
   @include argue-card__content-item;
 }

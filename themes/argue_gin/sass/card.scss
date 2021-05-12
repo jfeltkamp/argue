@@ -11,7 +11,9 @@
   --arg-card-box-shadow : #{$arg-card-box-shadow};
   --arg-card-header-icon-bg-on-card : #{$arg-card-header-icon-bg-on-card};
   --arg-card-border-size: #{$arg-card-border-size};
-  --arg-card-header-text-bot-color: #{$arg-card-header-text-bot-color};
+  --arg-base-text-default-color: #000000;
+  --arg-card-header-text-bot-color: #{$arg-card-metadata-color};
+  --arg-card-metadata-color: #{$arg-card-metadata-color};
 }
 
 // Card first extend.
@@ -24,6 +26,11 @@
 
   &__content-wrapper {
     @include argue-card__content-wrapper;
+  }
+
+  &__metadata {
+    @include argue-card__metadata;
+    @include arg-typo--subtitle2;
   }
 }
 
@@ -52,7 +59,7 @@
     }
 
     &__bot {
-      @include argue-card__metadata;
+      @include argue-card-header__text__bot;
       @include arg-typo--subtitle2;
     }
   }

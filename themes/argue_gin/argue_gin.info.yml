@@ -21,6 +21,7 @@ regions_hidden:
 
 libraries:
   - argue_gin/global-styling
+  - argue_gin/card
 
 
 libraries-override:

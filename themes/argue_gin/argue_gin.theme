@@ -10,6 +10,9 @@ function argue_gin_theme() {
     'argument_edit_form' => [
       'render element' => 'form',
     ],
+    'comment_form' => [
+      'render element' => 'form',
+    ],
     'card' => [
       'variables' => [
         'attributes' => NULL,
@@ -43,11 +46,6 @@ function argue_gin_preprocess_links(&$variables) {
       }
     }
   }
-}
-
-function argue_gin_theme_suggestions_form_alter(array &$suggestions, array $variables) {
-  $extension = str_replace('-', '_', $variables['element']['#id']);
-  $suggestions[] = 'form__' . $extension;
 }
 
 /**
@@ -190,5 +188,18 @@ function argue_gin_form_node_form_alter(&$form, FormStateInterface $form_state) 
       }
       $form['label'] = ['#markup' => $title];
     }
+  }
+}
+
+/**
+ * @implements hook_form_alter()
+ *
+ * Place form actions in the card footer (where not themeable).
+ */
+function argue_gin_preprocess_comment_form(&$vars) {
+  if (isset($vars['form']['#title'])) {
+    $vars['form']['label'] = ['#markup' => $vars['form']['#title']];
+  } else {
+    $vars['form']['label'] = ['#markup' => t('Add a comment')];
   }
 }

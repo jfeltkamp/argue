@@ -4,6 +4,7 @@ global-styling:
     component:
       iconfont/dist/argue-icons.css: {}
       css/argue_gin.css: {}
+      css/fixes.css: {}
   js:
     js/argue_gin.js: {}
   dependencies:

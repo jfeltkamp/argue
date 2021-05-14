@@ -1,0 +1,5 @@
+/* Card destroys layout of status report page. */
+.card.system-status-general-info__item {
+  flex-direction: row;
+  padding: 1.25rem;
+}

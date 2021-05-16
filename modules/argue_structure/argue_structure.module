@@ -7,10 +7,9 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\EntityInterface ;
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Link;
+use Drupal\node\NodeInterface;
 use Drupal\Core\Url;
 
 /**
@@ -204,6 +203,20 @@ function argue_structure_form_node_form_alter(&$form, FormStateInterface $form_s
     // Disable field_ratified if user has no permission.
     if(isset($form["field_ratified"]) && !\Drupal::currentUser()->hasPermission('set rule ratified') ) {
       $form["field_ratified"]['#disabled'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * Removes node creator on node publish.
+ */
+function argue_structure_node_presave(NodeInterface $node) {
+  if ((bool) $node->getOwnerId() && $node->isPublished()) {
+    $node_types = \Drupal::config('argue_structure.arguestructureconf')->get('unset_node_owner');
+    if (isset($node_types[$node->bundle()]) && ($node_types[$node->bundle()] == $node->bundle())) {
+      $node->setOwnerId(0);
     }
   }
 }

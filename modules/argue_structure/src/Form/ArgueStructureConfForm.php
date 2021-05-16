@@ -111,6 +111,27 @@ class ArgueStructureConfForm extends ConfigFormBase {
       '#description' => $this->t('Number of displayed levels in one view, starting from the routed term.'),
     ];
 
+    $form['argue_header_node_owner'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h3',
+      '#attributes' => [],
+      '0' => ['#markup' => $this->t('Node owner settings')]
+    ];
+
+    $node_types = [];
+    foreach ($this->entityTypeManager->getStorage('node_type')->loadMultiple() as $node_type) {
+      $node_types[$node_type->id()] = $node_type->label();
+    }
+
+    $form['unset_node_owner'] = [
+      '#type' => 'checkboxes',
+      '#title' => $this->t('Unset node owner'),
+      '#description' => $this->t('If checked the node owner will be removed on '
+        .'node publish. So the creator can not edit the node without change request.'),
+      '#default_value' => $config->get('unset_node_owner'),
+      '#options' => $node_types,
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -146,6 +167,7 @@ class ArgueStructureConfForm extends ConfigFormBase {
       ->set('description_section_term_overview_page', $form_state->getValue('description_section_term_overview_page'))
       ->set('argue_max_nesting_level', $form_state->getValue('argue_max_nesting_level'))
       ->set('argue_displayed_nesting_levels', $form_state->getValue('argue_displayed_nesting_levels'))
+      ->set('unset_node_owner', $form_state->getValue('unset_node_owner'))
       ->save();
   }
 

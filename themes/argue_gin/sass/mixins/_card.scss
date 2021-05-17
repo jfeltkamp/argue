@@ -41,6 +41,22 @@
   padding: 1.5rem;
 }
 
+@mixin argue-card__prevent_nesting {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  box-shadow: none;
+  border-left: 0;
+  border-right: 0;
+}
+@mixin argue-card__prevent_nesting_top {
+  margin-top: -1.5rem;
+  border-top: 0;
+}
+@mixin argue-card__prevent_nesting_bot {
+  margin-bottom: -1.5rem;
+  border-bottom: 0;
+}
+
 @mixin argue-card-spacer() {
   width: 100%;
   padding: .75rem;

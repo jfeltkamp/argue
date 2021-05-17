@@ -1,14 +1,22 @@
 .field--type-comment {
+  margin: 1rem 0;
+
   .indented {
     margin: 0;
-    padding: 0 0 0 calc(40px + 1rem);
+    padding: 0 0 0 calc(20px + 1rem);
+
+    @include mq($breakpointMedium) {
+      padding: 0 0 0 calc(40px + 1rem);
+    };
   }
 }
 
 .comment {
-  margin: 1rem 0;
+  margin: .5rem -.5rem;
+  padding: .5rem;
   display: flex;
   flex-direction: row;
+  border-radius: 2px;
 
   &__icon {
     flex: 0 0 40px;
@@ -23,11 +31,14 @@
   }
 
   &__text {
+    width: calc(100% - 40px - 1rem);
+    flex: 1 1 calc(100% - 40px - 1rem);
+    border-bottom: 1px solid var(--comment-border-color, #{$comment-border-color});
+
     &__header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
     }
 
 
@@ -43,6 +54,7 @@
 
     &__links {
       a {
+        font-size: .875em;
         text-transform: uppercase;
         text-decoration: none;
         &:hover {
@@ -52,14 +64,44 @@
     }
   }
 
+  &__content {
+    p {
+      margin: .25rem 0 .5rem;
+      &:first-child {
+        margin-top: .25rem;
+      }
+    }
+  }
+
   a.permalink {
     color: #000000;
   }
 
   &.has-parent {
-
     &.by-node-author {
-      background-color: #EEFEFE;
+      background-color: #F6FFFF;
+      box-shadow: -2px 0 0 #099;
+    }
+
+    &.by-viewer {
+      background-color: #FFF6F6;
+      box-shadow: -2px 0 0 #900;
     }
   }
+
+  // Comment form
+  &__form {
+    margin-top: 2rem;
+
+    &__header {
+      @include arg-typo--h5;
+    }
+
+
+    .form-type--textarea label,
+    .filter-wrapper {
+      display: none;
+    }
+  }
+
 }

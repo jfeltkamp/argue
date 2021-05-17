@@ -32,6 +32,14 @@
     @include argue-card__metadata;
     @include arg-typo--subtitle2;
   }
+
+
+  &__prevent_nesting .card {
+    @include argue-card__prevent_nesting;
+  }
+  &__prevent_nesting_top .card {
+    @include argue-card__prevent_nesting_top;
+  }
 }
 
 .card-header {
@@ -63,6 +71,7 @@
       @include arg-typo--subtitle2;
     }
   }
+
 }
 
 .card__content-item {
@@ -90,5 +99,4 @@
 
   }
 }
-
 

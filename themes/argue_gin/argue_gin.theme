@@ -202,4 +202,11 @@ function argue_gin_preprocess_comment_form(&$vars) {
   } else {
     $vars['form']['label'] = ['#markup' => t('Add a comment')];
   }
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  switch($route_name) {
+    case 'comment.reply':
+      $vars['form']['#preview'] = true;
+      break;
+    default:
+  }
 }

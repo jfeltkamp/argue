@@ -12,23 +12,25 @@
  * @ingroup themeable
  */
 #}
+{% if form['#preview'] %}
+  <div class="card card__prevent_nesting card__prevent_nesting_top">
+    <div class="card__content-wrapper">
+{% endif %}
+
 {{ form.comment_output_below }}
 
 {{ form.comment_preview }}
 
 <article{{ attributes.addClass('comment__form') }}>
-  <div class="comment__form__content-wrapper">
-    <header class="comment__form__header">
-      {{ form.label }}
-    </header>
-    <div class="comment__form__content-item">
-      {{ form|without('label', 'comment_output_below', 'comment_preview', 'actions') }}
-    </div>
-    <div class="comment__form__footer">
-      <div class="comment__form__action-buttons">
-        {{ form['actions'] }}
-      </div>
-    </div>
+  <h3 class="comment__form__header">{{ form.label }}</h3>
+  <div class="comment__form__content">
+    {{ form|without('label', 'comment_output_below', 'comment_preview', 'actions') }}
   </div>
+  {{ form['actions'] }}
 </article>
 
+
+{% if form['#preview'] %}
+    </div>
+  </div>
+{% endif %}

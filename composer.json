@@ -52,7 +52,8 @@
     "drupal/token": "^1.0",
     "drupal/votingapi": "^3.0",
     "drupal/votingapi_widgets": "dev-1.x",
-    "npm-asset/select2": "^4.0.7"
+    "npm-asset/select2": "^4.0.7",
+    "npm-asset/autosize": "^5.0.0"
   },
   "require-dev": {
     "drupal/drupal-extension": "^3.1"

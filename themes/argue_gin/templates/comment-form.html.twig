@@ -16,19 +16,16 @@
 
 {{ form.comment_preview }}
 
-<article{{ attributes.addClass('card', 'comment-form--wrapper') }}>
-  <div class="card__content-wrapper">
-    <header class="comment-form--header card-header">
-      <span class="card-header__icon argue-icon" aria-hidden="true">comment</span>
-      <span class="card-header__text">
-        <span class="card-header__text__top">{{ form.label }}</span>
-      </span>
+<article{{ attributes.addClass('comment__form') }}>
+  <div class="comment__form__content-wrapper">
+    <header class="comment__form__header">
+      {{ form.label }}
     </header>
-    <div class="card__content-item">
+    <div class="comment__form__content-item">
       {{ form|without('label', 'comment_output_below', 'comment_preview', 'actions') }}
     </div>
-    <div class="card-footer">
-      <div class="card-footer__action-buttons">
+    <div class="comment__form__footer">
+      <div class="comment__form__action-buttons">
         {{ form['actions'] }}
       </div>
     </div>

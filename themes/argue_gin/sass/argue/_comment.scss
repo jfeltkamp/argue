@@ -1,41 +1,65 @@
 .field--type-comment {
   .indented {
     margin: 0;
-    padding: 0 0 0 80px;
-    background-color: #DDDDDD;
-  }
-
-  > .indented {
-    margin: -2rem 0 2rem;
+    padding: 0 0 0 calc(40px + 1rem);
   }
 }
 
 .comment {
-  margin-bottom: 2rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+
+  &__icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+
+    .profile.teaser,
+    * {
+      margin: 0;
+    }
+  }
+
+  &__text {
+    &__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+
+
+    &__meta,
+    &__links {
+      @include arg-typo--subtitle2;
+      color: var(--arg-comment-text-meta-color, #{$arg-comment-text-meta-color});
+      margin: 0;
+      a {
+        color: inherit;
+      }
+    }
+
+    &__links {
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 
   a.permalink {
     color: #000000;
   }
 
-  &.densed {
-    margin: 0;
+  &.has-parent {
 
     &.by-node-author {
       background-color: #EEFEFE;
     }
-
-    .comment--content {
-      display: flex;
-      flex-direction: row;
-      justify-content: stretch;
-      align-content: stretch;
-    }
-
-    .content-links {
-      flex: 1 0 5%;
-      align-self: flex-end;
-      margin-right: -8px;
-    }
-
   }
 }

@@ -3,3 +3,11 @@
   flex-direction: row;
   padding: 1.25rem;
 }
+
+ul.links.inline {
+  margin: 0 -.25em;
+
+  li {
+    padding: 0 .5em;
+  }
+}

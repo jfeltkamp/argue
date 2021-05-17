@@ -91,15 +91,13 @@
         <h3 class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</h3>
       </div>
     </header>
-
     <div{{ content_attributes.addClass('node__content') }}>
       {{ content|without('field_comments', 'rate_vote_widget', 'links') }}
-    </div>
 
-    <div class="node__details">
       {{ drupal_view('argue_rules_ref_this_problem', 'embed_1') }}
-    </div>
 
+      {{ content.field_comments }}
+    </div>
     <div class="node__footer card-footer">
       <div class="card-footer__action-buttons">
         {{ content.links }}
@@ -110,6 +108,4 @@
     </div>
   </div>
 </article>
-
-{{ content.field_comments }}
 

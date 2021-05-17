@@ -29,7 +29,7 @@ function argue_gin_theme() {
 
 function argue_gin_preprocess_links(&$variables) {
   // Styling classes for entity links.
-  $in_group = ['links__node', 'links__comment'];
+  $in_group = ['links__node'];
   if (in_array($variables["theme_hook_original"], $in_group)) {
     // Add class to wrapper.
     $variables["attributes"]["class"] = ['links', 'button--group'];

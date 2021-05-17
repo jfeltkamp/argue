@@ -36,21 +36,21 @@
 %}
 {%
   set title_classes = [
-    'title',
+    'field__label',
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-<section{{ attributes.addClass(classes) }}>
-  {% if comments and not label_hidden %}
-    {{ title_prefix }}
-    <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
-    {{ title_suffix }}
-  {% endif %}
 
-  {{ comments }}
+<section{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <div{{ title_attributes.addClass(title_classes) }}><em class="argue-icon argue-icon__inline">comment</em> {{ label }}</div>
+  {% endif %}
+  <div class="field__items">
+    {{ comments }}
+  </div>
 
   {% if comment_form %}
     {{ comment_form }}
   {% endif %}
-
 </section>
+

@@ -66,7 +66,6 @@
 #}
 {%
   set classes = [
-    'card',
     'comment',
     'js-comment',
     parent ? 'has-parent',
@@ -76,47 +75,18 @@
   ]
 %}
 
-{% if parent %}
-  {# Densed comment for sub^n comments. #}
-  <article{{ attributes.addClass(classes, 'densed') }}>
-    <div class="card__content-wrapper">
-      {{ content.comment_body }}
-      <footer class="comment--footer card-footer">
-        <div class="card-footer__action-buttons">
-          <div class="card-footer__metadata" data-comment-timestamp="{{ new_indicator_timestamp }}">{{ submitted }}</div>
-        </div>
-        <div class="card-footer__action-icons">
-          {{ content.links }}
-        </div>
-      </footer>
+<article{{ attributes.addClass(classes) }}>
+  <div class="comment__icon">{{ user_picture }}</div>
+  {% if parent %}
+  {% endif %}
+  <div class="comment__text">
+    <header class="comment__text__header">
+      <h3 class="comment__text__meta" data-comment-timestamp="{{ new_indicator_timestamp }}">{{ submitted }}</h3>
+      <span class="comment__text__links">{{ content.links }}</span>
+    </header>
+    <div{{ content_attributes.addClass('comment__content') }}>
+      {{ content|without('links') }}
     </div>
-  </article>
-{% else %}
+  </div>
+</article>
 
-  <article{{ attributes.addClass(classes) }}>
-    <div class="card__content-wrapper">
-      <header class="comment--header card-header">
-        <div class="card-header__icon">{{ user_picture }}</div>
-        <div class="card-header__text">
-          <div{{ title_attributes.addClass('card-header__text__top') }}>{{ title }}</div>
-          <div class="card-header__text__bot">{{ submitted }}</div>
-        </div>
-      </header>
-
-      {#
-        Hide the "new" indicator by default, let a piece of JavaScript ask the
-        server which comments are new for the user. Rendering the final "new"
-        indicator here would break the render cache.
-      #}
-      <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-
-      <div{{ content_attributes.addClass('comment--content') }}>
-        {{ content|without('links', 'votingapi_links') }}
-      </div>
-      <footer class="comment--footer card-footer">
-        <div class="card-footer__action-buttons">{{ content.links }}</div>
-        <div class="card-footer__action-icons">{{ content.votingapi_links }}</div>
-      </footer>
-    </div>
-  </article>
-{% endif %}

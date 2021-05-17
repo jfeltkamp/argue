@@ -21,3 +21,11 @@ card:
     - core/jquery
     - core/drupal
     - core/drupal.debounce
+
+textarea:
+  js:
+    /libraries/autosize/dist/autosize.min.js: { minified: true }
+    js/textarea.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

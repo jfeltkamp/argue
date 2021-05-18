@@ -1,8 +1,12 @@
-
-%field__label_above {
-  @extend %arg-typo--h6;
+@mixin field__label_above() {
+  @include arg-typo--h6;
   border-bottom: 1px solid var(--arg-card-border-color, $arg-card-border-color);
   margin: .25em 0 0
+}
+
+
+%field__label_above {
+  @include field__label_above;
 }
 
 %field__items {

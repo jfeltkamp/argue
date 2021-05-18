@@ -31,3 +31,7 @@
   justify-content: safe center;
   margin-bottom: 0;
 }
+
+.argument__details .card__metadata {
+  margin-bottom: 1.5rem;
+}

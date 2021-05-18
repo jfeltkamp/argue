@@ -209,7 +209,7 @@ class ArgumentListService {
         '#type' => 'container',
         '#attributes' => ['id' => 'pros', 'class' => ['block-argue-proscons--col', 'pros', 'panel']],
         'header' => [
-          '#markup' => '<h3 class="pro panel__title">'. $this->t('Pro') .'</h3>',
+          '#markup' => '<h3 class="pro panel__title">'. $this->t('Pro Arguments') .'</h3>',
           '#weight' => -101,
         ]
       ],
@@ -217,7 +217,7 @@ class ArgumentListService {
         '#type' => 'container',
         '#attributes' => ['id' => 'cons', 'class' => ['block-argue-proscons--col', 'cons', 'panel']],
         'header' => [
-          '#markup' => '<h3 class="con  panel__title">'. $this->t('Contra') .'</h3>',
+          '#markup' => '<h3 class="con  panel__title">'. $this->t('Contra Arguments') .'</h3>',
           '#weight' => -101,
         ],
       ],

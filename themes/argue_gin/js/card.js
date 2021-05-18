@@ -13,6 +13,7 @@
    *   Attaches event listeners for card extendable content.
    */
   Drupal.behaviors.cardContentExtend = {
+
     attach: function (context) {
       let self = this;
       /**
@@ -22,25 +23,6 @@
       let eventData = { $elements: $cardExtendableCont };
 
       self.resetDataHeight(eventData, false);
-
-      let textareaObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          if (mutation.attributeName === "style") {
-            let regEx = /height:[^;]*;/;
-
-            let old = (mutation.oldValue)
-              ? mutation.oldValue.match(regEx) : null;
-            old = (old && old.length) ? old.shift() : null;
-
-            let cur = mutation.target.getAttribute("style");
-            cur = (cur) ? cur.match(regEx) : null;
-            cur = (cur && cur.length) ? cur.shift() : '';
-            if (old && old !== cur) {
-              $(window).trigger('resize');
-            }
-          }
-        });
-      });
 
       $cardExtendableCont.each(function (i, cec) {
         let $cec = $(cec);
@@ -55,14 +37,7 @@
         $btn.on('click', function () {
           $btn.toggleClass('show-extend');
           $cec.toggleClass('content-dense');
-          self.setHeight($cec);
-        });
-
-        $cec.find('textarea').each(function(i, textarea) {
-          textareaObserver.observe(textarea, {
-            attributes: true,
-            attributeOldValue: true,
-            attributeFilter: ['style'] });
+          self.setHeight($cec, true);
         });
       });
 
@@ -77,12 +52,45 @@
      *
      * @param {jQuery} $element
      *   The off-canvas dialog element.
+     * @param {boolean} animate
+     *   Animate extending the box.
      */
-    setHeight: function($element) {
+    setHeight: function($element, animate) {
+      let self = this;
       if ($element.is('.content-dense')) {
-        $element.css('height', $element.data('dense-height'));
+        if (animate) {
+          /*
+           * First set height (from 'auto') to measured height, then set to
+           * dense-height, to get animated slide effect.
+           */
+          let height = $element.height() + 'px';
+          $element.css('height', height);
+          setTimeout(function () {
+            $element.css('height', $element.data('dense-height'));
+          }, 100);
+        } else {
+          $element.css('height', $element.data('dense-height'));
+        }
       } else {
         $element.css('height', $element.data('full-height'));
+        let interval = 0;
+        let timeOutHeight = $element.height();
+        let timeOutFunc = setInterval(
+          function() {
+            /* Check while animation if container reached full height,
+             * then change to height auto.
+             */
+            if ($element.height() === timeOutHeight) {
+              $element.css('height', 'auto');
+              clearInterval(timeOutFunc);
+            } else {
+              timeOutHeight = $element.height();
+            }
+            if (interval++ > 10) {
+              console.log('Urgent Stop ...');
+              clearInterval(timeOutFunc);
+            }
+          }, 300);
       }
     },
 
@@ -104,7 +112,7 @@
         $elm.data('full-height', heightAuto);
 
         if (setHeight) {
-          self.setHeight($elm);
+          self.setHeight($elm, false);
         }
       });
     }

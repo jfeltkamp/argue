@@ -11,6 +11,17 @@
   }
 }
 
+.card__content-item__extend {
+  .field--type-comment > .field__items {
+    max-height: 80vh;
+    overflow: auto;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 .comment {
   margin: .5rem -.5rem;
   padding: .5rem;
@@ -94,7 +105,7 @@
     margin-top: 2rem;
 
     &__header {
-      @extend %field__label_above;
+      @include field__label_above;
     }
 
     .form-actions {
@@ -112,3 +123,4 @@
   }
 
 }
+

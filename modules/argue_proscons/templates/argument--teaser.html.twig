@@ -41,9 +41,10 @@ set classes = [
       </div>
 
       <div class="argument__details card__content-item">
+        <div class="card__metadata">{% trans %}Submitted on {{ date }}{% endtrans %}</div>
         {{ content.type }}
         {{ content.field_change_requests }}
-        <div class="card__metadata">{% trans %}Submitted on {{ date }}{% endtrans %}</div>
+        {{ content.field_comments }}
       </div>
     </div>
 

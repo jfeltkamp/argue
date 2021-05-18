@@ -122,7 +122,6 @@ function argue_gin_form_argument_form_alter(&$form, FormStateInterface $form_sta
   }
   // Use node display to keep it simple.
   $form['#theme'] = ['argument_edit_form'];
-  $form['#attached']['library'][] = 'claro/node-form';
   $form['icon'] = ['#markup' => $icon];
 
   $form['header'] = [
@@ -197,16 +196,31 @@ function argue_gin_form_node_form_alter(&$form, FormStateInterface $form_state) 
  * Place form actions in the card footer (where not themeable).
  */
 function argue_gin_preprocess_comment_form(&$vars) {
+  // Set label above comment form
   if (isset($vars['form']['#title'])) {
     $vars['form']['label'] = ['#markup' => $vars['form']['#title']];
   } else {
     $vars['form']['label'] = ['#markup' => t('Add a comment')];
   }
+
+  /*
+   * Try fix nasty behavior of extra page when edit, reply or preview comment.
+   * See /template/comments-form.html.twig
+   */
   $route_name = \Drupal::routeMatch()->getRouteName();
-  switch($route_name) {
-    case 'comment.reply':
-      $vars['form']['#preview'] = true;
-      break;
-    default:
+  if ($route_name == 'comment.reply') {
+    $vars['form']['#preview'] = true;
+  }
+
+  // Add small classes to form action-buttons.
+  $action_btns = ['submit', 'preview'];
+  foreach ($action_btns as $btnId) {
+    if (isset($vars["form"]["actions"][$btnId])) {
+      $btn = &$vars["form"]["actions"][$btnId];
+      if (!isset($btn['#attributes']['class'])) {
+        $btn['#attributes']['class'] = [];
+      }
+      $btn['#attributes']['class'][] = 'button--small';
+    }
   }
 }

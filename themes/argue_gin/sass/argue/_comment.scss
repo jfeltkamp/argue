@@ -94,9 +94,16 @@
     margin-top: 2rem;
 
     &__header {
-      @include arg-typo--h5;
+      @extend %field__label_above;
     }
 
+    .form-actions {
+      margin-top: 0;
+      .button {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
 
     .form-type--textarea label,
     .filter-wrapper {

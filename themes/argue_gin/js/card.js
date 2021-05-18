@@ -23,6 +23,25 @@
 
       self.resetDataHeight(eventData, false);
 
+      let textareaObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.attributeName === "style") {
+            let regEx = /height:[^;]*;/;
+
+            let old = (mutation.oldValue)
+              ? mutation.oldValue.match(regEx) : null;
+            old = (old && old.length) ? old.shift() : null;
+
+            let cur = mutation.target.getAttribute("style");
+            cur = (cur) ? cur.match(regEx) : null;
+            cur = (cur && cur.length) ? cur.shift() : '';
+            if (old && old !== cur) {
+              $(window).trigger('resize');
+            }
+          }
+        });
+      });
+
       $cardExtendableCont.each(function (i, cec) {
         let $cec = $(cec);
 
@@ -37,6 +56,13 @@
           $btn.toggleClass('show-extend');
           $cec.toggleClass('content-dense');
           self.setHeight($cec);
+        });
+
+        $cec.find('textarea').each(function(i, textarea) {
+          textareaObserver.observe(textarea, {
+            attributes: true,
+            attributeOldValue: true,
+            attributeFilter: ['style'] });
         });
       });
 

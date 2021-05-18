@@ -15,6 +15,7 @@
  * @see argue_proscons_form_argument_form_alter()
  */
 #}
+{{ attach_library('claro/node-form') }}
 {% set icon = form.icon|render %}
 {% set form_class = icon|clean_class %}
 <div class="layout-node-form layout-argue-form clearfix">

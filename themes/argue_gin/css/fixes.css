@@ -1,1 +1,12 @@
-.card.system-status-general-info__item{flex-direction:row;padding:1.25rem}ul.links.inline{margin:0 -.25em}ul.links.inline li{padding:0 .5em}
+/* Card destroys layout of status report page. */
+.card.system-status-general-info__item {
+  flex-direction: row;
+  padding: 1.25rem;
+}
+
+ul.links.inline {
+  margin: 0 -0.25em;
+}
+ul.links.inline li {
+  padding: 0 0.5em;
+}

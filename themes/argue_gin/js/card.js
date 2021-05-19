@@ -87,7 +87,7 @@
               timeOutHeight = $element.height();
             }
             if (interval++ > 10) {
-              console.log('Urgent Stop ...');
+              // Something went wrong, just stop interval.
               clearInterval(timeOutFunc);
             }
           }, 300);

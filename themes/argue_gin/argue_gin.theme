@@ -24,9 +24,23 @@ function argue_gin_theme() {
         'footer_right' => []
       ]
     ],
+    'argue_chip_set' => [
+      'render element' => 'children',
+    ],
+    'argue_chip' => [
+      'variables' => [
+        'attributes' => NULL,
+        'icon_before' => NULL,
+        'text' => '',
+        'icon_after' => NULL,
+      ],
+    ],
   ];
 }
 
+/**
+ * Implemented hook_preprocess_links().
+ */
 function argue_gin_preprocess_links(&$variables) {
   // Styling classes for entity links.
   $in_group = ['links__node'];

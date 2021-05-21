@@ -35,6 +35,14 @@ function argue_proscons_theme() {
     'argument' => [
       'render element' => 'content',
     ],
+    // @todo Can this be removed?? Can better be done by theme hook suggestions.
+    'argument__teaser' => [
+      'render element' => 'content',
+    ],
+    // @todo Can this be removed?? Can better be done by theme hook suggestions.
+    'argument__teaser_pro' => [
+      'render element' => 'content',
+    ],
     'change_request__list_item' => [
       'variables' => [
         'attributes' => NULL,
@@ -44,15 +52,20 @@ function argue_proscons_theme() {
         'status_literal' => NULL,
       ],
     ],
-    'argument__teaser' => [
-      'render element' => 'content',
-    ],
-    'argument__teaser_pro' => [
-      'render element' => 'content',
-    ],
     'argue_proscons' => [
       'render element' => 'children',
-    ]
+    ],
+    'argue_chip_set' => [
+      'render element' => 'children',
+    ],
+    'argue_chip' => [
+      'variables' => [
+        'attributes' => NULL,
+        'icon_before' => NULL,
+        'text' => '',
+        'icon_after' => NULL,
+      ],
+    ],
   ];
 }
 
@@ -63,7 +76,6 @@ function argue_proscons_theme() {
 function argue_proscons_theme_suggestions_argument(array $variables) {
   $suggestions = [];
   $sanitized_view_mode = strtr($variables['content']['#view_mode'], '.', '_');
-
   $suggestions[] = 'argument__' . $sanitized_view_mode;
 
   return $suggestions;
@@ -80,6 +92,7 @@ function argue_proscons_theme_suggestions_argument(array $variables) {
  * @param $view_mode
  *
  * @throws \Drupal\Core\Entity\EntityMalformedException
+ * @throws \Drupal\Core\TypedData\Exception\MissingDataException
  */
 function argue_proscons_argument_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   if($view_mode == 'full' && \Drupal::routeMatch()->getRouteName() == 'entity.argument.canonical') {
@@ -103,16 +116,50 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
     $build['#attributes']->addClass('argument-' . $arg_type);
     $build['argument_type'] = ['#markup' => $arg_type];
   }
-}
 
+  // Attach chips for hidden references.
+  $build['chips'] = [
+    '#theme' => 'argue_chip_set',
+    '#attributes' => ['class' => ['huhu']],
+  ];
 
-/**
- * Implements hook_entity_view().
- *
- *
- */
-function argue_proscons_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  // Icon map used for chips. If not set, the entity type id is used.
+  $chip_icon_map = ['patch' => 'change_request'];
+  /**
+   * Loop over fields and append the chips to the chip set.
+   *
+   * @var string $field_name
+   * @var Drupal\Core\Field\FieldDefinitionInterface $field_definition
+   */
+  foreach ($entity->getFieldDefinitions() as $field_name => $field_definition) {
+    if (isset ($build[$field_name])) {
+      if ($field_definition->getType() == 'comment') {
+        $field_comment = $entity->get($field_name);
+        if ($field_comment instanceof \Drupal\comment\CommentFieldItemList) {
+          $build["chips"][] = [
+            '#theme' => 'argue_chip',
+            '#attributes' => ['title' => t('Number of comments on this argument.')],
+            '#icon_before' => 'comments',
+            '#text' => $field_comment->first()->comment_count,
+          ];
+        }
+      } elseif ($field_definition->getType() == 'entity_reference') {
+        $target_type = $field_definition->getItemDefinition()->getSetting('target_type');
+        $is_multiple_field = (1 !== $field_definition->getFieldStorageDefinition()->getCardinality());
+        if ($is_multiple_field) {
+          $build["chips"][] = [
+            '#theme' => 'argue_chip',
+            '#attributes' => ['title' => t('Number of comments on this argument.')],
+            '#icon_before' => $chip_icon_map[$target_type] ?? $target_type,
+            '#text' => $entity->get($field_name)->count(),
+          ];
+        }
+      }
+    }
+  }
 
+  // Attach the rate_vote_widget.
+  // @todo Replace by own rate widget.
   $type = $entity->getEntityTypeId();
   $bundle = $entity->bundle();
 
@@ -120,20 +167,15 @@ function argue_proscons_entity_view(array &$build, EntityInterface $entity, Enti
 
   $show = [
     'argument__argument__teaser',
-    'argument__argument__teaser_pro'
+    'argument__argument__teaser_pro',
   ];
 
   if (in_array($view_string, $show) && $widget_config = $display->getComponent('rate_vote_widget')) {
     $vote_widget_service = \Drupal::service('rate.entity.vote_widget');
-    $vote_widget = $vote_widget_service->buildRateVotingWidget(
-      $entity->id(),
-      $entity->getEntityTypeId(),
-      $entity->bundle()
-    );
+    $vote_widget = $vote_widget_service->buildRateVotingWidget($entity->id(), $type, $bundle);
 
     if (isset($vote_widget['rate_vote_widget'])) {
-      $vote_widget['rate_vote_widget']['#weight'] =
-        isset($widget_config['weight']) ? $widget_config['weight'] : 2;
+      $vote_widget['rate_vote_widget']['#weight'] = $widget_config['weight'] ?? 2;
     }
 
     // add library

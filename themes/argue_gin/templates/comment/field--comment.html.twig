@@ -43,7 +43,7 @@
 
 <section{{ attributes.addClass(classes) }}>
   {% if not label_hidden %}
-    <div{{ title_attributes.addClass(title_classes) }}><em class="argue-icon argue-icon__inline">comment</em> {{ label }}</div>
+    <div{{ title_attributes.addClass(title_classes) }}><em class="argue-icon argue-icon__inline">comment</em> {{ label }} ({{ comments_count }})</div>
   {% endif %}
   <div class="field__items">
     {{ comments }}

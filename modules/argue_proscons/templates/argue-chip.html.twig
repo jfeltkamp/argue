@@ -1,0 +1,11 @@
+
+{{ attach_library('argue_proscons/argue-chip') }}
+<span{{ attributes.addClass('argue-chip') }}>
+  {% if icon_before %}
+    <span class="argue-icon argue-chip__icon argue-chip__icon--leading">{{ icon_before }}</span>
+  {% endif %}
+  {{ children }}
+  {% if icon_after %}
+    <span class="argue-icon argue-chip__icon argue-chip__icon--trailing">{{ icon_after }}</span>
+  {% endif %}
+</span>

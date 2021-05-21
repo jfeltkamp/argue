@@ -149,7 +149,9 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
         if ($is_multiple_field) {
           $build["chips"][] = [
             '#theme' => 'argue_chip',
-            '#attributes' => ['title' => t('Number of comments on this argument.')],
+            '#attributes' => ['title' => t('Number of %type on this argument.', [
+              '%type' => $field_definition->getLabel()
+            ])],
             '#icon_before' => $chip_icon_map[$target_type] ?? $target_type,
             '#text' => $entity->get($field_name)->count(),
           ];

@@ -96,7 +96,7 @@
     @include argue-card__metadata;
   }
   &__action-buttons {
-
+    @include argue-card-footer__action-buttons;
   }
 }
 

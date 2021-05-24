@@ -56,7 +56,6 @@ set classes = [
 
     <div class="card-footer argue-card__actions">
       <div class="card-footer__action-buttons">
-        {{ content.operations }}
         {{ content.chips }}
       </div>
 
@@ -64,6 +63,7 @@ set classes = [
         {% if content.voting %}
           {{- content.voting -}}
         {% endif %}
+        {{ content.operations }}
       </div>
     </div>
   </div>

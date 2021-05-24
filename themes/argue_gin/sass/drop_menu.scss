@@ -1,0 +1,110 @@
+@import "var";
+@import "mixins/typo";
+@import "mixins/fab";
+
+.drop-menu {
+  position: relative;
+
+  &__toggle {
+    @include argue-fab(40px);
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 20;
+    margin: 0;
+    padding: .35rem 0;
+    list-style: none;
+    border: var(--drop-menu-list-border-size, $drop-menu-list-border-size) solid var(--drop-menu-list-border-color, $drop-menu-list-border-color);
+    border-radius: var(--drop-menu-list-border-radius-size, $drop-menu-list-border-radius-size);
+    background-color: var(--drop-menu-list-bg-color, $drop-menu-list-bg-color);
+    box-shadow: var(--drop-menu-list-box-shadow, $drop-menu-list-box-shadow);
+
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      a {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 16px;
+        overflow: hidden;
+        height: 48px;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          background-color: var(--drop-menu-item-bg-hover-color, $drop-menu-item-bg-hover-color);
+        }
+        &:focus,
+        &:active {
+          background-color: var(--drop-menu-item-bg-active-color, $drop-menu-item-bg-active-color);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes drop-menu-in {
+  0%   { transform: scale(1);   opacity: 1; }
+  99%  { transform: scale(.75); opacity: 0; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes drop-menu-out {
+  0%   { transform: scale(0); opacity: 0; }
+  1%   { transform: scale(.75); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.drop-menu {
+  // Closed
+  .drop-menu__list {
+    animation: drop-menu-in .3s;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  // Open
+  &:focus-within .drop-menu__list,
+  &__toggle:focus + .drop-menu__list {
+    animation: drop-menu-out .3s;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  // Menu align directional from button.
+  &__top_left {
+    .drop-menu__list {
+      bottom: calc(100% - .35rem);
+      right: .35rem;
+      transform-origin: bottom right;
+    }
+  }
+  &__top_right {
+    .drop-menu__list {
+      bottom: calc(100% - .35rem);
+      left: .35rem;
+      transform-origin: bottom left;
+    }
+  }
+  &__bottom_left {
+    .drop-menu__list {
+      top: calc(100% - .35rem);
+      right: .35rem;
+      transform-origin: top right;
+    }
+  }
+  &__bottom_right {
+    .drop-menu__list {
+      top: calc(100% - .35rem);
+      left: .35rem;
+      transform-origin: top left;
+    }
+  }
+}
+

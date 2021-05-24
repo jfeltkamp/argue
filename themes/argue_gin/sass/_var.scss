@@ -141,3 +141,15 @@ $arg-card-border-radius-size: 2px;
 $arg-card-bg-color: #fff;
 $arg-card-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $arg-card-header-icon-bg-on-card: rgba(0,0,0,.3);
+
+// Drop menu
+$drop-menu-list-bg-color: #FFF;
+$drop-menu-list-border-radius-size: $arg-card-border-radius-size;
+$drop-menu-list-box-shadow: $arg-card-box-shadow;
+$drop-menu-list-border-size: $arg-card-border-size;
+$drop-menu-list-border-color: $arg-card-border-color;
+$drop-menu-item-bg-active-color: rgba(0,0,0, .1875);
+$drop-menu-item-bg-hover-color: rgba(0,0,0, .0625);
+
+// FAB - Floating Action Button
+$argue-fab-accent-bg-color: rgba($argue-accent-color, .0875)

@@ -1,0 +1,5 @@
+@import "../mixins/fab";
+
+%argue-fab {
+  @include argue-fab();
+}

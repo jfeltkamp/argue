@@ -1,0 +1,29 @@
+@import "../var";
+
+@mixin argue-fab($size: 56px, $color: var(--argue-fab-default-color, #999), $bg-color:  var(--argue-fab-default-bg-color, #fff)) {
+  border-radius: 50%;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: $size;
+  height: $size;
+  padding: 0;
+  border: none;
+  fill: currentColor;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  transition: background-color .3s ease, box-shadow .3s ease, opacity 15ms linear 30ms, transform .3s ease 0ms;
+  background-color: $bg-color;
+  color: $color;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    background-color: var(--argue-fab-default-bg-color, #{$argue-fab-accent-bg-color});
+  }
+}

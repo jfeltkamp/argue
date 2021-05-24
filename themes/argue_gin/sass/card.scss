@@ -97,6 +97,20 @@
   }
   &__action-buttons {
     @include argue-card-footer__action-buttons;
+
+    .drop-menu,
+    .argue-chip-set {
+      margin: -.35rem .5rem -.35rem -.5rem;
+    }
+  }
+
+  &__action-icons {
+    @include argue-card-footer__action-icons;
+
+    .drop-menu,
+    .argue-chip-set {
+      margin: -.35rem -.5rem -.35rem .5rem;
+    }
   }
 }
 

@@ -29,3 +29,8 @@ textarea:
   dependencies:
     - core/jquery
     - core/drupal
+
+drop_menu:
+  css:
+    theme:
+      css/drop_menu.css: {}

@@ -1,0 +1,43 @@
+// Override some properties for Select2 widget to achieve similar form display in Claro.
+.select2-container {
+
+  .select2-selection {
+    &--single {
+      height: 48px;
+      border-radius: 0.125rem;
+      border: 1px solid #8e929c;
+      &:hover {
+        border-color: #222330;
+        box-shadow: inset 0 0 0 1px #222330;
+      }
+
+      .select2-selection__rendered {
+        line-height: 48px;
+      }
+    }
+    .select2-selection__arrow {
+      height: 46px;
+    }
+
+
+    &--multiple {
+      min-height: 48px;
+      border-radius: 0.125rem;
+      border: 1px solid #8e929c;
+      &:hover {
+        border-color: #222330;
+        box-shadow: inset 0 0 0 1px #222330;
+      }
+
+      .select2-selection__rendered {
+        line-height: 34px;
+      }
+    }
+  }
+}
+
+.select2-dropdown {
+  border: 1px solid #8e929c;
+  border-radius: 0.125rem;
+  box-shadow: var(--arg-card-box-shadow, 0 4px 10px rgba(0, 0, 0, 0.2));
+}

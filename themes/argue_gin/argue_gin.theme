@@ -27,6 +27,13 @@ function argue_gin_theme() {
     'argue_chip_set' => [
       'render element' => 'children',
     ],
+    'drop_menu' => [
+      'variables' => [
+        'attributes' => NULL,
+        'id' => NULL,
+        'links' => [],
+      ]
+    ],
     'argue_chip' => [
       'variables' => [
         'attributes' => NULL,

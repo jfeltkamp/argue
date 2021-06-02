@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_theme().
@@ -243,5 +244,15 @@ function argue_gin_preprocess_comment_form(&$vars) {
       }
       $btn['#attributes']['class'][] = 'button--small';
     }
+  }
+}
+/**
+ * @implements hook_preprocess_comment()
+ *
+ * Shorten submitted string for comments.
+ */
+function argue_gin_preprocess_comment(&$vars) {
+  if (isset($vars["submitted"]) && $vars["submitted"] instanceof TranslatableMarkup) {
+    $vars["submitted"] = t('@username, @datetime', $vars["submitted"]->getArguments());
   }
 }

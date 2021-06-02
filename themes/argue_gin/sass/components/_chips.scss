@@ -11,7 +11,8 @@
 
 .argue-chip {
   border-radius: 16px;
-  background-color: #e0e0e0;
+  background-color: var(--argue-chip-bg-color, #fff);
+  color: var(--argue-chip-font-color, #a2c);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: .875rem;
@@ -26,7 +27,13 @@
   padding: 0 12px;
   border-width: 0;
   outline: none;
-  cursor: pointer;
+  transition: background-color .4s;
+  cursor: default;
+
+  &:hover {
+    background-color: var(--argue-chip-hover-bg-color, #fff2ff);
+    color: var(--argue-chip-hover-font-color, #a2c);
+  }
 
   &__text {
     white-space: nowrap;

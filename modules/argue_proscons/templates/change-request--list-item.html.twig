@@ -12,12 +12,10 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('change_requests/cr_status') }}
 {%
   set classes = [
     'entity--change-request',
     'argue-list-item',
-    status ? 'cr-status-' ~ status
   ]
 %}
 <a href="{{ url }}"{{ attributes.addClass(classes) }}>
@@ -26,6 +24,6 @@
     <span class="argue-list-item__primary-text">{{ label }}</span>
   </span>
   <span class="argue-list-item__meta">
-    <span class="cr-status {{ status }}">{{ status_literal }}</span>
+    {{ status }}
   </span>
 </a>

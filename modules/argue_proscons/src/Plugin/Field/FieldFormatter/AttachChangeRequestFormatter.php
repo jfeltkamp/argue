@@ -164,9 +164,9 @@ class AttachChangeRequestFormatter extends FormatterBase {
    *
    * @param EntityInterface $entity
    *
-   * @return array|string
+   * @return array
    */
-  protected function getEntityLink($entity) {
+  protected function getEntityLink(EntityInterface $entity) {
 
     if ($this->getSetting('display_modal')) {
       $route = 'change_requests.patch_ajax_controller_getPatchAjax';
@@ -186,8 +186,15 @@ class AttachChangeRequestFormatter extends FormatterBase {
         '#theme' => 'change_request__list_item',
         '#label' => $entity->label(),
         '#url' => $url->toString(),
-        '#status' => $entity->getStatus(),
-        '#status_literal' => $entity->getStatus(TRUE),
+        '#status' => [
+          '#theme' => 'argue_chip_set',
+          '#attributes' => ['class' => ['patch_props']],
+          'status' => [
+            '#theme' => 'cr_status',
+            '#status' => $entity->getStatus(true),
+            '#attributes' => ['class' => [ $entity->getStatus() ]],
+          ]
+        ],
         '#attributes' => new Attribute($attr),
       ];
     } else {

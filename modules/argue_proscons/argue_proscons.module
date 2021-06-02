@@ -49,7 +49,6 @@ function argue_proscons_theme() {
         'url' => NULL,
         'label' => NULL,
         'status' => NULL,
-        'status_literal' => NULL,
       ],
     ],
     'argue_proscons' => [
@@ -117,10 +116,32 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
     $build['argument_type'] = ['#markup' => $arg_type];
   }
 
+  // Operation links as argue drop menu.
+  if (isset($build['operations'])) {
+    $drop_menu = [
+      '#theme' => 'drop_menu',
+      '#id' => 'arguement__drop_menu_' . $entity->id(),
+      '#attributes' => [
+        'class' => ['drop-menu__top_left'],
+        'role' => 'navigation',
+      ],
+      '#links' => []
+    ];
+    foreach ($build["operations"]["#links"] as $link) {
+      $drop_menu['#links'][] = [
+        '#type' => 'link',
+        '#title' => $link['title'],
+        '#url' => $link['url'],
+        '#weight' => $link['weight'] ?? 0,
+      ];
+    }
+    $build["operations"] = $drop_menu;
+  }
+
   // Attach chips for hidden references.
   $build['chips'] = [
     '#theme' => 'argue_chip_set',
-    '#attributes' => ['class' => ['huhu']],
+    '#attributes' => ['class' => ['argument_props']],
   ];
 
   // Icon map used for chips. If not set, the entity type id is used.
@@ -180,11 +201,6 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
       $vote_widget['rate_vote_widget']['#weight'] = $widget_config['weight'] ?? 2;
     }
 
-    // add library
-    if (!isset($vote_widget['#attached']['library'])) {
-      $vote_widget['#attached']['library'] = [];
-    }
-    $vote_widget['#attached']['library'][] = 'argue_proscons/proscons.teaser';
     $vote_widget['#group'] = 'voting';
 
     // move voting widget to own region.

@@ -39,6 +39,7 @@
     "drupal/gin": "^3.0",
     "drupal/gin_login": "^1.0",
     "drupal/gin_toolbar": "^1.0",
+    "drupal/length_indicator": "^1.1",
     "drupal/pathauto": "^1.8",
     "drupal/r4032login": "^2.1",
     "drupal/rate": "^1.0-alpha6",

@@ -32,14 +32,24 @@ function argue_proscons_help($route_name, RouteMatchInterface $route_match) {
  */
 function argue_proscons_theme() {
   return [
+    'argue_proscons' => [
+      'render element' => 'content',
+    ],
+    'argue_proscons__header' => [
+      'variables' => [
+        'attributes' => NULL,
+        'type' => NULL,
+        'label' => NULL,
+      ],
+    ],
     'argument' => [
       'render element' => 'content',
     ],
-    // @todo Can this be removed?? Can better be done by theme hook suggestions.
+    // @todo Can this be removed?? Better done by theme hook suggestion.
     'argument__teaser' => [
       'render element' => 'content',
     ],
-    // @todo Can this be removed?? Can better be done by theme hook suggestions.
+    // @todo Can this be removed?? Better done by theme hook suggestion.
     'argument__teaser_pro' => [
       'render element' => 'content',
     ],
@@ -50,9 +60,6 @@ function argue_proscons_theme() {
         'label' => NULL,
         'status' => NULL,
       ],
-    ],
-    'argue_proscons' => [
-      'render element' => 'children',
     ],
     'argue_chip_set' => [
       'render element' => 'children',
@@ -180,6 +187,11 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
       }
     }
   }
+
+  // Attach history timestamp to mark as new.
+  $build['new_indicator_timestamp'] = [
+    '#markup' => $entity->get('changed')->getString()
+  ];
 
   // Attach the rate_vote_widget.
   // @todo Replace by own rate widget.

@@ -1,9 +1,12 @@
-proscons.list:
+argue-proscons.list:
+  version: VERSION
   css:
     theme:
-      css/list.css: {}
+      css/argue-proscons.css: {}
       css/rate-widget-number-up-down.css: {}
-proscons.teaser:
+
+argue-proscons.teaser:
+  version: VERSION
   css:
     theme:
       css/argument-teaser.css: {}

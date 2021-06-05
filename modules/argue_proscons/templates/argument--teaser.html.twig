@@ -15,9 +15,9 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('argue_proscons/proscons.teaser') }}
+{{ attach_library('argue_proscons/argue-proscons.teaser') }}
 
-{% set date = content.created|render|striptags|trim %}
+{% set date = content.changed|render|striptags|trim %}
 {% set arg_type = content.argument_type|render|trim %}
 {% set header_icon = (arg_type == 'pro') ? 'argue_pro' : 'argue_con' %}
 
@@ -31,7 +31,7 @@ set classes = [
 <article{{ attributes.addClass(classes) }}>
   <div class="argument-wrapper card__content-wrapper">
     <header class="card-header">
-      <span class="card-header__icon argue-icon" aria-hidden="true">{{ header_icon }}</span>
+      <span class="card-header__icon"><i class="argue-icon" aria-hidden="true">{{ header_icon }}</i><mark class="mark-new hidden" data-comment-timestamp="{{ content.new_indicator_timestamp }}"></mark></span>
       <div class="card-header__text">
         <h3 class="card-header__text__top">{{ content.name }}</h3>
       </div>
@@ -43,7 +43,7 @@ set classes = [
       </div>
 
       <div class="argument__details card__content-item">
-        <div class="card__metadata">{% trans %}Submitted on {{ date }}{% endtrans %}</div>
+        <div class="card__metadata">{% trans %}Changed {{ date }}{% endtrans %}</div>
         {{ content.type }}
         {{ content.field_change_requests }}
         {{ content.field_comments }}

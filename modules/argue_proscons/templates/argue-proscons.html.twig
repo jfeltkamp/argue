@@ -1,2 +1,11 @@
-<!-- Add you custom twig html here -->
-
+{{ attach_library('argue_proscons/argue-proscons.list') }}
+<section{{ attributes.addClass('argue-proscons') }}>
+  <div class="argue-proscons__col pro panel" aria-describedby="pro_arguments">
+    {{ content.pro_title }}
+    {{ content.pro }}
+  </div>
+  <div class="argue-proscons__col con panel" aria-describedby="con_arguments">
+    {{ content.con_title }}
+    {{ content.con }}
+  </div>
+</section>

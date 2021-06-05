@@ -120,9 +120,6 @@ class AttachChangeRequestFormatter extends FormatterBase {
     }
 
     if ($this->getSetting('display_modal')) {
-      if (!isset($view['#attached']['library'])) {
-        $view['#attached']['library'] = [];
-      }
       $view['#attached']['library'][] = 'core/drupal.dialog.ajax';
     }
 

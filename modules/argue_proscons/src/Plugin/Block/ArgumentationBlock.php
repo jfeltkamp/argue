@@ -11,6 +11,7 @@ use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Config\ConfigManager;
+use Drupal\Core\Session\AccountProxyInterface;
 
 /**
  * Provides a 'ArgumentationBlock' block.
@@ -32,6 +33,7 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
    * @var \Drupal\Core\Entity\EntityTypeManager
    */
   protected $entityTypeManager;
+
   /**
    * Drupal\Core\Config\ConfigManager definition.
    *
@@ -51,18 +53,37 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
    */
   protected $argumentListService;
 
+  /**
+   * The current user.
+   *
+   * @var \Drupal\Core\Session\AccountProxyInterface
+   */
+  public $currentUser;
+
+  /**
+   * ArgumentationBlock constructor.
+   *
+   * @param array $configuration
+   * @param $plugin_id
+   * @param $plugin_definition
+   * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
+   * @param \Drupal\Core\Config\ConfigManager $config_manager
+   * @param \Drupal\argue_proscons\ArgumentListService $argument_list_service
+   */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
     EntityTypeManager $entity_type_manager,
     ConfigManager $config_manager,
-    ArgumentListService $argument_list_service
+    ArgumentListService $argument_list_service,
+    AccountProxyInterface $current_user
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityTypeManager = $entity_type_manager;
     $this->configManager = $config_manager;
     $this->argumentListService = $argument_list_service;
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -75,7 +96,8 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
       $plugin_definition,
       $container->get('entity_type.manager'),
       $container->get('config.manager'),
-      $container->get('argue_proscons.argument_list_service')
+      $container->get('argue_proscons.argument_list_service'),
+      $container->get('current_user')
     );
   }
 
@@ -117,8 +139,18 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
    */
   public function build() {
     $build = [
+      '#attributes' => [
+        'class' => ['argumentation-block']
+      ],
+      'content' => [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => ['argumentation-content']
+        ],
+      ],
       '#cache' => [
-        'tags' => ['argue_block']
+        'tags' => ['argue_block'],
+        'contexts' => ['user.roles:authenticated'],
       ]
     ];
     $node = $this->getContextValue('node');
@@ -128,23 +160,33 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
 
     /* @var $node NodeInterface */
     if (!$node->isNew() && isset($node_types[$node->getType()]) && $node_types[$node->getType()]) {
-      $build = [];
+
       $reference_id = $node->id();
 
-      $build['argumentation_block_introduction'] = [
+      $build['content']['argumentation_block_introduction'] = [
         '#markup' => '<p>' . $this->configuration['introduction'] . '</p>',
       ];
 
-      $text = new TranslatableMarkup('Add Argument');
+      $text = $this->t('Add Argument');
 
       $add_link = $this->argumentListService->getAddArgumentLink($reference_id, $text);
       if (isset($add_link['#attributes'])) {
         $add_link['#attributes']['class'] = [
           'button', 'button--primary', 'button--action'
         ];
-        $build['argumentation_block_introduction']['add_link'] = $add_link;
+        $build['content']['argumentation_block_introduction']['add_link'] = $add_link;
       }
-      $build['argumentation_list'] = $this->argumentListService->render($reference_id);
+      $build['content']['argumentation_list'] = $this->argumentListService->render($reference_id);
+
+      // Enable history automatism to mark as new.
+      if (
+        $this->argumentListService->moduleHandler->moduleExists('history')
+        && $this->currentUser->isAuthenticated()
+      ) {
+        $build['content']['#attributes']['data-history-node-id'] = $reference_id;
+        /** @ToDo find solution for comment module is not enabled. */
+        $build['content']['#attached']['library'][] = 'comment/drupal.comment-new-indicator';
+      }
     }
 
     return $build;

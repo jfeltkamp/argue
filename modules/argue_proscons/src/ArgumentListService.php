@@ -31,7 +31,7 @@ class ArgumentListService {
    *
    * @var \Drupal\Core\Extension\ModuleHandler
    */
-  protected $moduleHandler;
+  public $moduleHandler;
 
   /**
    * Drupal\Core\Extension\ModuleHandler definition.
@@ -202,25 +202,22 @@ class ArgumentListService {
    */
   public function render($reference_id) {
     $build['argumentation'] = [
-      '#type' => 'container',
-      '#attributes' => ['id' => 'argumentation', 'class' => ['argumentation']],
-      '#attached' => ['library' => ['argue_proscons/proscons.list']],
-      'pros_group' => [
-        '#type' => 'container',
-        '#attributes' => ['id' => 'pros', 'class' => ['block-argue-proscons--col', 'pros', 'panel']],
-        'header' => [
-          '#markup' => '<h3 class="pro panel__title">'. $this->t('Pro Arguments') .'</h3>',
-          '#weight' => -101,
-        ]
+      '#theme' => 'argue_proscons',
+      '#attributes' => ['id' => 'argue-proscons'],
+      'pro_title' => [
+        '#theme' => 'argue_proscons__header',
+        '#attributes' => [],
+        '#label' => $this->t('Pro Arguments'),
+        '#type' => 'pro_arguments'
       ],
-      'cons_group' => [
-        '#type' => 'container',
-        '#attributes' => ['id' => 'cons', 'class' => ['block-argue-proscons--col', 'cons', 'panel']],
-        'header' => [
-          '#markup' => '<h3 class="con  panel__title">'. $this->t('Contra Arguments') .'</h3>',
-          '#weight' => -101,
-        ],
+      'con_title' =>[
+        '#theme' => 'argue_proscons__header',
+        '#attributes' => [],
+        '#label' => $this->t('Contra Arguments'),
+        '#type' => 'con_arguments'
       ],
+      'pro' => [],
+      'con' => [],
       '#empty' => $this->t('There is no argument yet.'),
       '#cache' => [
         'contexts' => $this->entityType->getListCacheContexts(),
@@ -232,10 +229,10 @@ class ArgumentListService {
       if ($item = $this->buildItem($entity)) {
         switch ($entity->get('type')->getString()) {
           case ArgueEvent::ARGUE_PRO:
-            $build['argumentation']['pros_group'][$entity->id()] = $item;
+            $build['argumentation']['pro'][$entity->id()] = $item;
             break;
           case ArgueEvent::ARGUE_CON:
-            $build['argumentation']['cons_group'][$entity->id()] = $item;
+            $build['argumentation']['con'][$entity->id()] = $item;
             break;
         };
       }

@@ -1,12 +1,12 @@
-.argumentation {
+.argue-proscons {
     margin-left: -1rem;
     margin-right: -1rem;
     display: flex;
     flex-direction: row;
 }
 
-.block-argue-proscons--col,
-.block-argue-proscons--col.panel {
+.argue-proscons__col,
+.argue-proscons__col.panel {
     flex: 1 1 50%;
     box-sizing: border-box;
     padding-left: 1rem;

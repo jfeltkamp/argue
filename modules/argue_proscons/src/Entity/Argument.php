@@ -382,16 +382,30 @@ class Argument extends RevisionableContentEntityBase implements ArgumentInterfac
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'string',
+        'label' => 'hidden',
+        'type' => 'timestamp',
         'weight' => 4,
       ])
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
-      ->setDescription(t('The time that the entity was last edited.'));
+      ->setDescription(t('The time that the entity was last edited.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'timestamp',
+        'settings' => [
+          'date_format' => 'custom',
+          'custom_date_format' => 'U',
+        ],
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['revision_translation_affected'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Revision translation affected'))

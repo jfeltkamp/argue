@@ -84,7 +84,7 @@
 %}
 
 <a href="{{ url }}"{{ attributes.addClass(classes) }}>
-  <span class="argue-icon argue-list-item__graphic" aria-hidden="true">rule</span>
+  <span class="argue-list-item__graphic"><span class="argue-icon" aria-hidden="true">rule</span><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
   {% spaceless %}
   <span class="argue-list-item__text">
     <span class="argue-list-item__primary-text">{{- label -}}</span>

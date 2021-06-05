@@ -85,7 +85,7 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="card__content-wrapper">
     <header class="card-header leading-icon">
-      <div class="card-header__icon" aria-hidden="true"><i class="argue-icon ">problem</i></div>
+      <span class="card-header__icon" aria-hidden="true"><i class="argue-icon ">{{ node.bundle }}</i><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
       <div class="card-header__text">
         <h2 class="card-header__text__top">{{ label }}</h2>
         <h3 class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</h3>

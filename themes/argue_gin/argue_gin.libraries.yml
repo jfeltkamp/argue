@@ -12,6 +12,7 @@ global-styling:
     - core/drupal
 
 card:
+  version: VERSION
   css:
     theme:
       css/card.css: {}
@@ -23,6 +24,7 @@ card:
     - core/drupal.debounce
 
 textarea:
+  version: VERSION
   js:
     /libraries/autosize/dist/autosize.min.js: { minified: true }
     js/textarea.js: {}
@@ -31,6 +33,20 @@ textarea:
     - core/drupal
 
 drop_menu:
+  version: VERSION
   css:
     theme:
       css/drop_menu.css: {}
+
+history:
+  version: VERSION
+  css:
+    theme:
+      css/history.css: {}
+  js:
+    js/history.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+    - history/mark-as-read

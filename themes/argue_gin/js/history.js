@@ -1,7 +1,11 @@
-(function(Drupal, $, drupalSettings, storage) {
+/**
+ * @file
+ * Argue history library.
+ */
+(function(Drupal, $, drupalSettings) {
 
   /**
-   * Attaches card behavior for extendable content.
+   * Attaches history behavior for mark content as new.
    *
    * @type {Drupal~behaviors}
    *
@@ -10,78 +14,42 @@
    */
   Drupal.behaviors.historyIsNew = {
     attach: function(context) {
-      if (drupalSettings.history && drupalSettings.history.nodesToMarkAsRead) {
-        let nodesMarkAsRead = drupalSettings.history.nodesToMarkAsRead;
-        let currentUserID = parseInt(drupalSettings.user.uid, 10);
+      const currentUserID = parseInt(drupalSettings.user.uid, 10);
 
-        let someMinutes = 2 * 60;
-        let now = Math.round(new Date().getTime() / 1000);
-        let someMinutesAgo = now - someMinutes;
-
-        console.log('nodesToMarkAsRead', nodesMarkAsRead);
-
+      if (Drupal.history && currentUserID) {
         let $nodes = $(context).find('[data-history-node-id]');
+        let nodeList = [];
         $nodes.each(function(i, node) {
           let $node = $(node);
           let nid = $node.attr('data-history-node-id');
           let $marker = $node.find("#node_mark_".concat(nid));
-
           if ($marker.length) {
-            let isNew = false;
-            // Enable label when NOT mark as read
-            if (typeof nodesMarkAsRead[nid] === 'undefined') {
-              isNew = true;
-              console.log('NOT marked as read');
-            } else {
-              // Enable label when mark as read since some minutes ago.
-              let histId = "Drupal.history.".concat(currentUserID, ".").concat(nid);
-              let marTime = storage.getItem(histId) || false;
-              if (marTime && marTime > someMinutesAgo) {
-                isNew = true;
-                console.log('MAR some minutes ago', marTime, someMinutesAgo, marTime - someMinutesAgo);
-              } else {
-                console.log('MAR more then some minutes ago', marTime, someMinutesAgo, marTime - someMinutesAgo );
+            let timestamp = $marker.attr('data-history-changed') || false;
+            if (timestamp) {
+              if (Drupal.history.needsServerCheck(nid, timestamp)) {
+                nodeList.push(nid);
               }
             }
+          }
+        });
 
-            if (isNew) {
-              $marker.removeClass('hidden').text(Drupal.t('new'))
+        if (nodeList.length) {
+          Drupal.history.fetchTimestamps(nodeList, function () {
+            for (let nid of nodeList) {
+              let $marker = $(context).find("#node_mark_".concat(nid));
+              if ($marker.length) {
+                const lastViewTimestamp = Drupal.history.getLastRead(nid);
+                let timestamp = $marker.attr('data-history-changed') || 0;
+                timestamp = parseInt(timestamp, 10);
+                if (timestamp && (timestamp > lastViewTimestamp)) {
+                  $marker.removeClass('hidden').text(Drupal.t('new'));
+                }
+              }
             }
-          }
-
-        });
-
-
+          });
+        }
       }
-
-      /**
-      if (typeof Drupal.history !== 'undefined') {
-        let $articles = $(context).find('.node[data-history-node-id]');
-        let nIds = [];
-        let nodeTimes = {};
-        $articles.each(function(i, article) {
-          let $article = $(article);
-          let $marker = $article.find('mark[data-history-nid]');
-          let nid = $marker.attr('data-history-nid');
-          nodeTimes[nid] = {
-            created: $marker.attr('data-history-created'),
-            updated: $marker.attr('data-history-updated')
-          }
-          nIds.push(parseInt($article.attr('data-history-node-id'), 10));
-        })
-
-        console.log(nIds, nodeTimes);
-
-        Drupal.history.fetchTimestamps(nIds, function() {
-          for (let nodeID of nIds) {
-            let str = "Drupal.history.".concat(currentUserID, ".").concat(nodeID);
-            console.log(str);
-            console.log(storage.getItem(str));
-          }
-        });
-      }
-       */
     }
   }
 
-})(Drupal, jQuery, drupalSettings, window.localStorage);
+})(Drupal, jQuery, drupalSettings);

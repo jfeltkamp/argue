@@ -46,6 +46,17 @@ function argue_gin_theme() {
   ];
 }
 
+
+function argue_gin_preprocess_node(&$variables) {
+  if (
+    $variables["elements"]["#view_mode"] == 'full'
+    && \Drupal::currentUser()->isAuthenticated()
+    && \Drupal::moduleHandler()->moduleExists('history')
+  ) {
+    $variables["#attached"]['library'][] = 'argue_gin/history';
+  }
+}
+
 /**
  * Implemented hook_preprocess_links().
  */

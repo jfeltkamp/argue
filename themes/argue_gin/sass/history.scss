@@ -1,12 +1,24 @@
 .mark-new {
   position: absolute;
-  font-size: .6em;
-  padding: 0 7px;
-  line-height: 1rem;
-  border-radius: 1rem;
+  font-size: var(--mark-new-font-size, .55em);
+  padding: 0 .4em;
+  line-height: 1.666em;
+  border-radius: 1em;
   background-color: #a2c;
   color: #FFF;
-  margin: 4px auto;
+  margin: auto;
   width: max-content;
   text-transform: uppercase;
+}
+
+.card-header__icon,
+.comment__icon,
+.argue-list-item__graphic {
+  position: relative;
+  .mark-new {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateY(-50%);
+  }
 }

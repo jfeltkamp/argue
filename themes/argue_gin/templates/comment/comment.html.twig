@@ -76,12 +76,12 @@
 %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div class="comment__icon">{{ user_picture }}</div>
+  <div class="comment__icon">{{ user_picture }}<mark class="mark-new hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark></div>
   {% if parent %}
   {% endif %}
   <div class="comment__text">
     <header class="comment__text__header">
-      <h3 class="comment__text__meta" data-comment-timestamp="{{ new_indicator_timestamp }}">{{ submitted }}</h3>
+      <h3 class="comment__text__meta">{{ submitted }}</h3>
       <span class="comment__text__links">{{ content.links }}</span>
     </header>
     <div{{ content_attributes.addClass('comment__content') }}>

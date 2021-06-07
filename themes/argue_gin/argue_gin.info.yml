@@ -26,6 +26,8 @@ libraries:
 
 libraries-override:
   gin/gin_dialog: false
+  draggable_dashboard/main: false
+  draggable_dashboard/frontend: false
   rate/number-up-down:
     css:
       theme:

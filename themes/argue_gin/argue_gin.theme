@@ -47,6 +47,13 @@ function argue_gin_theme() {
 }
 
 
+function argue_gin_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $suggestions = $suggestions;
+  if (empty($variables['header'])) {
+    $suggestions[] = 'hookname__' . 'no_header';
+  }
+}
+
 function argue_gin_preprocess_node(&$variables) {
   if (
     $variables["elements"]["#view_mode"] == 'full'

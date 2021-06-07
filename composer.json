@@ -32,6 +32,7 @@
     "drupal/change_requests": "^2.0",
     "drupal/default_content": "^1.0",
     "drupal/diff": "^1.0",
+    "drupal/draggable_dashboard": "^2.0",
     "drupal/entity": "^1.0",
     "drupal/entity_form_mode": "^2.0",
     "drupal/entity_reference_revisions": "^1.8",

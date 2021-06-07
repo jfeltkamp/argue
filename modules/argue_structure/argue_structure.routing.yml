@@ -1,4 +1,12 @@
 
+argue_structure.dashboard_controller:
+  path: '/argue/dashboard'
+  defaults:
+    _controller: '\Drupal\argue_structure\Controller\DashboardController::content'
+    _title_callback: '\Drupal\argue_structure\Controller\DashboardController::getTitle'
+  requirements:
+    _permission: 'access the argue dashboard'
+
 argue_structure.rule_overview_controller:
   path: '/argue/rules'
   defaults:

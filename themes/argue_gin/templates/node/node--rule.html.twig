@@ -70,6 +70,7 @@
  *   in different view modes.
  */
 #}
+{{ attach_library('argue_gin/history') }}
 {%
   set classes = [
     'card',
@@ -81,14 +82,24 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+{% set updated = (node.changed.value - node.getCreatedTime()) > (60 * 60) %}
+{% set date = updated ? node.changed.value|format_date('medium') : date %}
 
 <article{{ attributes.addClass(classes) }}>
   <div class="card__content-wrapper">
     <header class="card-header">
-      <span class="card-header__icon" aria-hidden="true"><i class="argue-icon ">rule</i><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
+      <span class="card-header__icon"><i class="argue-icon" aria-hidden="true">{{ node.bundle }}</i><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
       <span class="card-header__text">
         <h2 class="card-header__text__top">{{ label }}</h2>
-        <span class="card-header__text__bot">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+        {% if display_submitted %}
+        <span class="card-header__text__bot">
+          {% if updated %}
+            {% trans %}Updated on {{ date }}{% endtrans %}
+          {% else %}
+            {% trans %}Created on {{ date }}{% endtrans %}
+          {% endif %}
+        </span>
+        {% endif %}
       </span>
     </header>
 
@@ -113,5 +124,4 @@
       </div>
     </div>
   </div>
-
 </article>

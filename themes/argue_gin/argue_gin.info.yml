@@ -23,7 +23,6 @@ libraries:
   - argue_gin/global-styling
   - argue_gin/card
 
-
 libraries-override:
   gin/gin_dialog: false
   draggable_dashboard/main: false

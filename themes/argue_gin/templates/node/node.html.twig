@@ -104,19 +104,16 @@
     </header>
 
     <div{{ content_attributes.addClass('card__content-item') }}>
-      {{ content|without('field_comments', 'rate_vote_widget', 'links') }}
-
-      {{ drupal_view('argue_rules_ref_this_problem', 'embed_1') }}
-
-      {{ content.field_comments }}
+      {{ content|without('meta') }}
     </div>
 
     <div class="card-footer">
       <div class="card-footer__action-buttons">
-        {{ content.links }}
+        <div class="argue-chip-set status-chips">
+          {{ content.meta }}
+        </div>
       </div>
       <div class="card-footer__action-icons">
-        {{ content.rate_vote_widget }}
       </div>
     </div>
   </div>

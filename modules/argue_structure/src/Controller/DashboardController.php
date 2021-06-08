@@ -2,7 +2,9 @@
 
 namespace Drupal\argue_structure\Controller;
 
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Displayed instead of the default login form.
@@ -15,13 +17,40 @@ use Drupal\Core\Controller\ControllerBase;
 class DashboardController extends ControllerBase {
 
   /**
+   * Drupal\Core\Entity\EntityTypeManager definition.
+   *
+   * @var \Drupal\Core\Session\AccountProxyInterface
+   */
+  protected $currentUser;
+
+  /**
+   * Constructs a new RuleOverviewController object.
+   */
+  public function __construct(AccountProxyInterface $current_user) {
+    $this->currentUser = $current_user;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('current_user')
+    );
+  }
+  /**
    * Content displayed instead of the default user.login form.
    *
    * @return array
    *   Return empty content.
    */
   public function content() {
-    return ['#markup' => '<h2>hihi</h2>'];
+
+    return [
+      '#attached' => [
+        'library' => ['argue_gin/history']
+      ]
+    ];
   }
 
   /**
@@ -32,7 +61,9 @@ class DashboardController extends ControllerBase {
    *   Return empty content.
    */
   public function getTitle() {
-    return $this->t('Argue Dashboard');
+    return $this->t('Welcome back, @username', [
+      '@username' => $this->currentUser->getAccountName()
+    ]);
   }
 
 }

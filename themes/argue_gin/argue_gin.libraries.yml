@@ -50,3 +50,9 @@ history:
     - core/jquery
     - core/drupalSettings
     - history/mark-as-read
+
+grid:
+  version: VERSION
+  css:
+    theme:
+      css/grid.css: {}

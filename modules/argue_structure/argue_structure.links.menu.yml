@@ -6,9 +6,9 @@ argue_structure.argue_structure_conf_form:
   weight: 99
 
 argue_structure.argue:
-  title: 'Argue'
-  route_name: argue_structure.problem_overview_controller
-  description: 'Overviews and Argue content.'
+  title: 'Dashboard'
+  route_name: argue_structure.dashboard_controller
+  description: 'View the Argue dashboard.'
   parent: system.admin
   weight: -50
   options:

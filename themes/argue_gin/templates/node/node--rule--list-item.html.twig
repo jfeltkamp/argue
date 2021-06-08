@@ -82,14 +82,22 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+{% set updated = (node.changed.value - node.getCreatedTime()) > (60 * 60) %}
+{% set date = updated ? node.changed.value|format_date('medium') : date %}
 
 <a href="{{ url }}"{{ attributes.addClass(classes) }}>
-  <span class="argue-list-item__graphic"><span class="argue-icon" aria-hidden="true">rule</span><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
+  <span class="argue-list-item__graphic"><span class="argue-icon" aria-hidden="true">{{ node.bundle }}</span><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
   {% spaceless %}
   <span class="argue-list-item__text">
-    <span class="argue-list-item__primary-text">{{- label -}}</span>
+    <span class="argue-list-item__primary-text"> {{ label|render|striptags }} </span>
     {% if display_submitted %}
-    <span class="argue-list-item__secondary-text">{% trans %}Submitted on {{ date }}{% endtrans %}</span>
+    <span class="argue-list-item__secondary-text">
+      {% if updated %}
+        {% trans %}Updated on {{ date }}{% endtrans %}
+      {% else %}
+        {% trans %}Created on {{ date }}{% endtrans %}
+      {% endif %}
+    </span>
     {% endif %}
   </span>
   {% endspaceless %}

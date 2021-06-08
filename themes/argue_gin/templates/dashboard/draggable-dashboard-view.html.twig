@@ -1,26 +1,11 @@
-<div class="draggable-dashboard" data-id="{{ dashboard.id }}">
+
+{{ attach_library('argue_gin/grid') }}
+<div{{ attributes.addClass('draggable-dashboard').setAttribute('data-id', dashboard.id) }}>
   {% set column_num = columns|length %}
   {% for column in columns %}
-      <div class="draggable-dashboard-column col-{{ 12 / column_num }}" id="column-{{ loop.index }}" data-id="{{ loop.index }}">
+      <div class="draggable-dashboard-column row" id="column-{{ loop.index }}" data-id="{{ loop.index }}">
           {% for block in column %}
-            <article class="card draggable-dashboard-block" id="block-{{ block.id }}" data-id="{{ block.id }}">
-              <div class="card__content-wrapper">
-                <header class="card-header draggable-dashboard-block__header">
-                  {% if icon is not empty %}
-                    <span class="card-header__icon argue-icon" aria-hidden="true">{{ icon }}</span>
-                  {% endif %}
-                  <span class="card-header__text">
-                  <span class="card-header__text__top">{{ block.title }}</span>
-                  {% if subtitle is not empty %}
-                    <span class="card-header__text__bot">{{ block.description }}</span>
-                  {% endif %}
-                </span>
-                </header>
-                <div class="card__content-item">
-                  {{ block }}
-                </div>
-              </div>
-            </article>
+              {{ block }}
           {% endfor %}
       </div>
   {% endfor %}

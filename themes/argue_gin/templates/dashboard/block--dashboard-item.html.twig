@@ -29,27 +29,26 @@
 #}
 {%
   set classes = [
+    'card',
     'draggable-dashboard-block',
   ]
 %}
 
-<div{{ attributes.addClass(classes) }}>
-  <article class="card">
-    <div class="card__content-wrapper">
-      <header{{ title_attributes.addClass('card-header','draggable-dashboard-block__header') }}>
-        {% if icon is not empty %}
-          <span class="card-header__icon argue-icon" aria-hidden="true">{{ icon }}</span>
+<article{{ attributes.addClass(classes) }}>
+  <div class="card__content-wrapper">
+    <header{{ title_attributes.addClass('card-header','draggable-dashboard-block__header') }}>
+      {% if icon is not empty %}
+        <span class="card-header__icon argue-icon" aria-hidden="true">{{ icon }}</span>
+      {% endif %}
+      <span class="card-header__text">
+        <span class="card-header__text__top">{{ label }}</span>
+        {% if subtitle is not empty %}
+          <span class="card-header__text__bot">{{ subtitle }}</span>
         {% endif %}
-        <span class="card-header__text">
-          <span class="card-header__text__top">{{ label }}</span>
-          {% if subtitle is not empty %}
-            <span class="card-header__text__bot">{{ subtitle }}</span>
-          {% endif %}
-        </span>
-      </header>
-      {% block content %}
-        {{ content }}
-      {% endblock %}
-    </div>
-  </article>
-</div>
+      </span>
+    </header>
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</article>

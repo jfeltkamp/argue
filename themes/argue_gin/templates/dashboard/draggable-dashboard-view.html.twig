@@ -3,7 +3,7 @@
 <div{{ attributes.addClass('draggable-dashboard').setAttribute('data-id', dashboard.id) }}>
   {% set column_num = columns|length %}
   {% for column in columns %}
-      <div class="draggable-dashboard-column row" id="column-{{ loop.index }}" data-id="{{ loop.index }}">
+      <div class="draggable-dashboard-column grid" id="column-{{ loop.index }}" data-id="{{ loop.index }}">
           {% for block in column %}
               {{ block }}
           {% endfor %}

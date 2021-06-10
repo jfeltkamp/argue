@@ -46,14 +46,6 @@ function argue_gin_theme() {
   ];
 }
 
-
-function argue_gin_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  $suggestions = $suggestions;
-  if (empty($variables['header'])) {
-    $suggestions[] = 'hookname__' . 'no_header';
-  }
-}
-
 function argue_gin_preprocess_node(&$variables) {
   if (
     $variables["elements"]["#view_mode"] == 'full'
@@ -264,6 +256,7 @@ function argue_gin_preprocess_comment_form(&$vars) {
     }
   }
 }
+
 /**
  * @implements hook_preprocess_comment()
  *
@@ -272,5 +265,22 @@ function argue_gin_preprocess_comment_form(&$vars) {
 function argue_gin_preprocess_comment(&$vars) {
   if (isset($vars["submitted"]) && $vars["submitted"] instanceof TranslatableMarkup) {
     $vars["submitted"] = t('@username, @datetime', $vars["submitted"]->getArguments());
+  }
+}
+
+/**
+ * @implements hook_preprocess_block()
+ */
+function argue_gin_preprocess_block(&$vars) {
+  if (isset($vars["elements"]["#draggable_dashboard"]) && $vars["elements"]["#draggable_dashboard"]) {
+    switch($vars["plugin_id"]) {
+      case 'views_block:who_s_new-block_1':
+        $vars["attributes"]['class'][] = 'grid-md-2';
+        break;
+      case 'views_block:content_recent-block_1':
+        $vars["attributes"]['class'][] = 'grid-md-4';
+        break;
+      default:
+    }
   }
 }

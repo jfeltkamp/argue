@@ -1,0 +1,77 @@
+// Import breakpoint
+@import "breakpoint-sass/stylesheets/breakpoint";
+@import "var";
+
+$gutter: 1.5rem;
+$colWidth: 16.66666%;
+
+@mixin column-width($num) {
+  flex: 1 1 calc(#{$colWidth * $num} - #{$gutter});
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: $gutter/-2;
+
+  // Small
+  &-sm-1,
+  &-sm-2,
+  &-sm-3,
+  &-sm-4,
+  &-sm-5,
+  &-sm-6,
+  &-md-1,
+  &-md-2,
+  &-md-3,
+  &-md-4,
+  &-md-5,
+  &-md-6,
+  &-lg-1,
+  &-lg-2,
+  &-lg-3,
+  &-lg-4,
+  &-lg-5,
+  &-lg-6 {
+    box-sizing: border-box;
+    margin: $gutter/2;
+    overflow: hidden;
+    flex: 1 1 calc(100% - #{$gutter});
+  }
+
+  // Small
+  @include mq($breakpointXSmall) {
+    &-sm-1 { @include column-width(1); }
+    &-sm-2 { @include column-width(2); }
+    &-sm-3 { @include column-width(3); }
+    &-sm-4 { @include column-width(4); }
+    &-sm-5 { @include column-width(5); }
+    &-sm-6 { @include column-width(6); }
+  }
+
+  // Medium
+  @include mq($breakpointMedium) {
+    &-md-1 { @include column-width(1); }
+    &-md-2 { @include column-width(2); }
+    &-md-3 { @include column-width(3); }
+    &-md-4 { @include column-width(4); }
+    &-md-5 { @include column-width(5); }
+    &-md-6 { @include column-width(6); }
+  }
+
+  // Large
+  @include mq($breakpointWide) {
+    &-lg-1 { @include column-width(1); }
+    &-lg-2 { @include column-width(2); }
+    &-lg-3 { @include column-width(3); }
+    &-lg-4 { @include column-width(4); }
+    &-lg-5 { @include column-width(5); }
+    &-lg-6 { @include column-width(6); }
+  }
+}
+
+

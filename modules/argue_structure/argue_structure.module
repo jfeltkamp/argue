@@ -83,6 +83,60 @@ function argue_structure_theme() {
 }
 
 /**
+ * Implements hook_argue_meta_ENTITY_TYPE()
+ *
+ * Load the meta properties of current entity.
+ */
+function argue_structure_argue_meta_node_rule(NodeInterface $node, $view_mode) {
+  return [
+    'problem' => [
+      'icon_before' => 'problem',
+      'text' => '1:2',
+      'icon_after' => 'close',
+    ]
+  ];
+}
+
+/**
+ * Implements hook_entity_view_alter()
+ *
+ * Load the meta properties of current entity.
+ */
+function argue_structure_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  $callbackName = implode('_', [
+    'argue_meta',
+    $entity->getEntityTypeId(),
+    $entity->bundle(),
+  ]);
+  // build cache tag and validate before hooking.
+  $argue_meta = \Drupal::moduleHandler()->invokeAll($callbackName, [$entity, $display->getOriginalMode()]);
+  if (count($argue_meta)) {
+    $chips = [
+      '#theme' => 'argue_chip_set',
+    ];
+    foreach ($argue_meta as $key => $meta) {
+      $chips[$key] = [
+        '#theme' => 'argue_chip',
+        '#attributes' => [$key],
+        '#icon_before' => $meta['icon_before'],
+        '#text' => $meta['text'],
+        '#icon_after' => $meta['icon_after'],
+      ];
+    }
+  } else $chips = [];
+
+  /** @ToDo finalize
+   * - add to view.
+   * - implement hooks in modules for Arguments .
+   * - add caching !!! (use existing cache tags where possible).
+   * - remove old templates (argue_structure_proscons + argue_structure_proscons_pill).
+   * - remove old hooks implementing meta (e.g. argue_structure_preprocess_node)
+   * - reduce number of node templates.
+   */
+
+}
+
+/**
  * Implements hook_preprocess_node()
  *
  * Prepare pills with the number of arguments pro and con a rule.

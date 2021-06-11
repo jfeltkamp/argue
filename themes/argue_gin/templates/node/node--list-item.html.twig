@@ -89,7 +89,7 @@
   <span class="argue-list-item__graphic"><span class="argue-icon" aria-hidden="true">{{ node.bundle }}</span><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
   {% spaceless %}
   <span class="argue-list-item__text">
-    <span class="argue-list-item__primary-text {{ text_class }}"> {{ label|render|striptags }} </span>
+    <span class="argue-list-item__primary-text"> {{ label|render|striptags }} </span>
     {% if display_submitted %}
     <span class="argue-list-item__secondary-text">
       {% if updated %}
@@ -101,7 +101,7 @@
     {% endif %}
   </span>
   {% endspaceless %}
-  <span class="argue-list-item__meta">
-    {{ content.meta }}
-  </span>
+  {% if content.meta %}
+    <span class="argue-list-item__meta">{{ content.meta }}</span>
+  {% endif %}
 </a>

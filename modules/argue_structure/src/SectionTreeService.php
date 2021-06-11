@@ -244,11 +244,6 @@ class SectionTreeService {
         '#items' => $list,
         '#level' => -1,
         '#attributes' => new Attribute(['id' => $vid, 'class' => ['argue-structure-nested-list']]),
-        '#attached' => [
-          'library' => [
-            'argue_structure/structure.list'
-          ]
-        ],
       ];
 
       $render_array = [

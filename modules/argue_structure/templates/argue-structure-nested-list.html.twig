@@ -1,13 +1,14 @@
 {{ attach_library('argue_gin/history') }}
+{{ attach_library('argue_gin/grid') }}
 
 {% if level == -1 %}
-  <div{{ attributes }}>
+  <div{{ attributes.addClass('grid') }}>
     {{ node_list }}
     {{ items }}
   </div>
 {% elseif level == 0 %}
   <!-- CARD BEGIN -->
-  <article{{ attributes.addClass('card') }}>
+  <article{{ attributes.addClass('card', 'grid-lg-3') }}>
     <div class="card__content-wrapper">
       <!-- CARD Header Begin -->
       <header class="card-header">

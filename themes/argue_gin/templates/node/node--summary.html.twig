@@ -71,15 +71,23 @@
  */
 #}
 {%
-  set classes = [
-  'node',
-  'node--type-' ~ node.bundle|clean_class,
-  node.isPromoted() ? 'node--promoted',
-  node.isSticky() ? 'node--sticky',
-  not node.isPublished() ? 'node--unpublished',
-  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
+
 <article{{ attributes.addClass(classes) }}>
-  {{ content }}
+    <header class="">
+        <h3 class="arg-typo--overline">{{ label }}</h3>
+    </header>
+    <div{{ content_attributes.addClass('node__sub_content') }}>
+        {{ content|without('argue_meta') }}
+    </div>
+    <footer><a href="{{ url }}" class="button button--extrasmall">{{ 'See details and comments'|t }}</a></footer>
 </article>
+

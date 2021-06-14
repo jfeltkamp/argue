@@ -8,9 +8,11 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\EntityInterface ;
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Url;
+use Drupal\views\Views;
 
 /**
  * Implements hook_help().
@@ -35,32 +37,10 @@ function argue_structure_help($route_name, RouteMatchInterface $route_match) {
 function argue_structure_theme() {
 
   return [
-    'argue_structure_listitem' => [
-      'variables' => [
-        'url' => NULL,
-        'icon' => NULL,
-        'line_1' => NULL,
-        'line_2' => NULL,
-        'meta' => NULL,
-        'meta_attributes' => NULL,
-      ],
-    ],
     'argue_structure_list' => [
       'variables' => [
         'attributes' => NULL,
         'content' => NULL,
-      ]
-    ],
-    'argue_structure_proscons' => [
-      'variables' => [
-        'pro' => NULL,
-        'con' => NULL,
-      ]
-    ],
-    'argue_structure_proscons_pill' => [
-      'variables' => [
-        'pro' => NULL,
-        'con' => NULL,
       ]
     ],
     'argue_structure_nested_list' => [
@@ -83,82 +63,32 @@ function argue_structure_theme() {
 }
 
 /**
- * Implements hook_argue_meta_ENTITY_TYPE()
+ * Implements hook_entity_view_alter().
  *
- * Load the meta properties of current entity.
+ * Get the argue meta information.
  */
-function argue_structure_argue_meta_node_rule(NodeInterface $node, $view_mode) {
-  return [
-    'problem' => [
-      'icon_before' => 'problem',
-      'text' => '1:2',
-      'icon_after' => 'close',
-    ]
-  ];
+function argue_structure_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  module_load_include('meta_properties.inc', 'argue_structure');
+  $build['argue_meta'] = argue_structure_meta_properties_load($entity, $display);
 }
 
 /**
- * Implements hook_entity_view_alter()
+ * Implements hook_ENTITY_TYPE_view_alter()
  *
- * Load the meta properties of current entity.
+ * Attach view of rules handlung this problem to the problem (view_mde: full).
  */
-function argue_structure_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
-  $callbackName = implode('_', [
-    'argue_meta',
-    $entity->getEntityTypeId(),
-    $entity->bundle(),
-  ]);
-  // build cache tag and validate before hooking.
-  $argue_meta = \Drupal::moduleHandler()->invokeAll($callbackName, [$entity, $display->getOriginalMode()]);
-  if (count($argue_meta)) {
-    $chips = [
-      '#theme' => 'argue_chip_set',
+function argue_structure_node_view_alter(array &$build, NodeInterface $node, EntityViewDisplayInterface $display) {
+  if ($build['#view_mode'] == 'full' && $node->bundle() == 'problem') {
+    $nid = $node->id();
+    $build['rules_view'] = [
+      '#type' => 'view',
+      '#name' => 'argue_rules_ref_this_problem',
+      '#display_id' => 'embed_1',
+      '#arguments' => [$nid],
+      '#embed' => TRUE,
     ];
-    foreach ($argue_meta as $key => $meta) {
-      $chips[$key] = [
-        '#theme' => 'argue_chip',
-        '#attributes' => [$key],
-        '#icon_before' => $meta['icon_before'],
-        '#text' => $meta['text'],
-        '#icon_after' => $meta['icon_after'],
-      ];
-    }
-  } else $chips = [];
-
-  /** @ToDo finalize
-   * - add to view.
-   * - implement hooks in modules for Arguments .
-   * - add caching !!! (use existing cache tags where possible).
-   * - remove old templates (argue_structure_proscons + argue_structure_proscons_pill).
-   * - remove old hooks implementing meta (e.g. argue_structure_preprocess_node)
-   * - reduce number of node templates.
-   */
-
-}
-
-/**
- * Implements hook_preprocess_node()
- *
- * Prepare pills with the number of arguments pro and con a rule.
- */
-function argue_structure_preprocess_node(&$vars) {
-
-  /** @var \Drupal\argue_proscons\EvaluatingService $eval */
-  $eval = \Drupal::service('argue_proscons.evaluating_service');
-  if($vars['node']->bundle() == 'rule') {
-    $result = $eval->getRuleArgumentCounts($vars['node']->id());
-    if (in_array($vars["view_mode"], ['full', 'teaser'])) {
-      $vars['content']['meta'] = [
-        '#theme' => 'argue_structure_proscons',
-        '#pro' => $result['pro'],
-        '#con' => $result['con'],
-      ];
-    } elseif (in_array($vars["view_mode"], ['list_item'])) {
-      $vars['content']['meta'] = [
-        '#theme' => 'argue_structure_proscons_pill',
-        '#pro' => $result['pro'],
-        '#con' => $result['con'],
-      ];
+    if (isset($build["field_comments"]["#weight"])) {
+      $build['rules_view']['#weight'] = $build["field_comments"]["#weight"] - 1;
     }
   }
 }
@@ -174,6 +104,8 @@ function argue_structure_form_user_form_alter(&$form, FormStateInterface $form_s
 
 /**
  * Implements hook_ENTITY_TYPE_links_alter()
+ * @Todo To be removed
+ *   Action should be attached to field header (like add Change request).
  *
  * Adding action link at problem node to add a rule.
  */
@@ -196,34 +128,6 @@ function argue_structure_node_links_alter(array &$links, EntityInterface $entity
   }
 }
 
-function argue_structure_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
-  // For nodes, change the view mode when it is teaser.
-  if ($entity->getEntityTypeId() == 'argument' && $view_mode == 'teaser') {
-    if($entity->getTypeStr() == 'pro') {
-      $view_mode = 'teaser_pro';
-    };
-  }
-
-}
-
-
-/**
- * Implements hook_entity_form_display_alter().
- */
-function argue_structure_entity_form_display_alter(EntityFormDisplayInterface &$form_display, array $context) {
-  if ($context['entity_type'] == 'argument' && $context["form_mode"] == 'edit') {
-    /** @var \Drupal\Core\Entity\EntityDisplayRepository $entity_display_repo */
-    $entity_display_repo = \Drupal::service('entity_display.repository');
-    $form_mode_opts = $entity_display_repo->getFormModeOptionsByBundle('argument', 'argument');
-
-    /** @var \Drupal\argue_proscons\Entity\Argument $argument */
-    $argument = \Drupal::routeMatch()->getParameter('argument');
-    $type_str = $argument->getTypeStr();
-    if (isset($form_mode_opts["edit_{$type_str}"])) {
-      $form_display = $entity_display_repo->getFormDisplay('argument', 'argument', "edit_{$type_str}") ?: $form_display;
-    }
-  }
-}
 
 
 /**

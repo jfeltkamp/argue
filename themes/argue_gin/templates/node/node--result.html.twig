@@ -70,54 +70,16 @@
  *   in different view modes.
  */
 #}
-{{ attach_library('argue_gin/history') }}
 {%
   set classes = [
-    'card',
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
 %}
-{% set updated = (node.changed.value - node.getCreatedTime()) > (60 * 60) %}
-{% set date = updated ? node.changed.value|format_date('medium') : date %}
-
 <article{{ attributes.addClass(classes) }}>
-  <div class="card__content-wrapper">
-    <header class="card-header">
-      <span class="card-header__icon"><i class="argue-icon" aria-hidden="true">{{ node.bundle }}</i><mark id="node_mark_{{ node.id() }}" data-history-changed="{{ node.changed.value }}" class="hidden mark-new"></mark></span>
-      <span class="card-header__text">
-        <h2 class="card-header__text__top">{{ label }}</h2>
-        {% if display_submitted %}
-        <span class="card-header__text__bot">
-          {% if updated %}
-            {% trans %}Updated on {{ date }}{% endtrans %}
-          {% else %}
-            {% trans %}Created on {{ date }}{% endtrans %}
-          {% endif %}
-        </span>
-        {% endif %}
-      </span>
-    </header>
-
-    <div{{ content_attributes.addClass('card__content-item') }}>
-      {{ content|without('field_comments', 'rate_vote_widget', 'links') }}
-
-      {{ drupal_view('argue_rules_ref_this_problem', 'embed_1') }}
-
-      {{ content.field_comments }}
-    </div>
-
-    <div class="card-footer">
-      <div class="card-footer__action-buttons">
-        {{ content.links }}
-      </div>
-      <div class="card-footer__action-icons">
-        {{ content.rate_vote_widget }}
-      </div>
-    </div>
-  </div>
+  {{ content|without('argue_meta') }}
 </article>

@@ -134,8 +134,10 @@ class AttachChangeRequestFormatter extends FormatterBase {
     if (!$items->isEmpty()) {
       $this->crStatusConstants = new ChangeRequests;
       foreach ($items as $delta => $item) {
-        /** @var Argument $entity */
-        $elements[] = $this->getEntityLink($item->entity);
+        if ($item->entity) {
+          /** @var Argument $entity */
+          $elements[] = $this->getEntityLink($item->entity);
+        }
       }
     } elseif ($this->getSetting('show_empty_field')) {
       $elements[] = [

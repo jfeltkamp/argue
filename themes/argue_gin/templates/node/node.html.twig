@@ -104,16 +104,15 @@
     </header>
 
     <div{{ content_attributes.addClass('card__content-item') }}>
-      {{ content|without('meta') }}
+      {{ content|without('rate_vote_widget', 'links', 'argue_meta') }}
     </div>
 
     <div class="card-footer">
       <div class="card-footer__action-buttons">
-        <div class="argue-chip-set status-chips">
-          {{ content.meta }}
-        </div>
+        {{ content.argue_meta }} {{ content.links }}
       </div>
       <div class="card-footer__action-icons">
+        {{ content.rate_vote_widget }}
       </div>
     </div>
   </div>

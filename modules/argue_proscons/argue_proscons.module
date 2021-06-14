@@ -5,12 +5,14 @@
  * Contains argue_proscons.module.
  */
 
+use Drupal\argue_proscons\Entity\ArgumentInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 
 /**
  * Implements hook_help().
@@ -82,13 +84,22 @@ function argue_proscons_theme() {
  * Load the meta properties of current entity.
  */
 function argue_proscons_argue_meta_node_rule(NodeInterface $node, $view_mode) {
-  return [
-    'arguments' => [
-      'icon_before' => 'arguments',
-      'text' => '1:2',
-      'icon_after' => '',
+  $nid = $node->id();
+  $cache_tag = "node:{$nid}:meta:argument";
+  /** @var \Drupal\argue_proscons\EvaluatingService $eval */
+  $eval = \Drupal::service('argue_proscons.evaluating_service');
+  $argCount = $eval->getRuleArgumentCounts($nid);
+  $result = [
+    'argue_pro_con' => [
+      '#theme' => 'argue_chip',
+      '#attributes' => ['title' => t('Number of arguments (pro:contra)')],
+      '#icon_before' => 'argue_pro_con',
+      '#text' => "{$argCount['pro']}:{$argCount['con']}",
+      '#icon_after' => NULL,
+      '#cache' => ['tags' => [$cache_tag]],
     ]
   ];
+  return $result;
 }
 
 /**
@@ -113,7 +124,6 @@ function argue_proscons_theme_suggestions_argument(array $variables) {
  * @param $view_mode
  *
  * @throws \Drupal\Core\Entity\EntityMalformedException
- * @throws \Drupal\Core\TypedData\Exception\MissingDataException
  */
 function argue_proscons_argument_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   if($view_mode == 'full' && \Drupal::routeMatch()->getRouteName() == 'entity.argument.canonical') {
@@ -160,48 +170,6 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
     $build["operations"] = $drop_menu;
   }
 
-  // Attach chips for hidden references.
-  $build['chips'] = [
-    '#theme' => 'argue_chip_set',
-    '#attributes' => ['class' => ['argument_props']],
-  ];
-
-  // Icon map used for chips. If not set, the entity type id is used.
-  $chip_icon_map = ['patch' => 'change_request'];
-  /**
-   * Loop over fields and append the chips to the chip set.
-   *
-   * @var string $field_name
-   * @var Drupal\Core\Field\FieldDefinitionInterface $field_definition
-   */
-  foreach ($entity->getFieldDefinitions() as $field_name => $field_definition) {
-    if (isset ($build[$field_name])) {
-      if ($field_definition->getType() == 'comment') {
-        $field_comment = $entity->get($field_name);
-        if ($field_comment instanceof \Drupal\comment\CommentFieldItemList) {
-          $build["chips"][] = [
-            '#theme' => 'argue_chip',
-            '#attributes' => ['title' => t('Number of comments on this argument.')],
-            '#icon_before' => 'comments',
-            '#text' => $field_comment->first()->comment_count,
-          ];
-        }
-      } elseif ($field_definition->getType() == 'entity_reference') {
-        $target_type = $field_definition->getItemDefinition()->getSetting('target_type');
-        $is_multiple_field = (1 !== $field_definition->getFieldStorageDefinition()->getCardinality());
-        if ($is_multiple_field) {
-          $build["chips"][] = [
-            '#theme' => 'argue_chip',
-            '#attributes' => ['title' => t('Number of %type on this argument.', [
-              '%type' => $field_definition->getLabel()
-            ])],
-            '#icon_before' => $chip_icon_map[$target_type] ?? $target_type,
-            '#text' => $entity->get($field_name)->count(),
-          ];
-        }
-      }
-    }
-  }
 
   // Attach history timestamp to mark as new.
   $build['new_indicator_timestamp'] = [
@@ -241,3 +209,40 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
     ];
   }
 }
+
+/**
+ * Implements hook_entity_view_mode_alter()
+ *
+ * For Arguments, change the view mode when it is teaser.
+ * (Arguments have no bundles.)
+ */
+function argue_proscons_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
+  if ($entity->getEntityTypeId() == 'argument' && $view_mode == 'teaser') {
+    if($entity->getTypeStr() == 'pro') {
+      $view_mode = 'teaser_pro';
+    };
+  }
+}
+
+
+/**
+ * Implements hook_entity_form_display_alter().
+ *
+ * For Arguments, change the view mode when it is teaser.
+ * (Arguments have no bundles.)
+ */
+function argue_proscons_entity_form_display_alter(EntityFormDisplayInterface &$form_display, array $context) {
+  if ($context['entity_type'] == 'argument' && $context["form_mode"] == 'edit') {
+    /** @var \Drupal\Core\Entity\EntityDisplayRepository $entity_display_repo */
+    $entity_display_repo = \Drupal::service('entity_display.repository');
+    $form_mode_opts = $entity_display_repo->getFormModeOptionsByBundle('argument', 'argument');
+
+    /** @var \Drupal\argue_proscons\Entity\Argument $argument */
+    $argument = \Drupal::routeMatch()->getParameter('argument');
+    $type_str = $argument->getTypeStr();
+    if (isset($form_mode_opts["edit_{$type_str}"])) {
+      $form_display = $entity_display_repo->getFormDisplay('argument', 'argument', "edit_{$type_str}") ?: $form_display;
+    }
+  }
+}
+

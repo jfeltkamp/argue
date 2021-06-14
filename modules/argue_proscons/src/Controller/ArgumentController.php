@@ -98,7 +98,12 @@ class ArgumentController extends ControllerBase implements ContainerInjectionInt
         // Use revision link to link to revisions that are not active.
         $date = \Drupal::service('date.formatter')->format($revision->getRevisionCreationTime(), 'short');
         if ($vid != $argument->getRevisionId()) {
-          $link = $this->l($date, new Url('entity.argument.revision', ['argument' => $argument->id(), 'argument_revision' => $vid]));
+          $link = \Drupal\Core\Link::fromTextAndUrl(
+            $date,
+            new Url('entity.argument.revision', [
+              'argument' => $argument->id(),
+              'argument_revision' => $vid])
+          )->toString();
         }
         else {
           $link = $argument->link($date);

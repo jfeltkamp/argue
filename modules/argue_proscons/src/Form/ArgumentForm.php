@@ -32,7 +32,7 @@ class ArgumentForm extends ContentEntityForm {
     $title = ($this->entity->isNew())
       ? $this->t('Create a new Argument')
       : $this->t('Edit your Argument');
-      $form = [
+    $form = [
       'reference' => $reference_view,
       'title' => [
         '#markup' => '<h1>' . $title->render() . '</h1>',
@@ -56,7 +56,7 @@ class ArgumentForm extends ContentEntityForm {
           ArgueEvent::ARGUE_CON => $this->t('counters'),
         ];
         $form['type'] = [
-          '#markup' => new TranslatableMarkup('<h2>Argument %procon the preceding rule.</h2>', [
+          '#markup' => new TranslatableMarkup('<h2>Argument %procon the preceding entity.</h2>', [
               '%procon' => $titles[$type],
             ]),
           '#weight' => $form['type']['#weight'],

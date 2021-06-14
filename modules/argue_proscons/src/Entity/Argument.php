@@ -2,6 +2,7 @@
 
 namespace Drupal\argue_proscons\Entity;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\argue_proscons\Events\ArgueEvent;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -42,6 +43,7 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
  *   data_table = "argument_field_data",
  *   revision_table = "argument_revision",
  *   revision_data_table = "argument_field_revision",
+ *   show_revision_ui = TRUE,
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_user",
  *     "revision_created" = "revision_created",
@@ -137,20 +139,18 @@ class Argument extends RevisionableContentEntityBase implements ArgumentInterfac
   }
 
   /**
-   * @return int
-   */
-  public function save() {
-    if ($this->isNew()) {
-      \Drupal::cache('render')->invalidate('sections_tree');
-    }
-    return parent::save();
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function getName() {
     return $this->get('name')->value;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public function link() {
+    return $this->toLink()->toString();
   }
 
   /**

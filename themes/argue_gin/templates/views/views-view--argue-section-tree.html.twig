@@ -32,20 +32,25 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('argue_gin/grid') }}
+{{ attach_library('argue_gin/history') }}
 {%
   set classes = [
     css_name,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{% if rows %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title }}
   {{ title_suffix }}
 
-  {% if header -%}
-    {{ header }}
+  {% if header|render|striptags|trim %}
+    <div class="card grid-lg-6">
+      <div class="card__content-wrapper">
+        {{ header }}
+      </div>
+    </div>
   {% endif %}
 
   {{ exposed }}
@@ -69,4 +74,3 @@
 
   {{ feed_icons }}
 </div>
-{% endif %}

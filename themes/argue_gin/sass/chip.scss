@@ -1,0 +1,26 @@
+@import './var';
+@import './mixins/chip';
+
+:root {
+  --argue-chip-bg-color: #{$argue-chip-bg-color};
+  --argue-chip-font-color: #{$argue-chip-font-color};
+  --argue-chip-hover-bg-color: #{$argue-chip-hover-bg-color};
+  --argue-chip-hover-font-color: #{$argue-chip-hover-font-color};
+}
+
+.argue-chip-set {
+  @include argue-chip-set;
+}
+
+.argue-chip {
+  @include argue-chip;
+
+  &__text {
+    @include argue-chip__text;
+  }
+
+  &__icon {
+    @include argue-chip__icon;
+  }
+}
+

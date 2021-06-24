@@ -167,17 +167,20 @@ class AttachChangeRequestFormatter extends FormatterBase {
    */
   protected function getEntityLink(EntityInterface $entity) {
 
-    if ($this->getSetting('display_modal')) {
-      $route = 'change_requests.patch_ajax_controller_getPatchAjax';
-      $attr = [
+    $route = 'entity.patch.canonical';
+    $attr = ($this->getSetting('display_modal'))
+      ? [
         'class' => ['use-ajax'],
         'data-dialog-type' => 'modal',
+        'data-dialog-options' => '{"width":"80%","dialogClass":"popup-dialog-class"}',
         'role' => 'article',
-      ];
-    } else {
-      $route = 'entity.patch.canonical';
-      $attr = [];
-    }
+      ] : [];
+
+    $meta_props = [
+      '#theme' => 'argue_chip_set',
+      '#attributes' => ['class' => ['patch_props']],
+    ];
+    $invoke_meta = \Drupal::moduleHandler()->invokeAll('argue_meta_patch_patch', [$entity, 'list-item']);
 
     if($entity instanceof EntityInterface) {
       $url = Url::fromRoute($route, ['patch' => $entity->id()]);
@@ -185,15 +188,7 @@ class AttachChangeRequestFormatter extends FormatterBase {
         '#theme' => 'change_request__list_item',
         '#label' => $entity->label(),
         '#url' => $url->toString(),
-        '#status' => [
-          '#theme' => 'argue_chip_set',
-          '#attributes' => ['class' => ['patch_props']],
-          'status' => [
-            '#theme' => 'cr_status',
-            '#status' => $entity->getStatus(true),
-            '#attributes' => ['class' => [ $entity->getStatus() ]],
-          ]
-        ],
+        '#status' => array_merge($meta_props, $invoke_meta),
         '#attributes' => new Attribute($attr),
       ];
     } else {

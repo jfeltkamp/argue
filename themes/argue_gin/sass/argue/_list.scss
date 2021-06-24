@@ -130,6 +130,10 @@
     margin-left: auto;
     margin-right: 0;
   }
+
+  .argue-chip-set {
+    flex-wrap: nowrap;
+  }
 }
 
 a.argue-list-item {
@@ -146,4 +150,3 @@ a.argue-list-item {
     box-shadow: none;
   }
 }
-

@@ -1,7 +1,7 @@
-{{ attach_library('argue_gin/history') }}
-{{ attach_library('argue_gin/grid') }}
+
 
 {% if level == -1 %}
+  {{ attach_library('argue_gin/grid') }}
   <div{{ attributes.addClass('grid') }}>
     {{ node_list }}
     {{ items }}
@@ -26,6 +26,7 @@
         </span>
       </header>
       {% if node_list|render|striptags|trim is not empty %}
+        {{ attach_library('argue_gin/history') }}
         <div class="argue-list card__content-item">
           {{ node_list }}
         </div>
@@ -42,6 +43,7 @@
         {{ label }}
       {% endif %}
     </h3>
+    {{ attach_library('argue_gin/history') }}
     {{ node_list }}
     {{ items }}
   </article>

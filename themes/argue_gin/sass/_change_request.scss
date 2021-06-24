@@ -12,3 +12,9 @@
     }
   }
 }
+
+.argue-list-item {
+  .chip--cr-status {
+    @extend %chip-icon-only;
+  }
+}

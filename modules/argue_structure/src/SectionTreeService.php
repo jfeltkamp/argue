@@ -311,7 +311,9 @@ class SectionTreeService {
    * @param int $term_depth
    *   The depth level for the text indent.
    *
-   * @return \Drupal\Component\Render\MarkupInterface|null
+   * @return array|null
+   *   Render array of node list.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -347,14 +349,11 @@ class SectionTreeService {
 
       $nodes_view = $this->getNodeViewBuilder()->viewMultiple($nodes, 'list_item');
 
-      $list = [
+      return [
         '#theme' => 'argue_structure_list',
         '#attributes' => new Attribute(['class' => ['level_'.$term_depth]]),
         '#content' => $nodes_view
       ];
-
-      return $this->renderer->renderRoot($list);
-
     } else {
       return NULL;
     }

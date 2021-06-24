@@ -13,6 +13,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Url;
 use Drupal\views\Views;
+use Drupal\argue_proscons\Entity\ArgumentInterface;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Implements hook_help().
@@ -177,4 +179,93 @@ function argue_structure_node_presave(NodeInterface $node) {
       $node->setOwnerId(0);
     }
   }
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Invalidate cache tag for parent meta properties.
+ */
+function argue_structure_argument_presave(EntityInterface $entity) {
+  // Invalidate cache tag for parent meta properties.
+  if ($entity->isNew() && $nid = $entity->getReferenceId()) {
+    Cache::invalidateTags(["node:{$nid}:meta:argument"]);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete().
+ *
+ * Invalidate cache tag for parent meta properties.
+ */
+function argue_structure_argument_predelete(\Drupal\argue_proscons\Entity\ArgumentInterface $argument) {
+  if ($nid = $argument->getReferenceId()) {
+    Cache::invalidateTags(["node:{$nid}:meta:argument"]);
+  }
+}
+
+/**
+ * Implements hook_argue_meta_patch_patch().
+ */
+function argue_structure_argue_meta_patch_patch(\Drupal\change_requests\Entity\Patch $patch, $view_mode): array
+{
+  $result = [];
+  if ($voting = _argue_structure_argue_meta_voting_rate($patch)) {
+    $result['voting'] = [
+      '#theme' => 'argue_chip',
+      '#attributes' => [
+        'class' => ['voting'],
+        'title' => t('Voting result.')
+      ],
+      '#icon_before' => 'vote_result',
+      '#text' => $voting,
+      '#icon_after' => NULL,
+      '#cache' => ['tags' => ["patch:{$patch->id()}:meta:voting"]],
+    ];
+  }
+
+  // Patch status.
+  $statusId = $patch->getStatus();
+  $status_text = $patch->getStatus(true);
+  $result['status'] = [
+    '#theme' => 'argue_chip',
+    '#attributes' => [
+      'class' => ['chip--cr-status', $statusId],
+      'title' => t('Workflow status of change request: %status.', ['%status' => $status_text])
+    ],
+    '#icon_before' => $statusId,
+    '#text' => $status_text,
+    '#icon_after' => NULL,
+    '#cache' => ['tags' => ["patch:{$patch->id()}:meta:status"]],
+  ];
+  return $result;
+}
+
+
+/**
+ * Implements hook_argue_meta_patch_patch().
+ */
+function _argue_structure_argue_meta_voting(EntityInterface $entity): array {
+  $entity_type_id = $entity->getEntityTypeId();
+  $entity_id = $entity->id();
+  /** @var \Drupal\votingapi\VoteResultFunctionManager $vote_result_manager */
+  $vote_result_manager = \Drupal::service('plugin.manager.votingapi.resultfunction');
+  return $vote_result_manager->getResults($entity_type_id, $entity_id);
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * @return string|null
+ */
+function _argue_structure_argue_meta_voting_rate(EntityInterface $entity): ?string {
+  $result = _argue_structure_argue_meta_voting($entity);
+  if (isset($result["updown"])) {
+    $result = $result["updown"];
+    $up = (int) $result['rate_count_up'];
+    $down = $result['vote_count'] - $up;
+    $string = "{$up}:{$down}";
+    return $string;
+  }
+  else return NULL;
 }

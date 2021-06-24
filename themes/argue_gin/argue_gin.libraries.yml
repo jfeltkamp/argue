@@ -1,5 +1,5 @@
 global-styling:
-  version: 0.1
+  version: VERSION
   css:
     component:
       iconfont/dist/argue-icons.css: {}
@@ -22,6 +22,14 @@ card:
     - core/jquery
     - core/drupal
     - core/drupal.debounce
+
+chip:
+  version: VERSION
+  css:
+    theme:
+      css/chip.css: {}
+  dependencies:
+    - core/drupal
 
 textarea:
   version: VERSION

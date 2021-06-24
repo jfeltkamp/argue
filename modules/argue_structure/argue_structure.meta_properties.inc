@@ -17,6 +17,7 @@ use Drupal\Core\Entity\EntityInterface ;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
+use Drupal\argue_proscons\Entity\ArgumentInterface;
 
 /**
  * Load meta properties of current entity.
@@ -109,6 +110,17 @@ function argue_structure_argue_meta_node_problem(NodeInterface $node, $view_mode
   return array_merge($result, _argue_structure_meta_props_from_reference_fields($node));
 }
 
+/**
+ * @param \Drupal\node\NodeInterface $node
+ * @param $view_mode
+ *
+ * @return array
+ * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+ */
+function argue_structure_argue_meta_node_version(NodeInterface $node, $view_mode) :array
+{
+  return _argue_structure_meta_props_from_reference_fields($node);
+}
 
 /**
  * Implements hook_argue_meta_ENTITY_TYPE_BUNDLE()
@@ -127,29 +139,6 @@ function argue_structure_argue_meta_argument_argument(EntityInterface $entity, $
 }
 
 /**
- * Implements hook_ENTITY_TYPE_presave().
- *
- * Invalidate cache tag for parent meta properties.
- */
-function argue_structure_argument_presave(\Drupal\argue_proscons\Entity\ArgumentInterface $argument) {
-  // Invalidate cache tag for parent meta properties.
-  if ($argument->isNew() && $nid = $argument->getReferenceId()) {
-    Cache::invalidateTags(["node:{$nid}:meta:argument"]);
-  }
-}
-
-/**
- * Implements hook_ENTITY_TYPE_predelete().
- *
- * Invalidate cache tag for parent meta properties.
- */
-function argue_structure_argument_predelete(\Drupal\argue_proscons\Entity\ArgumentInterface $argument) {
-  if ($nid = $argument->getReferenceId()) {
-    Cache::invalidateTags(["node:{$nid}:meta:argument"]);
-  }
-}
-
-/**
  * @param \Drupal\Core\Entity\EntityInterface $entity
  *
  * @return array
@@ -162,38 +151,56 @@ function _argue_structure_meta_props_from_reference_fields(EntityInterface $enti
   $result = [];
 
   // Icon map used for chips. If not set, the entity type id is used.
-  $chip_icon_map = ['patch' => 'change_request'];
+  $chip_icon_map = [
+    'patch' => 'change_request',
+    'argument' => 'argue_pro_con',
+  ];
 
   /**
-   * Loop over fields and append the chips to the chip set.
+   * Loop over fields and append reference (revisions) fields.
    *
    * @var string $field_name
    * @var Drupal\Core\Field\FieldDefinitionInterface $field_definition
    */
   foreach ($entity->getFieldDefinitions() as $field_name => $field_definition) {
-    if ($field_definition->getType() == 'comment') {
+    $types = ['entity_reference', 'entity_reference_revisions'];
+    $storage = $field_definition->getFieldStorageDefinition();
+    if (!$storage->isBaseField() && in_array($field_definition->getType(), $types)) {
+      $target_type = $field_definition->getItemDefinition()->getSetting('target_type');
+      if ($target_type == 'node') {
+        $handler_settings = $field_definition->getItemDefinition()->getSetting('handler_settings');
+        $target_type = isset($handler_settings['target_bundles']) && count($handler_settings['target_bundles'])
+          ? reset($handler_settings['target_bundles'])
+          : $target_type;
+      }
+      $cache_tag = "{$entity_type}:{$id}:meta:{$target_type}";
+      if ($storage->isMultiple()) {
+        $result[$target_type] = [
+          '#theme' => 'argue_chip',
+          '#attributes' => [
+            'class' => ["argue-chip--{$target_type}"],
+            'title' => t('Number of %type on this entity.', [
+              '%type' => $field_definition->getLabel()
+            ])
+          ],
+          '#icon_before' => $chip_icon_map[$target_type] ?? $target_type,
+          '#text' => $entity->get($field_name)->count(),
+          '#cache' => ['tags' => [$cache_tag]],
+        ];
+      }
+    }
+    elseif ($field_definition->getType() == 'comment') {
       $cache_tag = "{$entity_type}:{$id}:meta:comment";
       $field_comment = $entity->get($field_name);
       if ($field_comment instanceof \Drupal\comment\CommentFieldItemList) {
         $result['comment'] = [
           '#theme' => 'argue_chip',
-          '#attributes' => ['title' => t('Number of comments on this entity.')],
+          '#attributes' => [
+            'class' => ['argue-chip--comment'],
+            'title' => t('Number of comments on this entity.')
+          ],
           '#icon_before' => 'comments',
           '#text' => $field_comment->first()->comment_count,
-          '#cache' => ['tags' => [$cache_tag]],
-        ];
-      }
-    } elseif ($field_definition->getType() == 'entity_reference') {
-      $target_type = $field_definition->getItemDefinition()->getSetting('target_type');
-      $cache_tag = "{$entity_type}:{$id}:meta:{$target_type}";
-      if (1 !== $field_definition->getFieldStorageDefinition()->getCardinality()) {
-        $result[$target_type] = [
-          '#theme' => 'argue_chip',
-          '#attributes' => ['title' => t('Number of %type on this entity.', [
-            '%type' => $field_definition->getLabel()
-          ])],
-          '#icon_before' => $chip_icon_map[$target_type] ?? $target_type,
-          '#text' => $entity->get($field_name)->count(),
           '#cache' => ['tags' => [$cache_tag]],
         ];
       }

@@ -1,0 +1,22 @@
+@import '../var';
+@import '../mixins/chip';
+
+%argue-chip-set {
+  @include argue-chip-set;
+}
+
+%argue-chip {
+  @include argue-chip;
+
+}
+%argue-chip__text {
+  @include argue-chip__text;
+}
+
+%argue-chip__icon {
+  @include argue-chip__icon;
+}
+
+%chip-icon-only {
+  @include argue-chip-icon-only;
+}

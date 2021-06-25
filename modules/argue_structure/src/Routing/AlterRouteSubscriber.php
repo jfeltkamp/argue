@@ -21,7 +21,6 @@ class AlterRouteSubscriber extends RouteSubscriberBase
     if ($route = $collection->get('user.login')) {
       $route->setPath('/argue/login');
       $route->addDefaults([
-        '_controller' => '\Drupal\argue_structure\Controller\LoginController::content',
         '_title' => 'Argue login',
       ]);
     }

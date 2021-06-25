@@ -71,5 +71,10 @@
         border-radius: 24px;
       }
     }
+
+    .user__roles {
+      @extend %arg-typo--subtitle2;
+      color: var(--arg-theme-text-secondary-on-background,rgba(0,0,0,.54));
+    }
   }
 }

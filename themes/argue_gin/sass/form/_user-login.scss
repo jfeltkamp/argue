@@ -1,14 +1,9 @@
-.block-user-login-block-argue,
-form.user-pass {
+.form-wrapper--user-auth {
   @extend %argue-card;
   @extend %argue-card__content-wrapper;
   max-width: 500px;
   margin: 0 auto;
   margin-top: 10vh;
-}
-
-
-.block-user-login-block-argue {
 
   > h2 {
     @extend %argue-card-header;
@@ -32,48 +27,5 @@ form.user-pass {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-
-  .item-list {
-    @extend %argue-card-footer;
-
-    ul, li {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    li {
-      flex: 1 1 50%;
-      text-align: left;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      line-height: 24px;
-    }
-
-    @include mq($breakpointTiny) {
-      ul {
-        flex-direction: row;
-      }
-      li {
-        text-align: center;
-      }
-    }
-
-  }
 }
 
-form.user-pass {
-  @extend %argue-card;
-  @extend %argue-card__content-wrapper;
-  max-width: 500px;
-  margin: 0 auto;
-  margin-top: 10vh;
-}

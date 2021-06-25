@@ -45,23 +45,34 @@ function argue_structure_theme() {
         'content' => NULL,
       ]
     ],
-    'argue_structure_nested_list' => [
-      'variables' => [
-        'attributes' => NULL,
-        'label' => NULL,
-        'description' => NULL,
-        'link' => NULL,
-        'level' => NULL,
-        'node_list' => NULL,
-        'items' => NULL,
-      ],
-    ],
-    'section_tree_block' => [
-      'variables' => [
-        'section_tree_block' => NULL,
-      ],
-    ],
   ];
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ *
+ * Overwrite title of section tree page (home) with the Argue project title.
+ */
+function argue_structure_preprocess_page_title(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === 'view.argue_section_tree.section_page') {
+    $query = \Drupal::request()->query;
+    $node_type = $query->get('node_type', 'all');
+    $title = &$variables['title']["#markup"];
+    switch ($node_type) {
+      case 'problem':
+        $title = t('Problems brought up');
+        break;
+      case 'rule':
+        $ratified = (int) $query->get('ratified', '0');
+        $title = ($ratified)
+          ? t('Ratified Rules (Preview)')
+          : \Drupal::configFactory()->get('argue_structure.arguestructureconf')
+            ->get('title_section_term_overview_page');
+        break;
+      default:
+    }
+  }
 }
 
 /**

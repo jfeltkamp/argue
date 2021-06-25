@@ -2,13 +2,9 @@ access the argue dashboard:
   title: 'Access the argue dashboard'
   description: 'Allow to access the argue dashboard used as front page.'
 
-access the rule overview page:
-  title: 'Access the rule overview page'
-  description: 'Allow to access the rule tree page used as front page.'
-
-access the problems overview page:
-  title: 'Access the problems overview page'
-  description: 'Allow to access the problems tree page.'
+access section tree overview page:
+  title: 'Access the section tree overview page'
+  description: 'Allow to view structured overview of rules and problems.'
 
 set rule ratified:
   title: 'Set rules ratified'

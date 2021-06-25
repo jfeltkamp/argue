@@ -2,27 +2,29 @@ argue_structure.add_section:
   route_name: entity.taxonomy_term.add_form
   route_parameters:
     taxonomy_vocabulary: 'sections'
-  title: 'Add Section'
+  title: 'Add new section'
   weight: 10
   appears_on:
-    - argue_structure.rule_overview_controller
+    - view.argue_section_tree.section_page
+    - entity.taxonomy_term.canonical
 
 argue_structure.add_rule:
   route_name: node.add
   route_parameters:
     node_type: 'rule'
-  title: 'Add new Rule'
+  title: 'Add new rule'
   weight: 20
   appears_on:
-    - argue_structure.rule_overview_controller
+    - view.argue_section_tree.section_page
+    - entity.taxonomy_term.canonical
 
 argue_structure.add_problem:
   route_name: node.add
   route_parameters:
     node_type: 'problem'
-  title: 'Add problem'
+  title: 'Add new problem'
   weight: 10
   appears_on:
-    - argue_structure.problem_overview_controller
-    - argue_structure.problem_overview_controller_getSubtree
+    - view.argue_section_tree.section_page
+    - entity.taxonomy_term.canonical
 

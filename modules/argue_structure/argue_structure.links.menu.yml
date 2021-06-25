@@ -17,30 +17,37 @@ argue_structure.argue:
 
 argue_structure.argue_problems_overview:
   title: 'Problems'
-  route_name: argue_structure.problem_overview_controller
+  route_name: view.argue_section_tree.section_page
   description: 'Overview of all problems brought up structured by sections.'
   parent: argue_structure.argue
   weight: -50
   options:
+    query:
+      node_type: problem
     attributes:
       data-icon: problem
 
 argue_structure.argue_rules_overview:
   title: 'Rules'
-  route_name: argue_structure.rule_overview_controller
+  route_name: view.argue_section_tree.section_page
   description: 'Overview of all rules structured by sections.'
   parent: argue_structure.argue
   weight: -40
   options:
+    query:
+      node_type: rule
     attributes:
       data-icon: rule
 
 argue_structure.argue_ratified_rules_overview:
   title: 'Ratified rules'
-  route_name: argue_structure.ratified_rule_overview_controller
-  description: 'Overview of all rules structured by sections.'
+  route_name: view.argue_section_tree.section_page
+  description: 'Overview of all ratified rules.'
   parent: argue_structure.argue
   weight: -30
   options:
+    query:
+      node_type: rule
+      ratified: 1
     attributes:
       data-icon: rule

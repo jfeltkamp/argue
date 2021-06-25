@@ -13,6 +13,8 @@
     @extend %field__label_above;
 
     a {
+      @extend %link-next;
+
       &,
       &:hover,
       &:focus,
@@ -21,6 +23,11 @@
         color: inherit;
         text-decoration: none;
       }
+    }
+
+    &:last-child {
+      // In argue section tree empty lists may occur.
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -149,4 +156,9 @@ a.argue-list-item {
     background-color: rgba(0,0,0,.25);
     box-shadow: none;
   }
+}
+
+.card-header + .argue-list {
+  // Argue section tree may start with a list instead of title.
+  // margin-top: -1rem;
 }

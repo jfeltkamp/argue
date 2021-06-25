@@ -1,7 +1,7 @@
 @mixin field__label_above() {
   @include arg-typo--h6;
   border-bottom: 1px solid var(--arg-card-border-color, $arg-card-border-color);
-  margin: .25em 0 0
+  margin: 1.5rem 0 0;
 }
 
 

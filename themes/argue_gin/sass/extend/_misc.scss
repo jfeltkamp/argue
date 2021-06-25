@@ -1,0 +1,19 @@
+
+%link-next {
+  &:after {
+    content: 'navigate_next';
+    font-family: 'argue-icons';
+    font-size: 1.2em;
+    line-height: 0.6em;
+    vertical-align: middle;
+    padding-left: .1em;
+    opacity: .3;
+    transition: opacity ease .3s;
+    position: relative;
+    bottom: .05em;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}

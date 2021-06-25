@@ -17,12 +17,6 @@
  * @ingroup themeable
  */
 #}
-{% if title %}
-  <h3 class="argue-list--title">{{ title }}</h3>
-{% endif %}
-
-<div class="argue-list--items">
 {% for row in rows %}
     {{- row.content -}}
 {% endfor %}
-</div>

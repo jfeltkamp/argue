@@ -2,6 +2,7 @@
 @import "breakpoint-sass/stylesheets/breakpoint";
 @import "mixins/typo";
 @import "mixins/card";
+@import "extend/misc";
 
 
 :root {
@@ -64,6 +65,9 @@
     &__top {
       @include argue-card-header__text__top;
       @include arg-typo--h6;
+      a {
+        @extend %link-next;
+      }
     }
 
     &__bot {

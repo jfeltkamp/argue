@@ -2,8 +2,7 @@
   @extend %argue-card;
   @extend %argue-card__content-wrapper;
   max-width: 500px;
-  margin: 0 auto;
-  margin-top: 10vh;
+  margin: 10vh auto 0;
 
   > h2 {
     @extend %argue-card-header;

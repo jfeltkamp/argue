@@ -3,6 +3,7 @@ argue_structure.add_section:
   route_parameters:
     taxonomy_vocabulary: 'sections'
   title: 'Add new section'
+  class: '\Drupal\argue_structure\Plugin\Menu\LocalAction\AddSectionLocalAction'
   weight: 10
   appears_on:
     - view.argue_section_tree.section_page
@@ -13,6 +14,7 @@ argue_structure.add_rule:
   route_parameters:
     node_type: 'rule'
   title: 'Add new rule'
+  class: '\Drupal\argue_structure\Plugin\Menu\LocalAction\AddSectionLocalAction'
   weight: 20
   appears_on:
     - view.argue_section_tree.section_page
@@ -23,6 +25,7 @@ argue_structure.add_problem:
   route_parameters:
     node_type: 'problem'
   title: 'Add new problem'
+  class: '\Drupal\argue_structure\Plugin\Menu\LocalAction\AddSectionLocalAction'
   weight: 10
   appears_on:
     - view.argue_section_tree.section_page

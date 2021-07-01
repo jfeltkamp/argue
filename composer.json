@@ -27,6 +27,7 @@
 
     "drupal/core": "^9.1",
     "drupal/address": "^1.9",
+    "drupal/admin_toolbar": "^3.0",
     "drupal/antibot": "^1.4",
     "drupal/change_requests": "^2.0",
     "drupal/default_content": "^1.0",

@@ -10,6 +10,8 @@ distribution:
 
 dependencies:
   - address
+  - admin_toolbar
+  - admin_toolbar_tools
   - antibot
   - argue_demo
   - argue_proscons

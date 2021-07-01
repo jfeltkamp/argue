@@ -1,55 +1,45 @@
 <!-- Add you custom twig html here -->
 <div class="argue-versions">
-  <div class="mdc-card argue-versions--description">
-    <header class="card-header leading-icon">
-      <div class="card-header__icon" aria-hidden="true"><i class="argue-icon ">verified_user</i></div>
-      <div class="card-header__text">
-        <h2 class="card-header__first">{{ 'Version overview'|t }}</h2>
-        <h3 class="card-header__second">{{ 'List off all completed versions.'|t }}</h3>
+  <article class="card argue-versions--description">
+    <div class="card__content-wrapper">
+      <header class="card-header leading-icon">
+        <div class="card-header__icon" aria-hidden="true"><i class="argue-icon" aria-hidden="true">version</i></div>
+        <div class="card-header__text">
+          <h2 class="card-header__text__top">{{ 'Version overview'|t }}</h2>
+          <span class="card-header__text__bot">{{ 'List off all completed versions.'|t }}</span>
+        </div>
+      </header>
+      <div class="card__content-item">
+        {{description}}
       </div>
-    </header>
-    <div class="argue-versions--inner">
-      {{description}}
-    </div>
-  </div>
 
-  {% if latest %}
-  <div class="mdc-card argue-versions--latest">
-    <div class="card-header">
-      <div class="card-header__text">
-        <h2 class="card-header__first mdc-typography mdc-typography--headline6">{{ 'Latest version'|t }}</h2>
-      </div>
-    </div>
-    <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
-      {{latest}}
-    </div>
-  </div>
-  {% endif %}
+      {% if latest %}
+        <h3 class="argue-list--title">{{ 'Latest version'|t }}</h3>
+        <div class="argue-list card__content-item">
+          <div class="argue-list--items">
+            {{ latest }}
+          </div>
+        </div>
+      {% endif %}
 
-  {% if current %}
-  <div class="mdc-card argue-versions--current">
-    <div class="card-header">
-      <div class="card-header__text">
-        <h2 class="card-header__first mdc-typography mdc-typography--headline6">{{ 'Current version'|t }}</h2>
-      </div>
-    </div>
-    <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
-      {{current}}
-    </div>
-  </div>
-  {% endif %}
+      {% if current %}
+        <h3 class="argue-list--title">{{ 'Current version'|t }}</h3>
+        <div class="argue-list card__content-item">
+          <div class="argue-list--items">
+            {{ current }}
+          </div>
+        </div>
+      {% endif %}
 
+      {% if history %}
+        <h3 class="argue-list--title">{{ 'Version history'|t }}</h3>
+        <div class="argue-list card__content-item">
+          <div class="argue-list--items">
+            {{ history }}
+          </div>
+        </div>
+      {% endif %}
 
-  {% if history %}
-  <div class="mdc-card argue-versions--history">
-    <div class="card-header">
-      <div class="card-header__text">
-        <h2 class="card-header__first mdc-typography mdc-typography--headline6">{{ 'Version history'|t }}</h2>
-      </div>
     </div>
-    <div class="mdc-list mdc-list--two-line mdc-list--avatar-list">
-      {{history}}
-    </div>
-  </div>
-  {% endif %}
+  </article>
 </div>

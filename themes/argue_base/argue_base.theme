@@ -6,7 +6,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 /**
  * Implements hook_theme().
  */
-function argue_gin_theme() {
+function argue_base_theme() {
   return [
     'argument_edit_form' => [
       'render element' => 'form',
@@ -46,20 +46,20 @@ function argue_gin_theme() {
   ];
 }
 
-function argue_gin_preprocess_node(&$variables) {
+function argue_base_preprocess_node(&$variables) {
   if (
     $variables["elements"]["#view_mode"] == 'full'
     && \Drupal::currentUser()->isAuthenticated()
     && \Drupal::moduleHandler()->moduleExists('history')
   ) {
-    $variables["#attached"]['library'][] = 'argue_gin/history';
+    $variables["#attached"]['library'][] = 'argue_base/history';
   }
 }
 
 /**
  * Implemented hook_preprocess_links().
  */
-function argue_gin_preprocess_links(&$variables) {
+function argue_base_preprocess_links(&$variables) {
   // Styling classes for entity links.
   $in_group = ['links__node'];
   if (in_array($variables["theme_hook_original"], $in_group)) {
@@ -85,7 +85,7 @@ function argue_gin_preprocess_links(&$variables) {
  *
  * Add theme hook specified by formatter id.
  */
-function argue_gin_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function argue_base_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   if (isset($variables['element']['#formatter'])) {
     $suggestions[] = 'field__' . $variables['element']['#formatter'];
     $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#formatter'];
@@ -99,7 +99,7 @@ function argue_gin_theme_suggestions_field_alter(array &$suggestions, array $var
  *
  * Add templates for view modes.
  */
-function argue_gin_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+function argue_base_theme_suggestions_user_alter(array &$suggestions, array $variables) {
   if (isset($variables['elements']['#view_mode'])) {
     $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
   }
@@ -111,7 +111,7 @@ function argue_gin_theme_suggestions_user_alter(array &$suggestions, array $vari
  *
  * Set users roles to display.
  */
-function argue_gin_preprocess_user(&$variables) {
+function argue_base_preprocess_user(&$variables) {
   $roles = user_roles(TRUE);
   $user_roles = [];
   /** @var \Drupal\user\UserInterface $user */
@@ -133,7 +133,7 @@ function argue_gin_preprocess_user(&$variables) {
  *
  * Changes vertical tabs to container.
  */
-function argue_gin_form_argument_form_alter(&$form, FormStateInterface $form_state) {
+function argue_base_form_argument_form_alter(&$form, FormStateInterface $form_state) {
   $icon = 'argue_pro_con';
   if ($storage = $form_state->getStorage()) {
     if (isset($storage['form_display'])) {
@@ -198,7 +198,7 @@ function argue_gin_form_argument_form_alter(&$form, FormStateInterface $form_sta
 }
 
 
-function argue_gin_form_node_form_alter(&$form, FormStateInterface $form_state) {
+function argue_base_form_node_form_alter(&$form, FormStateInterface $form_state) {
   $icon = 'default';
   if ($storage = $form_state->getStorage()) {
     if (isset($storage['form_display'])) {
@@ -227,7 +227,7 @@ function argue_gin_form_node_form_alter(&$form, FormStateInterface $form_state) 
  *
  * Place form actions in the card footer (where not themeable).
  */
-function argue_gin_preprocess_comment_form(&$vars) {
+function argue_base_preprocess_comment_form(&$vars) {
   // Set label above comment form
   if (isset($vars['form']['#title'])) {
     $vars['form']['label'] = ['#markup' => $vars['form']['#title']];
@@ -262,7 +262,7 @@ function argue_gin_preprocess_comment_form(&$vars) {
  *
  * Shorten submitted string for comments.
  */
-function argue_gin_preprocess_comment(&$vars) {
+function argue_base_preprocess_comment(&$vars) {
   if (isset($vars["submitted"]) && $vars["submitted"] instanceof TranslatableMarkup) {
     $vars["submitted"] = t('@username, @datetime', $vars["submitted"]->getArguments());
   }
@@ -271,7 +271,7 @@ function argue_gin_preprocess_comment(&$vars) {
 /**
  * @implements hook_preprocess_block()
  */
-function argue_gin_preprocess_block(&$vars) {
+function argue_base_preprocess_block(&$vars) {
   if (isset($vars["elements"]["#draggable_dashboard"]) && $vars["elements"]["#draggable_dashboard"]) {
     switch($vars["plugin_id"]) {
       case 'views_block:who_s_new-block_1':

@@ -20,8 +20,8 @@ regions_hidden:
 
 
 libraries:
-  - argue_gin/global-styling
-  - argue_gin/card
+  - argue_base/global-styling
+  - argue_base/card
 
 libraries-override:
   gin/gin_dialog: false

@@ -3,10 +3,10 @@ global-styling:
   css:
     component:
       iconfont/dist/argue-icons.css: {}
-      css/argue_gin.css: {}
+      css/argue_base.css: {}
       css/fixes.css: {}
   js:
-    js/argue_gin.js: {}
+    js/argue_base.js: {}
   dependencies:
     - core/jquery
     - core/drupal

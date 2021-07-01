@@ -48,7 +48,7 @@ class DashboardController extends ControllerBase {
 
     return [
       '#attached' => [
-        'library' => ['argue_gin/history']
+        'library' => ['argue_base/history']
       ]
     ];
   }

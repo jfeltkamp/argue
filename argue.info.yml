@@ -6,7 +6,7 @@ core_version_requirement: ^8 || ^9
 distribution:
   name: Argue
   install:
-    theme: argue_gin
+    theme: argue_base
 
 # Required modules
 dependencies:

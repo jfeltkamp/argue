@@ -8,45 +8,78 @@ distribution:
   install:
     theme: argue_base
 
-# Required modules
 dependencies:
-  # modules included in argue
+  - address
+  - antibot
+  - argue_demo
   - argue_proscons
   - argue_structure
-  # core
+  - argue_user
+  - argue_versions
   - block
   - breakpoint
+  - change_requests
+  - changed_fields
   - ckeditor
+  - color
+  - comment
   - contextual
   - ctools
-  - menu_link_content
   - datetime
-  - editor
-  - image
-  - menu_ui
-  - language
-  - node
-  - user
-  - views
-  - views_ui
-  - options
-  - votingapi
-  - rate
-  - path
-  - pathauto
-  - page_cache
-  - taxonomy
   - dblog
+  - default_content
+  - diff
+  - draggable_dashboard
   - dynamic_page_cache
-  - toolbar
+  - editor
+  - entity_form_mode
+  - entity_reference_revisions
+  - environment_indicator
+  - field
+  - field_group
   - field_ui
   - file
-# contrib
-  - admin_toolbar_tools
-  - change_requests
-  - diff
+  - filter
+  - gin_toolbar
+  - hal
+  - help
+  - help_topics
+  - history
+  - image
+  - language
+  - length_indicator
+  - link
+  - login_emailusername
+  - menu_link_attributes
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
   - pathauto
+  - path_alias
+  - publishcontent
+  - r4032login
+  - rate
+  - select2
+  - serialization
+  - system
+  - taxonomy
   - taxonomy_menu
+  - text
   - token
+  - toolbar
+  - tour
+  - twig_tweak
+  - update
+  - user
+  - views_field_view
+  - views_ui
+  - votingapi
+  - votingapi_widgets
+  - views
 themes:
   - argue_base
+  - claro
+  - gin

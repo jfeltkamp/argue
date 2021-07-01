@@ -27,7 +27,6 @@
 
     "drupal/core": "^9.1",
     "drupal/address": "^1.9",
-    "drupal/admin_toolbar": "^2.4",
     "drupal/antibot": "^1.4",
     "drupal/change_requests": "^2.0",
     "drupal/default_content": "^1.0",
@@ -38,7 +37,6 @@
     "drupal/entity_reference_revisions": "^1.8",
     "drupal/field_group": "^3.1",
     "drupal/gin": "^3.0",
-    "drupal/gin_login": "^1.0",
     "drupal/gin_toolbar": "^1.0",
     "drupal/length_indicator": "^1.1",
     "drupal/pathauto": "^1.8",

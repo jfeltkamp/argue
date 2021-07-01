@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.summary
+    - field.field.node.problem.body
+    - field.field.node.problem.field_comments
+    - field.field.node.problem.field_sector
+    - node.type.problem
+  module:
+    - text
+    - user
+id: node.problem.summary
+targetEntityType: node
+bundle: problem
+mode: summary
+content:
+  body:
+    label: visually_hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_comments: true
+  field_sector: true
+  langcode: true
+  links: true
+  rate_vote_widget: true

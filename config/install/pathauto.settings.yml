@@ -42,3 +42,11 @@ reduce_ascii: false
 case: true
 ignore_words: 'ein, eine, einer, der, die, das, dem, den, als, von, vor, um, bei, beim, in, im, unter, unterm, vorm, dass, dies, dieser, dieses, diese, welche, welcher, welches'
 update_action: 2
+safe_tokens:
+  - alias
+  - alias
+  - path
+  - join-path
+  - login-url
+  - url
+  - url-brief

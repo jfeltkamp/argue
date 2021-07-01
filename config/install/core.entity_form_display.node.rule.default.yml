@@ -4,11 +4,15 @@ dependencies:
   config:
     - field.field.node.rule.body
     - field.field.node.rule.field_causal_problems
+    - field.field.node.rule.field_ratified
     - field.field.node.rule.field_sector
+    - field.field.node.rule.field_voting
     - node.type.rule
   module:
     - path
+    - select2
     - text
+    - votingapi_widgets
 id: node.rule.default
 targetEntityType: node
 bundle: rule
@@ -19,8 +23,9 @@ content:
     weight: 9
     settings:
       rows: 9
-      summary_rows: 3
       placeholder: ''
+      summary_rows: 2
+      show_summary: false
     third_party_settings: {  }
     region: content
   created:
@@ -33,16 +38,35 @@ content:
     weight: 1
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      match_limit: 10
+      autocomplete: false
+      width: 100%
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: select2_entity_reference
+    region: content
+  field_ratified:
+    weight: 28
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_sector:
     weight: 0
-    settings: {  }
+    settings:
+      autocomplete: false
+      match_operator: CONTAINS
+      match_limit: 10
+      width: 100%
     third_party_settings: {  }
-    type: options_select
+    type: select2_entity_reference
+    region: content
+  field_voting:
+    weight: 27
+    settings:
+      show_initial_vote: 0
+    third_party_settings: {  }
+    type: voting_api_widget
     region: content
   langcode:
     type: language_select
@@ -95,12 +119,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: select2_entity_reference
     weight: 4
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      match_limit: 10
+      autocomplete: false
+      width: 100%
     region: content
     third_party_settings: {  }
 hidden: {  }

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profiles
+  module:
+    - link
+    - user
+id: user.user.field_profiles
+field_name: field_profiles
+entity_type: user
+bundle: user
+label: 'Other profiles'
+description: 'Link profiles on other social networks.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

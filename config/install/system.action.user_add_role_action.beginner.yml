@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.beginner
+  module:
+    - user
+id: user_add_role_action.beginner
+label: 'Add the Beginner role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: beginner

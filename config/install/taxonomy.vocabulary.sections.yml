@@ -3,6 +3,5 @@ status: true
 dependencies: {  }
 name: Sections
 vid: sections
-description: 'Thematic subdivision of problems and rules.'
-hierarchy: 0
+description: 'Thematic subdivision of problems and rules. sdfsdf'
 weight: 0

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sections
+id: taxonomy_term.sections.default
+targetEntityType: taxonomy_term
+bundle: sections
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - argue_proscons
+id: argument.teaser_pro
+label: 'Teaser Pro'
+targetEntityType: argument
+cache: true

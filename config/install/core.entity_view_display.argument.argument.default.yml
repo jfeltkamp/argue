@@ -2,9 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.argument_comments.default
     - field.field.argument.argument.field_change_requests
+    - field.field.argument.argument.field_comments
   module:
     - argue_proscons
+    - comment
     - options
     - user
 id: argument.argument.default
@@ -24,15 +27,34 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  created:
+    label: hidden
+    type: timestamp
+    weight: 6
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
   field_change_requests:
-    weight: 102
+    weight: 8
     label: above
     settings:
-      display_modal: true
-      display_add_link: true
-      show_empty_field: true
+      display_add_link: '1'
+      display_modal: '1'
+      show_empty_field: 0
     third_party_settings: {  }
     type: attach_change_requests
+    region: content
+  field_comments:
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
     region: content
   name:
     label: hidden
@@ -43,7 +65,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   rate_vote_widget:
-    weight: 100
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

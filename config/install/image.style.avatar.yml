@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: avatar
+label: Avatar
+effects:
+  5bf35651-6bb8-4708-879b-f051abe74302:
+    uuid: 5bf35651-6bb8-4708-879b-f051abe74302
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 96
+      height: 96
+      anchor: center-center

@@ -1,0 +1,91 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.argument_comments.default
+    - core.entity_view_mode.argument.teaser_pro
+    - field.field.argument.argument.field_change_requests
+    - field.field.argument.argument.field_comments
+  module:
+    - argue_proscons
+    - comment
+    - user
+id: argument.argument.teaser_pro
+targetEntityType: argument
+bundle: argument
+mode: teaser_pro
+content:
+  argument:
+    label: hidden
+    type: basic_string
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  changed:
+    label: hidden
+    type: timestamp_ago
+    weight: 7
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  created:
+    label: hidden
+    type: timestamp
+    weight: 4
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_comments:
+    type: comment_default
+    weight: 3
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+  langcode:
+    type: language
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  rate_vote_widget:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_change_requests: true
+  reference_id: true
+  type: true

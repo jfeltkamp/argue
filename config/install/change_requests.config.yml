@@ -21,7 +21,7 @@ general_excluded_fields:
   - revision_translation_affected
   - moderation_state
   - path
-enable_checkbox_node_form: 1
+enable_checkbox_node_form: true
 log_message_required: 1
 log_message_title: 'Log message'
 image_style: thumbnail
@@ -34,6 +34,7 @@ bundle_problem_fields:
 bundle_rule_fields:
   revision_default: revision_default
   menu_link: menu_link
+  field_ratified: field_ratified
   title: 0
   body: 0
   field_causal_problems: 0

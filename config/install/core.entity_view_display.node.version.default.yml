@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.version.body
+    - field.field.node.version.field_arguments
+    - field.field.node.version.field_description
+    - field.field.node.version.field_problems
+    - field.field.node.version.field_rules
+    - field.field.node.version.field_sections
+    - field.field.node.version.field_valid_date
+    - field.field.node.version.field_version_number
+    - node.type.version
+  module:
+    - argue_versions
+    - datetime
+    - text
+    - user
+id: node.version.default
+targetEntityType: node
+bundle: version
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_sections:
+    type: vocab_clone_formatter_type
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_valid_date:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_version_number:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_arguments: true
+  field_problems: true
+  field_rules: true
+  langcode: true

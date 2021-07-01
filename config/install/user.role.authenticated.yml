@@ -12,6 +12,6 @@ permissions:
   - 'access toolbar'
   - 'cancel account'
   - 'change own username'
+  - 'post comments'
   - 'view patch entities'
   - 'view published argument entities'
-  - 'view the administration theme'

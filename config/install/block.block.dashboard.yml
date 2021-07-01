@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - draggable_dashboard
+    - system
+  theme:
+    - argue_base
+id: dashboard
+theme: argue_base
+region: content
+weight: 0
+provider: null
+plugin: 'draggable_dashboard_block:draggable_dashboard_dashboard'
+settings:
+  id: 'draggable_dashboard_block:draggable_dashboard_dashboard'
+  label: Dashboard
+  provider: draggable_dashboard
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /argue/dashboard
+    negate: false

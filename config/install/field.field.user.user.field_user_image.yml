@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_image
+  module:
+    - image
+    - user
+id: user.user.field_user_image
+field_name: field_user_image
+entity_type: user
+bundle: user
+label: 'User image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: users
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '2 MB'
+  max_resolution: 1500x1500
+  min_resolution: 192x192
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: '[current-user:display-name]'
+    title: '[current-user:display-name]'
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

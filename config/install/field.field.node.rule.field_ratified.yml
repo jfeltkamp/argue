@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ratified
+    - node.type.rule
+id: node.rule.field_ratified
+field_name: field_ratified
+entity_type: node
+bundle: rule
+label: Ratified
+description: 'Flag indicating whether a rule applies (checked, yes) or not (un-checked, no).'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

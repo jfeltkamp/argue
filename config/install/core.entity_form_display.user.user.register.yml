@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.user.user.field_address
+    - field.field.user.user.field_connected_users
+    - field.field.user.user.field_cv
+    - field.field.user.user.field_professions
+    - field.field.user.user.field_profiles
+    - field.field.user.user.field_user_image
+  module:
+    - address
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_personal:
+      children:
+        - field_address
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        label: Personal
+        description: ''
+        required_fields: true
+        id: personal
+        classes: 'account-settings personal'
+      label: Personal
+      region: content
+    group_account_settings:
+      children:
+        - account
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: account-settings
+        classes: account-settings
+        open: true
+        required_fields: true
+        description: ''
+      label: 'Konto Einstellungen'
+      region: content
+id: user.user.register
+targetEntityType: user
+bundle: user
+mode: register
+content:
+  account:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    type: address_default
+    weight: 0
+    region: content
+    settings:
+      default_country: null
+    third_party_settings: {  }
+hidden:
+  field_connected_users: true
+  field_cv: true
+  field_professions: true
+  field_profiles: true
+  field_user_image: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true

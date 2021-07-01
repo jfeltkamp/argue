@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.argue_admin
+  module:
+    - user
+id: user_add_role_action.argue_admin
+label: 'Add the Argue Admin role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: argue_admin

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.argue_section_tree
+  module:
+    - system
+    - views
+  theme:
+    - argue_base
+id: argue_base_views_argue_section_tree_block
+theme: argue_base
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:argue_section_tree-block_1'
+settings:
+  id: 'views_block:argue_section_tree-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false

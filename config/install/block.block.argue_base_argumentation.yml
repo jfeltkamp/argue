@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - argue_proscons
+    - node
+    - system
+  theme:
+    - argue_base
+id: argue_base_argumentation
+theme: argue_base
+region: content
+weight: -3
+provider: null
+plugin: argumentation_block
+settings:
+  id: argumentation_block
+  label: Argumentation
+  provider: argue_proscons
+  label_display: visible
+  introduction: ''
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  request_path:
+    id: request_path
+    pages: "*/edit\r\n*/delete\r\n*/patches\r\n*/revisions\r\n*/revisions/*"
+    negate: true
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      rule: rule
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

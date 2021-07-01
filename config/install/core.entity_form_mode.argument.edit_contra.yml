@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - argue_proscons
+id: argument.edit_contra
+label: 'Edit Contra'
+targetEntityType: argument
+cache: true

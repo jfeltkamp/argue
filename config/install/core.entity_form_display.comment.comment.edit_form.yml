@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - core.entity_form_mode.comment.edit_form
+    - field.field.comment.comment.comment_body
+  module:
+    - text
+id: comment.comment.edit_form
+targetEntityType: comment
+bundle: comment
+mode: edit_form
+content:
+  comment_body:
+    type: text_textarea
+    weight: 0
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  author: true
+  langcode: true
+  subject: true

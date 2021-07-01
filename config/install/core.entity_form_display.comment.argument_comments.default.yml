@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.argument_comments
+    - field.field.comment.argument_comments.comment_body
+  module:
+    - text
+id: comment.argument_comments.default
+targetEntityType: comment
+bundle: argument_comments
+mode: default
+content:
+  author:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 1
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  subject: true

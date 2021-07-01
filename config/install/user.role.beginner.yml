@@ -6,13 +6,23 @@ label: Beginner
 weight: 2
 is_admin: null
 permissions:
+  - 'access argue version overview'
+  - 'access section tree overview page'
+  - 'access the argue dashboard'
+  - 'access the problems overview page'
   - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
-  - 'add patch entities'
+  - administer_draggable_dashboard
   - 'cast rate vote on argument of argument'
+  - 'cast rate vote on comment of comment'
+  - 'cast rate vote on node of problem'
+  - 'change own username'
   - 'edit own comments'
   - 'post comments'
+  - 'skip comment approval'
+  - 'view problem revisions'
   - 'view published argument entities'
   - 'view rate results page'
   - 'view rule revisions'
+  - 'view version revisions'

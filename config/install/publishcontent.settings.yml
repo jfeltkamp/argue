@@ -1,0 +1,4 @@
+ui_localtask: false
+ui_checkbox: true
+publish_text_value: Publish
+unpublish_text_value: Unpublish

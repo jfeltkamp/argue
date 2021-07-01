@@ -1,0 +1,144 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_address
+    - field.field.user.user.field_connected_users
+    - field.field.user.user.field_cv
+    - field.field.user.user.field_professions
+    - field.field.user.user.field_profiles
+    - field.field.user.user.field_user_image
+    - image.style.thumbnail
+  module:
+    - address
+    - field_group
+    - image
+    - link
+    - select2
+    - user
+third_party_settings:
+  field_group:
+    group_locating:
+      children:
+        - field_connected_users
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        description: ''
+        required_fields: true
+        id: related
+        classes: 'account-settings related'
+      label: Relations
+      region: content
+    group_personal_data:
+      children:
+        - field_user_image
+        - field_professions
+        - field_cv
+        - field_profiles
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        description: ''
+        required_fields: true
+        id: personal
+        classes: 'account-settings personal'
+      label: 'Persönliche Angaben'
+      region: content
+    group_account_settings:
+      children:
+        - account
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: account-settings
+        classes: account-settings
+        open: false
+        required_fields: true
+        description: ''
+      label: 'Konto Einstellungen'
+      region: content
+    group_location:
+      children:
+        - field_address
+        - timezone
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: location
+        classes: 'account-settings location'
+      label: Adresse
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_connected_users:
+    weight: 5
+    settings:
+      width: 100%
+      match_operator: CONTAINS
+      match_limit: 10
+      autocomplete: false
+    third_party_settings: {  }
+    type: select2_entity_reference
+    region: content
+  field_cv:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_professions:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profiles:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_user_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  timezone:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  language: true
+  path: true

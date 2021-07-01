@@ -2,9 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.argument_comments.default
     - core.entity_view_mode.argument.full
+    - field.field.argument.argument.field_change_requests
+    - field.field.argument.argument.field_comments
   module:
     - argue_proscons
+    - comment
     - options
     - user
 id: argument.argument.full
@@ -18,6 +22,25 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  created:
+    label: above
+    type: timestamp_ago
+    weight: 5
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  field_comments:
+    type: comment_default
+    weight: 4
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
     third_party_settings: {  }
   name:
     label: hidden
@@ -42,6 +65,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_change_requests: true
   langcode: true
   rate_vote_widget: true
   reference_id: true

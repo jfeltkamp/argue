@@ -1,0 +1,10 @@
+attributes:
+  class:
+    label: 'Extra classes'
+    description: ''
+  target:
+    label: Zielfenster
+    description: ''
+    options:
+      _blank: 'New window (_blank)'
+      _self: 'Same window (_self)'

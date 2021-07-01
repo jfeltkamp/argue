@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.list_item
+    - field.field.user.user.field_address
+    - field.field.user.user.field_connected_users
+    - field.field.user.user.field_cv
+    - field.field.user.user.field_professions
+    - field.field.user.user.field_profiles
+    - field.field.user.user.field_user_image
+    - image.style.avatar
+  module:
+    - image
+    - user
+id: user.user.list_item
+targetEntityType: user
+bundle: user
+mode: list_item
+content:
+  field_user_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: avatar
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  member_for:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_address: true
+  field_connected_users: true
+  field_cv: true
+  field_professions: true
+  field_profiles: true
+  langcode: true

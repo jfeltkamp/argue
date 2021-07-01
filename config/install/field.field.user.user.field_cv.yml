@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_cv
+  module:
+    - user
+id: user.user.field_cv
+field_name: field_cv
+entity_type: user
+bundle: user
+label: CV
+description: 'CV in list format. Use the following formatting rule. For example, "1998-2002 | Studies Political Science, University of Hamburg"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

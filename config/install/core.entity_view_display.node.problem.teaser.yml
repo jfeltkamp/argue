@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.problem.body
+    - field.field.node.problem.field_comments
     - field.field.node.problem.field_sector
     - node.type.problem
   module:
@@ -22,8 +23,14 @@ content:
       trim_length: 600
     third_party_settings: {  }
     region: content
+  rate_vote_widget:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   content_moderation_control: true
+  field_comments: true
   field_sector: true
   langcode: true
   links: true

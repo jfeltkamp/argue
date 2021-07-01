@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.argue_admin
+  module:
+    - user
+id: user_remove_role_action.argue_admin
+label: 'Remove the Argue Admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: argue_admin

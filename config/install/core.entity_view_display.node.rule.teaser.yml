@@ -5,7 +5,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.rule.body
     - field.field.node.rule.field_causal_problems
+    - field.field.node.rule.field_ratified
     - field.field.node.rule.field_sector
+    - field.field.node.rule.field_voting
     - node.type.rule
   module:
     - text
@@ -16,14 +18,24 @@ bundle: rule
 mode: teaser
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_causal_problems:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: summary
+      link: false
+    third_party_settings: {  }
 hidden:
-  field_causal_problems: true
+  field_ratified: true
   field_sector: true
+  field_voting: true
   langcode: true
   links: true

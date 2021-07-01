@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.result
+    - field.field.node.rule.body
+    - field.field.node.rule.field_causal_problems
+    - field.field.node.rule.field_ratified
+    - field.field.node.rule.field_sector
+    - field.field.node.rule.field_voting
+    - node.type.rule
+  module:
+    - text
+    - user
+id: node.rule.result
+targetEntityType: node
+bundle: rule
+mode: result
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_causal_problems: true
+  field_ratified: true
+  field_sector: true
+  field_voting: true
+  langcode: true
+  links: true

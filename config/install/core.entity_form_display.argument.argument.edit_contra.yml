@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.argument.edit_contra
+    - field.field.argument.argument.field_change_requests
+    - field.field.argument.argument.field_comments
+  module:
+    - argue_proscons
+    - select2
+id: argument.argument.edit_contra
+targetEntityType: argument
+bundle: argument
+mode: edit_contra
+content:
+  argument:
+    type: string_textarea
+    text_processing: 1
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      length_indicator:
+        indicator: true
+        indicator_opt:
+          optimin: 100
+          optimax: 250
+          tolerance: 60
+  field_change_requests:
+    type: select2_entity_reference
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      autocomplete: false
+      width: 100%
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_comments: true
+  reference_id: true
+  type: true

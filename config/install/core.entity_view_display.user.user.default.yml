@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_address
+    - field.field.user.user.field_connected_users
+    - field.field.user.user.field_cv
+    - field.field.user.user.field_professions
+    - field.field.user.user.field_profiles
+    - field.field.user.user.field_user_image
+    - image.style.medium
+  module:
+    - address
+    - argue_user
+    - image
+    - link
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_address:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_connected_users:
+    weight: 7
+    label: above
+    settings:
+      view_mode: list_item
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_cv:
+    weight: 6
+    label: above
+    settings:
+      column_names: 'Time | Profession and Location'
+      column_count: '2'
+      column_delimiter: '|'
+    third_party_settings: {  }
+    type: string_table_field_formatter
+    region: content
+  field_professions:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profiles:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_user_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: medium
+      image_link: content
+    third_party_settings: {  }
+    type: image
+    region: content
+  member_for:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

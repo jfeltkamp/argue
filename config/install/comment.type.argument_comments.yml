@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: argument_comments
+label: 'Argument comments'
+target_entity_type_id: argument
+description: 'Commenting arguments below rules.'

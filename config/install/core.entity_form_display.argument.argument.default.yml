@@ -3,8 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.argument.argument.field_change_requests
+    - field.field.argument.argument.field_comments
   module:
     - argue_proscons
+    - comment
 id: argument.argument.default
 targetEntityType: argument
 bundle: argument
@@ -18,19 +20,22 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings:
+      length_indicator:
+        indicator: true
+        indicator_opt:
+          optimin: 100
+          optimax: 250
+          tolerance: 60
+  field_comments:
+    weight: 103
+    settings: {  }
     third_party_settings: {  }
-  field_change_requests:
-    weight: 104
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: comment_default
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
@@ -53,9 +58,10 @@ content:
     third_party_settings: {  }
   type:
     type: options_buttons
-    weight: 1
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_change_requests: true
   reference_id: true

@@ -4,6 +4,6 @@ dependencies:
   module:
     - argue_proscons
 id: argument.teaser
-label: teaser
+label: Teaser
 targetEntityType: argument
 cache: true

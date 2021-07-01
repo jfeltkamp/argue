@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list_item
+    - field.field.node.problem.body
+    - field.field.node.problem.field_comments
+    - field.field.node.problem.field_sector
+    - node.type.problem
+  module:
+    - user
+id: node.problem.list_item
+targetEntityType: node
+bundle: problem
+mode: list_item
+content:
+  content_moderation_control:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_comments: true
+  field_sector: true
+  langcode: true
+  links: true
+  rate_vote_widget: true

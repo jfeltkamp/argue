@@ -1,87 +1,95 @@
 name: Argue
 type: profile
+project: argue
 description: 'Drupal based Argue app for community decision on practical rules.'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9
+version: '2.0.0-alpha1'
+
 distribution:
   name: Argue
   install:
     theme: argue_base
 
+# Required modules
 dependencies:
-  - address
-  - admin_toolbar
-  - admin_toolbar_tools
-  - antibot
-  - argue_demo
-  - argue_proscons
-  - argue_structure
-  - argue_user
-  - argue_versions
-  - block
-  - breakpoint
-  - change_requests
-  - changed_fields
-  - ckeditor
-  - color
-  - comment
-  - contextual
-  - ctools
-  - datetime
-  - dblog
-  - default_content
-  - diff
-  - draggable_dashboard
-  - dynamic_page_cache
-  - editor
-  - entity_form_mode
-  - entity_reference_revisions
-  - environment_indicator
-  - field
-  - field_group
-  - field_ui
-  - file
-  - filter
-  - gin_toolbar
-  - hal
-  - help
-  - help_topics
-  - history
-  - image
-  - language
-  - length_indicator
-  - link
-  - login_emailusername
-  - menu_link_attributes
-  - menu_link_content
-  - menu_ui
-  - node
-  - options
-  - page_cache
-  - path
-  - pathauto
-  - path_alias
-  - publishcontent
-  - r4032login
-  - rate
-  - select2
-  - serialization
-  - system
-  - taxonomy
-  - taxonomy_menu
-  - text
-  - token
-  - toolbar
-  - tour
-  - twig_tweak
-  - update
-  - user
-  - views_field_view
-  - views_ui
-  - votingapi
-  - votingapi_widgets
-  - views
+  - config_selector:config_selector
+  - drupal:node
+  - drupal:views
+  - update_helper:update_helper
+
+install:
+  - drupal:block
+  - drupal:breakpoint
+  - drupal:ckeditor
+  - drupal:color
+  - drupal:comment
+  - drupal:contextual
+  - drupal:ctools
+  - drupal:datetime
+  - drupal:dblog
+  - drupal:dynamic_page_cache
+  - drupal:editor
+  - drupal:field
+  - drupal:field_ui
+  - drupal:file
+  - drupal:filter
+  - drupal:hal
+  - drupal:help
+  - drupal:help_topics
+  - drupal:history
+  - drupal:image
+  - drupal:language
+  - drupal:link
+  - drupal:menu_link_content
+  - drupal:menu_ui
+  - drupal:options
+  - drupal:page_cache
+  - drupal:path
+  - drupal:path_alias
+  - drupal:serialization
+  - drupal:system
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:toolbar
+  - drupal:tour
+  - drupal:update
+  - drupal:user
+  - drupal:views_ui
+  # contrib
+  - address:address
+  - admin_toolbar:admin_toolbar
+  - admin_toolbar:admin_toolbar_tools
+  - antibot:antibot
+  - change_requests:change_requests
+  - changed_fields:changed_fields
+  - default_content:default_content
+  - diff:diff
+  - draggable_dashboard:draggable_dashboard
+  - entity_form_mode:entity_form_mode
+  - entity_reference_revisions:entity_reference_revisions
+  - field_group:field_group
+  - gin_toolbar:gin_toolbar
+  - length_indicator:length_indicator
+  - login_emailusername:login_emailusername
+  - menu_link_attributes:menu_link_attributes
+  - pathauto:pathauto
+  - publishcontent:publishcontent
+  - r4032login:r4032login
+  - rate:rate
+  - select2:select2
+  - taxonomy_menu:taxonomy_menu
+  - token:token
+  - twig_tweak:twig_tweak
+  - views_field_view:views_field_view
+  - votingapi:votingapi
+  - votingapi_widgets:votingapi_widgets
+  # argue profile
+  - argue:argue_demo
+  - argue:argue_structure
+  - argue:argue_user
+  - argue:argue_versions
+  - argue:argue_proscons
 themes:
-  - argue_base
   - claro
   - gin
+  - argue_base

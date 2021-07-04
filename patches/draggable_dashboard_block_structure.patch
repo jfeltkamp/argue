@@ -1,0 +1,151 @@
+diff --git a/draggable_dashboard.module b/draggable_dashboard.module
+index 9296d45..4ce91e5 100644
+--- a/draggable_dashboard.module
++++ b/draggable_dashboard.module
+@@ -39,10 +39,30 @@ function draggable_dashboard_theme($existing, $type, $theme, $path) {
+     'draggable_dashboard_block' =>
+     [
+       'variables' => [
++        'attributes' => [],
+         'columns' => [],
+         'dashboard' => [],
+       ],
+       'template' => 'draggable-dashboard-view',
+     ],
++    'block__dashboard_item' => [
++      'template' => 'block--dashboard-item',
++      'base hook' => 'block'
++    ],
+   ];
+ }
++
++/**
++ * Implements hook_theme_suggestions_HOOK_alter().
++ */
++function draggable_dashboard_theme_suggestions_block_alter(array &$suggestions, array $variables) {
++  if (isset($variables["elements"]["#draggable_dashboard"])
++    && $variables["elements"]["#draggable_dashboard"]
++  ) {
++    $current = $suggestions;
++    $suggestions[] = 'block__dashboard_item';
++    foreach ($current as $theme_hook) {
++      $suggestions[] = preg_replace('/^block/', 'block__dashboard_item', $theme_hook);
++    }
++  }
++}
+diff --git a/src/Plugin/Block/DraggableBlock.php b/src/Plugin/Block/DraggableBlock.php
+index de09587..8b3492a 100644
+--- a/src/Plugin/Block/DraggableBlock.php
++++ b/src/Plugin/Block/DraggableBlock.php
+@@ -169,16 +169,19 @@ class DraggableBlock extends BlockBase implements ContainerFactoryPluginInterfac
+             if ($block_instance->access($this->currentUser)) {
+               // See \Drupal\block\BlockViewBuilder::buildPreRenderableBlock
+               // See template_preprocess_block()
+-              $label = !empty($block_instance->getConfiguration()['label_display']) ? $block_instance->label() : '';
+               $element = [
+                 '#theme' => 'block',
+-                '#attributes' => [],
++                '#attributes' => [
++                  'id' => "block-" . $relation['block_id'],
++                  'data-id' => $relation['block_id']
++                ],
+                 '#configuration' => $block_instance->getConfiguration(),
+                 '#plugin_id' => $block_instance->getPluginId(),
+                 '#base_plugin_id' => $block_instance->getBaseId(),
+                 '#derivative_plugin_id' => $block_instance->getDerivativeId(),
++                '#draggable_dashboard' => true,
+                 'content' => $block_instance->build(),
+-                'title' => ['#markup' => $label],
++                'title' => ['#markup' => $block_instance->label()],
+                 'id' => ['#markup' => $relation['block_id']],
+               ];
+ 
+@@ -196,6 +199,9 @@ class DraggableBlock extends BlockBase implements ContainerFactoryPluginInterfac
+ 
+     return [
+       '#theme' => 'draggable_dashboard_block',
++      '#attributes' => [
++        'data-id' => $dashboard->id(),
++      ],
+       '#dashboard' => $dashboard,
+       '#columns' => $columns,
+       '#attached' => [
+diff --git a/templates/block--dashboard-item.html.twig b/templates/block--dashboard-item.html.twig
+new file mode 100644
+index 0000000..6d29939
+--- /dev/null
++++ b/templates/block--dashboard-item.html.twig
+@@ -0,0 +1,45 @@
++{#
++/**
++ * @file
++ * Default theme implementation to display a block.
++ *
++ * Available variables:
++ * - plugin_id: The ID of the block implementation.
++ * - label: The configured label of the block if visible.
++ * - configuration: A list of the block's configuration values.
++ *   - label: The configured label for the block.
++ *   - label_display: The display settings for the label.
++ *   - provider: The module or other provider that provided this block plugin.
++ *   - Block plugin specific settings will also be stored here.
++ * - content: The content of this block.
++ * - attributes: array of HTML attributes populated by modules, intended to
++ *   be added to the main container tag of this template.
++ *   - id: A valid HTML ID and guaranteed unique.
++ * - title_attributes: Same as attributes, except applied to the main title
++ *   tag that appears in the template.
++ * - title_prefix: Additional output populated by modules, intended to be
++ *   displayed in front of the main title tag that appears in the template.
++ * - title_suffix: Additional output populated by modules, intended to be
++ *   displayed after the main title tag that appears in the template.
++ *
++ * @see template_preprocess_block()
++ *
++ * @ingroup themeable
++ */
++#}
++<article{{ attributes.addClass('draggable-dashboard-block') }}>
++  <header{{ title_attributes.addClass('draggable-dashboard-block__header') }}>
++    {{ title_prefix }}
++    <h2>{{ label }}</h2>
++    {{ title_suffix }}
++    <div class="draggable-dashboard-block__controls">
++      <button class="draggable-dashboard__icon draggable-dashboard__icon--toggle draggable-dashboard__icon--collapse" title="Collapse" id="draggable-dashboard__icon--toggle"></button>
++      <button class="draggable-dashboard__icon draggable-dashboard__icon--resize draggable-dashboard__icon--maximize" title="Maximize" id="draggable-dashboard__icon--resize"></button>
++    </div>
++  </header>
++  <div class="draggable-dashboard-block__content">
++    {% block content %}
++      {{ content }}
++    {% endblock %}
++  </div>
++</article>
+diff --git a/templates/draggable-dashboard-view.html.twig b/templates/draggable-dashboard-view.html.twig
+index 4fcec3f..dc5cd10 100644
+--- a/templates/draggable-dashboard-view.html.twig
++++ b/templates/draggable-dashboard-view.html.twig
+@@ -1,20 +1,9 @@
+-<div class="draggable-dashboard" data-id="{{ dashboard.id }}">
+-{% set column_num = columns|length %}
++<div{{ attributes.addClass('draggable-dashboard').setAttribute('data-id', dashboard.id) }}>
++  {% set column_num = columns|length %}
+   {% for column in columns %}
+       <div class="draggable-dashboard-column col-{{ 12 / column_num }}" id="column-{{ loop.index }}" data-id="{{ loop.index }}">
+           {% for block in column %}
+-              <div class="draggable-dashboard-block" id="block-{{ block.id }}" data-id="{{ block.id }}">
+-                <div class="draggable-dashboard-block__header">
+-                  <h2>{{ block.title }}</h2>
+-                  <div class="draggable-dashboard-block__controls">
+-                    <button class="draggable-dashboard__icon draggable-dashboard__icon--toggle draggable-dashboard__icon--collapse" title="Collapse" id="draggable-dashboard__icon--toggle"></button>
+-                    <button class="draggable-dashboard__icon draggable-dashboard__icon--resize draggable-dashboard__icon--maximize" title="Maximize" id="draggable-dashboard__icon--resize"></button>
+-                  </div>
+-                </div>
+-                <div class="draggable-dashboard-block__content">
+-                  {{ block }}
+-                </div>
+-              </div>
++              {{ block }}
+           {% endfor %}
+       </div>
+   {% endfor %}

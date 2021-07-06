@@ -74,10 +74,7 @@
   "extra": {
     "patches": {
       "drupal/rate": {
-        "Display own voting and update D9 compatibility": "patches/drupal_rate_you_voted.patch"
-      },
-      "drupal/draggable_dashboard": {
-        "Block display issue #3217642": "patches/draggable_dashboard_block_structure.patch"
+        "Display own voting and update D9 compatibility": "https://www.drupal.org/files/issues/2021-07-06/drupal_rate_you_voted.patch"
       }
     },
     "installer-paths": {

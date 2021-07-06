@@ -55,6 +55,7 @@
     "drupal/tour_ui": "~1.0",
     "drupal/twig_tweak": "^2.9",
     "drupal/token": "^1.0",
+    "drupal/update_helper": "^2.0",
     "drupal/views_field_view": "^1.0@beta",
     "drupal/votingapi": "^3.0",
     "drupal/votingapi_widgets": "dev-1.x",

@@ -1,8 +1,8 @@
 argue_structure:
   title_section_term_overview_page: 'Rule Overview'
 argue_vocabulary: sections
-title_section_term_overview_page: 'Freiwillige Selbstverpflichtung'
-description_section_term_overview_page: 'Zur Selbst-Organisation der Bewohner der Wohngemeinschaft Sigmund-Freud-Str. 16, Kassel.'
+title_section_term_overview_page: 'New Contract'
+description_section_term_overview_page: ''
 link_section_terms_to_the_term_page: 0
 argue_max_nesting_level: null
 argue_displayed_nesting_levels: '2'

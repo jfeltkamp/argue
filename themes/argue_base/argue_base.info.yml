@@ -31,3 +31,7 @@ libraries-override:
     css:
       theme:
         css/number-up-down.css: false
+  claro/maintenance-page:
+    css:
+      theme:
+        css/theme/maintenance-page.css: css/maintenance-page.css

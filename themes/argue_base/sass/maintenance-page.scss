@@ -202,3 +202,49 @@ h1.page-title {
     font-size: .8em;
   }
 }
+
+.humans {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  + .layout-container {
+    position: relative;
+    z-index: 12;
+  }
+
+  [class*="humans--"] {
+    width: 12.5vw;
+    height: 12.5vw;
+    position: absolute;
+  }
+
+  &--1 {
+    top: 6.25vw;
+    left: 6.25vw;
+    transform: translate(-50%, -50%);
+  }
+  &--2 {
+    top: 6.25vw;
+    left: 93.75vw;
+    transform: translate(-50%, -50%);
+  }
+  &--3 {
+    bottom: 6.25vw;
+    left: 6.25vw;
+    transform: translate(-50%, 50%);
+  }
+  &--4 {
+    bottom: 6.25vw;
+    left: 93.75vw;
+    transform: translate(-50%, 50%);
+  }
+
+  svg {
+    width: auto;
+    height: 100%;
+  }
+}

@@ -9,8 +9,10 @@
  * @see template_preprocess_install_page()
  */
 #}
-<div class="layout-container">
 
+{% include directory ~ '/templates/humans.html.twig' %}
+
+<div class="layout-container">
   <header role="banner">
     {% if site_name %}
       <h1 class="page-title">
@@ -49,3 +51,4 @@
   {% endif %}
 
 </div>{# /.layout-container #}
+

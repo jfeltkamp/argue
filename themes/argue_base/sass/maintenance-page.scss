@@ -203,6 +203,11 @@ h1.page-title {
   }
 }
 
+body.install-page {
+  background: #FFF;
+  background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(13,13,79,0.2240963855421687) 100%);
+}
+
 .humans {
   position: fixed;
   display: block;
@@ -214,37 +219,48 @@ h1.page-title {
   + .layout-container {
     position: relative;
     z-index: 12;
+    background-color: rgba(255,255,255,.7);
+    box-shadow: none;
+    @media (min-width: 48em) {
+      width: 66% !important;
+    }
   }
 
   [class*="humans--"] {
-    width: 12.5vw;
-    height: 12.5vw;
+    width: 20vw;
+    height: 20vw;
     position: absolute;
+
+    @media (max-width: 47.999em) {
+      display: none;
+    }
   }
 
   &--1 {
-    top: 6.25vw;
-    left: 6.25vw;
+    top: 10vw;
+    left: 10vw;
     transform: translate(-50%, -50%);
   }
   &--2 {
-    top: 6.25vw;
-    left: 93.75vw;
+    top: 10vw;
+    left: 90vw;
     transform: translate(-50%, -50%);
   }
   &--3 {
-    bottom: 6.25vw;
-    left: 6.25vw;
+    bottom: 10vw;
+    left: 10vw;
     transform: translate(-50%, 50%);
   }
   &--4 {
-    bottom: 6.25vw;
-    left: 93.75vw;
+    bottom: 10vw;
+    left: 90vw;
     transform: translate(-50%, 50%);
   }
 
   svg {
     width: auto;
     height: 100%;
+    display: block;
+    margin: 0 auto;
   }
 }

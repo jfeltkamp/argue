@@ -84,7 +84,6 @@ install:
   - votingapi:votingapi
   - votingapi_widgets:votingapi_widgets
   # argue profile
-  - argue:argue_demo
   - argue:argue_structure
   - argue:argue_user
   - argue:argue_versions

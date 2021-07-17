@@ -1,7 +1,7 @@
 <?php
 
 function argue_demo_uninstall() {
-  $default_content_conf = system_get_info('module' ,'argue_demo')['default_content'];
+  $default_content_conf = \Drupal::service('extension.list.module')->getExtensionInfo('argue_demo')['default_content'];
 
   foreach($default_content_conf as $entity_type => $uuid_array) {
     /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */

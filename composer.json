@@ -67,7 +67,6 @@
   },
   "config": {
     "preferred-install": "dist",
-    "bin-dir": "bin/",
     "secure-http": false
   },
   "minimum-stability": "dev",
@@ -77,8 +76,8 @@
       "drupal/rate": {
         "Display own voting and update D9 compatibility": "https://www.drupal.org/files/issues/2021-07-06/drupal_rate_you_voted.patch"
       },
-      "drupal/dragable_dashboard": {
-        "Issue #3224097: Custom theme for Dragable Dashboard blocks": "https://www.drupal.org/files/issues/2021-07-17/draggable_dashboard_block_structure.patch",
+      "drupal/draggable_dashboard": {
+        "Issue #3224097: Custom theme for Dragable Dashboard blocks": "https://www.drupal.org/files/issues/2021-07-17/draggable_dashboard_block_structure.patch"
       }
     },
     "installer-paths": {

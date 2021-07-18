@@ -1,14 +1,14 @@
 {
-  "name": "drupal/argue",
-  "description": "Profile for a Drupal based Argue app installation.",
+  "name": "jfeltkamp/argue",
+  "description": "Argue distribution.",
   "type": "drupal-profile",
-  "license": "GPL-2.0+",
   "authors": [
     {
       "name": "Joachim Feltkamp",
       "email": "j.feltkamp@gmail.com"
     }
   ],
+  "license": "GPL-2.0+",
   "repositories": [
     {
       "type": "composer",
@@ -19,14 +19,20 @@
       "url": "https://asset-packagist.org"
     }
   ],
+  "extra": {
+    "installer-name": "argue",
+    "patches": {
+      "drupal/rate": {
+        "Display own voting and update D9 compatibility": "https://www.drupal.org/files/issues/2021-07-06/drupal_rate_you_voted.patch"
+      },
+      "drupal/draggable_dashboard": {
+        "Issue #3224097: Custom theme for Dragable Dashboard blocks": "https://www.drupal.org/files/issues/2021-07-17/draggable_dashboard_block_structure.patch"
+      }
+    }
+  },
   "require": {
     "php": "^7.3",
-    "composer/installers": "^1.9",
-    "oomphinc/composer-installers-extender": "^2.0",
     "cweagans/composer-patches": "^1.7",
-    "league/commonmark": "^0.11",
-    "drupal/core-composer-scaffold": "^9.0",
-
     "drupal/core": "^9.1",
     "drupal/address": "^1.9",
     "drupal/admin_toolbar": "^3.0",
@@ -62,59 +68,5 @@
     "drupal/votingapi_widgets": "dev-1.x",
     "npm-asset/select2": "^4.0.7",
     "npm-asset/autosize": "^5.0.0"
-  },
-  "require-dev": {
-    "drupal/drupal-extension": "^3.1"
-  },
-  "config": {
-    "preferred-install": "dist",
-    "secure-http": false
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "patches": {
-      "drupal/rate": {
-        "Display own voting and update D9 compatibility": "https://www.drupal.org/files/issues/2021-07-06/drupal_rate_you_voted.patch"
-      },
-      "drupal/draggable_dashboard": {
-        "Issue #3224097: Custom theme for Dragable Dashboard blocks": "https://www.drupal.org/files/issues/2021-07-17/draggable_dashboard_block_structure.patch"
-      }
-    },
-    "installer-paths": {
-      "config/shared": [
-        "type:drupal-module-config"
-      ],
-      "docroot/core": [
-        "type:drupal-core"
-      ],
-      "docroot/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "docroot/modules/custom/{$name}": [
-        "type:drupal-module-custom"
-      ],
-      "docroot/profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "docroot/profiles/custom/{$name}": [
-        "type:drupal-profile-custom"
-      ],
-      "docroot/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "docroot/themes/custom/{$name}": [
-        "type:drupal-theme-custom"
-      ],
-      "docroot/drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ],
-      "docroot/drush/custom/{$name}": [
-        "type:drupal-drush-custom"
-      ],
-      "docroot/modules/contrib/libraries/{$name}": [
-        "type:drupal-library"
-      ]
-    }
   }
 }

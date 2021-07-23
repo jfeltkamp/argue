@@ -6,6 +6,5 @@ fetch:
   max_attempts: 2
   timeout: 30
 notification:
-  emails:
-    - j.feltkamp@gmail.com
+  emails: {}
   threshold: all

@@ -41,7 +41,7 @@
     "drupal/config_selector": "^2.0",
     "drupal/config_update": "^1.7",
     "drupal/console": "^1.9",
-    "drupal/default_content": "^1.0",
+    "drupal/default_content": "^2.0",
     "drupal/diff": "^1.0",
     "drupal/draggable_dashboard": "2.0.0-alpha3",
     "drupal/entity": "^1.0",

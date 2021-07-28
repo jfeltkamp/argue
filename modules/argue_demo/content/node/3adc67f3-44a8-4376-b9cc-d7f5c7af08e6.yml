@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3adc67f3-44a8-4376-b9cc-d7f5c7af08e6
+  bundle: problem
+  default_langcode: en
+  depends:
+    f069fcb7-f024-45e5-8f82-2ab33a03f0de: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'prec prob'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Diskriminierung neuer WG-Mitglieder'
+  created:
+    -
+      value: 1627127327
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner/vertrag/diskriminierung-neuer-wg-mitglieder
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Neue WG-Mitglieder werden regelmäßig diskriminiert. Die älteren WG-Mitglieder leiten bewusst oder unbewusst aus der längeren Dauer ihrer WG-Mitgliedschaft Privilegien ab. Noch gravierender ist, dass neue WG-Mitglieder veränderte Mietverträge bekommen haben, die sich von älteren Verträgen unterscheiden. Auch hier ist zu beobachten, dass neueren WG-Mitgliedern nicht die gleichen Rechte zugestanden werden.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627127921
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: f069fcb7-f024-45e5-8f82-2ab33a03f0de

@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: aa1ba176-3cfe-4275-912d-a31f805291d3
+  bundle: comment
+  default_langcode: en
+  depends:
+    8a6baeef-cd29-4b14-aea5-d9ee1a052bc8: comment
+    52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  pid:
+    -
+      entity: 8a6baeef-cd29-4b14-aea5-d9ee1a052bc8
+  entity_id:
+    -
+      entity: 52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5
+  subject:
+    -
+      value: 'Das ist richtig. Zu dem…'
+  hostname:
+    -
+      value: 194.34.241.234
+  created:
+    -
+      value: 1627400009
+  thread:
+    -
+      value: 01.00/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Das ist richtig. Zu dem Zeitpunkt, als das Problem formuliert wurde, gab es noch keine Kaution.'
+      format: plain_text

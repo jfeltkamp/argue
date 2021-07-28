@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 59e03fdb-df18-485b-ae7b-45b7e0a63681
+  bundle: rule
+  default_langcode: en
+  depends:
+    36569f24-3387-48fb-ad7c-0c21513e4cb4: node
+    3db59aa5-cd59-429e-a630-138ef8a36528: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Reinigung der Gemeinschaftsräume'
+  created:
+    -
+      value: 1579454007
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/reinigung/reinigung-gemeinschaftsraume-0
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Jedes WG-Mitglied wäscht sein eigenes Geschirr direkt nach Benutzung wieder ab und sortiert es in die Schränke ein. Auch soll jeder nach Benutzung der Gemeinschaftsräume dort wieder aufräumen und kein Geschirr, Reste oder Verpackungen hinterlassen.\r\n\r\n- Jedes WG-Mitglied hat reihum eine Woche lang (von So. bis Sa.) Reinigungsdienst \r\n(Liste am Kühlschrank).\r\n\r\n- Zum Reinigungsdienst gehört eine gründliche Reinigung aller Gemeinschaftsräume am Sonntag, Montag oder Dienstag, ca. 4-5 Std. (Aufgaben: Aufräumen, Staubsaugen, alle Flächen Staubwischen, Fußböden wischen, Kühlschrank, Herd und Backofen reinigen, Müll und Leergut entsorgen, Badezimmer Waschbecken, Toilette und Duschwanne putzen, Spiegel abwischen, Handtücher waschen und trocknen, fehlende Reinigungs- und Verbrauchsmittel auf die Einkaufsliste setzen)\r\n\r\n- An allen Wochentagen kümmert sich der Reinigungsdienst darum, dass Küche und Wohnzimmer morgens einmal kurz aufgeräumt werden, Geschirr abgewaschen, abgetrocknet, der Müll weggeräumt und runtergebracht wird. Er muss nicht unbedingt alles selber machen, sondern kann auch die Verursacher daran erinnern, sofern diese greifbar sind, wobei aber immer Unkompliziertheit und Feingefühl erforderlich ist, denn Dienst ist Dienst. \r\n\r\n- Sollte derjenige, der mit Reinigungsdienst dran ist, in dieser Woche ganz oder teilweise nicht anwesend sein, so ist er dafür verantwortlich, seinen Dienst mit einem anderen WG-Mitgliedern zu tauschen oder umzuorganisieren.\r\n\r\n- Zu den optionalen Aufgaben des Reinigungsdienstes gehört, seine*n Nachfolger*in auf der Liste rechtzeitig zu erinnern, dass er/sie in der nächsten Woche Reinigungsdienst hat. "
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 36569f24-3387-48fb-ad7c-0c21513e4cb4
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 3db59aa5-cd59-429e-a630-138ef8a36528
+  field_voting:
+    -
+      status: 1

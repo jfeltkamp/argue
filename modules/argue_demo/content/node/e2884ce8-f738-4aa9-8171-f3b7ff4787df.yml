@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e2884ce8-f738-4aa9-8171-f3b7ff4787df
+  bundle: problem
+  default_langcode: en
+  depends:
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Stabilisierung der Wohngemeinschaft'
+  created:
+    -
+      value: 1627112962
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/stabilisierung-wohngemeinschaft
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Wie kann eine Wohngemeinschaft als Wohnmodell gelingen und sich zeitlich gesehen etablieren bzw. stabilisieren? Welche sachlich-existentiellen und typischen Abhängigkeiten gibt es, die nach Regelung verlangen, wenn man die Wohngemeinschaft als Selbstzweck betrachtet?'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627115435
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b

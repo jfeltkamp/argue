@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 7aa72e77-ae4f-4f3e-940b-78e33f60f1cc
+  depends:
+    e3bf3fd2-7053-4513-bc25-62c249a34390: node
+default:
+  created:
+    -
+      value: 1579459818
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: e3bf3fd2-7053-4513-bc25-62c249a34390
+  rvid:
+    -
+      value: 4
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Problem hinzugefügt'

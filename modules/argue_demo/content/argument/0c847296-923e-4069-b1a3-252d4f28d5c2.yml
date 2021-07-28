@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 0c847296-923e-4069-b1a3-252d4f28d5c2
+  default_langcode: en
+  depends:
+    f5405f29-6f5f-4969-91eb-25f788ad083f: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: f5405f29-6f5f-4969-91eb-25f788ad083f
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Regeln beschränken individuelle Freiheiten '
+  argument:
+    -
+      value: 'Die Befolgung von Regeln, welche immer individuelle Freiheiten beschränken, wiederstrebt einigen WG-Mitgliedern und wird als Bevormundung empfunden. Es sollte so wenig Regeln wie möglich geben.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627392435
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627392435
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

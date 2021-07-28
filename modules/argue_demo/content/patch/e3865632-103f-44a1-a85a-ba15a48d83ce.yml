@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: e3865632-103f-44a1-a85a-ba15a48d83ce
+  depends:
+    5ea10b61-8164-40be-9485-a5951a2802d5: node
+default:
+  created:
+    -
+      value: 1577353074
+  status:
+    -
+      value: 1
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 5ea10b61-8164-40be-9485-a5951a2802d5
+  rvid:
+    -
+      value: 7
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Kaution auf eine Monatmiete reduziert.'

@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: a3ae5e2e-a6b8-4f75-97e8-c37dbc52e74b
+  depends:
+    59e03fdb-df18-485b-ae7b-45b7e0a63681: node
+default:
+  created:
+    -
+      value: 1579456120
+  status:
+    -
+      value: 1
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 59e03fdb-df18-485b-ae7b-45b7e0a63681
+  rvid:
+    -
+      value: 59
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Sanktionen wurden eingefügt.'

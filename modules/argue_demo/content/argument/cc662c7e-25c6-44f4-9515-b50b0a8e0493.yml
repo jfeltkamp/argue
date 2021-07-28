@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: cc662c7e-25c6-44f4-9515-b50b0a8e0493
+  default_langcode: en
+  depends:
+    8e7d809c-d6b5-420b-a284-beb8ae92cc6c: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 8e7d809c-d6b5-420b-a284-beb8ae92cc6c
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Zusätzliche individuelle Einkäufe'
+  argument:
+    -
+      value: 'Wegen der Mängel im Lebensmittelangebot kaufen einzelne WG-Mitglieder zusätzlich ein und mindern damit den Verbrauch gemeinschaftlich eingekaufter Produkte. Insofern ist es ungerecht, wenn sie den vollen Beitrag in die Haushaltskasse zahlen müssen.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627388482
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 21
+      last_comment_timestamp: 1627388615
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 1

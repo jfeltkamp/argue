@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 780c8b40-ac9a-489b-97e1-1155f22b85ad
+  bundle: comment
+  default_langcode: en
+  depends:
+    cbb074d3-a429-4ac7-a7f6-4f24b10f9a33: comment
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  pid:
+    -
+      entity: cbb074d3-a429-4ac7-a7f6-4f24b10f9a33
+  entity_id:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  subject:
+    -
+      value: 'If you think it is true, it is true'
+  hostname:
+    -
+      value: 127.0.0.1
+  created:
+    -
+      value: 1545053206
+  thread:
+    -
+      value: 01.00.00/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Das ist bei uns Studenten nun leider ein Fakt des Lebens, dass wir nicht so viel Geld haben, dass immer alles bezahlbar ist. Aber das mit dem "unsichtbar" finde ich korrekt.'
+      format: plain_text

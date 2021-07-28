@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: bf19e9db-23e2-4455-8578-7e79685e7572
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: admin.png
+  uri:
+    -
+      value: 'public://users/admin.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 125321
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627466487

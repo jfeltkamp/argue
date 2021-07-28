@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: aac7acf8-7fcb-45d8-9dd0-88dbefb978fb
+  bundle: argument_comments
+  default_langcode: en
+  depends:
+    3235a413-743c-4972-96dd-a3563e029986: argument
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: 3235a413-743c-4972-96dd-a3563e029986
+  subject:
+    -
+      value: 'Und was sollen die nicht…'
+  hostname:
+    -
+      value: 194.34.241.234
+  created:
+    -
+      value: 1627382324
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: argument
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Und was sollen die nicht eingeladenen WG-Mitglieder während der Party machen. Müssen sie sich in ihren Zimmern einschließen?'
+      format: plain_text

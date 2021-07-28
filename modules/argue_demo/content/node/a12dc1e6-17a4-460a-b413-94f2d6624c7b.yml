@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a12dc1e6-17a4-460a-b413-94f2d6624c7b
+  bundle: problem
+  default_langcode: en
+  depends:
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Privarsphäre und Selbstbestimmung'
+  created:
+    -
+      value: 1627209667
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/privarsphare-und-selbstbestimmung
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Die Privatsphäre jedes WG-Mitgliedes ist ein hohes Gut. Aufgrund von Mehrheitsentscheidungen können gegen die Entscheidung Einzelner, Veränderungen in der WG erzwungen werden, die sich zum Nachteil und als Verletzung der Privatsphäre dieses WG-Mitgliedes auswirken, obwohl es sich von Anfang an dagegen entschieden hat. '
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627211476
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b

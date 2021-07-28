@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: c16afbea-c61c-4c95-a89e-3dfdb7e3bc17
+  default_langcode: en
+  depends:
+    b962fd03-61c3-4e49-afdb-7c843b80aadd: user
+    9efbb14c-9ee0-493a-8a3e-d89a720adbb2: node
+default:
+  revision_user:
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  user_id:
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  reference_id:
+    -
+      entity: 9efbb14c-9ee0-493a-8a3e-d89a720adbb2
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Formulierung "Rücksichtnahme" ist zu ungenau'
+  argument:
+    -
+      value: 'Die Formulierung "soll auf die Zustimmung jedes Einzelnen Rücksicht genommen werden" ist zu vage. Das heißt, dass es im Prinzip möglich ist, dass die Ablehnung eines Anwärters seitens eines WG-Mitglieds übergangen werden kann.  '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1581263677
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      target_id: 29

@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c1f11f48-dd9f-4bea-9e36-d33799ff1551
+  bundle: problem
+  default_langcode: en
+  depends:
+    a0af3455-efaa-4df3-9450-8b8a06d81801: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: moved
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Haushaltskasse ständig leer'
+  created:
+    -
+      value: 1627292588
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld/haushaltskasse-standig-leer
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Die Haushaltskasse ist am Anfang des Monats wegen versäumter Zahlungen des Haushaltsgeldes oft leer, wodurch der Einkauf blockiert wird. '
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627292746
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_sector:
+    -
+      entity: a0af3455-efaa-4df3-9450-8b8a06d81801

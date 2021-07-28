@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: d67d60bf-5da1-4528-960d-76408da0f706
+  default_langcode: en
+  depends:
+    8e7d809c-d6b5-420b-a284-beb8ae92cc6c: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 8e7d809c-d6b5-420b-a284-beb8ae92cc6c
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Stark abweichender Verbrauch'
+  argument:
+    -
+      value: 'Einzelne WG-Mitglieder essen nahzu das doppelte als andere, oder ernähren sich ausschließlich vom gemeinschaftlichen Einkauf, während andere öfters auswärts essen und damit deutlich weniger verbrauchen. Es ist ungerecht, wenn alle das gleiche in die Haushaltsgeldkasse zahlen.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627389139
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627389139
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

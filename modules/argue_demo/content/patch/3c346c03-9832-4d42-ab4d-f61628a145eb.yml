@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 3c346c03-9832-4d42-ab4d-f61628a145eb
+  depends:
+    41acde70-710c-4a29-88aa-eacaf4eeabf6: node
+default:
+  created:
+    -
+      value: 1627055704
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 41acde70-710c-4a29-88aa-eacaf4eeabf6
+  rvid:
+    -
+      value: 122
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'New concise title.'

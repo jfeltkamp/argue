@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e7c21ed2-6b27-473c-8d81-c3efd4087c2a
+  bundle: rule
+  default_langcode: en
+  depends:
+    b53994fe-1b21-42e2-b5f8-b5516b1eb1c0: node
+    36799b00-1059-4d50-bbf1-2f7ce912461e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'prec rule'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: Nachtruhe
+  created:
+    -
+      value: 1508874157
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/nachtruhe/nachtruhe
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Die Nachtruhe gilt in den Nächten zu Werktagen (nicht am Wochenende) und beginnt um 23:00 und endet um 8:00 Uhr.\r\n\r\n- Rücksicht auf das Ruhe-Bedürfnis und den Schlaf der WG-Bewohner ist in jeder Form auch außerhalb der Nachtruhe und an Wochenenden angebracht.\r\n\r\n- Zusammentreffen mit Freund*innen in der WG während der Nachtruhe erfordern, dass sie allen WG-Mitgliedern angekündigt und von diesen akzeptiert wurden. Davon ausgenommen sind Beziehungspartner*innen. Alle WG-Besucher*innen sind zur Rücksichtnahme auf die Nachtruhe anzuhalten, wenn sie diese vergessen haben sollten.\r\n\r\n- Türen sind möglicht geschlossen zu halten, damit störende Unruhe sich weniger ausbreiten kann. \r\n\r\n- Beschwerden über störenden Lärm sind immer äußerst ernst zu nehmen und erfordern eine freundliche und kooperative Haltung gegenüber der gestörten Person (\"gefrustete Spaßbremse\") durch die Störer (\"ausgelassene fröhliche Gesellschaft\").\r\n\r\n- Es sollte immer miterwogen werden, ein Treffen in der WG zur Nachtruhe hin in eine benachbarte Kneipe oder den Park zu verlagern.  "
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: b53994fe-1b21-42e2-b5f8-b5516b1eb1c0
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 36799b00-1059-4d50-bbf1-2f7ce912461e
+  field_voting:
+    -
+      status: 1

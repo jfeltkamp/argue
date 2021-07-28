@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: e5bac487-0b2f-43f1-b5d3-1ce39b459953
+  bundle: argument_comments
+  default_langcode: en
+  depends:
+    cc662c7e-25c6-44f4-9515-b50b0a8e0493: argument
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: cc662c7e-25c6-44f4-9515-b50b0a8e0493
+  subject:
+    -
+      value: 'Könnte man das Problem nicht…'
+  hostname:
+    -
+      value: 194.34.241.234
+  created:
+    -
+      value: 1627388615
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: argument
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Könnte man das Problem nicht auch so lösen, dass keine zusätzlichen Einkäufe notwendig sind, weil das Lebensmittelangebot ausreicht?'
+      format: plain_text

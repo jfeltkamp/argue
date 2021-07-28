@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f80f4d33-d2d8-4c98-b63e-21ce4a03f264
+  bundle: problem
+  default_langcode: en
+  depends:
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Prec problem'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Wahrung persönlicher Rechte und Pflichten'
+  created:
+    -
+      value: 1627115447
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/wahrung-personlicher-rechte-und-pflichten
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Durch das Wohnmodell "Wohngemeinschaft" werden unbedingte Rechte und Pflichten einer Person infrage gestellt. Eine Wohngemeinschaft ist ein enger Interaktionsraum mehrerer Personen, in dem typische Probleme entstehen, welche mitunter die Grundrechte einer Person betreffen, z.B. das Recht auf Privatsphäre oder das Postgeheimnis. In der Regel werden Verstöße gegen solche Grundrechte nicht juristisch aufgearbeitet, weswegen es problemorientierter Regeln bedarf, welche dieses preventiv sicherstellen. '
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627116056
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b

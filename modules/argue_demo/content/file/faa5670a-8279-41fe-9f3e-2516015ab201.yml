@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: faa5670a-8279-41fe-9f3e-2516015ab201
+  default_langcode: en
+  depends:
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+default:
+  uid:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+  filename:
+    -
+      value: moderator.jpg
+  uri:
+    -
+      value: 'public://users/moderator.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 19689
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1577902089

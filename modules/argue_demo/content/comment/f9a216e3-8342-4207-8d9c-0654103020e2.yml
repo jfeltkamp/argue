@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: f9a216e3-8342-4207-8d9c-0654103020e2
+  bundle: argument_comments
+  default_langcode: en
+  depends:
+    f32a0778-ee46-4ba8-8430-464cf5b77b8c: argument
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: f32a0778-ee46-4ba8-8430-464cf5b77b8c
+  subject:
+    -
+      value: 'Wir besprechen in der WG…'
+  hostname:
+    -
+      value: 172.23.0.6
+  created:
+    -
+      value: 1627461557
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: argument
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: "Wir besprechen in der WG-Versammlung viele Themen, die vertraulich und privat sind. In der Signal-Historie wären diese Informationen dann dokumentiert. Ich selber kenne Personen, die Handys ihrer Freunde und Bekannten schon einmal ausspioniert haben. Das ist leider wahr. Die Versuchung war wohl zu groß.\r\nIch wäre nur einverstanden, wenn wir die Nutzung des Channels klar begrenzen."
+      format: plain_text

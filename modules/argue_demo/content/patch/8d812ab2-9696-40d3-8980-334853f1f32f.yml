@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 8d812ab2-9696-40d3-8980-334853f1f32f
+  depends:
+    e3bf3fd2-7053-4513-bc25-62c249a34390: node
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+default:
+  created:
+    -
+      value: 1577118783
+  status:
+    -
+      value: 1
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: e3bf3fd2-7053-4513-bc25-62c249a34390
+  rvid:
+    -
+      value: 4
+  uid:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+  message:
+    -
+      value: '"Garantien Dritter" entfernt und durch "geeignete andere Nachweise" ersetzt'

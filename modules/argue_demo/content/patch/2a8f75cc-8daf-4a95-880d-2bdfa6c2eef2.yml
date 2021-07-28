@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 2a8f75cc-8daf-4a95-880d-2bdfa6c2eef2
+  depends:
+    8e7d809c-d6b5-420b-a284-beb8ae92cc6c: node
+default:
+  created:
+    -
+      value: 1577644579
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 8e7d809c-d6b5-420b-a284-beb8ae92cc6c
+  rvid:
+    -
+      value: 21
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Changed Scector'

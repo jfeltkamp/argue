@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: e9772c6d-cd89-4001-a712-8740df8194b6
+  default_langcode: en
+  depends:
+    e3bf3fd2-7053-4513-bc25-62c249a34390: node
+    8d812ab2-9696-40d3-8980-334853f1f32f: patch
+default:
+  revision_user:
+    -
+      target_id: 0
+  user_id:
+    -
+      target_id: 0
+  reference_id:
+    -
+      entity: e3bf3fd2-7053-4513-bc25-62c249a34390
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Garantien Dritter sind nicht belastbar'
+  argument:
+    -
+      value: 'Garantien Dritter sind nicht belastbar, wenn das nicht in einer juristisch einwandfreien Form geschieht. Das geht auch zu weit. Letztlich ist entscheidend, ob der WG-Anwärter die Kaution samt der ersten Miete vor dem Einzug zahlt oder nicht; danach darf er einziehen, oder eben nicht.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1545405846
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: 8d812ab2-9696-40d3-8980-334853f1f32f

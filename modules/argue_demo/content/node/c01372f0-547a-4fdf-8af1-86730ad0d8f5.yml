@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c01372f0-547a-4fdf-8af1-86730ad0d8f5
+  bundle: rule
+  default_langcode: en
+  depends:
+    3adc67f3-44a8-4376-b9cc-d7f5c7af08e6: node
+    f069fcb7-f024-45e5-8f82-2ab33a03f0de: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: gender
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Gleichberechtigung der WG-Mitglieder'
+  created:
+    -
+      value: 1508503645
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner/vertrag/gleichberechtigung-wg-mitglieder
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Alle WG-Mitglieder haben die gleichen Rechte und Pflichten. Sowohl Mietvertrag, als auch WG-Ordnung, dürfen niemanden in der WG persönlich bevor- oder benachteiligen. Im Streitfall soll in der WG-Versammlung eine Regelung gefunden werden, die für alle WG-Mitglieder gilt und die Gleichberechtigung wieder herstellt.'
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 3adc67f3-44a8-4376-b9cc-d7f5c7af08e6
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: f069fcb7-f024-45e5-8f82-2ab33a03f0de
+  field_voting:
+    -
+      status: 1

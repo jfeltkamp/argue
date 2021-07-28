@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ed7c8489-b580-4c82-9bef-1460836967d2
+  bundle: problem
+  default_langcode: en
+  depends:
+    055cc669-bcd8-41a7-a8b7-cb884a9a5deb: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'WG Organisation und Besprechung'
+  created:
+    -
+      value: 1627297049
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/wg-watch-up/wg-organisation-und-besprechung
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Es ist nicht möglich und viel zu zeitaufwendig, alles, was es mit den WG-Mitgliedern zu besprechen und zu organisieren gibt, zwischen Tür und Angel oder telefonisch zu klären. '
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627297252
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: 055cc669-bcd8-41a7-a8b7-cb884a9a5deb

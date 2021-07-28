@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: d88d977c-bd73-436e-a822-6754940f73f2
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+default:
+  created:
+    -
+      value: 1618226826
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  rvid:
+    -
+      value: 68
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Einen Dauerauftrag einrichten.'

@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 83d29e9e-cb6a-466e-b21f-1869873be9a2
+  bundle: rule
+  default_langcode: en
+  depends:
+    5b5a8118-b28f-4912-bf3e-ce787b4a731f: node
+    a0af3455-efaa-4df3-9450-8b8a06d81801: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Führung der Haushaltskasse'
+  created:
+    -
+      value: 1508506973
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld/fuhrung-haushaltskasse
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Die/der Kassenführer*in\r\n- ... führt die Haushaltskasse (in Bargeld) und ist für die sichere Verwahrung des Geldes verantwortlich.\r\n-  ... wird alle 6 Monate, jeweils in der ersten WG-Versammlung des Januars und des Julis gewählt.\r\n-  ... fordert die monatlichen Beiträge in der WG-Versammlung ein und quittiert den Empfang. \r\n-  ... gibt das Einkaufsgeld vorab an die Einkäufer ab, und verrechnet später das Wechselgeld und sammelt alle Einkaufsbelege.\r\n-  ... führt sorgfältig Buch über alle Zahlungsein- und ausgänge der Haushaltskasse und verrechnet diese mit dem Kassenbestand. \r\n-  ... berichtet bei jeder WG-Versammlung über die Buchführung und den Kassenbestand, Fehlbeträge und fehlende Belege.\r\n-  ... ist für alle Fehlbeträge verantwortlich, sofern ihn die WG-Versammlung nicht entlasten kann. \r\n-  ... selbst wird wegen seiner verantwortungsvollen Aufgabe von der Aufgabe des Einkaufens befreit."
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 5b5a8118-b28f-4912-bf3e-ce787b4a731f
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: a0af3455-efaa-4df3-9450-8b8a06d81801
+  field_voting:
+    -
+      status: 1

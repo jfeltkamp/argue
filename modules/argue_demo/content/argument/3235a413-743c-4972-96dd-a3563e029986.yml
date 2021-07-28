@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 3235a413-743c-4972-96dd-a3563e029986
+  default_langcode: en
+  depends:
+    b962fd03-61c3-4e49-afdb-7c843b80aadd: user
+    b791ddbb-8914-49be-901b-686b2318e8c6: node
+default:
+  revision_user:
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  user_id:
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  reference_id:
+    -
+      entity: b791ddbb-8914-49be-901b-686b2318e8c6
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Einbeziehung anderer WG-Mitglieder und deren Zimmer '
+  argument:
+    -
+      value: "Es ist nicht einzusehen, warum andere WG-Mitglieder automatisch eingeladen sind. Dies sollte dem jeweiligen Partyveranstalter obliegen.\r\nAußerdem darf es keinen automatischen Anspruch auf die Zimmer der anderen geben. Dafür braucht es deren Einverständnis."
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1578332892
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 20
+      last_comment_timestamp: 1627382324
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 1

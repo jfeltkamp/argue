@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3e8b8c38-b647-4942-ae3c-a2cf19103b96
+  bundle: rule
+  default_langcode: en
+  depends:
+    946d6c64-184a-45c2-8050-3761a719cf59: node
+    a0af3455-efaa-4df3-9450-8b8a06d81801: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Verwendung des Haushaltsgeldes'
+  created:
+    -
+      value: 1508511068
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld/verwendung-des-haushaltsgeldes
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Das Haushaltsgeld ist für Lebens- und Verbrauchsmittel, gemeinsame Kosten (z.B. Stromnachzahlung, Hausratversicherung) und gemeinsam verschuldete Haftungsansprüche bestimmt. Für letzteres werden Rücklagen gebildet, indem 10% des Haushaltsgeldes auf ein gemeinsames Sparkonto überwiesen werden.\r\n\r\nEinkäufer dürfen mit dem Haushaltsgeld ausschließlich preiswerte, vegetarische, WG-übliche Produkte einkaufen. Das gemeinsame Haushaltsgeld darf nur zur Anschaffung von Produkten ausgegeben werden, die im Auftrag der WG eingekauft werden, nicht aber nur den Vorlieben des Einkäufers entsprechen. (Liste am Kühlschrank) Andere Produkte als diese muss der Einkäufer aus eigener Tasche zahlen, oder diese Produkte in den Laden zurückbringen.\r\n\r\nVerwendung der Rücklagen:\r\nSollte z.B. bei einer Party etwas kaputt gehen, oder ein gemeinsam genutzter Gegenstand verschwinden, das Haustier eines WG-Mitglieds krank werden, oder Zahnersatz eines WG-Mitglieds nötig werden, so können auf Antrag die Kosten durch die Gemeinschaft übernommen werden. Darüber entscheidet im Einzelfall die einfache Mehrheit der WG-Versammlung."
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 946d6c64-184a-45c2-8050-3761a719cf59
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: a0af3455-efaa-4df3-9450-8b8a06d81801
+  field_voting:
+    -
+      status: 1

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 38a790b1-2722-4291-8c7a-b9a24172b4ea
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: beginner.gif
+  uri:
+    -
+      value: 'public://users/beginner.gif'
+  filemime:
+    -
+      value: image/gif
+  filesize:
+    -
+      value: 64283
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1577451636

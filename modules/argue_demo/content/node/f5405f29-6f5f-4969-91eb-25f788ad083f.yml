@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f5405f29-6f5f-4969-91eb-25f788ad083f
+  bundle: rule
+  default_langcode: en
+  depends:
+    e2884ce8-f738-4aa9-8171-f3b7ff4787df: node
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Wohngemeinschaft als Wohnform stabilisieren'
+  created:
+    -
+      value: 1627116142
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/wohngemeinschaft-wohnform-stabilisieren
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Die WG-Ordnung soll die Wohngemeinschaft als Wohnform stabilisieren. Die Wohn- bzw. Lebensumstände, welche durch die WG-Ordnung mit geformt werden, sollen für die Bewohner*innen als lebenswert (angenehm, schön, bereichernd) empfunden werden. \r\n\r\nDamit die WG-Ordnung überhaupt Einfluss auf die Lebensumstände nehmen kann, wird vorausgesetzt, dass die WG-Ordnung die Zustimmung der Bewohner*innen findet - und sofern dieses nicht der Fall ist, dass die Bewohner*innen die WG-Ordnung im gegenseitigen einvernehmen mit- und umgestalten können."
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: e2884ce8-f738-4aa9-8171-f3b7ff4787df
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b
+  field_voting:
+    -
+      status: 1

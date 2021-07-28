@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 087ac1e3-ebbc-45e8-a382-e6f2bc00f02b
+  default_langcode: en
+  depends:
+    8e7d809c-d6b5-420b-a284-beb8ae92cc6c: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 8e7d809c-d6b5-420b-a284-beb8ae92cc6c
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: Zeiteinsparung
+  argument:
+    -
+      value: 'Die gemeinsame Organisation des Einkaufs ist eine große Entlastung für alle Bewohner. Statt mehrmals monatlich für sich alleine einzukaufen, wird diese Arbeit zeitsparend und besser mit einer gerechte Aufgabenverteilung erledigt. '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627387324
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627387324
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

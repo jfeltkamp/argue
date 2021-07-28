@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 36799b00-1059-4d50-bbf1-2f7ce912461e
+  bundle: sections
+  default_langcode: en
+  depends:
+    b0e49b5f-43a9-4414-bd30-37cf4f84b136: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Nachtruhe
+  weight:
+    -
+      value: 2
+  parent:
+    -
+      entity: b0e49b5f-43a9-4414-bd30-37cf4f84b136
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/nachtruhe
+      langcode: en
+      pathauto: 1

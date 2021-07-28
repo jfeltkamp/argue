@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 28cd0308-5037-47c6-9efd-52bb1e09095a
+  bundle: comment
+  default_langcode: en
+  depends:
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+    106eb209-5347-4db6-bcdb-cfa24364b1c8: comment
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+  pid:
+    -
+      entity: 106eb209-5347-4db6-bcdb-cfa24364b1c8
+  entity_id:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  subject:
+    -
+      value: 'Maecenas nec odio et ante…'
+  hostname:
+    -
+      value: 172.18.0.6
+  created:
+    -
+      value: 1577902936
+  thread:
+    -
+      value: 01.01/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Das ist jetzt kein sachlicher Kommentar. Es klingt so, als würdest Du das Problem nicht ernst nehmen. Und mir kommt es so vor, als wenn diese Einstellung Teil des geäußerten Problems sein könnte. Deswegen bekommt das Problem mein Voting. +1'
+      format: plain_text

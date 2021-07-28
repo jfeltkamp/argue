@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 379e69e3-d51d-45f0-a081-39c403fe6805
+  bundle: problem
+  default_langcode: en
+  depends:
+    2d2e393a-98db-4e0e-8fb1-3870df0f7cbc: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: moved
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Organisation des Einkaufs'
+  created:
+    -
+      value: 1627219747
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/einkauf/organisation-des-einkaufs
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Es ist völlig unsinnig, dass jedes WG-Mitglied seinen eigenen kleinen Unterhaushalt führt, alleine einkauft, seine kleine Ecke im Kühlschrank hat, usw. Jeder muss wöchentlich ein- oder mehrmals Einkaufen, weil der Platz nicht ausreicht. Viele Dinge, die jeder benötigt, stehen mehfach im Kühlschrank (Milch, Brot, Marmelade, ...) und weil es unübersichtlich ist, bleiben  Lebensmittel wochenlang stehen, verstopfen den Kühlschrank und werden schlecht, wodurch hygienische Problem hinzukommen.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627221026
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: 2d2e393a-98db-4e0e-8fb1-3870df0f7cbc

@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b53994fe-1b21-42e2-b5f8-b5516b1eb1c0
+  bundle: problem
+  default_langcode: en
+  depends:
+    36799b00-1059-4d50-bbf1-2f7ce912461e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Störende Unruhe in der Nacht'
+  created:
+    -
+      value: 1627293643
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/nachtruhe/storende-unruhe-nacht
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Störende Unruhe in der Nacht führt zu Schlafstörungen, Verschlafen von Terminen am frühen Morgen, Stress und Unkonzentriertheit. Die Ursachen sind Musik und laute Gespräche, Türenknallen und auf der Treppe poltern.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627294126
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: 36799b00-1059-4d50-bbf1-2f7ce912461e

@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 946d6c64-184a-45c2-8050-3761a719cf59
+  bundle: problem
+  default_langcode: en
+  depends:
+    a0af3455-efaa-4df3-9450-8b8a06d81801: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Einkauf von Verbrauchsmitteln '
+  created:
+    -
+      value: 1627128339
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld/einkauf-verbrauchsmitteln
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Das Haushaltsgeld wird regelmäßig für Produkte ausgegeben, die nur der Einkäufer gewohnt ist zu konsumieren. Andere Produkte, die er nicht konsumiert fehlen stattdessen. Das führt dazu, dass fortlaufend Produkte im Haushalt fehlen, während andere, die kaum verwendet werden, herumstehen und schlecht werden. Das ist Verschwendung von Geld und Lebensmitteln.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627128710
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: a0af3455-efaa-4df3-9450-8b8a06d81801

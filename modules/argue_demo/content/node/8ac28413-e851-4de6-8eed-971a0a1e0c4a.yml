@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 8ac28413-e851-4de6-8eed-971a0a1e0c4a
+  bundle: problem
+  default_langcode: en
+  depends:
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Streit zwischen WG-Bewohnern'
+  created:
+    -
+      value: 1627047329
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/streit-zwischen-wg-bewohnern
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'In einer WG kommt es regelmäßig nach realtiv kurzer Zeit zu Streit zwischen den Bewohnern. Die Ursachen dafür sind, bei hinreichend distanzierter Betrachtung, in der Regel dieselben: mangelnder Respekt, fehlende Rücksichtnahme und zu geringes Engagement bei gemeinschaftlichen Aufgaben. Folgen des belastenden Streits sind schlechte Stimmung, wiederkehrende Anfeindungen, usw. Sofern die Streitereien nicht beigelegt werden können, führen sie oft zur vollständigen oder teilweisen Auflösung der WG.  '
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627048488
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b

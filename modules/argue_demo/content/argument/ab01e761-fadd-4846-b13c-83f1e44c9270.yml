@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: ab01e761-fadd-4846-b13c-83f1e44c9270
+  default_langcode: en
+  depends:
+    59e03fdb-df18-485b-ae7b-45b7e0a63681: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 59e03fdb-df18-485b-ae7b-45b7e0a63681
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Küchendienst hat Vorteil einer klaren Zuständigkeit'
+  argument:
+    -
+      value: 'Ein Küchendienst hat den Vorteil einer klaren Zuständigkeit, die Küche in Ordnung zu halten und ist eine gerechte Verteilung der Arbeit.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1579455052
+  revision_translation_affected:
+    -
+      value: true

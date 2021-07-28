@@ -1,0 +1,372 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 27801147-f432-4d8f-80fc-cfb1a6e4efbb
+  bundle: version
+  default_langcode: en
+  depends:
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+    36569f24-3387-48fb-ad7c-0c21513e4cb4: node
+    52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5: node
+    8ac28413-e851-4de6-8eed-971a0a1e0c4a: node
+    a68b841e-1642-4f1d-8997-63d5afe84f3c: node
+    e2884ce8-f738-4aa9-8171-f3b7ff4787df: node
+    f80f4d33-d2d8-4c98-b63e-21ce4a03f264: node
+    3adc67f3-44a8-4376-b9cc-d7f5c7af08e6: node
+    946d6c64-184a-45c2-8050-3761a719cf59: node
+    75d3691d-4d1a-4423-a632-d650f935bb17: node
+    a12dc1e6-17a4-460a-b413-94f2d6624c7b: node
+    44339213-adde-4ab5-b785-1e5526da03c4: node
+    379e69e3-d51d-45f0-a081-39c403fe6805: node
+    5b5a8118-b28f-4912-bf3e-ce787b4a731f: node
+    c1f11f48-dd9f-4bea-9e36-d33799ff1551: node
+    b53994fe-1b21-42e2-b5f8-b5516b1eb1c0: node
+    ed7c8489-b580-4c82-9bef-1460836967d2: node
+    a64a7fec-3330-49ce-b6d6-f79554bf4ab8: node
+    99eac7b6-4df0-41bf-a19c-799bfb0f46e1: node
+    9efbb14c-9ee0-493a-8a3e-d89a720adbb2: node
+    e3bf3fd2-7053-4513-bc25-62c249a34390: node
+    1a3ada4b-db2d-4f70-9206-7c2af3c2afa8: node
+    c01372f0-547a-4fdf-8af1-86730ad0d8f5: node
+    5ea10b61-8164-40be-9485-a5951a2802d5: node
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+    8e7d809c-d6b5-420b-a284-beb8ae92cc6c: node
+    83d29e9e-cb6a-466e-b21f-1869873be9a2: node
+    de67573d-bdfe-4272-9d90-125881c16845: node
+    3e8b8c38-b647-4942-ae3c-a2cf19103b96: node
+    3dc1658a-085a-41a2-9a3d-543ce56b6336: node
+    e7c21ed2-6b27-473c-8d81-c3efd4087c2a: node
+    778f06ab-391a-4c53-b07c-30181f49d99a: node
+    b791ddbb-8914-49be-901b-686b2318e8c6: node
+    59e03fdb-df18-485b-ae7b-45b7e0a63681: node
+    1297b296-e884-4d56-aed1-845a159a0929: node
+    41acde70-710c-4a29-88aa-eacaf4eeabf6: node
+    f5405f29-6f5f-4969-91eb-25f788ad083f: node
+    7052f60f-9f4d-4dd9-93f3-9e7c5fc2b972: node
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Freiwillige Selbstverpflichtung'
+  created:
+    -
+      value: 1627401309
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /version/4
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Updated Version'
+      format: plain_text
+      summary: ''
+  field_arguments:
+    -
+      target_id: 1
+      target_revision_id: 240
+    -
+      target_id: 2
+      target_revision_id: 230
+    -
+      target_id: 3
+      target_revision_id: 241
+    -
+      target_id: 4
+      target_revision_id: 237
+    -
+      target_id: 5
+      target_revision_id: 224
+    -
+      target_id: 6
+      target_revision_id: 203
+    -
+      target_id: 7
+      target_revision_id: 242
+    -
+      target_id: 8
+      target_revision_id: 227
+    -
+      target_id: 9
+      target_revision_id: 243
+    -
+      target_id: 10
+      target_revision_id: 225
+    -
+      target_id: 11
+      target_revision_id: 168
+    -
+      target_id: 12
+      target_revision_id: 248
+    -
+      target_id: 14
+      target_revision_id: 234
+    -
+      target_id: 15
+      target_revision_id: 233
+    -
+      target_id: 16
+      target_revision_id: 201
+    -
+      target_id: 17
+      target_revision_id: 180
+    -
+      target_id: 18
+      target_revision_id: 231
+    -
+      target_id: 19
+      target_revision_id: 199
+    -
+      target_id: 20
+      target_revision_id: 69
+    -
+      target_id: 28
+      target_revision_id: 110
+    -
+      target_id: 29
+      target_revision_id: 118
+    -
+      target_id: 30
+      target_revision_id: 223
+    -
+      target_id: 31
+      target_revision_id: 207
+    -
+      target_id: 32
+      target_revision_id: 222
+    -
+      target_id: 33
+      target_revision_id: 127
+    -
+      target_id: 34
+      target_revision_id: 211
+    -
+      target_id: 35
+      target_revision_id: 221
+    -
+      target_id: 36
+      target_revision_id: 220
+    -
+      target_id: 37
+      target_revision_id: 217
+    -
+      target_id: 38
+      target_revision_id: 134
+    -
+      target_id: 39
+      target_revision_id: 155
+    -
+      target_id: 40
+      target_revision_id: 142
+    -
+      target_id: 41
+      target_revision_id: 144
+    -
+      target_id: 42
+      target_revision_id: 245
+    -
+      target_id: 43
+      target_revision_id: 152
+    -
+      target_id: 44
+      target_revision_id: 244
+    -
+      target_id: 45
+      target_revision_id: 162
+    -
+      target_id: 46
+      target_revision_id: 165
+    -
+      target_id: 47
+      target_revision_id: 185
+    -
+      target_id: 48
+      target_revision_id: 177
+    -
+      target_id: 49
+      target_revision_id: 235
+  field_description:
+    -
+      value: 'Zur Selbst-Organisation der Bewohner der Wohngemeinschaft Sigmund-Freud-Str. 16, Kassel.'
+  field_problems:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+    -
+      entity: 36569f24-3387-48fb-ad7c-0c21513e4cb4
+    -
+      entity: 52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5
+    -
+      entity: 8ac28413-e851-4de6-8eed-971a0a1e0c4a
+    -
+      entity: a68b841e-1642-4f1d-8997-63d5afe84f3c
+    -
+      entity: e2884ce8-f738-4aa9-8171-f3b7ff4787df
+    -
+      entity: f80f4d33-d2d8-4c98-b63e-21ce4a03f264
+    -
+      entity: 3adc67f3-44a8-4376-b9cc-d7f5c7af08e6
+    -
+      entity: 946d6c64-184a-45c2-8050-3761a719cf59
+    -
+      entity: 75d3691d-4d1a-4423-a632-d650f935bb17
+    -
+      entity: a12dc1e6-17a4-460a-b413-94f2d6624c7b
+    -
+      entity: 44339213-adde-4ab5-b785-1e5526da03c4
+    -
+      entity: 379e69e3-d51d-45f0-a081-39c403fe6805
+    -
+      entity: 5b5a8118-b28f-4912-bf3e-ce787b4a731f
+    -
+      entity: c1f11f48-dd9f-4bea-9e36-d33799ff1551
+    -
+      entity: b53994fe-1b21-42e2-b5f8-b5516b1eb1c0
+    -
+      entity: ed7c8489-b580-4c82-9bef-1460836967d2
+    -
+      entity: a64a7fec-3330-49ce-b6d6-f79554bf4ab8
+    -
+      entity: 99eac7b6-4df0-41bf-a19c-799bfb0f46e1
+  field_rules:
+    -
+      entity: 9efbb14c-9ee0-493a-8a3e-d89a720adbb2
+    -
+      entity: e3bf3fd2-7053-4513-bc25-62c249a34390
+    -
+      entity: 1a3ada4b-db2d-4f70-9206-7c2af3c2afa8
+    -
+      entity: c01372f0-547a-4fdf-8af1-86730ad0d8f5
+    -
+      entity: 5ea10b61-8164-40be-9485-a5951a2802d5
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+    -
+      entity: 8e7d809c-d6b5-420b-a284-beb8ae92cc6c
+    -
+      entity: 83d29e9e-cb6a-466e-b21f-1869873be9a2
+    -
+      entity: de67573d-bdfe-4272-9d90-125881c16845
+    -
+      entity: 3e8b8c38-b647-4942-ae3c-a2cf19103b96
+    -
+      entity: 3dc1658a-085a-41a2-9a3d-543ce56b6336
+    -
+      entity: e7c21ed2-6b27-473c-8d81-c3efd4087c2a
+    -
+      entity: 778f06ab-391a-4c53-b07c-30181f49d99a
+    -
+      entity: b791ddbb-8914-49be-901b-686b2318e8c6
+    -
+      entity: 59e03fdb-df18-485b-ae7b-45b7e0a63681
+    -
+      entity: 1297b296-e884-4d56-aed1-845a159a0929
+    -
+      entity: 41acde70-710c-4a29-88aa-eacaf4eeabf6
+    -
+      entity: f5405f29-6f5f-4969-91eb-25f788ad083f
+    -
+      entity: 7052f60f-9f4d-4dd9-93f3-9e7c5fc2b972
+  field_sections:
+    -
+      name: 'Ziele der WG-Ordnung'
+      term_id: 16
+      term_parent_id: 0
+      description: ''
+    -
+      name: 'Aufnahme neuer Mitbewohner'
+      term_id: 3
+      term_parent_id: 0
+      description: ''
+    -
+      name: Voraussetzungen
+      term_id: 6
+      term_parent_id: 3
+      description: ''
+    -
+      name: Aufnahmeverfahren
+      term_id: 5
+      term_parent_id: 3
+      description: ''
+    -
+      name: Vertrag
+      term_id: 4
+      term_parent_id: 3
+      description: ''
+    -
+      name: Finanzen
+      term_id: 2
+      term_parent_id: 0
+      description: ''
+    -
+      name: Kaution
+      term_id: 11
+      term_parent_id: 2
+      description: ''
+    -
+      name: Mietzahlung
+      term_id: 12
+      term_parent_id: 2
+      description: ''
+    -
+      name: Haushaltsgeld
+      term_id: 13
+      term_parent_id: 2
+      description: ''
+    -
+      name: Zusammenleben
+      term_id: 1
+      term_parent_id: 0
+      description: ''
+    -
+      name: WG-Versammlung
+      term_id: 14
+      term_parent_id: 1
+      description: ''
+    -
+      name: Einkauf
+      term_id: 7
+      term_parent_id: 1
+      description: ''
+    -
+      name: Nachtruhe
+      term_id: 10
+      term_parent_id: 1
+      description: ''
+    -
+      name: Reinigung
+      term_id: 8
+      term_parent_id: 1
+      description: ''
+    -
+      name: Partys
+      term_id: 9
+      term_parent_id: 1
+      description: ''
+    -
+      name: Sanktionen
+      term_id: 15
+      term_parent_id: 1
+      description: ''
+  field_valid_date:
+    -
+      value: '2021-08-03'
+  field_version_number:
+    -
+      value: 4

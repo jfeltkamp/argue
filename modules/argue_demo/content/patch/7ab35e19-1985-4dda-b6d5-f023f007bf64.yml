@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 7ab35e19-1985-4dda-b6d5-f023f007bf64
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+default:
+  created:
+    -
+      value: 1619586352
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  rvid:
+    -
+      value: 72
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Abmilderung der Kündigungsklausel.'

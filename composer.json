@@ -26,7 +26,7 @@
 
     "drupal/core": "^9.3",
     "drupal/address": "^1.9",
-    "drupal/admin_toolbar": "3.0.2",
+    "drupal/admin_toolbar": "^3.1",
     "drupal/antibot": "^1.4",
     "drupal/change_requests": "^2.0",
     "drupal/config_selector": "^2.0",

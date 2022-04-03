@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 1f31e21c-4393-4b26-8d7c-5eb0f409349e
+  default_langcode: en
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+    c484816d-6544-4651-849b-e3281eb82afb: patch
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Zahlungsausfall ist ein Kündigungsgrund, keine Kündigung.'
+  argument:
+    -
+      value: 'Ein einmaliger Zahlungsausfall kann keine Kündigung sein, sondern nur ein Kündigungsgrund.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1577472872
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: c484816d-6544-4651-849b-e3281eb82afb
+  field_comments:
+    -
+      status: 2
+      cid: 11
+      last_comment_timestamp: 1621317681
+      last_comment_name: ''
+      last_comment_uid: 9
+      comment_count: 1

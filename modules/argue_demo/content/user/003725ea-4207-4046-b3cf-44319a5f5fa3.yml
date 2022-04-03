@@ -1,0 +1,93 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 003725ea-4207-4046-b3cf-44319a5f5fa3
+  default_langcode: en
+  depends:
+    b23fa08e-2103-47f7-a8b3-51ffca1936b2: user
+    b962fd03-61c3-4e49-afdb-7c843b80aadd: user
+    faa5670a-8279-41fe-9f3e-2516015ab201: file
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Momo Moderator'
+  pass:
+    -
+      value: $S$EJMbsoZiUZ4ejdUvSjZp/mHHicpv/ZDsXf2OU/DRbjuAbLZPuik9
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: momo@argue-demo.org
+  timezone:
+    -
+      value: Europe/Berlin
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1509288880
+  access:
+    -
+      value: 1624633226
+  login:
+    -
+      value: 1624633226
+  roles:
+    -
+      target_id: moderator
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: ''
+      country_code: DE
+      administrative_area: ''
+      locality: Kassel
+      dependent_locality: ''
+      postal_code: '12345'
+      sorting_code: ''
+      address_line1: 'Sigmund-Freud-Str. 16'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_connected_users:
+    -
+      entity: b23fa08e-2103-47f7-a8b3-51ffca1936b2
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  field_cv:
+    -
+      value: '1992 | geb. Kassel'
+    -
+      value: '2004-2007 | Realschule Kassel '
+    -
+      value: '2007-2010 | Gymnasium Kassel '
+    -
+      value: '2010-2014 | Reisen nach überall und diverses'
+    -
+      value: '2014-heute | Studium Soziologie, Kassel'
+  field_professions:
+    -
+      value: Web-Programmierung
+  field_profiles:
+    -
+      uri: 'https://www.xing.com/profile/Moderator_1/cv'
+      title: ''
+      options: {  }
+  field_user_image:
+    -
+      entity: faa5670a-8279-41fe-9f3e-2516015ab201
+      alt: ''
+      title: ''
+      width: 1000
+      height: 563

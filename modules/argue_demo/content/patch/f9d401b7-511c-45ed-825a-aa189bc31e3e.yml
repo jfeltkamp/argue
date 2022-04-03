@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: f9d401b7-511c-45ed-825a-aa189bc31e3e
+  depends:
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+    b962fd03-61c3-4e49-afdb-7c843b80aadd: user
+default:
+  created:
+    -
+      value: 1581262809
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: problem
+  rid:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  rvid:
+    -
+      value: 63
+  uid:
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  message:
+    -
+      value: 'Gehört in den Bereich Finanzen (nicht Aufnahme/Vertrag )'

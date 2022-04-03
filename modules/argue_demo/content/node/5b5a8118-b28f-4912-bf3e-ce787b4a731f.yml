@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 5b5a8118-b28f-4912-bf3e-ce787b4a731f
+  bundle: problem
+  default_langcode: en
+  depends:
+    a0af3455-efaa-4df3-9450-8b8a06d81801: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: Haushaltskasse
+  created:
+    -
+      value: 1627235019
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld/haushaltskasse
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'In der Haushaltskasse kommen monatlich große Beträge zusammen. Der Umgang mit der Haushaltskasse ist Vertrauenssache und es ist schwierig, über den Kassenbestand buchzuführen und mit Unstimmigkeiten umzugehen.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627235407
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: a0af3455-efaa-4df3-9450-8b8a06d81801

@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 3ff258a3-5bfb-4cc4-99e2-7bbf226b58a5
+  default_langcode: en
+  depends:
+    41acde70-710c-4a29-88aa-eacaf4eeabf6: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 41acde70-710c-4a29-88aa-eacaf4eeabf6
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Ablehnung von Verantwortung'
+  argument:
+    -
+      value: 'Einzelne WG-Mitglieder möchten bewusst keine Verantwortung für andere übernehmen, sondern suchen in der Wohngemeinschaft z.B. ein möglichst unbeschwertes Leben in netter Gesellschaft.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627393086
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627393086
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

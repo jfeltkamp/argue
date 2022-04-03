@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 20d77ba0-cbc1-470f-8c4f-40fb179f162c
+  depends:
+    59e03fdb-df18-485b-ae7b-45b7e0a63681: node
+default:
+  created:
+    -
+      value: 1627312373
+  status:
+    -
+      value: 1
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 59e03fdb-df18-485b-ae7b-45b7e0a63681
+  rvid:
+    -
+      value: 181
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Precised rule'

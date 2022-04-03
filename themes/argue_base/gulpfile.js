@@ -1,12 +1,11 @@
 var gulp            = require('gulp'),
   concat          = require('gulp-concat'),
-  sass            = require('gulp-sass'),
+  sass            = require('gulp-sass')(require('sass')),
   cleanCSS        = require('gulp-clean-css'),
   sourcemaps      = require('gulp-sourcemaps'),
   prefixer        = require('gulp-autoprefixer'),
   browserSync     = require('browser-sync').create();
 
-sass.compiler   = require('sass');
 
 
 gulp.task('sass', function ()
@@ -43,7 +42,7 @@ gulp.task('sass', function ()
 gulp.task('watch', function ()
 {
   browserSync.init({
-    proxy: 'demo.arguepro.de.ddev.site'
+    proxy: 'argue-test-inst.de.ddev.site'
   });
 
   gulp.watch('./sass/**/*', gulp.series('sass'));

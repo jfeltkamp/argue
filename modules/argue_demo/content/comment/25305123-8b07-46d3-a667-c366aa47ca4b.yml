@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 25305123-8b07-46d3-a667-c366aa47ca4b
+  bundle: argument_comments
+  default_langcode: en
+  depends:
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+    1f31e21c-4393-4b26-8d7c-5eb0f409349e: argument
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+  entity_id:
+    -
+      entity: 1f31e21c-4393-4b26-8d7c-5eb0f409349e
+  subject:
+    -
+      value: 'Begründung fehlt. Diese…'
+  hostname:
+    -
+      value: 172.23.0.6
+  created:
+    -
+      value: 1621317681
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: argument
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Begründung fehlt. Diese könnte lauten: "Ein Zahlungsausfall kann keine Kündigung sein, weil dieses einem automatismus gleichkäme, über die man im Einzelfall keine Kontrolle mehr hat.'
+      format: plain_text

@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: de67573d-bdfe-4272-9d90-125881c16845
+  bundle: rule
+  default_langcode: en
+  depends:
+    379e69e3-d51d-45f0-a081-39c403fe6805: node
+    2d2e393a-98db-4e0e-8fb1-3870df0f7cbc: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: moved
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Einkauf gemeinschaftlich organisieren'
+  created:
+    -
+      value: 1508510765
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/einkauf/einkauf-gemeinschaftlich-organisieren
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Der Einkauf von Lebens- und Verbrauchsmitteln wird gemeinschaftlich organisiert. Wöchentlich reihum sind 2 WG-Mitglieder für den Einkauf zuständig, und sorgen dafür, dass alle Vorräte (Liste am Kühlschrank) aufgefüllt werden.'
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 379e69e3-d51d-45f0-a081-39c403fe6805
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 2d2e393a-98db-4e0e-8fb1-3870df0f7cbc
+  field_voting:
+    -
+      status: 1

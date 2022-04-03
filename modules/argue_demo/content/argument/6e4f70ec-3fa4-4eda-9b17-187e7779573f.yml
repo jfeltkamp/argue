@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 6e4f70ec-3fa4-4eda-9b17-187e7779573f
+  default_langcode: en
+  depends:
+    b791ddbb-8914-49be-901b-686b2318e8c6: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: b791ddbb-8914-49be-901b-686b2318e8c6
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Zahl der Partygäste beschränken'
+  argument:
+    -
+      value: 'Die Zahl der eingeladenen Freunde sollte maximal begrenzt sein. Je mehr Leute zur Party kommen, desto mehr geht kaputt und desto chaotischer und dreckiger ist die Wohnung danach.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1544720737
+  revision_translation_affected:
+    -
+      value: true

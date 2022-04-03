@@ -1,2 +1,12 @@
 argue_structure:
-  title_section_term_overview_page: "Rule Overview"
+  title_section_term_overview_page: 'Rule Overview'
+argue_vocabulary: sections
+title_section_term_overview_page: 'New Contract'
+description_section_term_overview_page: ''
+link_section_terms_to_the_term_page: 0
+argue_max_nesting_level: null
+argue_displayed_nesting_levels: '2'
+unset_node_owner:
+  problem: problem
+  rule: rule
+  version: 0

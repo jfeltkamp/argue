@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 6265d829-1575-47a1-a0d3-528440f353fd
+  default_langcode: en
+  depends:
+    a69010e9-e50a-4f79-87eb-482791e447fb: user
+    c01372f0-547a-4fdf-8af1-86730ad0d8f5: node
+default:
+  revision_user:
+    -
+      entity: a69010e9-e50a-4f79-87eb-482791e447fb
+  user_id:
+    -
+      entity: a69010e9-e50a-4f79-87eb-482791e447fb
+  reference_id:
+    -
+      entity: c01372f0-547a-4fdf-8af1-86730ad0d8f5
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Unlogisch: Streitfall unmöglich, wenn alle Verträge gleich. Darum streichen.'
+  argument:
+    -
+      value: 'Stimme zu, meine aber, dass man den Streitfall-Passus streichen kann. Er ist unlogisch: Wenn alle Verträge gleich sind, kann es gar keinen Streit um ungleiche Verträge geben. '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1580291912
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 19
+      last_comment_timestamp: 1624559953
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 1

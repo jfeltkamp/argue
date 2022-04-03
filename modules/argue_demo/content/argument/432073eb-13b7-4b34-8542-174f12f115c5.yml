@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 432073eb-13b7-4b34-8542-174f12f115c5
+  default_langcode: en
+  depends:
+    3e8b8c38-b647-4942-ae3c-a2cf19103b96: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 3e8b8c38-b647-4942-ae3c-a2cf19103b96
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Verschwendung des Haushaltsgeldes kann nicht toleriert werden'
+  argument:
+    -
+      value: 'Das Haushaltsgeld ist neben der Miete für die meisten WG-Bewohner die höchste monatliche Kostenposition. Eine Verschwendung des Geldes kann nicht toleriert werden.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627129131
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627129131
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

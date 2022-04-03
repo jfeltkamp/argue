@@ -1,10 +1,1 @@
 <?php
-
-/**
- * Implements hook_ENTITY_TYPE_view().
- */
-function argue_demo_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode)
-{
-  $name = \Drupal::routeMatch()->getRouteName();
-
-}

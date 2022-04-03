@@ -1,0 +1,85 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: a8c01908-91d8-4cd8-a256-de4aa48c4a1a
+  default_langcode: en
+  depends:
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+    b23fa08e-2103-47f7-a8b3-51ffca1936b2: user
+    b962fd03-61c3-4e49-afdb-7c843b80aadd: user
+    bf19e9db-23e2-4455-8578-7e79685e7572: file
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Adiran Admin'
+  pass:
+    -
+      value: $S$E/DPF/oVmUM9lOZXUqsgATJtDdJVETTCMwZpHXLpOFMWHYtBv8Qs
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: adrian@argue-demo.org
+  timezone:
+    -
+      value: Europe/Berlin
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1509289050
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: argue_admin
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: ''
+      country_code: DE
+      administrative_area: ''
+      locality: Kassel
+      dependent_locality: ''
+      postal_code: '12345'
+      sorting_code: ''
+      address_line1: 'Sigmund-Freud-Str. 16'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_connected_users:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+    -
+      entity: b23fa08e-2103-47f7-a8b3-51ffca1936b2
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  field_cv:
+    -
+      value: '2001 | geb. Rotenburg '
+    -
+      value: '2019 | Abi, Gymnasium Scheeßel'
+  field_professions:
+    -
+      value: 'Azubi Zweiradmechaniker'
+  field_user_image:
+    -
+      entity: bf19e9db-23e2-4455-8578-7e79685e7572
+      alt: ''
+      title: ''
+      width: 500
+      height: 500

@@ -1,0 +1,88 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  default_langcode: en
+  depends:
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+    a8c01908-91d8-4cd8-a256-de4aa48c4a1a: user
+    b23fa08e-2103-47f7-a8b3-51ffca1936b2: user
+    687c6c9e-d6e2-4935-a951-7da047e9bc75: file
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Meike Member'
+  pass:
+    -
+      value: $S$EF2mRTMGrfwgeM4kV/AWlJYpqUGdbVhOV9qflo.taMvW1MyvYP.E
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: meike@argue-demo.org
+  timezone:
+    -
+      value: Europe/Berlin
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1509288816
+  access:
+    -
+      value: 1624558508
+  login:
+    -
+      value: 1624558508
+  roles:
+    -
+      target_id: member
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: ''
+      country_code: DE
+      administrative_area: ''
+      locality: Kassel
+      dependent_locality: ''
+      postal_code: '12345'
+      sorting_code: ''
+      address_line1: 'Sigmund-Freud-Str. 16'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_connected_users:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+    -
+      entity: a8c01908-91d8-4cd8-a256-de4aa48c4a1a
+    -
+      entity: b23fa08e-2103-47f7-a8b3-51ffca1936b2
+  field_cv:
+    -
+      value: '2000 | geb. Lüneburg'
+  field_professions:
+    -
+      value: 'Studentin Soziologie, Universität Kassel'
+  field_profiles:
+    -
+      uri: 'https://www.xing.com/profile/Member_1/cv'
+      title: ''
+      options: {  }
+  field_user_image:
+    -
+      entity: 687c6c9e-d6e2-4935-a951-7da047e9bc75
+      alt: ''
+      title: ''
+      width: 670
+      height: 669

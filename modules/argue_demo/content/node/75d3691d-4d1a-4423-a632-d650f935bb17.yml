@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 75d3691d-4d1a-4423-a632-d650f935bb17
+  bundle: problem
+  default_langcode: en
+  depends:
+    975dbb45-f51c-426f-87b6-61196d786fd6: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Precised title'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Ablehnung von Bewerber*innen'
+  created:
+    -
+      value: 1627205586
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner/aufnahmeverfahren/ablehnung-bewerberinnen
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Im Verlauf eines Aufnahmeprozesses und ganz besonders im Vorstellungsgespräch kann die Ablehnung des/r Bewerber*in, welche das Recht jedes WG-Mitglieds ist, offen zutage treten und zur Demütigung oder Verletzung des/r Bewerber*in führen. Das muss unbedingt vermieden werden.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627207767
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: 975dbb45-f51c-426f-87b6-61196d786fd6

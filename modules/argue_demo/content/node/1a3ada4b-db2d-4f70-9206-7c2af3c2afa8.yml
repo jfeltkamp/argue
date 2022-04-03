@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1a3ada4b-db2d-4f70-9206-7c2af3c2afa8
+  bundle: rule
+  default_langcode: en
+  depends:
+    75d3691d-4d1a-4423-a632-d650f935bb17: node
+    975dbb45-f51c-426f-87b6-61196d786fd6: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Moved rule'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Taktvoller Umgang mit Bewerbern'
+  created:
+    -
+      value: 1508503223
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner/aufnahmeverfahren/taktvoller-umgang-mit-bewerbern
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Über die Aufnahme von Bewerber*innen in die WG wird in der WG-Versammlung in Abwesenheit des/der Bewerber*in entschieden. Bewerber*innen sind stets respektvoll und zuvorkommend nach allen Regeln der Gastfreundschaft zu behandeln.\r\n\r\n- Falls sich ein*e Bewerber*in nach den Gründen für die Ablehnung erkundigt, sollte lediglich angegeben werden, dass man sich für einen andere*n Bewerber*in entschieden habe, unabhängig davon ob es zu der Zeit schon einen andere*n Bewerber*in gibt oder noch nicht. \r\n\r\n- Details aus Abstimmung und Besprechung in der WG-Versammlung sind vertraulich und sollten keinesfalls nach außen getragen werden. "
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 75d3691d-4d1a-4423-a632-d650f935bb17
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 975dbb45-f51c-426f-87b6-61196d786fd6
+  field_voting:
+    -
+      status: 1

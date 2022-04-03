@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 36569f24-3387-48fb-ad7c-0c21513e4cb4
+  bundle: problem
+  default_langcode: en
+  depends:
+    3db59aa5-cd59-429e-a630-138ef8a36528: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Precised problem'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Reinigung der Gemeinschaftsräume'
+  created:
+    -
+      value: 1579452735
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/reinigung/reinigung-gemeinschaftsraume
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Es gibt wiederkehrende Klagen darüber, dass die Küche verdreckt ist, Geschirr nicht abgewaschen oder nach dem Abwaschen nicht weggeräumt wird, sich Müllberge ansammeln, der Fußboden verdreckt ist usw. Die Reinigung der Gemeinschaftsräume wird regelmäßig von einzelnen WG-Mitgliedern vernachlässigt, was andere dazu nötigt, diese Aufgabe zu übernehmen. Für manche ist es kein Problem, mit diesen Zuständen zu leben, für andere ist es unerträglich. Oft sind es die letzteren, die ständig die Gemeinschaftsräume reinigen, damit sie sich auch wieder wohlfühlen können. \r\nIn der Regel hat aber niemand ein Problem damit, in einer sauberen Wohnung zu wohnen. Deswegen sollte es bindende Regeln geben, die für Ordnung und Sauberkeit in der Wohnung sorgen, so dass sich alle zu Hause wohlfühlen können. \r\n"
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1579453071
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_sector:
+    -
+      entity: 3db59aa5-cd59-429e-a630-138ef8a36528

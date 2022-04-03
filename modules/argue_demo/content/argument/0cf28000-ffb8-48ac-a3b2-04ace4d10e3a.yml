@@ -1,0 +1,50 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 0cf28000-ffb8-48ac-a3b2-04ace4d10e3a
+  default_langcode: en
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+    d88d977c-bd73-436e-a822-6754940f73f2: patch
+    7ab35e19-1985-4dda-b6d5-f023f007bf64: patch
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Am 1. Tag des Monats haben viele ihre monatliche Unterhaltszahlung noch nicht.'
+  argument:
+    -
+      value: 'Am ersten Tag des Monats haben viele noch nicht ihre monatliche Unterhaltszahlung erhalten. '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1509900724
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: d88d977c-bd73-436e-a822-6754940f73f2
+    -
+      entity: 7ab35e19-1985-4dda-b6d5-f023f007bf64
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1621576748
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: bc8b36da-6439-4c67-807b-15912200fe38
+  bundle: argument_comments
+  default_langcode: en
+  depends:
+    6265d829-1575-47a1-a0d3-528440f353fd: argument
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: 6265d829-1575-47a1-a0d3-528440f353fd
+  subject:
+    -
+      value: 'Das Argument enthält…'
+  hostname:
+    -
+      value: 172.23.0.6
+  created:
+    -
+      value: 1624559953
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: argument
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Das Argument enthält persönliche Meinungen, ist also nicht sachlich formuliert. Wenn ein Passus gestrichen werden soll, so muss dieses ein Contra-Argument sein.'
+      format: plain_text

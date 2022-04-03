@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 23937c79-8a6c-4dd2-b5fc-bbf122d02234
+  default_langcode: en
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+    0c29d112-cf27-46a0-96b0-ec51d85de23b: patch
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Ein Dauer-Überweisungsauftrag verhindert Vergessen der Mietzahlung. '
+  argument:
+    -
+      value: 'Ein Dauer-Überweisungsauftrag verhindert, dass die Mietzahlung vergessen wird und sorgt automatisch für Regelmäßigkeit. Die Zahlungsunfähigkeit eines Mitbewohners fällt frühzeitig auf, so dass Unterstützung geleistet werden kann.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1509899838
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: 0c29d112-cf27-46a0-96b0-ec51d85de23b
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1623609173
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

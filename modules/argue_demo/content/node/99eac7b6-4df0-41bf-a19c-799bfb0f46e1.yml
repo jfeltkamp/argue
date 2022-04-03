@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 99eac7b6-4df0-41bf-a19c-799bfb0f46e1
+  bundle: problem
+  default_langcode: en
+  depends:
+    08d35d09-3338-464b-9467-8c577eb4ac6c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Pflichten und Sanktionen'
+  created:
+    -
+      value: 1627306250
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/sanktionen/pflichten-und-sanktionen
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Wenn im Rahmen der WG-Ordnung von Pflichten gesprochen wird (z.B. Teilnahme an der WG-Versammlung), dann kann es nicht ohne Folgen sein, wenn diese Pflicht vernachlässigt wird. Es muss also auch Sanktionen geben, die in diesem Fall greifen.'
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627306511
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: 08d35d09-3338-464b-9467-8c577eb4ac6c

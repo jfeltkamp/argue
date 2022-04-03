@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9efbb14c-9ee0-493a-8a3e-d89a720adbb2
+  bundle: rule
+  default_langcode: en
+  depends:
+    a12dc1e6-17a4-460a-b413-94f2d6624c7b: node
+    975dbb45-f51c-426f-87b6-61196d786fd6: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Precised rule'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Veto-Recht bei neuen Bewerber*innen'
+  created:
+    -
+      value: 1508501040
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner/aufnahmeverfahren/veto-recht-neuen-bewerberinnen
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Jedes WG-Mitglied hat die volle Entscheidungsfreiheit darüber, ob es mit einer anderen Person zusammenleben möchte oder nicht, ohne sich für diese Entscheidung rechtfertigen zu müssen. Alle WG-Mitglieder müssen ihre Zustimmung geben, ob eine*n Bewerber*in als WG-Mitglied aufgenommen werden kann. Sollte ein WG-Mitglied dagegen sein, oder nicht befragt worden sein, kann der/die Bewerber*in nicht aufgenommen werden.\r\n\r\n- Es ist jedoch allen gegenüber unfair eine*n Bewerber*in abzulehnen, nur weil ein*e andere*r Bewerber*in bevorzugt wird. Stattdessen sollte die Bevorzugung offen zur Sprache gebracht werden, um den Entscheidungsprozess nicht unnötig zu verkomplizieren und zu verlängern."
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: a12dc1e6-17a4-460a-b413-94f2d6624c7b
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 975dbb45-f51c-426f-87b6-61196d786fd6
+  field_voting:
+    -
+      status: 1

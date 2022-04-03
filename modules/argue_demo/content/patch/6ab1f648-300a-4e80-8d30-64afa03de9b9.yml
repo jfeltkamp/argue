@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 6ab1f648-300a-4e80-8d30-64afa03de9b9
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+default:
+  created:
+    -
+      value: 1545055177
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  rvid:
+    -
+      value: 51
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Wording korrigiert'

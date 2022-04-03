@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: eb76d50b-3f78-467b-b723-2e94ef3a84e5
+  default_langcode: en
+  depends:
+    59e03fdb-df18-485b-ae7b-45b7e0a63681: node
+    a3ae5e2e-a6b8-4f75-97e8-c37dbc52e74b: patch
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 59e03fdb-df18-485b-ae7b-45b7e0a63681
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Zuständigkeit reicht nicht aus, es muss auch Sanktionen geben'
+  argument:
+    -
+      value: 'Eine bloße Zuordnung der Zuständigkeit reicht nicht aus. Es muss auch Sanktionen geben, wenn jemand seinen Dienst nicht erfüllt. In den letzten Wochen (Jan 2020) war die Küche im erbärmlichen Zustand, trotz mündlicher Zusage, dass sich einzelne Leute kümmern.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1579455394
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: a3ae5e2e-a6b8-4f75-97e8-c37dbc52e74b

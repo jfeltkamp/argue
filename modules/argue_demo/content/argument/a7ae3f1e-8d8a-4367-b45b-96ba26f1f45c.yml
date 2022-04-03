@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: a7ae3f1e-8d8a-4367-b45b-96ba26f1f45c
+  default_langcode: en
+  depends:
+    1297b296-e884-4d56-aed1-845a159a0929: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 1297b296-e884-4d56-aed1-845a159a0929
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Streit darf nicht unterdrückt werden'
+  argument:
+    -
+      value: 'Nicht jeder Streit kann beigelegt werden. Ein falscher Frieden kann auch zur Unterdrückung werden. Erst ein Streit bringt manche Ungerechtigkeit, die einzelne hinnehmen müssen, zur Erscheinung. '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627393722
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627393722
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

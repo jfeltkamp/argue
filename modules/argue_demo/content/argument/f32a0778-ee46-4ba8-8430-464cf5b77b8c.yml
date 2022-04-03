@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: f32a0778-ee46-4ba8-8430-464cf5b77b8c
+  default_langcode: en
+  depends:
+    3dc1658a-085a-41a2-9a3d-543ce56b6336: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 3dc1658a-085a-41a2-9a3d-543ce56b6336
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: Signal-Channel
+  argument:
+    -
+      value: 'Zur gegenseitigen Information und Abstimmung könnten wir auch zusätzlich den Signal-Channel einrichten. Das könnte die WG-Versammlung deutlich entlasten.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627461114
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 23
+      last_comment_timestamp: 1627461690
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 1

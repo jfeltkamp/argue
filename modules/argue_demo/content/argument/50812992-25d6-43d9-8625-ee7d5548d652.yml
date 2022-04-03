@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 50812992-25d6-43d9-8625-ee7d5548d652
+  default_langcode: en
+  depends:
+    7052f60f-9f4d-4dd9-93f3-9e7c5fc2b972: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 7052f60f-9f4d-4dd9-93f3-9e7c5fc2b972
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Rechtsverzicht als Teilnahmebedingung verhindern'
+  argument:
+    -
+      value: 'Die Regel verhindert, dass Bewohner*innen zum Verzicht auf ihre persönlichen Rechte verpflichtet werden können, z.B. als Bedingung dafür als Mitglied in der Wohngemeinschaft geduldet zu werden.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627119814
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627119814
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

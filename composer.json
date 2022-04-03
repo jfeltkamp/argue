@@ -1,6 +1,6 @@
 {
   "name": "jfeltkamp/argue",
-  "description": "Profile for a Drupal based Argue app installation.",
+  "description": "Argue distribution.",
   "type": "drupal-profile",
   "license": "GPL-2.0+",
   "authors": [
@@ -20,13 +20,12 @@
     }
   ],
   "require": {
-    "composer/installers": "^1.9",
-    "oomphinc/composer-installers-extender": "^2.0",
+    "php": "^7.3",
     "cweagans/composer-patches": "^1.7",
     "league/commonmark": "^0.11",
     "drupal/core-composer-scaffold": "^9.0",
 
-    "drupal/core": "^9.3",
+    "drupal/core": "^9.1",
     "drupal/address": "^1.9",
     "drupal/admin_toolbar": "^3.0",
     "drupal/antibot": "^1.4",
@@ -34,9 +33,9 @@
     "drupal/config_selector": "^2.0",
     "drupal/config_update": "^1.7",
     "drupal/console": "^1.9",
-    "drupal/default_content": "^1.0",
+    "drupal/default_content": "^2.0",
     "drupal/diff": "^1.0",
-    "drupal/draggable_dashboard": "^2.0",
+    "drupal/draggable_dashboard": "2.0.0-alpha3",
     "drupal/entity": "^1.0",
     "drupal/entity_form_mode": "^2.0",
     "drupal/entity_reference_revisions": "^1.8",
@@ -46,7 +45,7 @@
     "drupal/length_indicator": "^1.1",
     "drupal/pathauto": "^1.8",
     "drupal/r4032login": "^2.1",
-    "drupal/rate": "^1.0-alpha6",
+    "drupal/rate": "1.0.0-alpha6",
     "drupal/login_emailusername": "^1.2",
     "drupal/menu_link_attributes": "^1.1",
     "drupal/publishcontent": "^1.2",
@@ -55,6 +54,7 @@
     "drupal/tour_ui": "~1.0",
     "drupal/twig_tweak": "^2.9",
     "drupal/token": "^1.0",
+    "drupal/update_helper": "^2.0",
     "drupal/views_field_view": "^1.0@beta",
     "drupal/votingapi": "^3.0",
     "drupal/votingapi_widgets": "dev-1.x",
@@ -72,6 +72,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
+    "installer-name": "argue",
     "patches": {
       "drupal/rate": {
         "Display own voting and update D9 compatibility": "patches/drupal_rate_you_voted.patch"

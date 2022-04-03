@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 5ea10b61-8164-40be-9485-a5951a2802d5
+  bundle: rule
+  default_langcode: en
+  depends:
+    44339213-adde-4ab5-b785-1e5526da03c4: node
+    ad242f84-2a4c-432a-bf44-5de53008630d: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Die Höhe der Kaution'
+  created:
+    -
+      value: 1508504531
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/kaution/hohe-kaution
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Um dem Ausbleiben von laufenden Zahlungen vorzubeugen wird bei Mietbeginn eine Kaution festgelegt. Die Höhe der Kaution beträgt 2 volle Monatsmieten, inklusiv der regelmäßigen Nebenkosten, und muss zusammen mit der ersten Monatsmiete 14 Tage vor Mietbeginn an den Kassenwart entrichtet werden. Die Kaution wird nach Beendigung des Untermietverhältnisses und nach Ausgleich aller ungedeckten Kosten in voller Höhe an das ehemalige Wg-Mitglied zurückgezahlt.'
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 44339213-adde-4ab5-b785-1e5526da03c4
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: ad242f84-2a4c-432a-bf44-5de53008630d
+  field_voting:
+    -
+      status: 1

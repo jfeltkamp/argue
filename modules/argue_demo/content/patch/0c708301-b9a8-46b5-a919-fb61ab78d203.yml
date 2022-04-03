@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 0c708301-b9a8-46b5-a919-fb61ab78d203
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+default:
+  created:
+    -
+      value: 1577726775
+  status:
+    -
+      value: 3
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  rvid:
+    -
+      value: 53
+  uid:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+  message:
+    -
+      value: 'Dauerauftrag einrichten'

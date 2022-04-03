@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 687c6c9e-d6e2-4935-a951-7da047e9bc75
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: member.png
+  uri:
+    -
+      value: 'public://users/member.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 240146
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627463364

@@ -1,0 +1,49 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: f79d58b5-51f7-4f55-b168-d660bc7c3614
+  default_langcode: en
+  depends:
+    5ea10b61-8164-40be-9485-a5951a2802d5: node
+    e3865632-103f-44a1-a85a-ba15a48d83ce: patch
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 5ea10b61-8164-40be-9485-a5951a2802d5
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: '2 Volle Monatsmieten sind zu viel für einen Studenten.'
+  argument:
+    -
+      value: '2 Volle Monatsmieten sind zu viel für einen Studenten. Wenn er deswegen Schulden machen muss, ist nichts an Sicherheit für die WG gewonnen. Eine Monatsmiete muss reichen.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1577352204
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: e3865632-103f-44a1-a85a-ba15a48d83ce
+    -
+      target_id: 43
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1623582093
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

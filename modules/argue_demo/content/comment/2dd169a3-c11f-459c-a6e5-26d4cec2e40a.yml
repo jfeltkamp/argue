@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 2dd169a3-c11f-459c-a6e5-26d4cec2e40a
+  bundle: comment
+  default_langcode: en
+  depends:
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  subject:
+    -
+      value: 'Saecenas tempus, tellus eget…'
+  hostname:
+    -
+      value: 127.0.0.1
+  created:
+    -
+      value: 1545128577
+  thread:
+    -
+      value: 02/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Nach der hoffentlich nicht zu erhitzten Debatte am Dienstag denke ich auch, dass wir für die Miete klare Regeln besprechen sollten. Das Dach überm'' Kopf ist es wert.'
+      format: plain_text

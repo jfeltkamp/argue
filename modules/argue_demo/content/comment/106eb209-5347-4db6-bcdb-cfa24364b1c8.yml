@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 106eb209-5347-4db6-bcdb-cfa24364b1c8
+  bundle: comment
+  default_langcode: en
+  depends:
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  subject:
+    -
+      value: 'Saecenas tempus, tellus eget…'
+  hostname:
+    -
+      value: 127.0.0.1
+  created:
+    -
+      value: 1530091686
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: "Die Beschwerden des Vermieters würde ich jetzt nicht so hoch bewerten. Wenn es mal ein paar Tage dauert, bis alles da ist, ist doch alles gut, oder? \r\n"
+      format: plain_text

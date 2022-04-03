@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  bundle: problem
+  default_langcode: en
+  depends:
+    17f612c0-c03d-4350-91c5-0593d392f4f1: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Moved '
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Vermieter droht wg. verspätete Mietzahlung'
+  created:
+    -
+      value: 1622712375
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/mietzahlung/vermieter-droht-wg-verspatete-mietzahlung
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Die Mietzahlung an den Wohnungseigentümer muss bis spätestens zum fünften Werktag im Monat erfolgen. \r\nDer Vermieter hat sich schon zweimal wegen verspäteter Mietzahlung beschwert; jedesmal ca. eine Woche nach dem versäumten Zahlungstermin. Er hat bereits mit einer Abmahnung gedroht, wenn die WG die Zahlungstermine nicht einhält. Es braucht geeignete Regeln, die sicherstellen, dass die Miete pünktlich gezahlt wird."
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 6
+      last_comment_timestamp: 1627370922
+      last_comment_name: ''
+      last_comment_uid: 9
+      comment_count: 5
+  field_sector:
+    -
+      entity: 17f612c0-c03d-4350-91c5-0593d392f4f1

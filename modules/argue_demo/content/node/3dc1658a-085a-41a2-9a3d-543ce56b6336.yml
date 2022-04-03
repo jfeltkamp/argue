@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3dc1658a-085a-41a2-9a3d-543ce56b6336
+  bundle: rule
+  default_langcode: en
+  depends:
+    ed7c8489-b580-4c82-9bef-1460836967d2: node
+    055cc669-bcd8-41a7-a8b7-cb884a9a5deb: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Applied change request with id "51" of user "Joachim Feltkamp" with message "Precised rule".'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'WG-Versammlung '
+  created:
+    -
+      value: 1508871620
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/wg-watch-up/wg-versammlung
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Die WG-Versammlung findet 2 Mal monatlich am 1. und 3. Dienstag des Monats um 19:30 Uhr statt und sollte nicht länger als 90 Min dauern. \r\n\r\nDie WG-Versammlung enthält folgende Tagesordnungspunkte:\r\n - Kassenbericht und Klärung offener Punkte und Entlastung des Kassenwarts.\r\n - Zahlung des Haushaltsgeldes.\r\n - Festlegung von Küchen- und Einkaufsdienst \r\n - Sammeln und besprechen von verschiedenen Themen.\r\n - Abstimmungen zu einscheidender Themen.\r\n\r\nJeder WG-Bewohner bringt alle fälligen Zahlungsmittel und fehlende Belege mit.\r\n\r\n- Die Teilnahme an den WG-Versammlungen ist verpflichtend. \r\n- Das Fehlen bei der WG-Versammlung ist vorher anzukündigen.\r\n- Im Falle der Nicht-Teilnahme ... \r\n- ... sind fällige Zahlungen dem Kassenwart vorher zu übergeben.\r\n- ... die Stimmen für Abstimmungen können einem anderen WG-Mitglied mitgeteilt oder schriftlich übergeben werden.\r\n "
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: ed7c8489-b580-4c82-9bef-1460836967d2
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 055cc669-bcd8-41a7-a8b7-cb884a9a5deb
+  field_voting:
+    -
+      status: 1

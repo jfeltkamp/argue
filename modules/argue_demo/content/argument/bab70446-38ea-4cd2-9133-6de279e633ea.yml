@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: bab70446-38ea-4cd2-9133-6de279e633ea
+  default_langcode: en
+  depends:
+    de67573d-bdfe-4272-9d90-125881c16845: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: de67573d-bdfe-4272-9d90-125881c16845
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Zeitersparnis und Komfort'
+  argument:
+    -
+      value: 'Die gemeinsame Organisation wirkt sich sehr zeitsparend und komfortabel für die WG-Bewohner aus. Es sind immer Lebensmittel in ausreichenden Mengen vorhanden. '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627390140
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627390140
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 8e7d809c-d6b5-420b-a284-beb8ae92cc6c
+  bundle: rule
+  default_langcode: en
+  depends:
+    c1f11f48-dd9f-4bea-9e36-d33799ff1551: node
+    a0af3455-efaa-4df3-9450-8b8a06d81801: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Moved to finance'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Zahlung und Höhe des Haushaltsgeldes'
+  created:
+    -
+      value: 1508506323
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld/zahlung-und-hohe-des-haushaltsgeldes
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Für den gemeinsamen Einkauf von Lebens- und Haushaltsmitteln zahlt jedes WG-Mitglied monatlich 250,- EUR in die Haushaltskasse ein. \r\n\r\n- 25,- EUR des Geldes sind für die Rücklagen-Bildung bestimmt.\r\n\r\n- Der/die Kassenführer*in sammelt das Haushaltsgeld im der 1. WG-Versammlung des Monats ein, quittiert den Empfang und trägt es in das Kassenbuch ein.\r\n\r\n- Sollte ein WG-Mitglied versäumt haben, das Hauhaltsgeld rechtzeitig zu zahlen, kommt ihm in der folgenden Woche der Einkaufsdienst zu, mit der Auflage, den Einkauf aus eigener Tasche zu zahlen und spätestens mit der Abrechnung des Einkaufs auch das restliche Haushaltsgeld einzuzahlen."
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: c1f11f48-dd9f-4bea-9e36-d33799ff1551
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: a0af3455-efaa-4df3-9450-8b8a06d81801
+  field_voting:
+    -
+      status: 1

@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: dfa208e4-b45c-4599-b776-e1fe549967ce
+  default_langcode: en
+  depends:
+    e3bf3fd2-7053-4513-bc25-62c249a34390: node
+    3e698fd9-3d04-4c58-a52d-f2f2f0642667: patch
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: e3bf3fd2-7053-4513-bc25-62c249a34390
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Zahlungsunfähige Mieter gefährden die WG existentiell'
+  argument:
+    -
+      value: 'Die finanzielle Situation des WG-Anwärters muss hinterfragt werden, auch wenn dies indiskret ist. Mit einer Fehlentscheidung bei diesem Punkt ist eine existentielle Bedrohung der WG verbunden.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1579460520
+  revision_translation_affected:
+    -
+      value: true
+  field_change_requests:
+    -
+      entity: 3e698fd9-3d04-4c58-a52d-f2f2f0642667

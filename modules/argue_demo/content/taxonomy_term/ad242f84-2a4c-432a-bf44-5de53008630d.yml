@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: ad242f84-2a4c-432a-bf44-5de53008630d
+  bundle: sections
+  default_langcode: en
+  depends:
+    83422f2c-eda0-475f-a25c-ce7b7724305e: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Kaution
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 83422f2c-eda0-475f-a25c-ce7b7724305e
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/kaution
+      langcode: en
+      pathauto: 1

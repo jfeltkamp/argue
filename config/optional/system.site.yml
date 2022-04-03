@@ -1,10 +1,10 @@
-name: 'Argue test'
-mail: j.feltkamp@gmail.com
-slogan: 'Installation for development'
+name: 'Argue'
+mail: ''
+slogan: ''
 page:
   403: ''
   404: ''
-  front: /sections
+  front: /sections?node_type=rule
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

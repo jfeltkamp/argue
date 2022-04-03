@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a64a7fec-3330-49ce-b6d6-f79554bf4ab8
+  bundle: problem
+  default_langcode: en
+  depends:
+    383f380d-5368-49b2-a228-96511d82dd45: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: Orth.
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Ständig Party'
+  created:
+    -
+      value: 1627302320
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/partys/standig-party
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Ständig finden am Wochenende irgendwelche Partys oder Zusammenkünfte statt, und immer wieder ist danach die ganze Wohnung völlig verschmutzt, stinkt nach Bier und Rauch, überall steht Leergut herum und es dauert Tage, bis alles wieder hergerichtet ist. Das ist für manche WG-Mitglieder normal, für andere aber unerträglich. '
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627302647
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: 383f380d-5368-49b2-a228-96511d82dd45

@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a68b841e-1642-4f1d-8997-63d5afe84f3c
+  bundle: problem
+  default_langcode: en
+  depends:
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: 'Applied change request with id "48" of user "Joachim Feltkamp" with message "Gender".'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Verantwortungsbewusstsein junger Menschen'
+  created:
+    -
+      value: 1627050604
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/verantwortungsbewusstsein-junger-menschen
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "Eine WG ist oft der einzige sichere Rückzugsort, das Zuhause, seiner Bewohner*innen. Das ist ein hohes Gut. Jedes WG-Mitglied trägt die Verantwortung, diesen sicheren Raum für sich und gleichermaßen für alle anderen zu schützen. \r\nDie WG ist als Wohnmodell vor allem für junge Menschen (Schüler*innen, Auszubildende und Studierende) attraktiv, insofern als diese oft nur über geringe Mittel verfügen und aktiv den Kontakt zu Gleichgesinnten suchen. Aufgrund des jugendlichen Alters hat diese Gruppe eher selten Erfahrungen mit dieser Art von gegenseitiger Verantwortung gemacht. Bezogen auf das Verantwortungsbewusstsein drohen gravierende Konflikte in der Wohngemeinschaft. "
+      format: plain_text
+      summary: ''
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627052878
+      last_comment_name: ''
+      last_comment_uid: 0
+      comment_count: 0
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b

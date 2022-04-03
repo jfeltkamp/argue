@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: b4cad5b5-40f8-480f-bcab-f511059fbe29
+  default_langcode: en
+  depends:
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Der Hauptmieter muss geschützt werden'
+  argument:
+    -
+      value: 'Der Hauptmieter der WG-Wohnung führt die gesamte Miete an jedem 5. des Monats ab. Versäumnisse bei der Mietzahlung anderer WG-Bewohner führen zur Belastung seines privaten Kontos durch unfreiwillige Darlehen. Davor muss der Hauptmieter geschützt werden.  '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1508697887
+  revision_translation_affected:
+    -
+      value: true

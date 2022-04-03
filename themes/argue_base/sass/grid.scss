@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Import breakpoint
 @import "breakpoint-sass/stylesheets/breakpoint";
 @import "var";
@@ -16,7 +18,7 @@ $colWidth: 16.66666%;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
-  margin: $gutter/-2;
+  margin: math.div($gutter, -2);
 
   // Small
   &-sm-1,
@@ -38,7 +40,7 @@ $colWidth: 16.66666%;
   &-lg-5,
   &-lg-6 {
     box-sizing: border-box;
-    margin: $gutter/2;
+    margin: math.div($gutter, 2);
     overflow: hidden;
     flex: 1 1 calc(100% - #{$gutter});
   }

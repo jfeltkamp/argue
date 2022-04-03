@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 778f06ab-391a-4c53-b07c-30181f49d99a
+  bundle: rule
+  default_langcode: en
+  depends:
+    99eac7b6-4df0-41bf-a19c-799bfb0f46e1: node
+    08d35d09-3338-464b-9467-8c577eb4ac6c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: Sanktionen
+  created:
+    -
+      value: 1509796384
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/sanktionen/sanktionen
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Das Ziel jeder Sanktion ist, die Ordnung wieder herzustellen und deren Einhaltung anzumahnen. Negative Sanktionen sind nur insofern statthaft, als sie nicht als strafende Nötigung oder Demütigung empfunden werden. \r\n\r\n- Man kann davon ausgehen, dass eine Vernachlässigung von Pflichten zulasten der Gemeinschaft geht. Dann muss die Sanktion als praktische Regeln verstehbar sein, einen persönlich verursachten Schaden auszugleichen, um diesen so von der Gemeinschaft fernzuhalten.\r\nDeswegen ist als Sanktion nur eine zusätzliche, die Gemeinschaft entlastende Aufgabe zulässig, die ohnehin für jedes WG-Mitglied in regelmäßigen Abständen anfällt, und somit auch nicht als Strafe empfunden werden sollte.\r\n"
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 99eac7b6-4df0-41bf-a19c-799bfb0f46e1
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 08d35d09-3338-464b-9467-8c577eb4ac6c
+  field_voting:
+    -
+      status: 1

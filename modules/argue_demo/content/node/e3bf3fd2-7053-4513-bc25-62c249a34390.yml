@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e3bf3fd2-7053-4513-bc25-62c249a34390
+  bundle: rule
+  default_langcode: en
+  depends:
+    52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5: node
+    2a334cdf-3db7-4edc-9975-b3e8a08bcfd5: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: pr
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Liquidität WG-Bewerber*in'
+  created:
+    -
+      value: 1508502685
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner/voraussetzungen/liquiditat-wg-bewerberin
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Der WG-Bewerber muss die Kaution und die laufende Miete zahlen können. In der Regel soll dieses z.B. durch Kontoauszüge oder Garantien Dritter nachgewiesen werden, eine einfache Mehrheit der WG-Bewohner kann jedoch entscheiden, ob der WG-Anwärter von diesem Nachweis entlastet wird.'
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: 52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 2a334cdf-3db7-4edc-9975-b3e8a08bcfd5
+  field_voting:
+    -
+      status: 1

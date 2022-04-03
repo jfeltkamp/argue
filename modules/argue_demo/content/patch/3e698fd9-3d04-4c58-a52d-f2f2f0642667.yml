@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: patch
+  uuid: 3e698fd9-3d04-4c58-a52d-f2f2f0642667
+  depends:
+    e3bf3fd2-7053-4513-bc25-62c249a34390: node
+default:
+  created:
+    -
+      value: 1579460655
+  status:
+    -
+      value: 1
+  rtype:
+    -
+      value: node
+  rbundle:
+    -
+      value: rule
+  rid:
+    -
+      entity: e3bf3fd2-7053-4513-bc25-62c249a34390
+  rvid:
+    -
+      value: 61
+  uid:
+    -
+      target_id: 1
+  message:
+    -
+      value: 'Nach monatlichen Einkünften frage.'

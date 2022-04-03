@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 7052f60f-9f4d-4dd9-93f3-9e7c5fc2b972
+  bundle: rule
+  default_langcode: en
+  depends:
+    f80f4d33-d2d8-4c98-b63e-21ce4a03f264: node
+    ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: ratified
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Persönlichkeitsrechte schützen'
+  created:
+    -
+      value: 1627117647
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/ziele-wg-ordnung/personlichkeitsrechte-schutzen
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'Die persönlichen Rechte der Bewohner*innen, wie auch aller Personen, die mit der Wohngemeinschaft in Kontakt treten, stehen an oberster Stelle. Die WG-Ordnung dient dazu, die Rechte der Persönlichkeit hervorzuheben und zu schützen, und sie darf nicht in diese eingreifen. Die Rechte und Freiheiten der Person werden nur dadurch eingeschränkt, wenn sie die Rechte und Freiheiten anderer berühren. '
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: f80f4d33-d2d8-4c98-b63e-21ce4a03f264
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: ff6a96da-c9d0-4053-ae3c-8f3a75e51e9b
+  field_voting:
+    -
+      status: 1

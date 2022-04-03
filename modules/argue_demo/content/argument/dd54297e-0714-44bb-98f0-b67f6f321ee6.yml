@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: dd54297e-0714-44bb-98f0-b67f6f321ee6
+  default_langcode: en
+  depends:
+    1297b296-e884-4d56-aed1-845a159a0929: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 1297b296-e884-4d56-aed1-845a159a0929
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Streit zu vermeiden ist eine Regel aller Regeln'
+  argument:
+    -
+      value: 'Streit ist eine der wichtigsten existentiellen Bedrohungen von Wohngemeinschaften. Deswegen ist es grundlegend, diese Regel allen anderen Regeln voranzustellen, weil sie alle letztlich dazu dienen, Streit zu vermeiden.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627050377
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627050377
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

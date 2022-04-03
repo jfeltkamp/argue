@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 383f380d-5368-49b2-a228-96511d82dd45
+  bundle: sections
+  default_langcode: en
+  depends:
+    b0e49b5f-43a9-4414-bd30-37cf4f84b136: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Partys
+  weight:
+    -
+      value: 4
+  parent:
+    -
+      entity: b0e49b5f-43a9-4414-bd30-37cf4f84b136
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/zusammenleben/partys
+      langcode: en
+      pathauto: 1

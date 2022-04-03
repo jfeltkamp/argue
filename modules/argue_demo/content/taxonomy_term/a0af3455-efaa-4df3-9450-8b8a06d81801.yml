@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: a0af3455-efaa-4df3-9450-8b8a06d81801
+  bundle: sections
+  default_langcode: en
+  depends:
+    83422f2c-eda0-475f-a25c-ce7b7724305e: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Haushaltsgeld
+  weight:
+    -
+      value: 2
+  parent:
+    -
+      entity: 83422f2c-eda0-475f-a25c-ce7b7724305e
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/haushaltsgeld
+      langcode: en
+      pathauto: 1

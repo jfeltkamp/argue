@@ -1,0 +1,80 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: b23fa08e-2103-47f7-a8b3-51ffca1936b2
+  default_langcode: en
+  depends:
+    003725ea-4207-4046-b3cf-44319a5f5fa3: user
+    a8c01908-91d8-4cd8-a256-de4aa48c4a1a: user
+    b962fd03-61c3-4e49-afdb-7c843b80aadd: user
+    38a790b1-2722-4291-8c7a-b9a24172b4ea: file
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Benjo Beginner'
+  pass:
+    -
+      value: $S$Eh1dnSxVe2jIIrbRw.Zo.XhyXwd8dn2gf0.1ezRrICHlBcxbTEq4
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: benjo@argue-demo.org
+  timezone:
+    -
+      value: Europe/Berlin
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1509288735
+  access:
+    -
+      value: 1624558990
+  login:
+    -
+      value: 1624558556
+  roles:
+    -
+      target_id: beginner
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: ''
+      country_code: DE
+      administrative_area: ''
+      locality: ' Kassel'
+      dependent_locality: ''
+      postal_code: '12345'
+      sorting_code: ''
+      address_line1: 'Sigmund-Freud-Str. 16'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_connected_users:
+    -
+      entity: 003725ea-4207-4046-b3cf-44319a5f5fa3
+    -
+      entity: a8c01908-91d8-4cd8-a256-de4aa48c4a1a
+    -
+      entity: b962fd03-61c3-4e49-afdb-7c843b80aadd
+  field_professions:
+    -
+      value: 'Student Philosophie'
+  field_user_image:
+    -
+      entity: 38a790b1-2722-4291-8c7a-b9a24172b4ea
+      alt: ''
+      title: ''
+      width: 495
+      height: 498

@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 0b4bc6f7-74cd-4a9f-8e6a-60389a094a10
+  default_langcode: en
+  depends:
+    41acde70-710c-4a29-88aa-eacaf4eeabf6: node
+default:
+  revision_user:
+    -
+      target_id: 1
+  user_id:
+    -
+      target_id: 1
+  reference_id:
+    -
+      entity: 41acde70-710c-4a29-88aa-eacaf4eeabf6
+  type:
+    -
+      value: 1
+  name:
+    -
+      value: 'Jedes Tun hat Einfluss auf das Leben der anderen ...'
+  argument:
+    -
+      value: 'In einer WG hat nahezu jedes Tun Einfluss auf das Leben der anderen - und ist deshalb an deren Akzeptanz geknüpft. Respekt, Rücksichtnahme und Verantwortung machen das Leben in der Gemeinschaft erst erträglich und vielleicht sogar angenehm. '
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1627054991
+  revision_translation_affected:
+    -
+      value: true
+  field_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1627054991
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0

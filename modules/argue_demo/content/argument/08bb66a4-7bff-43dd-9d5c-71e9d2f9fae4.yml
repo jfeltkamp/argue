@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: argument
+  uuid: 08bb66a4-7bff-43dd-9d5c-71e9d2f9fae4
+  default_langcode: en
+  depends:
+    a69010e9-e50a-4f79-87eb-482791e447fb: user
+    1a3ada4b-db2d-4f70-9206-7c2af3c2afa8: node
+default:
+  revision_user:
+    -
+      entity: a69010e9-e50a-4f79-87eb-482791e447fb
+  user_id:
+    -
+      entity: a69010e9-e50a-4f79-87eb-482791e447fb
+  reference_id:
+    -
+      entity: 1a3ada4b-db2d-4f70-9206-7c2af3c2afa8
+  type:
+    -
+      value: 2
+  name:
+    -
+      value: 'Abwesenheit verlangt Vollmacht für 1 Bewohner. Mehrheitswahl ist unzutreffend.'
+  argument:
+    -
+      value: 'Wer abwesend ist, muss eine Stimmvollmacht für 1 Bewohner ausstellen. Es ist nicht möglich, sein Votum an eine Mehrheit abzutreten. Grund: Es wurde bereits festgelegt, dass es sich nicht um eine Mehrheitswahl handelt, sondern um eine einstimmige Wahl – es müssen alle Bewohner mit dem Anwärter einverstanden sein. Außerdem könnte die Wahl unentschieden ausgehen, und dann könnte auch das Votum des Abwesenden nicht zugeordnet werden.'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1580288996
+  revision_translation_affected:
+    -
+      value: true

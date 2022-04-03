@@ -1,0 +1,62 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+  bundle: rule
+  default_langcode: en
+  depends:
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+    52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5: node
+    17f612c0-c03d-4350-91c5-0593d392f4f1: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  revision_log:
+    -
+      value: pr
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Absicherung Mietzahlung'
+  created:
+    -
+      value: 1508505863
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/mietzahlung/absicherung-mietzahlung
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "- Die Untermiete eines jeden WG-Mitglieds muss zum 1. Tag des Monats an den Hauptmieter überwiesen werden.\r\n\r\n- Von jedem WG-Mitglied wird eine konstante Mietsicherheit eingefordert, die an den Hauptmieter gezahlt wird und die letzterer nach Beendigung der WG-Mitgliedschaft an das (ehem.) WG-Mitglied zurückzahlt.\r\n\r\n- Der Hauptmieter zahlt die Mietsicherheiten der WG-Mitglieder auf ein Sparkonto ein, das nur für diesen Zweck bestimmt ist. Alle WG-Mitglieder haben das Recht, dieses Sparkonto einzusehen.\r\n\r\n- Von jedem WG-Mitglied wird erwartet, dass es bei seiner Bank einen Dauerauftrag für die volle Miete einrichtet und sorgfältig die Zahlungsausgänge kontrolliert. \r\n\r\n- Probleme bei der Zahlung der Untermiete müssen dem Hauptmieter so frühzeitig wie möglich angezeigt werden, um entsprechende Absprachen zu treffen.\r\n\r\n- Ein Zahlungsrückstand einer vollen Untermiete für über einen Kalendermonat ist ein Kündigungsgrund der WG-Mitgliedschaft."
+      format: plain_text
+      summary: ''
+  field_causal_problems:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+    -
+      entity: 52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5
+  field_ratified:
+    -
+      value: true
+  field_sector:
+    -
+      entity: 17f612c0-c03d-4350-91c5-0593d392f4f1
+  field_voting:
+    -
+      status: 1

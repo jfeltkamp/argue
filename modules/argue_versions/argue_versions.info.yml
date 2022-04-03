@@ -5,6 +5,6 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 package: 'Argue'
 dependencies:
-  - argue_proscons
-  - argue_structure
-  - entity_reference_revisions
+  - argue:argue_proscons
+  - argue:argue_structure
+  - entity_reference_revisions:entity_reference_revisions

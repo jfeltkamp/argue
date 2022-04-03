@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 67c2c56c-7462-4e9d-bb15-3c35c8dbdc08
+  bundle: sections
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Aufnahme neuer Mitbewohner'
+  weight:
+    -
+      value: 12
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/aufnahme-neuer-mitbewohner
+      langcode: en
+      pathauto: 1

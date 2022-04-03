@@ -1,0 +1,208 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: aae7a146-0093-4c1c-bf09-48bfa8163e32
+  bundle: version
+  default_langcode: en
+  depends:
+    f32a0778-ee46-4ba8-8430-464cf5b77b8c: argument
+    a7ae3f1e-8d8a-4367-b45b-96ba26f1f45c: argument
+    e9772c6d-cd89-4001-a712-8740df8194b6: argument
+    ab01e761-fadd-4846-b13c-83f1e44c9270: argument
+    eb76d50b-3f78-467b-b723-2e94ef3a84e5: argument
+    6265d829-1575-47a1-a0d3-528440f353fd: argument
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+    36569f24-3387-48fb-ad7c-0c21513e4cb4: node
+    52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5: node
+    9fe6fa77-6f5a-487a-b959-d9d746bfa64b: node
+    3dc1658a-085a-41a2-9a3d-543ce56b6336: node
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Freiwillige Selbstverpflichtung'
+  created:
+    -
+      value: 1623136741
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /version/2
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: 'lsdkfhlkshdfkksjdhfk kshdfkjhskdfhksjhdfk jh kjshdkf kjhsdkfjhkjhsdkfh k'
+      format: plain_text
+      summary: ''
+  field_arguments:
+    -
+      entity: f32a0778-ee46-4ba8-8430-464cf5b77b8c
+    -
+      entity: a7ae3f1e-8d8a-4367-b45b-96ba26f1f45c
+    -
+      target_id: 3
+      target_revision_id: 5
+    -
+      target_id: 4
+      target_revision_id: 6
+    -
+      entity: e9772c6d-cd89-4001-a712-8740df8194b6
+    -
+      target_id: 6
+      target_revision_id: 109
+    -
+      target_id: 7
+      target_revision_id: 54
+    -
+      entity: ab01e761-fadd-4846-b13c-83f1e44c9270
+    -
+      entity: eb76d50b-3f78-467b-b723-2e94ef3a84e5
+    -
+      target_id: 10
+      target_revision_id: 15
+    -
+      target_id: 11
+      target_revision_id: 80
+    -
+      entity: 6265d829-1575-47a1-a0d3-528440f353fd
+    -
+      target_id: 14
+      target_revision_id: 27
+    -
+      target_id: 15
+      target_revision_id: 31
+    -
+      target_id: 16
+      target_revision_id: 108
+    -
+      target_id: 17
+      target_revision_id: 67
+    -
+      target_id: 18
+      target_revision_id: 59
+    -
+      target_id: 19
+      target_revision_id: 66
+    -
+      target_id: 20
+      target_revision_id: 69
+    -
+      target_id: 21
+      target_revision_id: 70
+  field_description:
+    -
+      value: 'Zur Selbst-Organisation der Bewohner der Wohngemeinschaft Sigmund-Freud-Str. 16, Kassel.'
+  field_problems:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+    -
+      entity: 36569f24-3387-48fb-ad7c-0c21513e4cb4
+    -
+      entity: 52f43daa-dcbe-41d2-9e3e-d31f5f0a48a5
+    -
+      target_id: 21
+      target_revision_id: 70
+  field_rules:
+    -
+      entity: 9fe6fa77-6f5a-487a-b959-d9d746bfa64b
+    -
+      entity: 3dc1658a-085a-41a2-9a3d-543ce56b6336
+  field_sections:
+    -
+      name: 'Aufnahme neuer Mitbewohner'
+      term_id: 3
+      term_parent_id: 0
+      description: ''
+    -
+      name: Voraussetzungen
+      term_id: 6
+      term_parent_id: 3
+      description: ''
+    -
+      name: Aufnahmeverfahren
+      term_id: 5
+      term_parent_id: 3
+      description: ''
+    -
+      name: Vertrag
+      term_id: 4
+      term_parent_id: 3
+      description: ''
+    -
+      name: Finanzen
+      term_id: 2
+      term_parent_id: 0
+      description: ''
+    -
+      name: Kaution
+      term_id: 11
+      term_parent_id: 2
+      description: ''
+    -
+      name: Mietzahlung
+      term_id: 12
+      term_parent_id: 2
+      description: ''
+    -
+      name: Haushaltsgeld
+      term_id: 13
+      term_parent_id: 2
+      description: ''
+    -
+      name: Zusammenleben
+      term_id: 1
+      term_parent_id: 0
+      description: ''
+    -
+      name: WG-Watch-Up
+      term_id: 14
+      term_parent_id: 1
+      description: ''
+    -
+      name: Einkauf
+      term_id: 7
+      term_parent_id: 1
+      description: ''
+    -
+      name: Nachtruhe
+      term_id: 10
+      term_parent_id: 1
+      description: ''
+    -
+      name: Reinigung
+      term_id: 8
+      term_parent_id: 1
+      description: ''
+    -
+      name: Partys
+      term_id: 9
+      term_parent_id: 1
+      description: ''
+    -
+      name: Sanktionen
+      term_id: 15
+      term_parent_id: 1
+      description: ''
+  field_valid_date:
+    -
+      value: '2021-06-15'
+  field_version_number:
+    -
+      value: 2

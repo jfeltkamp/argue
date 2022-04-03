@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 17f612c0-c03d-4350-91c5-0593d392f4f1
+  bundle: sections
+  default_langcode: en
+  depends:
+    83422f2c-eda0-475f-a25c-ce7b7724305e: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Mietzahlung
+  weight:
+    -
+      value: 1
+  parent:
+    -
+      entity: 83422f2c-eda0-475f-a25c-ce7b7724305e
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /sections/finanzen/mietzahlung
+      langcode: en
+      pathauto: 1

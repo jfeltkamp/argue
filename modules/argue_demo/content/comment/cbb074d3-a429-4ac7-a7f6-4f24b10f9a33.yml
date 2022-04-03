@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: cbb074d3-a429-4ac7-a7f6-4f24b10f9a33
+  bundle: comment
+  default_langcode: en
+  depends:
+    b23fa08e-2103-47f7-a8b3-51ffca1936b2: user
+    106eb209-5347-4db6-bcdb-cfa24364b1c8: comment
+    fd4d2a6b-bd3c-473c-ab91-cb752d2ba155: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: b23fa08e-2103-47f7-a8b3-51ffca1936b2
+  pid:
+    -
+      entity: 106eb209-5347-4db6-bcdb-cfa24364b1c8
+  entity_id:
+    -
+      entity: fd4d2a6b-bd3c-473c-ab91-cb752d2ba155
+  subject:
+    -
+      value: 'Etiam sit amet orci eget…'
+  hostname:
+    -
+      value: 127.0.0.1
+  created:
+    -
+      value: 1530091825
+  thread:
+    -
+      value: 01.00/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: field_comments
+  comment_body:
+    -
+      value: 'Da bin ich anderer Meinung. Wir haben einen Vertrag und müssen und an alle Regeln halten. Das ist sein Recht. Er hat auch laufende Kosten und Zahlungstermine. Den Nerv mit dem Vermieter können wir uns und ihm echt sparen, damit wir unsere Ruhe haben. Am besten zahlen wir pünktlich und machen uns damit unsichtbar, dass er uns möglichst vergisst.'
+      format: plain_text

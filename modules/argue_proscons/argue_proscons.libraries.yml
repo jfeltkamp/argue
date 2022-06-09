@@ -3,7 +3,6 @@ argue-proscons.list:
   css:
     theme:
       css/argue-proscons.css: {}
-      css/rate-widget-number-up-down.css: {}
 
 argue-proscons.teaser:
   version: VERSION

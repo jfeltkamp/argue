@@ -1,0 +1,13 @@
+
+:root {
+  --vjsr-modal-color: #232323;
+  --vjsr-own-vote-bg-color: var(--argue-chip-hover-bg-color, #{$argue-chip-hover-bg-color});
+  --vjsr-stats-bar-height: .875rem;
+}
+
+table.vjsr--stats-table {
+  th, td {
+    height: auto;
+    padding: .25rem .5rem;
+  }
+}

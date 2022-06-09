@@ -42,7 +42,7 @@ gulp.task('sass', function ()
 gulp.task('watch', function ()
 {
   browserSync.init({
-    proxy: 'argue-test-inst.de.ddev.site'
+    proxy: 'demo.arguepro.de.ddev.site'
   });
 
   gulp.watch('./sass/**/*', gulp.series('sass'));

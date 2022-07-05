@@ -22,13 +22,15 @@
   }
 }
 
-.comment {
+article.comment {
   margin: .5rem -.5rem;
   padding: .5rem;
   display: flex;
   flex-direction: row;
   border-radius: 2px;
+}
 
+.comment {
   &__icon {
     flex: 0 0 40px;
     width: 40px;

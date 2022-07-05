@@ -21,9 +21,12 @@ class AddSectionLocalAction extends LocalActionDefault {
       return [
         'query' => [
           'sector' => $term->id(),
-        ]
+        ],
       ];
-    } else return [];
+    }
+    else {
+      return [];
+    }
   }
 
 }

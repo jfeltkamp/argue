@@ -93,6 +93,12 @@ class ArgumentSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('argue_proscons.argue_proscons_node_types'),
       '#options' => $node_types,
     ];
+
+    $form['revisions_default'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Revisions enabled by default'),
+      '#default_value' => $config->get('argue_proscons.revisions_default'),
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -113,6 +119,7 @@ class ArgumentSettingsForm extends ConfigFormBase {
       ->set('argue_proscons.max_argument_name_length', $form_state->getValue('max_argument_name_length'))
       ->set('argue_proscons.max_argument_text_length', $form_state->getValue('max_argument_text_length'))
       ->set('argue_proscons.argue_proscons_node_types', $form_state->getValue('argue_proscons_node_types'))
+      ->set('argue_proscons.revisions_default', $form_state->getValue('revisions_default'))
       ->save();
     Cache::invalidateTags(['argument_list', 'argue_block']);
   }

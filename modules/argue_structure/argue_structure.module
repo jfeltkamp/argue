@@ -183,9 +183,11 @@ function argue_structure_form_node_form_alter(&$form, FormStateInterface $form_s
     /* Set causal problem from get param, if param set. See link set in
        argue_structure_node_links_alter(). */
     $causal_problem = $request->get('causal_problem');
-    if($causal_problem && empty($form["field_causal_problems"]["widget"][0]["target_id"]["#default_value"])) {
-      $causal_problem = \Drupal\node\Entity\Node::load($causal_problem);
-      $form["field_causal_problems"]["widget"][0]["target_id"]["#default_value"] = $causal_problem;
+    if($causal_problem && empty($form["field_causal_problems"]["widget"]["#default_value"])) {
+      $form["field_causal_problems"]["widget"]["#default_value"] = [$causal_problem];
+      // #default_value not excepted. Strange site effect has gone after on-time included following line.
+      // https://drupal.stackexchange.com/questions/257732/default-value-not-working-in-select-field
+      // $form["field_causal_problems"]["widget"]["#autocomplete"] = false;
     }
 
     // Remove field_ratified if user has no permission.

@@ -86,7 +86,7 @@
         <h3 class="arg-typo--overline">{{ label }}</h3>
     </header>
     <div{{ content_attributes.addClass('node__sub_content') }}>
-        {{ content|without('argue_meta') }}
+        {{ content|without('vote_vote_field', 'argue_meta') }}
     </div>
     <footer><a href="{{ url }}" class="button button--extrasmall">{{ 'See details and comments'|t }}</a></footer>
 </article>

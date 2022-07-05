@@ -21,6 +21,9 @@ view published argument entities:
 view unpublished argument entities:
   title: 'View unpublished Argument entities'
 
+allow to omit creation of new argument revisions:
+  title: 'Omit creation of new argument revisions'
+
 view all argument revisions:
   title: 'View all Argument revisions'
 

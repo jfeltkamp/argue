@@ -4,10 +4,7 @@ namespace Drupal\argue_proscons\Form;
 
 use Drupal\argue_proscons\Events\ArgueEvent;
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Field\EntityReferenceFieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\node\NodeInterface;
 
 /**
  * Form controller for Argument edit forms.
@@ -22,7 +19,7 @@ class ArgumentForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $entity = $this->entity;
 
-    /* @var $reference NodeInterface */
+    /** @var \Drupal\node\NodeInterface $reference */
     $reference = $entity->getFields()['reference_id']->entity;
 
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder($reference->getEntityTypeId());
@@ -36,18 +33,16 @@ class ArgumentForm extends ContentEntityForm {
       'reference' => $reference_view,
       'title' => [
         '#markup' => '<h1>' . $title->render() . '</h1>',
-        '#weight' => -45
-      ]
+        '#weight' => -45,
+      ],
     ];
 
-
-
-    /* @var $entity \Drupal\argue_proscons\Entity\Argument */
+    /** @var \Drupal\argue_proscons\Entity\Argument $entity */
     $form += parent::buildForm($form, $form_state);
 
     if (!$this->entity->isNew()) {
 
-      // Output type as text because it is not allowed to change it after it is set once and voting has begun.
+      // Output PRO/CON type as text. Not allowed to change if voting has begun.
       if (ArgueEvent::hasEvaluationBegun($entity->id())) {
         // Unset form element and replace by rendered field value.
         $type = $entity->get('type')->getString();
@@ -56,12 +51,21 @@ class ArgumentForm extends ContentEntityForm {
           ArgueEvent::ARGUE_CON => $this->t('counters'),
         ];
         $form['type'] = [
-          '#markup' => new TranslatableMarkup('<h2>Argument %procon the preceding entity.</h2>', [
-              '%procon' => $titles[$type],
-            ]),
+          '#markup' => $this->t('<h2>Argument %procon the preceding entity.</h2>', [
+            '%procon' => $titles[$type],
+          ]),
           '#weight' => $form['type']['#weight'],
         ];
 
+      }
+
+      // Default settings for revision.
+      $revisions_default = \Drupal::config('argue_proscons.settings')
+        ->get('argue_proscons.revisions_default');
+      $allow_omit = \Drupal::currentUser()->hasPermission('allow to omit creation of new argument revisions');
+      $form["revision"]["#default_value"] = $revisions_default;
+      if ($revisions_default && !$allow_omit) {
+        $form["revision"]["#disabled"] = TRUE;
       }
     }
 
@@ -91,18 +95,18 @@ class ArgumentForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-         \Drupal::messenger()->addMessage($this->t('Created the %label Argument.', [
+        \Drupal::messenger()->addMessage($this->t('Created the %label Argument.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-         \Drupal::messenger()->addMessage($this->t('Saved the %label Argument.', [
+        \Drupal::messenger()->addMessage($this->t('Saved the %label Argument.', [
           '%label' => $entity->label(),
         ]));
     }
 
-    /* @var $reference NodeInterface */
+    /** @var \Drupal\node\NodeInterface $reference */
     $reference = $entity->getFields()['reference_id']->entity;
     $options = ($entity->id())
       ? ['fragment' => 'argument_' . $entity->id()] : [];
@@ -147,7 +151,6 @@ class ArgumentForm extends ContentEntityForm {
     return TRUE;
   }
 
-
   /**
    * {@inheritdoc}
    *
@@ -160,4 +163,5 @@ class ArgumentForm extends ContentEntityForm {
       $form['revision_log_message']['#group'] = 'revision_information';
     }
   }
+
 }

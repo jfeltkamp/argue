@@ -104,7 +104,7 @@
     </header>
 
     <div{{ content_attributes.addClass('card__content-item') }}>
-      {{ content|without('rate_vote_widget', 'links', 'argue_meta') }}
+      {{ content|without('vote_vote_field', 'links', 'argue_meta') }}
     </div>
 
     <div class="card-footer">
@@ -112,7 +112,9 @@
         {{ content.argue_meta }} {{ content.links }}
       </div>
       <div class="card-footer__action-icons">
-        {{ content.rate_vote_widget }}
+        {% if content.vote_vote_field %}
+          {{- content.vote_vote_field -}}
+        {% endif %}
       </div>
     </div>
   </div>

@@ -164,6 +164,13 @@ class ArgumentListService {
         'url' => $entity->toUrl('edit-form'),
       ];
     }
+    if ($entity->access('view') && $entity->hasLinkTemplate('version-history')) {
+      $operations['revision'] = [
+        'title' => $this->t('Revisions'),
+        'weight' => 50,
+        'url' => $entity->toUrl('version-history'),
+      ];
+    }
     if ($entity->access('delete') && $entity->hasLinkTemplate('delete-form')) {
       $operations['delete'] = [
         'title' => $this->t('Delete'),

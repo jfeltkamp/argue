@@ -26,9 +26,15 @@ class ArgumentForm extends ContentEntityForm {
     $reference_view = $view_builder->view($reference, 'teaser');
     $reference_view['#weight'] = -50;
 
+    $type = $entity->get('type')->getString();
+    $typeStr = [
+      ArgueEvent::ARGUE_PRO => $this->t('Pro'),
+      ArgueEvent::ARGUE_CON => $this->t('Contra'),
+    ];
+
     $title = ($this->entity->isNew())
       ? $this->t('Create a new Argument')
-      : $this->t('Edit your Argument');
+      : $this->t('Edit %type-Argument', ['%type' => $typeStr[$type]]);
     $form = [
       'reference' => $reference_view,
       'title' => [
@@ -45,7 +51,6 @@ class ArgumentForm extends ContentEntityForm {
       // Output PRO/CON type as text. Not allowed to change if voting has begun.
       if (ArgueEvent::hasEvaluationBegun($entity->id())) {
         // Unset form element and replace by rendered field value.
-        $type = $entity->get('type')->getString();
         $titles = [
           ArgueEvent::ARGUE_PRO => $this->t('confirms'),
           ArgueEvent::ARGUE_CON => $this->t('counters'),
@@ -56,7 +61,6 @@ class ArgumentForm extends ContentEntityForm {
           ]),
           '#weight' => $form['type']['#weight'],
         ];
-
       }
 
       // Default settings for revision.

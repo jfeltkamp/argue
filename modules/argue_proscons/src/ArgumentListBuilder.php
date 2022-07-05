@@ -13,6 +13,35 @@ use Drupal\Core\Link;
  */
 class ArgumentListBuilder extends EntityListBuilder {
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function getDefaultOperations(EntityInterface $entity) {
+    $operations = [];
+    if ($entity->access('update') && $entity->hasLinkTemplate('edit-form')) {
+      $operations['edit'] = [
+        'title' => $this->t('Edit'),
+        'weight' => 10,
+        'url' => $this->ensureDestination($entity->toUrl('edit-form')),
+      ];
+    }
+    if ($entity->access('view') && $entity->hasLinkTemplate('version-history')) {
+      $operations['revision'] = [
+        'title' => $this->t('Revisions'),
+        'weight' => 50,
+        'url' => $entity->toUrl('version-history'),
+      ];
+    }
+    if ($entity->access('delete') && $entity->hasLinkTemplate('delete-form')) {
+      $operations['delete'] = [
+        'title' => $this->t('Delete'),
+        'weight' => 100,
+        'url' => $this->ensureDestination($entity->toUrl('delete-form')),
+      ];
+    }
+
+    return $operations;
+  }
 
   /**
    * {@inheritdoc}

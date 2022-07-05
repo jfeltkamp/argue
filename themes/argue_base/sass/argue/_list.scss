@@ -33,6 +33,13 @@
 
   &--items {
     padding: 6px 0;
+
+    span.empty {
+      display: block;
+      text-align: center;
+      font-size: .85em;
+      padding: .5rem 1.5rem;
+    }
   }
 
   &.card__content-item {

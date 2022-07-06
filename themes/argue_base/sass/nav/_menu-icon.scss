@@ -30,3 +30,13 @@
   border-right: 0;
   background-color: var(--argue-toolbar-item-bg-color, #FFF);
 }
+
+.toolbar-tray-horizontal ul li.menu-item--expanded {
+  &.hover-intent ul {
+    box-shadow: 0 2px 4px -1px #0003,0 4px 5px #00000024,0 1px 10px #0000001f;
+  }
+  .menu-item.hover-intent ul {
+    margin: -3.0625em 0 0 100%;
+  }
+}
+

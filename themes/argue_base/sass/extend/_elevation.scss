@@ -1,0 +1,29 @@
+// Elevation
+$elevation1: 0 2px 1px -1px #0003,0 1px 1px #00000024,0 1px 3px #0000001f;
+$elevation2: 0 3px 1px -2px #0003,0 2px 2px #00000024,0 1px 5px #0000001f;
+$elevation3: 0 3px 3px -2px #0003,0 3px 4px #00000024,0 1px 8px #0000001f;
+$elevation4: 0 2px 4px -1px #0003,0 4px 5px #00000024,0 1px 10px #0000001f;
+$elevation5: 0 3px 5px -1px #0003,0 5px 8px #00000024,0 1px 14px #0000001f;
+$elevation6: 0 3px 5px -1px #0003,0 6px 10px #00000024,0 1px 18px #0000001f;
+$elevation7: 0 4px 5px -2px #0003,0 7px 10px 1px #00000024,0 2px 16px 1px #0000001f;
+$elevation8: 0 5px 5px -3px #0003,0 8px 10px 1px #00000024,0 3px 14px 2px #0000001f;
+
+:root {
+  --argue-elev-1: #{$elevation1};
+  --argue-elev-2: #{$elevation2};
+  --argue-elev-3: #{$elevation3};
+  --argue-elev-4: #{$elevation4};
+  --argue-elev-5: #{$elevation5};
+  --argue-elev-6: #{$elevation6};
+  --argue-elev-7: #{$elevation7};
+  --argue-elev-8: #{$elevation8};
+}
+
+%elevation1 { box-shadow: var(--argue-elev-1, #{$elevation1}); }
+%elevation2 { box-shadow: var(--argue-elev-2, #{$elevation2}); }
+%elevation3 { box-shadow: var(--argue-elev-3, #{$elevation3}); }
+%elevation4 { box-shadow: var(--argue-elev-4, #{$elevation4}); }
+%elevation5 { box-shadow: var(--argue-elev-5, #{$elevation5}); }
+%elevation6 { box-shadow: var(--argue-elev-6, #{$elevation6}); }
+%elevation7 { box-shadow: var(--argue-elev-7, #{$elevation7}); }
+%elevation8 { box-shadow: var(--argue-elev-8, #{$elevation8}); }

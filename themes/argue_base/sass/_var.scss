@@ -157,4 +157,14 @@ $drop-menu-item-bg-active-color: rgba(0,0,0, .1875);
 $drop-menu-item-bg-hover-color: rgba(0,0,0, .0625);
 
 // FAB - Floating Action Button
-$argue-fab-accent-bg-color: rgba($argue-accent-color, .0875)
+$argue-fab-accent-bg-color: rgba($argue-accent-color, .0875);
+
+// Elevation
+$elevation1: 0 2px 1px -1px #0003,0 1px 1px #00000024,0 1px 3px #0000001f;
+$elevation2: 0 3px 1px -2px #0003,0 2px 2px #00000024,0 1px 5px #0000001f;
+$elevation3: 0 3px 3px -2px #0003,0 3px 4px #00000024,0 1px 8px #0000001f;
+$elevation4: 0 2px 4px -1px #0003,0 4px 5px #00000024,0 1px 10px #0000001f;
+$elevation5: 0 3px 5px -1px #0003,0 5px 8px #00000024,0 1px 14px #0000001f;
+$elevation6: 0 3px 5px -1px #0003,0 6px 10px #00000024,0 1px 18px #0000001f;
+$elevation7: 0 4px 5px -2px #0003,0 7px 10px 1px #00000024,0 2px 16px 1px #0000001f;
+$elevation8: 0 5px 5px -3px #0003,0 8px 10px 1px #00000024,0 3px 14px 2px #0000001f;

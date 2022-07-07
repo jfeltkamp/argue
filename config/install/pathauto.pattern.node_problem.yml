@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_problem
+label: Problem
+type: 'canonical_entities:node'
+pattern: 'sections/[node:field_sector:entity:parents]/[node:field_sector:entity:name]/[node:title]'
+selection_criteria:
+  e0df0ae2-98fb-4214-8fdd-b259a8a39381:
+    id: 'entity_bundle:node'
+    negate: false
+        context_mapping:
+      node: node
+    bundles:
+      problem: problem
+selection_logic: and
+weight: -5
+relationships: {  }

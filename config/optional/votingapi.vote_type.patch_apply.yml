@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - vote.vote_vote_type.patch_apply
+id: patch_apply
+label: 'Apply Change Request'
+value_type: points
+description: 'Generated automated by Vote module. Do not edit directly or delete.'

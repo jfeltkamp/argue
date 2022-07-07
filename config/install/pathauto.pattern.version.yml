@@ -9,13 +9,12 @@ type: 'canonical_entities:node'
 pattern: 'version/[node:field_version_number:value]'
 selection_criteria:
   f7c919bc-9eb7-4cd7-8534-f93a6d74f818:
-    id: node_type
+    id: 'entity_bundle:node'
+    negate: false
+        context_mapping:
+      node: node
     bundles:
       version: version
-    negate: false
-    context_mapping:
-      node: node
-    uuid: f7c919bc-9eb7-4cd7-8534-f93a6d74f818
 selection_logic: and
 weight: -5
 relationships: {  }

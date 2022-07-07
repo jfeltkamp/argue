@@ -15,10 +15,10 @@ plugin: 'draggable_dashboard_block:draggable_dashboard_dashboard'
 settings:
   id: 'draggable_dashboard_block:draggable_dashboard_dashboard'
   label: Dashboard
-  provider: draggable_dashboard
   label_display: '0'
+  provider: draggable_dashboard
 visibility:
   request_path:
     id: request_path
-    pages: /argue/dashboard
     negate: false
+    pages: /argue/dashboard

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies: {  }
+id: argument_relevance
+label: Relevance
+base_type: five_star
+allow_abstention: null
+value_definition:
+  points_5: 5
+  points_4: 4
+  points_3: 3
+  points_2: 2
+  points_1: 1
+labels:
+  points_1: '1 Star'
+  points_2: '2 Stars'
+  points_3: '3 Stars'
+  points_4: '4 Stars'
+  points_5: '5 Stars'
+condensed_format: '%result/5'
+result_format: 'Stars: %result/5'
+description: 'Relevance indicates the weight or importance of the argument in relation to current or future situations.'
+rating_factor: 1
+icon: R
+icon_family: /profiles/contrib/argue/themes/argue_base/svg/fraktur/fraktur_alphabet.svg
+color: '#FFD700'
+question: 'How relevant is the argument?'

@@ -5,8 +5,8 @@ general_settings:
   revision_pager_limit: 50
   layout_plugins:
     visual_inline:
-      weight: 0
       enabled: false
+      weight: 0
     split_fields:
       enabled: true
       weight: 1

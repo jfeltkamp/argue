@@ -17,13 +17,13 @@ plugin: 'views_block:argue_section_tree-block_1'
 settings:
   id: 'views_block:argue_section_tree-block_1'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
-  context_mapping: {  }
 visibility:
   request_path:
     id: request_path
-    pages: '/taxonomy/term/*'
     negate: false
+    pages: '/taxonomy/term/*'

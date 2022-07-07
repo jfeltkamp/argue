@@ -1,6 +1,13 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - argue_proscons
+    - change_requests
+    - comment
+    - contextual
+    - system
+    - toolbar
 id: authenticated
 label: 'Authenticated user'
 weight: 1

@@ -10,87 +10,106 @@ dependencies:
     - comment
     - options
     - user
+    - vote
 id: argument.argument.default
 targetEntityType: argument
 bundle: argument
 mode: default
 content:
   argument:
-    label: hidden
     type: basic_string
-    weight: 3
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 4
+    region: content
+  changed:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: custom
+      custom_date_format: U
+      timezone: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
   content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
     weight: -20
     region: content
-    settings: {  }
-    third_party_settings: {  }
   created:
-    label: hidden
     type: timestamp
-    weight: 6
-    region: content
+    label: hidden
     settings:
       date_format: medium
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    weight: 7
+    region: content
   field_change_requests:
-    weight: 8
+    type: attach_change_requests
     label: above
     settings:
       display_add_link: '1'
       display_modal: '1'
       show_empty_field: 0
     third_party_settings: {  }
-    type: attach_change_requests
+    weight: 8
     region: content
   field_comments:
-    weight: 5
+    type: comment_default
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    type: comment_default
+    weight: 6
     region: content
   name:
-    label: hidden
     type: string
-    weight: 2
-    region: content
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  rate_vote_widget:
-    weight: 7
+    weight: 3
     region: content
-    settings: {  }
-    third_party_settings: {  }
   reference_id:
     type: entity_reference_entity_view
-    weight: 0
-    region: content
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-  type:
-    label: hidden
-    type: list_key
     weight: 1
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  user_id:
+  type:
+    type: list_key
     label: hidden
-    type: author
-    weight: 4
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  vote_vote_field:
+    type: vote_plugin_formatter
+    label: above
+    settings:
+      interactive: '1'
+      placement: top-end
+      voting_stats: '1'
+      summary: detailed
+    third_party_settings: {  }
+    weight: 9
+    region: content
+    default_formatter: vote_plugin_formatter
 hidden:
   langcode: true
+  rate_vote_widget: true

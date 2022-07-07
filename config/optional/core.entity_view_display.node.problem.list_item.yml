@@ -15,10 +15,10 @@ bundle: problem
 mode: list_item
 content:
   content_moderation_control:
-    weight: 3
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   body: true
   field_comments: true

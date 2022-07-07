@@ -19,11 +19,11 @@ content:
   comment_body:
     type: text_textarea
     weight: 1
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true
   subject: true

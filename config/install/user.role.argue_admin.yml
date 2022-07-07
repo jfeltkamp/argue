@@ -1,6 +1,26 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.problem
+    - node.type.rule
+    - node.type.version
+    - taxonomy.vocabulary.sections
+  module:
+    - argue_proscons
+    - argue_structure
+    - argue_versions
+    - change_requests
+    - comment
+    - draggable_dashboard
+    - menu_link_attributes
+    - node
+    - publishcontent
+    - system
+    - taxonomy
+    - tour
+    - vote
+    - votingapi
 id: argue_admin
 label: 'Argue Admin'
 weight: 5
@@ -15,8 +35,6 @@ permissions:
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access the argue dashboard'
-  - 'access the problems overview page'
-  - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
   - 'add argument entities'
@@ -28,18 +46,15 @@ permissions:
   - 'administer nodes'
   - 'administer patch entities'
   - 'administer permissions'
-  - 'administer rate'
   - 'administer taxonomy'
   - 'administer users'
-  - 'administer workflows'
+  - 'administer vote types'
+  - 'administer voting api'
   - administer_draggable_dashboard
+  - 'allow to omit creation of new argument revisions'
   - 'apply patch entities'
   - 'bypass node access'
   - 'bypass patch creation'
-  - 'cast rate vote on argument of argument'
-  - 'cast rate vote on comment of comment'
-  - 'cast rate vote on node of problem'
-  - 'cast rate vote on patch of patch'
   - 'change own username'
   - 'change status of patch entities'
   - 'delete all argument revisions'
@@ -53,6 +68,7 @@ permissions:
   - 'delete problem revisions'
   - 'delete rule revisions'
   - 'delete terms in sections'
+  - 'delete votes'
   - 'edit any problem content'
   - 'edit any rule content'
   - 'edit argument entities'
@@ -73,20 +89,17 @@ permissions:
   - 'skip comment approval'
   - 'unpublish own node type problem'
   - 'unpublish own node type rule'
-  - 'use editorial transition archive'
-  - 'use editorial transition archived_draft'
-  - 'use editorial transition archived_published'
-  - 'use editorial transition create_new_draft'
-  - 'use editorial transition publish'
   - 'use menu link attributes'
   - 'view all argument revisions'
-  - 'view any unpublished content'
-  - 'view latest version'
   - 'view problem revisions'
   - 'view published argument entities'
-  - 'view rate results page'
   - 'view rule revisions'
   - 'view the administration theme'
   - 'view unpublished argument entities'
   - 'view unpublished patch entities'
   - 'view version revisions'
+  - 'vjsr add own votes'
+  - 'vjsr edit own votes'
+  - 'vjsr remove own votes'
+  - 'vjsr show voting stats'
+  - 'vjsr show voting stats before voted'

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: rule
+label: Rule
+type: 'canonical_entities:node'
+pattern: 'sections/[node:field_sector:entity:parents]/[node:field_sector:entity:name]/[node:title]'
+selection_criteria:
+  32c2caac-5ead-4766-8518-aead2142b14d:
+    id: 'entity_bundle:node'
+    negate: false
+        context_mapping:
+      node: node
+    bundles:
+      rule: rule
+selection_logic: and
+weight: -9
+relationships: {  }

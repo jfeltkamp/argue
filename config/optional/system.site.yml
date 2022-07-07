@@ -1,3 +1,4 @@
+langcode: en
 name: 'Argue'
 mail: ''
 slogan: ''
@@ -7,6 +8,5 @@ page:
   front: /sections?node_type=rule
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
 mail_notification: ''

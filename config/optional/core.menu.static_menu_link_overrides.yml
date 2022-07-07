@@ -6,32 +6,32 @@ definitions:
     expanded: false
     enabled: true
   system__admin_index:
+    menu_name: admin
+    parent: admin_toolbar_tools.help
     weight: 12
-    menu_name: admin
-    parent: admin_toolbar_tools.help
-    enabled: true
     expanded: false
+    enabled: true
   admin_toolbar_tools__flush:
-    weight: 13
     menu_name: admin
     parent: admin_toolbar_tools.help
+    weight: 13
     expanded: false
     enabled: true
   system__run_cron:
-    weight: 14
     menu_name: admin
     parent: admin_toolbar_tools.help
+    weight: 14
     expanded: false
     enabled: true
   system__db_update:
-    weight: 15
     menu_name: admin
     parent: admin_toolbar_tools.help
+    weight: 15
     expanded: false
     enabled: true
   'admin_toolbar_tools__extra_links:user__logout':
-    weight: 11
     menu_name: admin
     parent: admin_toolbar_tools.help
+    weight: 11
     expanded: false
     enabled: true

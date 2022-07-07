@@ -18,31 +18,31 @@ third_party_settings:
     group_personal:
       children:
         - field_address
+      label: Personal
+      region: content
       parent_name: ''
       weight: 1
       format_type: fieldset
       format_settings:
         label: Personal
+        classes: 'account-settings personal'
+        id: personal
         description: ''
         required_fields: true
-        id: personal
-        classes: 'account-settings personal'
-      label: Personal
-      region: content
     group_account_settings:
       children:
         - account
+      label: 'Account Settings'
+      region: content
       parent_name: ''
       weight: 0
       format_type: fieldset
       format_settings:
-        id: account-settings
         classes: account-settings
-        open: true
-        required_fields: true
+        id: account-settings
         description: ''
-      label: 'Konto Einstellungen'
-      region: content
+        required_fields: true
+        open: true
 id: user.user.register
 targetEntityType: user
 bundle: user

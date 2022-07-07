@@ -14,7 +14,6 @@ mode: default
 content:
   argument:
     type: string_textarea
-    text_processing: 1
     weight: 3
     region: content
     settings:
@@ -27,12 +26,13 @@ content:
           optimin: 100
           optimax: 250
           tolerance: 60
+    text_processing: 1
   field_comments:
+    type: comment_default
     weight: 103
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: comment_default
-    region: content
   langcode:
     type: language_select
     weight: 1
@@ -41,13 +41,13 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
+    type: string_textfield
     weight: 102
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   name:
     type: string_textfield
     weight: 2

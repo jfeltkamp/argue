@@ -11,59 +11,82 @@ dependencies:
     - comment
     - options
     - user
+    - vote
 id: argument.argument.full
 targetEntityType: argument
 bundle: argument
 mode: full
 content:
   argument:
-    label: hidden
     type: basic_string
-    weight: 2
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  created:
-    label: above
-    type: timestamp_ago
-    weight: 5
+    weight: 2
     region: content
+  changed:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: custom
+      custom_date_format: U
+      timezone: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  created:
+    type: timestamp_ago
+    label: above
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
       granularity: 2
     third_party_settings: {  }
+    weight: 5
+    region: content
   field_comments:
     type: comment_default
-    weight: 4
-    region: content
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  name:
-    label: hidden
-    type: string
-    weight: 1
+    weight: 4
     region: content
+  name:
+    type: string
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 1
+    region: content
   type:
-    label: hidden
     type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 0
     region: content
+  user_id:
+    type: author
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
     weight: 3
     region: content
-    settings: {  }
+  vote_vote_field:
+    type: vote_plugin_formatter
+    label: above
+    settings:
+      interactive: '1'
+      placement: top-end
+      voting_stats: '1'
+      summary: detailed
     third_party_settings: {  }
+    weight: 99
+    region: content
+    default_formatter: vote_plugin_formatter
 hidden:
   field_change_requests: true
   langcode: true

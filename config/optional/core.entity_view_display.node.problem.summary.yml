@@ -16,18 +16,18 @@ bundle: problem
 mode: summary
 content:
   body:
-    label: visually_hidden
     type: text_summary_or_trimmed
-    weight: 0
+    label: visually_hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 0
     region: content
   content_moderation_control:
-    weight: 3
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   field_comments: true
   field_sector: true

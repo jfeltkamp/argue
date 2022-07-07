@@ -4,3 +4,5 @@ argue_proscons:
   argue_proscons_node_types:
     rule: rule
     problem: 0
+    version: 0
+  revisions_default: 1

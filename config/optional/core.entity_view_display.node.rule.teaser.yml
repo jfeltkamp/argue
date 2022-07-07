@@ -7,35 +7,45 @@ dependencies:
     - field.field.node.rule.field_causal_problems
     - field.field.node.rule.field_ratified
     - field.field.node.rule.field_sector
-    - field.field.node.rule.field_voting
     - node.type.rule
   module:
     - text
     - user
+    - vote
 id: node.rule.teaser
 targetEntityType: node
 bundle: rule
 mode: teaser
 content:
   body:
-    label: above
     type: text_default
-    weight: 1
+    label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_causal_problems:
     type: entity_reference_entity_view
-    weight: 0
-    region: content
     label: above
     settings:
       view_mode: summary
       link: false
     third_party_settings: {  }
+    weight: 0
+    region: content
+  vote_vote_field:
+    type: vote_plugin_formatter
+    label: hidden
+    settings:
+      interactive: '1'
+      placement: top-end
+      voting_stats: '1'
+      summary: percent
+    third_party_settings: {  }
+    weight: 99
+    region: content
 hidden:
   field_ratified: true
   field_sector: true
-  field_voting: true
   langcode: true
   links: true

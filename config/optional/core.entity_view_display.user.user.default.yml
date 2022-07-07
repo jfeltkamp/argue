@@ -21,41 +21,41 @@ bundle: user
 mode: default
 content:
   field_address:
-    weight: 3
+    type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: address_default
+    weight: 3
     region: content
   field_connected_users:
-    weight: 7
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: list_item
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 7
     region: content
   field_cv:
-    weight: 6
+    type: string_table_field_formatter
     label: above
     settings:
       column_names: 'Time | Profession and Location'
       column_count: '2'
       column_delimiter: '|'
     third_party_settings: {  }
-    type: string_table_field_formatter
+    weight: 6
     region: content
   field_professions:
-    weight: 4
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 4
     region: content
   field_profiles:
-    weight: 5
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -64,21 +64,23 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 5
     region: content
   field_user_image:
-    weight: 0
+    type: image
     label: above
     settings:
-      image_style: medium
       image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   member_for:
-    weight: 2
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   langcode: true

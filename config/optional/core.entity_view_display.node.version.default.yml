@@ -22,49 +22,49 @@ bundle: version
 mode: default
 content:
   body:
-    label: above
     type: text_default
-    weight: 5
+    label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 5
     region: content
   field_description:
-    weight: 1
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 1
     region: content
   field_sections:
     type: vocab_clone_formatter_type
-    weight: 4
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 4
+    region: content
   field_valid_date:
-    weight: 2
+    type: datetime_default
     label: inline
     settings:
       timezone_override: ''
       format_type: html_date
     third_party_settings: {  }
-    type: datetime_default
+    weight: 2
     region: content
   field_version_number:
-    weight: 3
+    type: number_integer
     label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 3
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_arguments: true
   field_problems: true

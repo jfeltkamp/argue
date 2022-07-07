@@ -15,30 +15,30 @@ tips:
     plugin: text
     label: 'Suggested rule that is argued below.'
     weight: 1
-    body: 'Carefully read and understand the suggested rule that is being argued below. '
-    selector: '#block-mainpagecontent'
     position: bottom-start
+    selector: '#block-mainpagecontent'
+    body: 'Carefully read and understand the suggested rule that is being argued below. '
   block-pagetitle:
     id: block-pagetitle
     plugin: text
     label: 'Arguments for the suggested rule.'
     weight: 2
-    body: 'These are the arguments that speak for (Pro) the proposal. Read all the pro-arguments to better understand the proposal. Read all the counter-arguments to understand what is against this proposal.'
-    selector: '#pros'
     position: top-start
+    selector: '#pros'
+    body: 'These are the arguments that speak for (Pro) the proposal. Read all the pro-arguments to better understand the proposal. Read all the counter-arguments to understand what is against this proposal.'
   container-description:
     id: container-description
     plugin: text
     label: 'Arguments against (Contra) the proposal.'
     weight: 3
-    body: 'These are the arguments that speak against (Contra) the proposal. Read all the counter-arguments to understand what reasons speak against this proposal.'
-    selector: '#cons'
     position: top-start
+    selector: '#cons'
+    body: 'These are the arguments that speak against (Contra) the proposal. Read all the counter-arguments to understand what reasons speak against this proposal.'
   container-save:
     id: container-save
     plugin: text
     label: 'Evaluate the arguments'
     weight: 4
-    body: "When you have read and understand the argument, you can evaluate it. </p><p>\r\n\r\nUp = The argument is correct and important.</p><p>\r\n\r\nDown = The argument is wrong or misleading.</p><p>\r\n\r\nThe important thing is, that you think about the arguments and not about the proposal. Do nothing if you don't understand the point or if you think the argument is not important."
-    selector: '.argument-teaser .rate-widget-number-up-down'
     position: right-start
+    selector: '.argument-teaser .rate-widget-number-up-down'
+    body: "When you have read and understand the argument, you can evaluate it. </p><p>\r\n\r\nUp = The argument is correct and important.</p><p>\r\n\r\nDown = The argument is wrong or misleading.</p><p>\r\n\r\nThe important thing is, that you think about the arguments and not about the proposal. Do nothing if you don't understand the point or if you think the argument is not important."

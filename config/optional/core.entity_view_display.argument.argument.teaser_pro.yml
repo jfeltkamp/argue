@@ -10,82 +10,91 @@ dependencies:
     - argue_proscons
     - comment
     - user
+    - vote
 id: argument.argument.teaser_pro
 targetEntityType: argument
 bundle: argument
 mode: teaser_pro
 content:
   argument:
-    label: hidden
     type: basic_string
-    weight: 1
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  changed:
-    label: hidden
-    type: timestamp_ago
-    weight: 7
+    weight: 1
     region: content
+  changed:
+    type: timestamp_ago
+    label: hidden
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
       granularity: 2
     third_party_settings: {  }
-  content_moderation_control:
-    weight: -20
+    weight: 6
     region: content
+  content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-  created:
-    label: hidden
-    type: timestamp
-    weight: 4
+    weight: -20
     region: content
+  created:
+    type: timestamp
+    label: hidden
     settings:
       date_format: medium
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    weight: 4
+    region: content
   field_comments:
     type: comment_default
-    weight: 3
-    region: content
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
+    weight: 3
+    region: content
   langcode:
     type: language
-    weight: 6
-    region: content
     label: above
     settings:
       link_to_entity: false
       native_language: false
     third_party_settings: {  }
-  name:
-    label: hidden
-    type: string
-    weight: 0
+    weight: 5
     region: content
+  name:
+    type: string
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  rate_vote_widget:
-    weight: 5
+    weight: 0
     region: content
+  user_id:
+    type: author
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
     weight: 2
     region: content
-    settings: {  }
+  vote_vote_field:
+    type: vote_plugin_formatter
+    label: hidden
+    settings:
+      interactive: '1'
+      placement: top-end
+      voting_stats: '1'
+      summary: percent
     third_party_settings: {  }
+    weight: 7
+    region: content
+    default_formatter: vote_plugin_formatter
 hidden:
   field_change_requests: true
+  rate_vote_widget: true
   reference_id: true
   type: true

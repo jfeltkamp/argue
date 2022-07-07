@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies: {  }
+id: rule_ratify
+label: Ratification
+base_type: yes_no
+allow_abstention: 1
+value_definition:
+  points_1: 1
+  points_0: 0
+  points_n1: -1
+labels:
+  points_1: 'Yes'
+  points_0: Abstain
+  points_n1: 'No'
+condensed_format: '%result'
+result_format: 'Result: %result'
+description: 'If you select ''yes'', you vote for this rule to go into effect (or remain in effect). If you select ''No'', you vote against. If you are unsure or undecided, you should select ''Abstain''. Are you willing to follow this rule when required, and do you think it''s reasonable to expect from everyone to do the same?'
+rating_factor: 1
+icon: R
+icon_family: /profiles/contrib/argue/themes/argue_base/svg/fraktur/fraktur_alphabet.svg
+color: ''
+question: 'Should the rule be ratified and apply?'

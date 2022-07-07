@@ -15,7 +15,6 @@ mode: edit_contra
 content:
   argument:
     type: string_textarea
-    text_processing: 1
     weight: 2
     region: content
     settings:
@@ -28,15 +27,16 @@ content:
           optimin: 100
           optimax: 250
           tolerance: 60
+    text_processing: 1
   field_change_requests:
     type: select2_entity_reference
     weight: 3
     region: content
     settings:
+      width: 100%
+      autocomplete: false
       match_operator: CONTAINS
       match_limit: 10
-      autocomplete: false
-      width: 100%
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -46,13 +46,13 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
+    type: string_textfield
     weight: 102
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   name:
     type: string_textfield
     weight: 1

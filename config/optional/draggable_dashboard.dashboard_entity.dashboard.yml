@@ -3,26 +3,26 @@ status: true
 dependencies: {  }
 id: dashboard
 title: Dashboard
-description: ''
 columns: 1
 blocks:
   dashboard_argue_base_whoisnew:
-    column: '1'
     settings:
       id: 'views_block:who_s_new-block_1'
       label: ''
-      provider: views
       label_display: visible
+      provider: views
       views_label: ''
       items_per_page: none
+    column: '1'
     weight: -1
   dashboard_argue_base_new_content:
-    column: '1'
     settings:
       id: 'views_block:content_recent-block_1'
       label: ''
-      provider: views
       label_display: visible
+      provider: views
       views_label: ''
       items_per_page: none
+    column: '1'
     weight: 0
+description: ''

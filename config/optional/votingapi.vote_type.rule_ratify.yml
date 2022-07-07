@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - vote.vote_vote_type.rule_ratify
+id: rule_ratify
+label: Ratification
+value_type: points
+description: 'Generated automated by Vote module. Do not edit directly or delete.'

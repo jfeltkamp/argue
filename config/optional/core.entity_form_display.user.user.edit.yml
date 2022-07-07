@@ -20,43 +20,43 @@ third_party_settings:
     group_locating:
       children:
         - timezone
+      label: Locating
+      region: content
       parent_name: ''
       weight: 3
       format_type: details
       format_settings:
-        id: locating
         classes: locating
+        id: locating
         open: true
         required_fields: true
-      label: Locating
-      region: content
     group_personal_data:
       children:
         - field_user_image
         - field_full_name
+      label: 'Personal Information'
+      region: content
       parent_name: ''
       weight: 1
       format_type: details
       format_settings:
-        id: personal
         classes: personal
+        id: personal
         open: true
         required_fields: true
-      label: 'Persönliche Angaben'
-      region: content
     group_account_settings:
       children:
         - account
+      label: 'Account Settings'
+      region: content
       parent_name: ''
       weight: 0
       format_type: details
       format_settings:
-        id: account-settings
         classes: account-settings
+        id: account-settings
         open: false
         required_fields: true
-      label: 'Konto Einstellungen'
-      region: content
 id: user.user.edit
 targetEntityType: user
 bundle: user
@@ -68,20 +68,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_address:
+    type: address_default
     weight: 2
+    region: content
     settings:
       default_country: DE
     third_party_settings: {  }
-    type: address_default
-    region: content
   field_user_image:
+    type: image_image
     weight: 1
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   language:
     weight: 4
     region: content

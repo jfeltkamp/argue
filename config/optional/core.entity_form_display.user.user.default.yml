@@ -21,60 +21,60 @@ third_party_settings:
     group_locating:
       children:
         - field_connected_users
+      label: Relations
+      region: content
       parent_name: ''
       weight: 2
       format_type: fieldset
       format_settings:
+        classes: 'account-settings related'
+        id: related
         description: ''
         required_fields: true
-        id: related
-        classes: 'account-settings related'
-      label: Relations
-      region: content
     group_personal_data:
       children:
         - field_user_image
         - field_professions
         - field_cv
         - field_profiles
+      label: 'Persönliche Angaben'
+      region: content
       parent_name: ''
       weight: 1
       format_type: fieldset
       format_settings:
+        classes: 'account-settings personal'
+        id: personal
         description: ''
         required_fields: true
-        id: personal
-        classes: 'account-settings personal'
-      label: 'Persönliche Angaben'
-      region: content
     group_account_settings:
       children:
         - account
+      label: 'Konto Einstellungen'
+      region: content
       parent_name: ''
       weight: 0
       format_type: fieldset
       format_settings:
-        id: account-settings
         classes: account-settings
-        open: false
-        required_fields: true
+        id: account-settings
         description: ''
-      label: 'Konto Einstellungen'
-      region: content
+        required_fields: true
+        open: false
     group_location:
       children:
         - field_address
         - timezone
+      label: Adresse
+      region: content
       parent_name: ''
       weight: 3
       format_type: fieldset
-      region: content
       format_settings:
+        classes: 'account-settings location'
+        id: location
         description: ''
         required_fields: true
-        id: location
-        classes: 'account-settings location'
-      label: Adresse
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -86,53 +86,53 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_address:
+    type: address_default
     weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: address_default
-    region: content
   field_connected_users:
+    type: select2_entity_reference
     weight: 5
+    region: content
     settings:
       width: 100%
+      autocomplete: false
       match_operator: CONTAINS
       match_limit: 10
-      autocomplete: false
     third_party_settings: {  }
-    type: select2_entity_reference
-    region: content
   field_cv:
+    type: string_textfield
     weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_professions:
+    type: string_textfield
     weight: 2
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_profiles:
+    type: link_default
     weight: 4
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_user_image:
+    type: image_image
     weight: 1
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   timezone:
     weight: 5
     region: content

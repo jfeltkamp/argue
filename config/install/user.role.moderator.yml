@@ -1,6 +1,22 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.problem
+    - node.type.rule
+    - node.type.version
+  module:
+    - argue_proscons
+    - argue_structure
+    - argue_versions
+    - change_requests
+    - comment
+    - draggable_dashboard
+    - node
+    - publishcontent
+    - tour
+    - vote
+    - votingapi
 id: moderator
 label: Moderator
 weight: 4
@@ -12,20 +28,15 @@ permissions:
   - 'access content overview'
   - 'access section tree overview page'
   - 'access the argue dashboard'
-  - 'access the problems overview page'
-  - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
   - 'add argument entities'
   - 'add patch entities'
   - 'administer comments'
   - administer_draggable_dashboard
+  - 'allow to omit creation of new argument revisions'
   - 'apply patch entities'
   - 'bypass patch creation'
-  - 'cast rate vote on argument of argument'
-  - 'cast rate vote on comment of comment'
-  - 'cast rate vote on node of problem'
-  - 'cast rate vote on patch of patch'
   - 'change own username'
   - 'change status of patch entities'
   - 'create version content'
@@ -36,6 +47,7 @@ permissions:
   - 'delete own problem content'
   - 'delete own rule content'
   - 'delete patch entities'
+  - 'delete votes'
   - 'edit any problem content'
   - 'edit any rule content'
   - 'edit argument entities'
@@ -56,20 +68,17 @@ permissions:
   - 'skip comment approval'
   - 'unpublish own node type problem'
   - 'unpublish own node type rule'
-  - 'use editorial transition archive'
-  - 'use editorial transition archived_draft'
-  - 'use editorial transition archived_published'
-  - 'use editorial transition create_new_draft'
-  - 'use editorial transition publish'
   - 'view all argument revisions'
   - 'view all revisions'
-  - 'view any unpublished content'
-  - 'view latest version'
   - 'view own unpublished content'
   - 'view problem revisions'
   - 'view published argument entities'
-  - 'view rate results page'
   - 'view rule revisions'
   - 'view unpublished argument entities'
   - 'view unpublished patch entities'
   - 'view version revisions'
+  - 'vjsr add own votes'
+  - 'vjsr edit own votes'
+  - 'vjsr remove own votes'
+  - 'vjsr show voting stats'
+  - 'vjsr show voting stats before voted'

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies: {  }
+id: problem_correctness
+label: Correctness
+base_type: yes_no
+allow_abstention: 1
+value_definition:
+  points_1: 1
+  points_0: 0
+  points_n1: -1
+labels:
+  points_1: 'Yes'
+  points_0: Abstain
+  points_n1: 'No'
+condensed_format: '%result'
+result_format: 'Result: %result'
+description: 'A correct problem statement is a precise and understandable statement of causes and their negative effects. It describes how the problem arose and ''for whom'' it has ''which'' negative effects. It should be formulated as solution-neutral as possible.'
+rating_factor: 1
+icon: C
+icon_family: /profiles/contrib/argue/themes/argue_base/svg/fraktur/fraktur_alphabet.svg
+color: ''
+question: 'Is the problem presented correctly?'

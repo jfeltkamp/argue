@@ -11,42 +11,51 @@ dependencies:
     - comment
     - text
     - user
+    - vote
 id: node.problem.default
 targetEntityType: node
 bundle: problem
 mode: default
 content:
   body:
-    label: above
     type: text_default
-    weight: 0
+    label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   content_moderation_control:
-    weight: 3
-    region: content
     settings: {  }
     third_party_settings: {  }
-  field_comments:
     weight: 3
+    region: content
+  field_comments:
+    type: comment_default
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    type: comment_default
-    region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  rate_vote_widget:
     weight: 2
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
+  vote_vote_field:
+    type: vote_plugin_formatter
+    label: hidden
+    settings:
+      interactive: '1'
+      placement: top-end
+      voting_stats: '1'
+      summary: percent
+    third_party_settings: {  }
+    weight: 3
+    region: content
+    default_formatter: vote_plugin_formatter
 hidden:
   field_sector: true
   langcode: true
+  rate_vote_widget: true

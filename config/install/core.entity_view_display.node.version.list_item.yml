@@ -21,28 +21,28 @@ bundle: version
 mode: list_item
 content:
   field_valid_date:
-    weight: 1
+    type: datetime_default
     label: inline
     settings:
       timezone_override: ''
       format_type: html_date
     third_party_settings: {  }
-    type: datetime_default
+    weight: 1
     region: content
   field_version_number:
-    weight: 2
+    type: number_integer
     label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 2
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   body: true
   field_arguments: true

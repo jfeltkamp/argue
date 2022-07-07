@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - vote.vote_vote_type.argument_validity
+id: argument_validity
+label: Validity
+value_type: points
+description: 'Generated automated by Vote module. Do not edit directly or delete.'

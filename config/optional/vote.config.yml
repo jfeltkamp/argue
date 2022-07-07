@@ -1,0 +1,29 @@
+entity_vote_map:
+  patch:
+    patch:
+      - patch_apply
+  node:
+    problem:
+      - problem_relevance
+      - problem_correctness
+    rule:
+      - rule_ratify
+  argument:
+    argument:
+      - argument_relevance
+      - argument_validity
+api:
+  request_options:
+    method: POST
+    headers:
+      Accept: application/json
+      Content-Type: application/json
+  results: /vote/vote-results
+  vote: '/vote/vote/{entity_type_id}/{entity_id}'
+icons:
+  default_sprite: /modules/contrib/vote/assets/svg/icons.svg
+button_types:
+  default: 'button button--secondary button--extrasmall'
+  primary: 'button button--primary button--extrasmall'
+  secondary: 'button button--outline--primary button--extrasmall'
+  tertiary: 'button button--outline--secondary button--extrasmall'

@@ -14,7 +14,6 @@ mode: edit_pro
 content:
   argument:
     type: string_textarea
-    text_processing: 1
     weight: 2
     region: content
     settings:
@@ -27,6 +26,7 @@ content:
           optimin: 100
           optimax: 250
           tolerance: 60
+    text_processing: 1
   langcode:
     type: language_select
     weight: 0
@@ -35,13 +35,13 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
+    type: string_textfield
     weight: 102
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   name:
     type: string_textfield
     weight: 1

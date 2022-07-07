@@ -14,11 +14,11 @@ content:
   comment_body:
     type: text_textarea
     weight: 0
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    region: content
 hidden:
   author: true
   langcode: true

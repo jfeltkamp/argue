@@ -19,19 +19,21 @@ bundle: user
 mode: list_item
 content:
   field_user_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: avatar
       image_link: ''
+      image_style: avatar
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   member_for:
-    weight: 1
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_address: true
   field_connected_users: true

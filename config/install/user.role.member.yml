@@ -1,6 +1,21 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.problem
+    - node.type.rule
+    - node.type.version
+  module:
+    - argue_proscons
+    - argue_structure
+    - argue_versions
+    - change_requests
+    - comment
+    - draggable_dashboard
+    - node
+    - publishcontent
+    - tour
+    - vote
 id: member
 label: Member
 weight: 3
@@ -11,17 +26,11 @@ permissions:
   - 'access argument overview'
   - 'access section tree overview page'
   - 'access the argue dashboard'
-  - 'access the problems overview page'
-  - 'access the rule overview page'
   - 'access tour'
   - 'access user profiles'
   - 'add argument entities'
   - 'add patch entities'
   - administer_draggable_dashboard
-  - 'cast rate vote on argument of argument'
-  - 'cast rate vote on comment of comment'
-  - 'cast rate vote on node of problem'
-  - 'cast rate vote on patch of patch'
   - 'change own username'
   - 'create problem content'
   - 'create rule content'
@@ -38,11 +47,13 @@ permissions:
   - 'skip comment approval'
   - 'unpublish own node type problem'
   - 'unpublish own node type rule'
-  - 'use editorial transition create_new_draft'
   - 'view all argument revisions'
   - 'view own unpublished content'
   - 'view problem revisions'
   - 'view published argument entities'
-  - 'view rate results page'
   - 'view rule revisions'
   - 'view version revisions'
+  - 'vjsr add own votes'
+  - 'vjsr edit own votes'
+  - 'vjsr show voting stats'
+  - 'vjsr show voting stats before voted'

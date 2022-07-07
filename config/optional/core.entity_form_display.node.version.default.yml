@@ -24,13 +24,13 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 6
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 2
@@ -38,26 +38,26 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_description:
+    type: string_textarea
     weight: 1
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   field_valid_date:
+    type: datetime_default
     weight: 7
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_version_number:
+    type: number
     weight: 5
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   path:
     type: path
     weight: 3
@@ -66,10 +66,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 4
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -82,12 +82,12 @@ content:
   uid:
     type: select2_entity_reference
     weight: 8
+    region: content
     settings:
+      width: 100%
+      autocomplete: false
       match_operator: CONTAINS
       match_limit: 10
-      autocomplete: false
-      width: 100%
-    region: content
     third_party_settings: {  }
 hidden:
   field_arguments: true

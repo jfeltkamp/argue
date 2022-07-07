@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - vote.vote_vote_type.argument_relevance
+id: argument_relevance
+label: Relevance
+value_type: points
+description: 'Generated automated by Vote module. Do not edit directly or delete.'

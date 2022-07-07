@@ -215,13 +215,13 @@ class ArgumentListService {
         '#theme' => 'argue_proscons__header',
         '#attributes' => [],
         '#label' => $this->t('Pro Arguments'),
-        '#type' => 'pro_arguments'
+        '#type' => 'pro_arguments',
       ],
       'con_title' =>[
         '#theme' => 'argue_proscons__header',
         '#attributes' => [],
         '#label' => $this->t('Contra Arguments'),
-        '#type' => 'con_arguments'
+        '#type' => 'con_arguments',
       ],
       'pro' => [],
       'con' => [],
@@ -232,7 +232,7 @@ class ArgumentListService {
       ],
     ];
     foreach ($this->load($reference_id) as $entity) {
-      /* @var $entity Argument */
+      /** @var \Drupal\argue_proscons\Entity\Argument $entity */
       if ($item = $this->buildItem($entity)) {
         switch ($entity->get('type')->getString()) {
           case ArgueEvent::ARGUE_PRO:

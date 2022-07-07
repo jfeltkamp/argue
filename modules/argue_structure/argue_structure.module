@@ -48,6 +48,11 @@ function argue_structure_theme() {
   ];
 }
 
+function argue_structure_patch_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  if ($build['#view_mode'] == 'full' && isset($build["vote_vote_field"]["#attributes"]["data-summary"])) {
+    $build["vote_vote_field"]["#attributes"]["data-summary"] = 'percent';
+  }
+}
 
 
 function argue_structure_theme_suggestions_form_alter(array &$suggestions, array $variables) {

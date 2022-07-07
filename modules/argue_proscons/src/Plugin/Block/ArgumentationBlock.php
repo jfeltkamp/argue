@@ -144,6 +144,12 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
         '#attributes' => [
           'class' => ['argumentation-header'],
         ],
+        'primary_actions' => [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => ['argumentation-header--actions'],
+          ],
+        ],
       ],
       'content' => [
         '#type' => 'container',
@@ -166,7 +172,7 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
 
       $reference_id = $node->id();
 
-      if ($this->configuration['intro']) {
+      if (isset($this->configuration['intro']) && $this->configuration['intro']) {
         $build['header']['argumentation_block_introduction'] = [
           '#markup' => '<div class="argumentation-header--intro">' . $this->configuration['introduction'] . '</div>',
         ];
@@ -181,13 +187,7 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
           'button--primary',
           'button--action',
         ];
-        $build['header']['primary_actions'] = [
-          '#type' => 'container',
-          '#attributes' => [
-            'class' => ['argumentation-header--actions'],
-          ],
-          'add_link' => $add_link,
-        ];
+        $build['header']['primary_actions']['add_link'] = $add_link;
       }
 
       // Sorter for arguements.

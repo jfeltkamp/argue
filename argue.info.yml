@@ -68,20 +68,19 @@ install:
   - entity_form_mode:entity_form_mode
   - entity_reference_revisions:entity_reference_revisions
   - field_group:field_group
-  - gin_toolbar:gin_toolbar
   - length_indicator:length_indicator
   - login_emailusername:login_emailusername
   - menu_link_attributes:menu_link_attributes
   - pathauto:pathauto
   - publishcontent:publishcontent
   - r4032login:r4032login
-  - rate:rate
   - select2:select2
   - taxonomy_menu:taxonomy_menu
   - token:token
   - twig_tweak:twig_tweak
   - views_field_view:views_field_view
   - votingapi:votingapi
+  - vote:vote
   - votingapi_widgets:votingapi_widgets
   # argue profile
   - argue:argue_structure
@@ -90,5 +89,4 @@ install:
   - argue:argue_proscons
 themes:
   - claro
-  - gin
   - argue_base

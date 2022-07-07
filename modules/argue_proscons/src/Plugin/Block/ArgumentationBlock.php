@@ -6,7 +6,6 @@ use Drupal\argue_proscons\ArgumentListService;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
@@ -105,9 +104,7 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    return [
-         'introduction' => $this->t(''),
-        ] + parent::defaultConfiguration();
+    return ['introduction' => ''] + parent::defaultConfiguration();
   }
 
   /**
@@ -117,7 +114,7 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
     $form['introduction'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Introduction'),
-      '#description' => $this->t(''),
+      '#description' => '',
       '#default_value' => $this->configuration['introduction'],
       '#maxlength' => 128,
       '#size' => 60,
@@ -140,42 +137,68 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
   public function build() {
     $build = [
       '#attributes' => [
-        'class' => ['argumentation-block']
+        'class' => ['argumentation-block'],
+      ],
+      'header' => [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => ['argumentation-header'],
+        ],
       ],
       'content' => [
         '#type' => 'container',
         '#attributes' => [
-          'class' => ['argumentation-content']
+          'class' => ['argumentation-content'],
         ],
       ],
       '#cache' => [
         'tags' => ['argue_block'],
         'contexts' => ['user.roles:authenticated'],
-      ]
+      ],
     ];
     $node = $this->getContextValue('node');
     $node_types = $this->configManager->getConfigFactory()
       ->get('argue_proscons.settings')
       ->get('argue_proscons.argue_proscons_node_types');
 
-    /* @var $node NodeInterface */
+    /** @var \Drupal\node\NodeInterface $node */
     if (!$node->isNew() && isset($node_types[$node->getType()]) && $node_types[$node->getType()]) {
 
       $reference_id = $node->id();
 
-      $build['content']['argumentation_block_introduction'] = [
-        '#markup' => '<p>' . $this->configuration['introduction'] . '</p>',
-      ];
+      if ($this->configuration['intro']) {
+        $build['header']['argumentation_block_introduction'] = [
+          '#markup' => '<div class="argumentation-header--intro">' . $this->configuration['introduction'] . '</div>',
+        ];
+      }
 
       $text = $this->t('Add Argument');
 
       $add_link = $this->argumentListService->getAddArgumentLink($reference_id, $text);
       if (isset($add_link['#attributes'])) {
         $add_link['#attributes']['class'] = [
-          'button', 'button--primary', 'button--action'
+          'button',
+          'button--primary',
+          'button--action',
         ];
-        $build['content']['argumentation_block_introduction']['add_link'] = $add_link;
+        $build['header']['primary_actions'] = [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => ['argumentation-header--actions'],
+          ],
+          'add_link' => $add_link,
+        ];
       }
+
+      // Sorter for arguements.
+      $build['header']['argumentation_sorter'] = [
+        '#markup' => '<div class="votejsr argumentation-header--sorter"
+                           data-votejsr="sort"
+                           data-sort-plugin="argument"
+                           data-additional="ttl_res:created:changed"
+                           data-context=".argue-proscons__col"></div>',
+      ];
+
       $build['content']['argumentation_list'] = $this->argumentListService->render($reference_id);
 
       // Enable history automatism to mark as new.
@@ -184,7 +207,7 @@ class ArgumentationBlock extends BlockBase implements ContainerFactoryPluginInte
         && $this->currentUser->isAuthenticated()
       ) {
         $build['content']['#attributes']['data-history-node-id'] = $reference_id;
-        /** @ToDo find solution for comment module is not enabled. */
+        /* @ToDo find solution for comment module is not enabled. */
         $build['content']['#attached']['library'][] = 'comment/drupal.comment-new-indicator';
       }
     }

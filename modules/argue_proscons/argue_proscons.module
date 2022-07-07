@@ -176,38 +176,6 @@ function argue_proscons_argument_view(array &$build, EntityInterface $entity, En
     '#markup' => $entity->get('changed')->getString()
   ];
 
-  // Attach the rate_vote_widget.
-  // @todo Replace by own rate widget.
-  $type = $entity->getEntityTypeId();
-  $bundle = $entity->bundle();
-
-  $view_string = "{$type}__{$bundle}__{$view_mode}";
-
-  $show = [
-    'argument__argument__teaser',
-    'argument__argument__teaser_pro',
-  ];
-
-  if (in_array($view_string, $show) && $widget_config = $display->getComponent('rate_vote_widget')) {
-    $vote_widget_service = \Drupal::service('rate.entity.vote_widget');
-    $vote_widget = $vote_widget_service->buildRateVotingWidget($entity->id(), $type, $bundle);
-
-    if (isset($vote_widget['rate_vote_widget'])) {
-      $vote_widget['rate_vote_widget']['#weight'] = $widget_config['weight'] ?? 2;
-    }
-
-    $vote_widget['#group'] = 'voting';
-
-    // move voting widget to own region.
-    $build['voting'] = [
-      '#type' => 'container',
-      '#weight' => 10,
-      '#attributes' => ['class' => ['voting']],
-      '#tree' => TRUE,
-      '#access' => TRUE,
-      'votingapi_links' => $vote_widget,
-    ];
-  }
 }
 
 /**

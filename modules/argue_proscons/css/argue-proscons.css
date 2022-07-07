@@ -1,14 +1,57 @@
+.argumentation-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  box-sizing: border-box;
+}
+
+.argumentation-header--intro,
+.argumentation-header--actions,
+.argumentation-header--sorter {
+  max-width: 100%;
+  flex: 0 0 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+.argumentation-header--actions {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .argumentation-header--intro {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .argumentation-header--actions,
+  .argumentation-header--sorter {
+    max-width: 50%;
+    flex: 0 0 50%;
+    margin-bottom: 0;
+  }
+}
+
+
 .argue-proscons {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    display: flex;
-    flex-direction: row;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .argue-proscons__col,
 .argue-proscons__col.panel {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
 }
+

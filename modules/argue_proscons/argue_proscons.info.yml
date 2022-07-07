@@ -6,10 +6,4 @@ core_version_requirement: ^8 || ^9
 package: Argue
 dependencies:
   - votingapi
-  - rate
-
-libraries-override:
-  rate/number-up-down:
-    css:
-      theme:
-        css/number-up-down.css: css/rate-widget-number-up-down.css
+  - vote

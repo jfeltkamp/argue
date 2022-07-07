@@ -20,7 +20,7 @@
     }
   ],
   "require": {
-    "php": "^7.3",
+    "php": ">=7.3 <8.2",
     "cweagans/composer-patches": "^1.7",
     "league/commonmark": "^0.11",
 
@@ -39,12 +39,9 @@
     "drupal/entity_form_mode": "^2.0",
     "drupal/entity_reference_revisions": "^1.8",
     "drupal/field_group": "^3.1",
-    "drupal/gin": "3.0.0-alpha36",
-    "drupal/gin_toolbar": "1.0.0-beta17",
     "drupal/length_indicator": "^1.1",
     "drupal/pathauto": "^1.8",
     "drupal/r4032login": "^2.1",
-    "drupal/rate": "1.0.0-alpha6",
     "drupal/login_emailusername": "^1.2",
     "drupal/menu_link_attributes": "^1.1",
     "drupal/publishcontent": "^1.2",
@@ -55,10 +52,15 @@
     "drupal/token": "^1.0",
     "drupal/update_helper": "^2.0",
     "drupal/views_field_view": "^1.0@beta",
+    "drupal/vote": "^1.0",
     "drupal/votingapi": "^3.0",
-    "drupal/votingapi_widgets": "dev-1.x",
     "npm-asset/select2": "^4.0.7",
-    "npm-asset/autosize": "^5.0.0"
+    "npm-asset/autosize": "^5.0.0",
+
+    "drupal/gin": "3.0.0-alpha36",
+    "drupal/gin_toolbar": "1.0.0-beta17",
+    "drupal/votingapi_widgets": "dev-1.x",
+    "drupal/rate": "1.0.0-alpha6"
   },
   "require-dev": {
     "drupal/drupal-extension": "^3.1"
@@ -73,9 +75,6 @@
   "extra": {
     "installer-name": "argue",
     "patches": {
-      "drupal/rate": {
-        "Display own voting and update D9 compatibility": "patches/drupal_rate_you_voted.patch"
-      },
       "drupal/draggable_dashboard": {
         "Block display issue #3217642": "patches/draggable_dashboard_block_structure.patch"
       }

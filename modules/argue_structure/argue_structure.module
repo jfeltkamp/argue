@@ -245,7 +245,7 @@ function argue_structure_argument_predelete(\Drupal\argue_proscons\Entity\Argume
 function argue_structure_argue_meta_patch_patch(\Drupal\change_requests\Entity\Patch $patch, $view_mode): array
 {
   $result = [];
-  if ($voting = _argue_structure_argue_meta_voting_rate($patch)) {
+  if ($voting = _argue_structure_argue_meta_voting_voted($patch)) {
     $result['voting'] = [
       '#theme' => 'argue_chip',
       '#attributes' => [
@@ -283,9 +283,9 @@ function argue_structure_argue_meta_patch_patch(\Drupal\change_requests\Entity\P
 function _argue_structure_argue_meta_voting(EntityInterface $entity): array {
   $entity_type_id = $entity->getEntityTypeId();
   $entity_id = $entity->id();
-  /** @var \Drupal\votingapi\VoteResultFunctionManager $vote_result_manager */
-  $vote_result_manager = \Drupal::service('plugin.manager.votingapi.resultfunction');
-  return $vote_result_manager->getResults($entity_type_id, $entity_id);
+  /** @var \Drupal\vote\VotingApiService $vote_result_manager */
+  $vote_result_manager = \Drupal::service('vote.votingapi');
+  return $vote_result_manager->getResults($entity_type_id, $entity_id, TRUE);
 }
 
 /**
@@ -293,14 +293,11 @@ function _argue_structure_argue_meta_voting(EntityInterface $entity): array {
  *
  * @return string|null
  */
-function _argue_structure_argue_meta_voting_rate(EntityInterface $entity): ?string {
+function _argue_structure_argue_meta_voting_voted(EntityInterface $entity): ?string {
   $result = _argue_structure_argue_meta_voting($entity);
-  if (isset($result["updown"])) {
-    $result = $result["updown"];
-    $up = (int) $result['rate_count_up'];
-    $down = $result['vote_count'] - $up;
-    $string = "{$up}:{$down}";
-    return $string;
+  if (isset($result["ttl_res"]["abs"])) {
+    $string = (int) round($result["ttl_res"]["abs"] * 100);
+    return $string . '%';
   }
   else return NULL;
 }

@@ -11,7 +11,7 @@ use Drupal\Core\Extension\ModuleHandler;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
-use Drupal\votingapi\VoteResultFunctionManager;
+use Drupal\vote\VotingApiService;
 
 /**
  * Class ArgumentListService.
@@ -57,7 +57,7 @@ class ArgumentListService {
   /**
    * Information about the entity type 'argument'.
    *
-   * @var VoteResultFunctionManager
+   * @var \Drupal\vote\VotingApiService
    */
   protected $voteResultManager;
 
@@ -66,9 +66,9 @@ class ArgumentListService {
    *
    * @param ModuleHandler $module_handler
    * @param EntityTypeManagerInterface $entity_type_manager
-   * @param VoteResultFunctionManager $vote_result_manager
+   * @param \Drupal\vote\VotingApiService $vote_result_manager
    */
-  public function __construct(ModuleHandler $module_handler, EntityTypeManagerInterface $entity_type_manager, VoteResultFunctionManager $vote_result_manager) {
+  public function __construct(ModuleHandler $module_handler, EntityTypeManagerInterface $entity_type_manager, VotingApiService $vote_result_manager) {
     $this->moduleHandler = $module_handler;
     $this->entityTypeManager = $entity_type_manager;
     $this->voteResultManager = $vote_result_manager;
@@ -251,26 +251,16 @@ class ArgumentListService {
   /**
    * Get the absolute weight of an item by voting api.
    *
-   * @param $id integer
+   * @param int $entity_id
+   *   The entity id to request.
    *
-   * @return float
-   *   Returns
+   * @return int
+   *   Returns weight calculated by vote result (not related to other entities).
    */
-  public function getWeight($id) {
-    $results = $this->voteResultManager->getResults('argument', $id);
-
-    $up = (isset($results["updown"]["rate_count_up"])) ? ((int) $results["updown"]["rate_count_up"]) : 0;
-    $count = (isset($results['updown']['vote_count'])) ? (int) $results['updown']['vote_count'] : 0;
-
-    if($count == 0) {
-      $weight = -51;
-    } else {
-      $weight = (int) round(-100 * $up / $count + 50);
-    }
-
-    return $weight;
+  public function getWeight(int $entity_id) {
+    $results = $this->voteResultManager->getResults('argument', $entity_id, TRUE);
+    return (isset($results["ttl_res"]["abs"])) ? (int) round($results["ttl_res"]["abs"] * -100) : 0;
   }
-
 
   /**
    * Builds a row for an entity in the entity listing.

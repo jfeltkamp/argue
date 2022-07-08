@@ -71,7 +71,7 @@
     "installer-name": "argue",
     "patches": {
       "drupal/draggable_dashboard": {
-        "Block display issue #3217642": "patches/draggable_dashboard_block_structure.patch"
+        "Block display issue #3217642": "https://www.drupal.org/files/issues/2021-06-07/draggable_dashboard_block_structure_1.patch"
       }
     },
     "installer-paths": {

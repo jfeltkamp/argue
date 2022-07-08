@@ -11,7 +11,6 @@ dependencies:
   module:
     - text
     - user
-    - vote
 id: node.rule.result
 targetEntityType: node
 bundle: rule
@@ -29,20 +28,10 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  vote_vote_field:
-    type: vote_plugin_formatter
-    label: hidden
-    settings:
-      placement: top-end
-      interactive: '1'
-      voting_stats: '1'
-      summary: detailed
-    third_party_settings: {  }
-    weight: 99
-    region: content
 hidden:
   field_causal_problems: true
   field_ratified: true
   field_sector: true
   langcode: true
   links: true
+  vote_vote_field: true

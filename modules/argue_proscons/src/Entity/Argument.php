@@ -418,5 +418,4 @@ class Argument extends RevisionableContentEntityBase implements ArgumentInterfac
     return $fields;
   }
 
-
 }

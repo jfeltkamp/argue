@@ -11,7 +11,8 @@ selection_criteria:
   32c2caac-5ead-4766-8518-aead2142b14d:
     id: 'entity_bundle:node'
     negate: false
-        context_mapping:
+    uuid: 32c2caac-5ead-4766-8518-aead2142b14d
+    context_mapping:
       node: node
     bundles:
       rule: rule

@@ -29,7 +29,8 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-        alt: '[current-user:display-name]'
+    uuid: ''
+    alt: '[current-user:display-name]'
     title: '[current-user:display-name]'
     width: null
     height: null

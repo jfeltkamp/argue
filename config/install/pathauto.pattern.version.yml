@@ -11,7 +11,8 @@ selection_criteria:
   f7c919bc-9eb7-4cd7-8534-f93a6d74f818:
     id: 'entity_bundle:node'
     negate: false
-        context_mapping:
+    uuid: f7c919bc-9eb7-4cd7-8534-f93a6d74f818
+    context_mapping:
       node: node
     bundles:
       version: version

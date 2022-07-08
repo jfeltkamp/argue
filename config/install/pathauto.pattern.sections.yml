@@ -12,7 +12,8 @@ selection_criteria:
   233a79c6-81a6-4a42-87aa-456c1241dcf3:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-        context_mapping:
+    uuid: 233a79c6-81a6-4a42-87aa-456c1241dcf3
+    context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       sections: sections

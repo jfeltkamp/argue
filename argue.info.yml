@@ -81,7 +81,6 @@ install:
   - views_field_view:views_field_view
   - votingapi:votingapi
   - vote:vote
-  - votingapi_widgets:votingapi_widgets
   # argue profile
   - argue:argue_structure
   - argue:argue_user

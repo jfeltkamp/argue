@@ -12,6 +12,7 @@ dependencies:
     - comment
     - draggable_dashboard
     - node
+    - toolbar
     - tour
 id: beginner
 label: Beginner
@@ -21,6 +22,7 @@ permissions:
   - 'access argue version overview'
   - 'access section tree overview page'
   - 'access the argue dashboard'
+  - 'access toolbar'
   - 'access tour'
   - 'access user profiles'
   - administer_draggable_dashboard

@@ -23,7 +23,7 @@ api:
 icons:
   default_sprite: /modules/contrib/vote/assets/svg/icons.svg
 button_types:
-  default: 'button button--secondary button--extrasmall'
+  default: 'button button--primary button--extrasmall'
   primary: 'button button--primary button--extrasmall'
   secondary: 'button button--outline--primary button--extrasmall'
   tertiary: 'button button--outline--secondary button--extrasmall'

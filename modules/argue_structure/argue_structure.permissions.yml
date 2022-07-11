@@ -10,3 +10,7 @@ set rule ratified:
   title: 'Set rules ratified'
   description: 'Allow to change the field ratified .'
   restrict access: true
+
+view toolbar tab manage:
+  title: 'View the toolbar tab "Manage"'
+  description: 'Allow user to view the toolbar tab "Manage" for roles with advanced permissions.'

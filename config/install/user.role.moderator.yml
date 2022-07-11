@@ -14,6 +14,7 @@ dependencies:
     - draggable_dashboard
     - node
     - publishcontent
+    - toolbar
     - tour
     - vote
     - votingapi
@@ -28,6 +29,7 @@ permissions:
   - 'access content overview'
   - 'access section tree overview page'
   - 'access the argue dashboard'
+  - 'access toolbar'
   - 'access tour'
   - 'access user profiles'
   - 'add argument entities'
@@ -74,6 +76,7 @@ permissions:
   - 'view problem revisions'
   - 'view published argument entities'
   - 'view rule revisions'
+  - 'view toolbar tab manage'
   - 'view unpublished argument entities'
   - 'view unpublished patch entities'
   - 'view version revisions'

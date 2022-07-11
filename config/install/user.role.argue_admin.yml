@@ -18,6 +18,7 @@ dependencies:
     - publishcontent
     - system
     - taxonomy
+    - toolbar
     - tour
     - vote
     - votingapi
@@ -35,6 +36,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access the argue dashboard'
+  - 'access toolbar'
   - 'access tour'
   - 'access user profiles'
   - 'add argument entities'
@@ -95,6 +97,7 @@ permissions:
   - 'view published argument entities'
   - 'view rule revisions'
   - 'view the administration theme'
+  - 'view toolbar tab manage'
   - 'view unpublished argument entities'
   - 'view unpublished patch entities'
   - 'view version revisions'

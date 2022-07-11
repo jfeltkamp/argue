@@ -16,7 +16,6 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access contextual links'
-  - 'access toolbar'
   - 'cancel account'
   - 'change own username'
   - 'post comments'

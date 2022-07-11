@@ -48,6 +48,119 @@ function argue_structure_theme() {
   ];
 }
 
+
+/**
+ * Implements hook_toolbar().
+ */
+function argue_structure_toolbar()
+{
+  $user = \Drupal::currentUser();
+
+  $items['argue'] = [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('Argue'),
+      '#url' => Url::fromRoute('user.page'),
+      '#attributes' => [
+        'title' => t('Argue main menu'),
+        'class' => ['toolbar-icon', 'toolbar-icon-argue'],
+      ],
+      '#cache' => [
+        // Vary cache for anonymous and authenticated users.
+        'contexts' => ['user.permissions'],
+      ],
+    ],
+    'tray' => [
+      '#heading' => t('Argue content'),
+    ],
+    '#weight' => -110,
+  ];
+
+  $links = [];
+  if (!$user->isAnonymous()) {
+    $links['dashboard'] = [
+      'title' => t('Dashboard'),
+      'url' => Url::fromRoute('argue_structure.dashboard_controller'),
+      'weight' => -50,
+      'attributes' => [
+        'class' => ['toolbar-icon', 'toolbar-icon-argue-dashboard']
+      ],
+    ];
+  }
+
+  if ($user->hasPermission('access section tree overview page')) {
+      $links['problems'] = [
+        'title' => t('Problems'),
+        'url' => Url::fromRoute('view.argue_section_tree.section_page', [], ['query' => ["node_type" => "problem"]]),
+        'description' => t('Overview of all problems brought up structured by sections.'),
+        'weight' => -40,
+        'attributes' => [
+          'class' => ['toolbar-icon', 'toolbar-icon-argue-problem']
+        ],
+      ];
+
+    $links['rules'] = [
+      'title' => t('Rules'),
+      'url' => Url::fromRoute('view.argue_section_tree.section_page', [], ['query' => ["node_type" => "rule"]]),
+      'description' => t('Overview of all rules structured by sections.'),
+      'weight' => -40,
+      'attributes' => [
+        'class' => ['toolbar-icon', 'toolbar-icon-argue-rule']
+      ],
+    ];
+
+    $links['ratified'] = [
+      'title' => t('Ratified rules'),
+      'url' => Url::fromRoute('view.argue_section_tree.section_page', [], ['query' => [
+        "node_type" => "rule",
+        "ratified" => "1"
+      ]]),
+      'description' => t('Overview of all ratified rules.'),
+      'weight' => -30,
+      'attributes' => [
+        'class' => ['toolbar-icon', 'toolbar-icon-argue-rule-ratified']
+      ],
+    ];
+  }
+
+  if ($user->hasPermission('access argue version overview')) {
+    $links['versions'] = [
+      'title' => t('Versions'),
+      'url' => Url::fromRoute('argue_versions.overview'),
+      'description' => t('Overview of final Versions.'),
+      'weight' => -20,
+      'attributes' => [
+        'class' => ['toolbar-icon', 'toolbar-icon-argue-versions']
+      ],
+    ];
+  }
+
+  $items['argue']['tray']['argue_links'] = [
+    '#theme' => 'links',
+    '#links' => $links,
+    '#attributes' => [
+      'class' => ['toolbar-menu'],
+    ],
+  ];
+
+  return $items;
+}
+
+// view toolbar tab manage
+function argue_structure_preprocess_toolbar(&$vars) {
+  /** @var \Drupal\Core\Session\AccountProxy $user */
+  $user = (isset($vars["user"]) && $vars["user"] instanceof \Drupal\Core\Session\AccountProxyInterface)
+    ? $vars["user"] : \Drupal::currentUser();
+  if ($user && !$user->hasPermission('view toolbar tab manage')) {
+    if(!isset($vars["attributes"]['class'])) {
+      $vars["attributes"]['class'] = [];
+    }
+    $vars["attributes"]['class'][] = 'argue-hide-tab-managed';
+  }
+}
+
+
 function argue_structure_patch_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
   if ($build['#view_mode'] == 'full' && isset($build["vote_vote_field"]["#attributes"]["data-summary"])) {
     $build["vote_vote_field"]["#attributes"]["data-summary"] = 'percent';

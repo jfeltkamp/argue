@@ -50,7 +50,7 @@
     "drupal/tour_ui": "^1.0",
     "drupal/twig_tweak": "^3.1",
     "drupal/token": "^1.10",
-    "drupal/update_helper": "^2.0",
+    "drupal/update_helper": "^3.0",
     "drupal/views_field_view": "^1.0@beta",
     "drupal/vote": "^1.0",
     "drupal/votingapi": "^3.0",

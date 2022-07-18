@@ -22,7 +22,6 @@
   "require": {
     "php": ">=7.3 <8.2",
     "cweagans/composer-patches": "^1.7",
-    "league/commonmark": "^0.11",
 
     "drupal/core": "~9.4.2",
     "drupal/address": "^1.9",

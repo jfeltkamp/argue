@@ -3,7 +3,7 @@ type: profile
 project: argue
 description: 'Argue: app for communities creating practical rules.'
 core_version_requirement: ^9
-version: '2.0.0-beta'
+version: '2.0.0-beta6'
 
 distribution:
   name: Argue

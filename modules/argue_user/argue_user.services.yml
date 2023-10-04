@@ -1,0 +1,4 @@
+services:
+  plugin.manager.argue_user_points:
+    class: Drupal\argue_user\ArgueUserPointsPluginManager
+    parent: default_plugin_manager

@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\userpoints\Service\UserPointsServiceInterface;
 
 /**
  * Implements hook_help().
@@ -35,4 +37,32 @@ function argue_user_theme() {
       ],
     ],
   ];
+}
+
+
+/**
+ * Implements hook_entity_insert().
+ */
+function argue_user_entity_insert(EntityInterface $entity) {
+  if (!\Drupal::currentUser()->isAnonymous()) {
+    \Drupal::service('plugin.manager.argue_user_points')->assignPoints('entity_actions', 'create', $entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function argue_user_entity_update(EntityInterface $entity) {
+  if (!\Drupal::currentUser()->isAnonymous()) {
+    \Drupal::service('plugin.manager.argue_user_points')->assignPoints('entity_actions', 'update', $entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function argue_user_entity_delete(EntityInterface $entity) {
+  if (!\Drupal::currentUser()->isAnonymous()) {
+    \Drupal::service('plugin.manager.argue_user_points')->assignPoints('entity_actions', 'delete', $entity);
+  }
 }

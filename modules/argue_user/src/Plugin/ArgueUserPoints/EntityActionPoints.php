@@ -2,25 +2,34 @@
 
 namespace Drupal\argue_user\Plugin\ArgueUserPoints;
 
-use Drupal\argue_user\ArgueUserPointsPluginBase;
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\argue_user\EntityActionsPluginBase;
 
 /**
  * Plugin implementation of the argue_user_points_plugin.
  *
  * @ArgueUserPointsPlugin(
  *   id = "entity_default",
- *   base = "entity_actions",
  *   label = @Translation("Entity Actions"),
  *   description = @Translation("Receive points for adding, publishing, updating entities."),
  *   actions = {
- *     "create" = "10",
- *     "update" = "5",
- *     "delete" = "0"
+ *     "create" = "defaultAction",
+ *     "update" = "defaultAction",
+ *     "delete" = "defaultAction"
+ *   },
+ *   validation_defaults = {
+ *     "create" = {
+ *        "repeat": "0"
+ *      },
+ *     "update" = {
+ *        "repeat": "3"
+ *      },
+ *     "delete" = {
+ *        "repeat": "0"
+ *      }
  *   },
  *   interface = "Drupal\Core\Entity\EntityInterface",
- *   default_user_point_type = "advancement",
- *   supported_entity_bundle_types = {
+ *   default_userpoint_type = "advancement",
+ *   plugin_keys = {
  *     "node__problem",
  *     "node__rule",
  *     "argument__argument",
@@ -28,25 +37,4 @@ use Drupal\Core\Entity\EntityInterface;
  *   }
  * )
  */
-class EntityActionPoints extends ArgueUserPointsPluginBase {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function handleAction(string $action, mixed $context = NULL): void {
-
-    if ($this->hasAction($action) && $context instanceof EntityInterface) {
-      if ($points = $this->getActionPoints($action) ?? NULL) {
-        $log_msg = $this->t('@action @type @bundle (@id)@title', [
-          '@action' => $action,
-          '@type' => $context->getEntityTypeId(),
-          '@bundle' => $context->bundle(),
-          '@id' => $context->id(),
-          '@title' => (!!$context->label()) ? ": {$context->label()}" : '',
-        ]);
-        $this->userpointsService->addPoints($points, $this->getDefaultUserPointsType(), $this->user, $log_msg);
-      }
-    }
-  }
-
-}
+class EntityActionPoints extends EntityActionsPluginBase {}

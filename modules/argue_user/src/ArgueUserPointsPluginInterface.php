@@ -2,6 +2,8 @@
 
 namespace Drupal\argue_user;
 
+use Drupal\Core\Entity\EntityInterface;
+
 /**
  * Interface for argue_user_points_plugin plugins.
  */
@@ -34,14 +36,6 @@ interface ArgueUserPointsPluginInterface {
   public function getActions(): array;
 
   /**
-   * Returns number of action points to assign for triggered action.
-   *
-   * @return int
-   *   Number of action points.
-   */
-  public function getActionPoints(string $action): int;
-
-  /**
    * Returns if plugin support this action.
    *
    * @return bool
@@ -55,6 +49,39 @@ interface ArgueUserPointsPluginInterface {
    * @return string
    *   The default userpoints type.
    */
-  public function getDefaultUserPointsType(): string;
+  public function getDefaultUserpointType(): string;
+
+  /**
+   * Build an ID from collection of different identifiers.
+   *
+   * @param array $ids
+   *   Multiple different identifiers.
+   *
+   * @return string
+   *   The ID that is qualified as selector.
+   */
+  public function buildLogId(array $ids): string;
+
+  /**
+   * Validates if rule is applicable.
+   *
+   * @param string $action
+   *   Action id to load the validation_defaults from plugin definition.
+   *
+   * @return bool
+   *   Return true if rule is applicable.
+   */
+  public function validates(string $action): bool;
+
+  /**
+   * Get validation defaults.
+   *
+   * @param string $action
+   *   The action for which the defaults should be returned.
+   *
+   * @return array
+   *   Array with the validation definitions.
+   */
+  public function getValidationDefaults(string $action): array;
 
 }

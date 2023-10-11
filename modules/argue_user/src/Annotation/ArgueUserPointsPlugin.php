@@ -20,13 +20,6 @@ class ArgueUserPointsPlugin extends Plugin {
   public string $id;
 
   /**
-   * The plugin base type e.g. entity_actions.
-   *
-   * @var string
-   */
-  public string $base;
-
-  /**
    * The human-readable name of the plugin.
    *
    * @var \Drupal\Core\Annotation\Translation
@@ -63,6 +56,22 @@ class ArgueUserPointsPlugin extends Plugin {
    *
    * @var string
    */
-  public string $default_user_point_type;
+  public string $default_userpoint_type;
+
+  /**
+   * Match keys given as pattern or array to select plugin.
+   *
+   * @var string|array
+   */
+  public string|array $plugin_keys;
+
+  /**
+   * Default validation settings to avoid typical side effects.
+   *
+   * Can be overwritten by config and plugin hook.
+   *
+   * @var array[]
+   */
+  public array $validation_defaults;
 
 }

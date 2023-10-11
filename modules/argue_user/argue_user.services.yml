@@ -1,4 +1,8 @@
 services:
   plugin.manager.argue_user_points:
     class: Drupal\argue_user\ArgueUserPointsPluginManager
+    arguments: ['@config.factory', '@messenger']
     parent: default_plugin_manager
+  argue_user_points.action_rules:
+    class: Drupal\argue_user\UserPointsActionRules
+    arguments: ['@config.factory', '@messenger']

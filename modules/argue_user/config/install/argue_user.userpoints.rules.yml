@@ -1,0 +1,66 @@
+dev_mode: true
+userpoints_rules:
+#  just_for__demo__collection:
+#    points: <any positive or negative number>
+#    addressed_user: <current_user|entity_creator>
+#    config:
+#      repeat: 0 <any number >= 0; -1 = unlimited>
+#      revert_max_age: <time in seconds>
+  entity_actions__argument_argument__create:
+    points: 2
+    addressed_user: current_user
+    config: { }
+  entity_actions__argument_argument__update:
+    points: 1
+    addressed_user: current_user
+    config: { }
+  entity_actions__argument_argument__delete:
+    points: -2
+    addressed_user: entity_creator
+    config:
+      revert_max_age: 1209600
+  entity_actions__node_rule__create:
+    points: 2
+    addressed_user: current_user
+    config: { }
+  entity_actions__node_rule__update:
+    points: 1
+    addressed_user: current_user
+    config: { }
+  entity_actions__node_rule__delete:
+    points: -2
+    addressed_user: entity_creator
+    config:
+      revert_max_age: 1209600
+  entity_actions__node_problem__create:
+    points: 2
+    addressed_user: current_user
+    config: { }
+  entity_actions__node_problem__update:
+    points: 1
+    addressed_user: current_user
+    config: { }
+  entity_actions__node_problem__delete:
+    points: -2
+    addressed_user: entity_creator
+    config:
+      revert_max_age: 1209600
+  entity_actions__vote_argument_relevance__create:
+    points: 1
+    addressed_user: current_user
+    config:
+      repeat: 0
+  entity_actions__vote_argument_relevance__delete:
+    points: -1
+    addressed_user: current_user
+    config: { }
+  entity_actions__vote_argument_validity__create:
+    points: 1
+    addressed_user: current_user
+    config:
+      repeat: 0
+  entity_actions__vote_argument_validity__delete:
+    points: -1
+    addressed_user: current_user
+    config:
+      repeat: -1

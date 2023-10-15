@@ -5,6 +5,8 @@ namespace Drupal\argue_user;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
+use Drupal\userpoints\Entity\UserPoints;
+use Drupal\userpoints\Entity\UserPointsInterface;
 
 /**
  * ArgueUserPointsPlugin plugin manager.
@@ -47,6 +49,9 @@ class ArgueUserPointsPluginManager extends DefaultPluginManager {
    * @throws \Drupal\Component\Plugin\Exception\PluginException
    */
   public function assignPoints(string $plugin_key, string $action, mixed $context): void {
+    if ($context instanceof UserPointsInterface) {
+      return;
+    }
     if ($plugin_id = $this->getActionPluginId($plugin_key, $action)) {
       /** @var ArgueUserPointsPluginInterface $plugin */
       $plugin = $this->createInstance($plugin_id);

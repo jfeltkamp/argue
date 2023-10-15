@@ -3,31 +3,24 @@
 namespace Drupal\argue_user\Plugin\ArgueUserPoints;
 
 use Drupal\argue_user\EntityActionsPluginBase;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\votingapi\VoteInterface;
 
 /**
  * Plugin implementation of the argue_user_points_plugin.
  *
  * @ArgueUserPointsPlugin(
- *   id = "vote_default",
+ *   id = "vote_actions",
  *   label = @Translation("Vote Actions"),
  *   description = @Translation("Receive points for adding, publishing, updating votes."),
  *   actions = {
  *     "create" = "defaultAction",
  *     "update" = "defaultAction",
- *     "delete" = "defaultAction"
+ *     "delete" = "deleteAction"
  *   },
  *   validation_defaults = {
- *     "create" = {
- *        "repeat": "0"
- *      },
- *     "update" = {
- *        "repeat": "0"
- *      },
- *     "delete" = {
- *        "repeat": "-1"
- *      }
+ *     "create" = { },
+ *     "update" = { },
+ *     "delete" = { }
  *   },
  *   interface = "Drupal\Core\Entity\EntityInterface",
  *   default_userpoint_type = "advancement",
@@ -39,14 +32,25 @@ class VoteActionPoints extends EntityActionsPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function getLogIdStack(EntityInterface $entity, string $action): ?array {
-    if ($entity instanceof VoteInterface) {
+  public function getLogIdStack(string $action): ?array {
+    if ($this->entity instanceof VoteInterface) {
       return [
-        'rule' => $this->rule['id'],
-        'voted_entity' => "{$entity->getVotedEntityType()}:{$entity->getVotedEntityId()}",
+        'rule' => $this->buildRuleId($action),
+        'voted_entity' => "{$this->entity->getVotedEntityType()}:{$this->entity->getVotedEntityId()}",
       ];
     }
     return NULL;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildRuleId(string $action): string {
+    return implode('__', [
+      $this->getPluginId(),
+      "{$this->entity->getEntityTypeId()}",
+      $action,
+    ]);
   }
 
 }

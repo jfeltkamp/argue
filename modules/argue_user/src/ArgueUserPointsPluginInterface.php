@@ -2,8 +2,6 @@
 
 namespace Drupal\argue_user;
 
-use Drupal\Core\Entity\EntityInterface;
-
 /**
  * Interface for argue_user_points_plugin plugins.
  */
@@ -83,5 +81,16 @@ interface ArgueUserPointsPluginInterface {
    *   Array with the validation definitions.
    */
   public function getValidationDefaults(string $action): array;
+
+  /**
+   * Get final validation config with overwritten defaults.
+   *
+   * @param string $action
+   *   The action for which the validation config should be returned.
+   *
+   * @return array
+   *   Array with the final validation definitions.
+   */
+  public function getValidationConfig(string $action): array;
 
 }

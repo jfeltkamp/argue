@@ -8,7 +8,7 @@ use Drupal\argue_user\EntityActionsPluginBase;
  * Plugin implementation of the argue_user_points_plugin.
  *
  * @ArgueUserPointsPlugin(
- *   id = "entity_default",
+ *   id = "entity_actions",
  *   label = @Translation("Entity Actions"),
  *   description = @Translation("Receive points for adding, publishing, updating entities."),
  *   actions = {
@@ -18,13 +18,16 @@ use Drupal\argue_user\EntityActionsPluginBase;
  *   },
  *   validation_defaults = {
  *     "create" = {
- *        "repeat": "0"
+ *        "published" = TRUE
  *      },
  *     "update" = {
- *        "repeat": "3"
+ *        "repeat" = 5,
+ *        "published" = TRUE,
+ *        "earliest_repeat" = 86400
  *      },
  *     "delete" = {
- *        "repeat": "0"
+ *        "repeat" =  0,
+ *        "revert_max_age" = 2419200
  *      }
  *   },
  *   interface = "Drupal\Core\Entity\EntityInterface",

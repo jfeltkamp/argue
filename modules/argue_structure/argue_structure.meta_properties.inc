@@ -209,3 +209,27 @@ function _argue_structure_meta_props_from_reference_fields(EntityInterface $enti
 
   return $result;
 }
+
+
+/**
+ * Implements hook_argue_meta_ENTITY_TYPE_BUNDLE().
+ */
+function argue_structure_argue_meta_gamify_alert_gamify_alert(EntityInterface $entity, string $view_mode): array {
+  $status = $entity->get('status')->value === "1";
+  $short_str = $status ? 'active' : 'closed';
+  $cache_tag = "gamify_alert:{$entity->id()}:meta:status";
+  $result = [
+    'status' => [
+      '#theme' => 'argue_chip',
+      '#help' => t('Entity status is @status.', ['@status' => $short_str]),
+      '#attributes' => [
+        'title' => t('Entity status is @status.', ['@status' => $short_str]),
+      ],
+      '#icon_before' => $status ? 'check' : 'clear',
+      '#text' => $short_str,
+      '#icon_after' => NULL,
+      '#cache' => ['tags' => [$cache_tag]],
+    ],
+  ];
+  return $result;
+}

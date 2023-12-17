@@ -219,5 +219,16 @@ function argue_proscons_entity_form_display_alter(EntityFormDisplayInterface &$f
  */
 function argue_proscons_gamify_log_id_argument_context(ArgumentInterface $entity) {
   $nid = $entity->getReferenceId();
-  return ["node:$nid"];
+  $type = $entity->getTypeStr();
+  return [
+    "argument:$type",
+    "rel:node:$nid"
+  ];
+}
+
+/**
+ * Implements hook_gamify_watchdog_entity_types().
+ */
+function argue_proscons_gamify_watchdog_entity_types() {
+  return ['argument'];
 }

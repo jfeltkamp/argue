@@ -6,8 +6,6 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\votingapi\VoteInterface;
 
 /**
  * Implements hook_help().
@@ -37,35 +35,4 @@ function argue_user_theme() {
       ],
     ],
   ];
-}
-
-/**
- * Implements hook_gamify_get_ENTITY_TYPE_parent_entity().
- */
-function argue_user_gamify_get_vote_parent_entity(VoteInterface $entity): ?EntityInterface {
-  try {
-    return \Drupal::entityTypeManager()
-      ->getStorage($entity->getVotedEntityType())
-      ->load($entity->getVotedEntityId());
-  }
-  catch(\Exception $e) {
-    \Drupal::logger('rufi')->error($e->getMessage());
-    return NULL;
-  }
-}
-
-
-/**
- * Implements hook_gamify_log_id_ENTITY_TYPE_context().
- */
-function argue_user_gamify_log_id_vote_context(VoteInterface $entity) {
-  $entity_type_id = $entity->getVotedEntityType();
-  $entity_id = $entity->getVotedEntityId();
-  $parent_ids = ["$entity_type_id:$entity_id"];
-  if ($parent_entity = argue_user_gamify_get_vote_parent_entity($entity)) {
-    $further_ids = \Drupal::moduleHandler()
-      ->invokeAll("gamify_log_id_{$entity_type_id}_context", ['entity' => $parent_entity]);
-    $parent_ids = array_merge($parent_ids, $further_ids);
-  }
-  return $parent_ids;
 }

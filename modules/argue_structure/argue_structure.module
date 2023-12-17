@@ -207,7 +207,7 @@ function argue_structure_preprocess_page_title(&$variables) {
  * Get the argue meta information.
  */
 function argue_structure_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
-  module_load_include('meta_properties.inc', 'argue_structure');
+  \Drupal::moduleHandler()->loadInclude('argue_structure', 'meta_properties.inc');
   $build['argue_meta'] = argue_structure_meta_properties_load($entity, $display);
 }
 
@@ -394,6 +394,12 @@ function argue_structure_argue_meta_patch_patch(\Drupal\change_requests\Entity\P
   return $result;
 }
 
+/**
+ * Implements hook_gamify_watchdog_entity_types().
+ */
+function argue_structure_gamify_watchdog_entity_types(): array {
+  return ['node', 'patch'];
+}
 
 /**
  * Implements hook_argue_meta_patch_patch().

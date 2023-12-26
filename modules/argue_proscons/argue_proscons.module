@@ -9,8 +9,8 @@ use Drupal\argue_proscons\Entity\ArgumentInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 
@@ -215,15 +215,22 @@ function argue_proscons_entity_form_display_alter(EntityFormDisplayInterface &$f
 }
 
 /**
- * Implements hook_gamify_log_id_ENTITY_TYPE_context().
+ * ###NEW Implements hook_gamify_hash_ENTITY_TYPE_context().
  */
-function argue_proscons_gamify_log_id_argument_context(ArgumentInterface $entity) {
-  $nid = $entity->getReferenceId();
+function argue_proscons_gamify_hash_argument_context(ArgumentInterface $entity) {
+  $aid = $entity->id();
   $type = $entity->getTypeStr();
-  return [
-    "argument:$type",
-    "rel:node:$nid"
-  ];
+  $context = ["argument:$aid type='$type'"];
+  // Get the parent context.
+  $module_handler = \Drupal::moduleHandler();
+  if ($module_handler->moduleExists('argue_structure')) {
+    $nid = $entity->getReferenceId();
+    if ($node = Node::load($nid)) {
+      $parent = $module_handler->invoke('argue_structure', "gamify_hash_node_context", ['entity' => $node]);
+      $context = array_merge($context, $parent);
+    }
+  }
+  return $context;
 }
 
 /**

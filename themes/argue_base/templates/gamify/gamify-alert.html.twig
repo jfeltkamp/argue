@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a gamify alert entity.
+ *
+ * This template is used when viewing a canonical gamify alert page,
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.label'.
+ * - entity: Instance of current entity to receive values directly.
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_gamify_alert()
+ */
+#}
+{{ attach_library('gamify/main') }}
+{{ attach_library('argue_base/history') }}
+{%
+  set classes = [
+  'card',
+  'gamify_alert',
+  'alert',
+  'alert--type-' ~ entity.type.value|clean_class,
+]
+%}
+{% set updated = (entity.changed.value - entity.created.value) > (60 * 60) %}
+{% set date = updated ? entity.changed.value|format_date('medium') : entity.created.value|format_date('medium') %}
+
+<article{{ attributes.addClass(classes).setAttribute('data-history-alert-id', entity.id.value) }}>
+  <div class="card__content-wrapper">
+    <header class="card-header">
+      <span class="card-header__icon"><i class="argue-icon" aria-hidden="true">{{ entity.type.value }}</i><mark id="alert_mark_{{ entity.id.value }}" data-history-changed="{{ entity.changed.value }}" class="hidden mark-new"></mark></span>
+      <span class="card-header__text">
+        <h2 class="card-header__text__top">{{ entity.label.value }}</h2>
+          <span class="card-header__text__bot">
+          {% if updated %}
+            {% trans %}Updated on {{ date }}{% endtrans %}
+          {% else %}
+            {% trans %}Created on {{ date }}{% endtrans %}
+          {% endif %}
+        </span>
+      </span>
+    </header>
+
+    <div{{ content_attributes.addClass('card__content-item') }}>
+      {{ content|without('type', 'status', 'created', 'links', 'argue_meta') }}
+    </div>
+
+    <div class="card-footer">
+      <div class="card-footer__action-buttons">
+        {{ content.argue_meta }} {{ content.links }}
+      </div>
+      <div class="card-footer__action-icons"></div>
+    </div>
+  </div>
+</article>

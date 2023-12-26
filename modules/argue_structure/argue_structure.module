@@ -15,6 +15,8 @@ use Drupal\Core\Url;
 use Drupal\views\Views;
 use Drupal\argue_proscons\Entity\ArgumentInterface;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Field\EntityReferenceFieldItemListInterface;
+use Drupal\taxonomy\TermInterface;
 
 /**
  * Implements hook_help().
@@ -392,6 +394,48 @@ function argue_structure_argue_meta_patch_patch(\Drupal\change_requests\Entity\P
     '#cache' => ['tags' => ["patch:{$patch->id()}:meta:status"]],
   ];
   return $result;
+}
+
+/**
+ * ###NEW Implements hook_gamify_hash_ENTITY_TYPE_context().
+ */
+function argue_structure_gamify_hash_node_context(NodeInterface $entity) {
+  $nid = $entity->id();
+  $bundle = $entity->bundle();
+  $context = ["node:$nid bundle='$bundle'"];
+  // Get the parent context.
+  if ($entity->hasField('field_sector') && $field = $entity->get('field_sector')) {
+    if ($field instanceof EntityReferenceFieldItemListInterface && ($entities = $field->referencedEntities())) {
+      /** @var EntityInterface $parent_entity */
+      if ($parent_entity = reset($entities)) {
+        $parent_entity_type = $parent_entity->getEntityTypeId();
+        $parent = \Drupal::moduleHandler()->invokeAll( "gamify_hash_{$parent_entity_type}_context", ['entity' => $parent_entity]);
+        $context = array_merge($context, $parent);
+      }
+    }
+  }
+  return $context;
+}
+
+/**
+ * ###NEW Implements hook_gamify_hash_ENTITY_TYPE_context().
+ */
+function argue_structure_gamify_hash_taxonomy_term_context(TermInterface $entity) {
+  $tid = $entity->id();
+  $bundle = $entity->bundle();
+  $context = ["taxonomy_term:$tid bundle='$bundle'"];
+  // Get the parent context.
+  if ($entity->hasField('parent') && $field = $entity->get('parent')) {
+    if ($field instanceof EntityReferenceFieldItemListInterface && ($entities = $field->referencedEntities())) {
+      /** @var EntityInterface $parent_entity */
+      if ($parent_entity = reset($entities)) {
+        $parent_entity_type = $parent_entity->getEntityTypeId();
+        $parent = \Drupal::moduleHandler()->invokeAll( "gamify_hash_{$parent_entity_type}_context", ['entity' => $parent_entity]);
+        $context = array_merge($context, $parent);
+      }
+    }
+  }
+  return $context;
 }
 
 /**

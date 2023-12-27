@@ -215,18 +215,21 @@ function argue_proscons_entity_form_display_alter(EntityFormDisplayInterface &$f
 }
 
 /**
- * ###NEW Implements hook_gamify_hash_ENTITY_TYPE_context().
+ * Implements hook_gamify_log_hash_ENTITY_TYPE_context().
  */
-function argue_proscons_gamify_hash_argument_context(ArgumentInterface $entity) {
+function argue_proscons_gamify_log_hash_argument_context(ArgumentInterface $entity, bool $deep_context) {
   $aid = $entity->id();
   $type = $entity->getTypeStr();
   $context = ["argument:$aid type='$type'"];
   // Get the parent context.
   $module_handler = \Drupal::moduleHandler();
-  if ($module_handler->moduleExists('argue_structure')) {
+  if ($deep_context && $module_handler->moduleExists('argue_structure')) {
     $nid = $entity->getReferenceId();
     if ($node = Node::load($nid)) {
-      $parent = $module_handler->invoke('argue_structure', "gamify_hash_node_context", ['entity' => $node]);
+      $parent = $module_handler->invoke('argue_structure', "gamify_log_hash_node_context", [
+        'entity' => $node,
+        'deep_context' => TRUE,
+        ]);
       $context = array_merge($context, $parent);
     }
   }

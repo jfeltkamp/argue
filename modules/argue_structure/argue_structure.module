@@ -397,19 +397,22 @@ function argue_structure_argue_meta_patch_patch(\Drupal\change_requests\Entity\P
 }
 
 /**
- * ###NEW Implements hook_gamify_hash_ENTITY_TYPE_context().
+ * Implements hook_gamify_log_hash_ENTITY_TYPE_context().
  */
-function argue_structure_gamify_hash_node_context(NodeInterface $entity) {
+function argue_structure_gamify_log_hash_node_context(NodeInterface $entity, bool $deep_context) {
   $nid = $entity->id();
   $bundle = $entity->bundle();
   $context = ["node:$nid bundle='$bundle'"];
   // Get the parent context.
-  if ($entity->hasField('field_sector') && $field = $entity->get('field_sector')) {
+  if ($deep_context && $entity->hasField('field_sector') && $field = $entity->get('field_sector')) {
     if ($field instanceof EntityReferenceFieldItemListInterface && ($entities = $field->referencedEntities())) {
       /** @var EntityInterface $parent_entity */
       if ($parent_entity = reset($entities)) {
         $parent_entity_type = $parent_entity->getEntityTypeId();
-        $parent = \Drupal::moduleHandler()->invokeAll( "gamify_hash_{$parent_entity_type}_context", ['entity' => $parent_entity]);
+        $parent = \Drupal::moduleHandler()->invoke('argue_structure', "gamify_log_hash_{$parent_entity_type}_context", [
+          'entity' => $parent_entity,
+          'deep_context' => TRUE,
+          ]);
         $context = array_merge($context, $parent);
       }
     }
@@ -418,19 +421,22 @@ function argue_structure_gamify_hash_node_context(NodeInterface $entity) {
 }
 
 /**
- * ###NEW Implements hook_gamify_hash_ENTITY_TYPE_context().
+ * Implements hook_gamify_log_hash_ENTITY_TYPE_context().
  */
-function argue_structure_gamify_hash_taxonomy_term_context(TermInterface $entity) {
+function argue_structure_gamify_log_hash_taxonomy_term_context(TermInterface $entity, bool $deep_context) {
   $tid = $entity->id();
   $bundle = $entity->bundle();
   $context = ["taxonomy_term:$tid bundle='$bundle'"];
   // Get the parent context.
-  if ($entity->hasField('parent') && $field = $entity->get('parent')) {
+  if ($deep_context && $entity->hasField('parent') && $field = $entity->get('parent')) {
     if ($field instanceof EntityReferenceFieldItemListInterface && ($entities = $field->referencedEntities())) {
       /** @var EntityInterface $parent_entity */
       if ($parent_entity = reset($entities)) {
         $parent_entity_type = $parent_entity->getEntityTypeId();
-        $parent = \Drupal::moduleHandler()->invokeAll( "gamify_hash_{$parent_entity_type}_context", ['entity' => $parent_entity]);
+        $parent = \Drupal::moduleHandler()->invoke('argue_structure',"gamify_log_hash_{$parent_entity_type}_context", [
+          'entity' => $parent_entity,
+          'deep_context' => TRUE,
+          ]);
         $context = array_merge($context, $parent);
       }
     }
